@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI社群 · NOVA Island · Figma Standalone</title>
+  <meta name="description" content="NOVA Island AI社群独立设计稿页面，可直接在浏览器打开并导入 Figma。">
+  <style>
+    :root {
+      --canvas: #fdfcfc;
+      --mist: #f7f7f8;
+      --mist-deep: #f0f0f2;
+      --ink: #1c1917;
+      --body: #57534e;
+      --muted: #85817f;
+      --faint: #aaa6a3;
+      --line: rgba(28, 25, 23, .09);
+      --line-strong: rgba(28, 25, 23, .16);
+      --signal: #2b55ff;
+      --signal-dark: #1737c7;
+      --signal-soft: #e9edff;
+      --white: #fff;
+      --rail: min(1280px, calc(100vw - 48px));
+      --radius: 24px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: Inter, "SF Pro Display", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; font: inherit; }
+
+    .page {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg,
+          transparent calc((100% - var(--rail)) / 2),
+          var(--line) calc((100% - var(--rail)) / 2),
+          var(--line) calc((100% - var(--rail)) / 2 + 1px),
+          transparent calc((100% - var(--rail)) / 2 + 1px),
+          transparent calc((100% + var(--rail)) / 2 - 1px),
+          var(--line) calc((100% + var(--rail)) / 2 - 1px),
+          var(--line) calc((100% + var(--rail)) / 2),
+          transparent calc((100% + var(--rail)) / 2));
+    }
+    .container { width: var(--rail); margin: 0 auto; padding-inline: 36px; }
+    .eyebrow {
+      margin: 0;
+      color: var(--muted);
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      margin: 16px 0 0;
+      font-size: clamp(34px, 4vw, 52px);
+      font-weight: 570;
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+    .section-copy {
+      max-width: 560px;
+      margin: 20px 0 0;
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 0 24px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-dark { color: white; background: var(--ink); }
+    .button-dark:hover { background: #000; }
+    .button-light { border-color: var(--line-strong); background: rgba(255,255,255,.65); }
+    .button-light:hover { border-color: var(--ink); }
+    .button-white { color: var(--signal-dark); background: white; }
+
+    .nav-wrap {
+      position: fixed;
+      z-index: 50;
+      top: 14px;
+      left: 50%;
+      width: min(760px, calc(100vw - 24px));
+      transform: translateX(-50%);
+    }
+    .nav {
+      display: flex;
+      min-height: 52px;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 7px 6px 16px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.72), 0 12px 40px rgba(28,25,23,.06);
+      backdrop-filter: blur(24px);
+    }
+    .brand { margin-right: auto; font-size: 13px; font-weight: 800; letter-spacing: -.03em; }
+    .nav-link { padding: 10px 14px; border-radius: 999px; color: rgba(28,25,23,.58); font-size: 12px; }
+    .nav-link.active { color: var(--ink); font-weight: 700; background: rgba(28,25,23,.05); }
+    .nav-cta { min-height: 38px; padding-inline: 18px; color: white; background: var(--ink); }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 680px;
+      place-items: center;
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      bottom: -4px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ink);
+      content: "";
+    }
+    .hero::before { left: calc((100% - var(--rail)) / 2 - 3px); }
+    .hero::after { right: calc((100% - var(--rail)) / 2 - 3px); }
+    .hero-inner { width: min(860px, calc(100% - 48px)); padding-top: 36px; }
+    .hero-kicker { margin: 0; color: var(--muted); font-size: 15px; font-weight: 550; }
+    .hero h1 {
+      margin: 22px 0 0;
+      font-size: clamp(68px, 10vw, 132px);
+      font-weight: 650;
+      line-height: .94;
+      letter-spacing: -.065em;
+    }
+    .hero-copy {
+      margin: 36px auto 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.6;
+    }
+    .hero-actions { display: flex; justify-content: center; gap: 12px; margin-top: 32px; }
+
+    .manifesto { padding: 112px 0 120px; }
+    .manifesto-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 88px; align-items: center; }
+    .manifesto .section-title { max-width: 440px; }
+    .manifesto-card {
+      position: relative;
+      min-height: 460px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--mist);
+    }
+    .signal-orbit { position: absolute; inset: 0; }
+    .signal-orbit::before {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 280px; height: 280px;
+      border: 1px solid rgba(43,85,255,.18);
+      border-radius: 50%;
+      transform: translate(-50%,-50%);
+      box-shadow: 0 0 0 48px rgba(43,85,255,.045), 0 0 0 96px rgba(43,85,255,.025);
+      content: "";
+    }
+    .signal-orbit::after {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 118px; height: 118px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #9eb0ff 0, var(--signal) 38%, #132fba 100%);
+      box-shadow: 0 30px 60px rgba(43,85,255,.24);
+      transform: translate(-50%,-50%);
+      content: "";
+    }
+    .orbit-line { position: absolute; inset: 50% auto auto 50%; width: 390px; height: 142px; border: 1px solid rgba(28,25,23,.22); border-radius: 50%; transform: translate(-50%,-50%) rotate(-18deg); }
+    .orbit-line::after { position: absolute; top: 51%; left: -5px; width: 10px; height: 10px; border-radius: 50%; background: var(--ink); content: ""; }
+    .coordinate { position: absolute; color: var(--muted); font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: .12em; }
+    .coordinate.top { top: 28px; left: 28px; }
+    .coordinate.bottom { right: 28px; bottom: 28px; }
+
+    .spectrum { padding: 112px 0 120px; background: var(--mist); }
+    .spectrum-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 56px; }
+    .spectrum-heading .section-copy { max-width: 420px; margin: 0; }
+    .spectrum-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 32px; align-items: stretch; }
+    .feature-visual {
+      position: relative;
+      min-height: 600px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--ink);
+      isolation: isolate;
+    }
+    .visual-grid {
+      position: absolute; inset: 0;
+      opacity: .28;
+      background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to bottom, black, transparent 92%);
+    }
+    .dot-field { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .visual-caption { position: absolute; z-index: 3; right: 32px; bottom: 28px; left: 32px; display: flex; align-items: end; justify-content: space-between; color: white; }
+    .visual-caption strong { display: block; font-size: 22px; letter-spacing: -.02em; }
+    .visual-caption span { color: rgba(255,255,255,.55); font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: .12em; }
+    .feature-list { border-top: 1px solid var(--line-strong); }
+    .feature { border-bottom: 1px solid var(--line-strong); }
+    .feature button {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 40px 1fr 32px;
+      align-items: center;
+      gap: 8px;
+      border: 0;
+      padding: 24px 0;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+    }
+    .feature-index { color: var(--faint); font-family: ui-monospace, monospace; font-size: 11px; }
+    .feature-title { font-size: 20px; font-weight: 570; letter-spacing: -.02em; }
+    .feature-toggle { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid var(--line-strong); border-radius: 50%; font-size: 18px; }
+    .feature-copy { display: none; max-width: 520px; margin: -6px 40px 24px 48px; color: var(--body); font-size: 14px; line-height: 1.72; }
+    .feature.open .feature-copy { display: block; }
+    .feature.open .feature-title { color: var(--signal-dark); }
+
+    .ready { padding: 96px 0; }
+    .ready-card {
+      position: relative;
+      display: flex;
+      min-height: 270px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      padding: 56px 64px;
+      color: white;
+      background: var(--signal);
+    }
+    .ready-card::after { position: absolute; inset: 0; background: radial-gradient(circle at 75% 50%, rgba(255,255,255,.22), transparent 32%); content: ""; }
+    .ready-copy, .ready-card .button { position: relative; z-index: 2; }
+    .ready-copy h2 { margin: 0; font-size: 42px; font-weight: 580; letter-spacing: -.04em; }
+    .ready-copy p { margin: 14px 0 0; color: rgba(255,255,255,.72); font-size: 16px; }
+    .ready-dots { position: absolute; z-index: 1; top: 0; right: 11%; width: 480px; height: 100%; opacity: .72; }
+
+    .membership { padding: 120px 0; background: var(--mist); }
+    .membership-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 80px; align-items: center; }
+    .benefits { margin-top: 36px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--canvas); overflow: hidden; }
+    .benefit { display: flex; align-items: center; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .benefit:last-child { border-bottom: 0; }
+    .check { display: grid; width: 26px; height: 26px; flex: 0 0 auto; place-items: center; border-radius: 50%; color: white; background: var(--ink); }
+    .price-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 48px; background: var(--canvas); }
+    .price { display: flex; align-items: end; gap: 8px; margin-top: 24px; }
+    .price-currency { padding-bottom: 10px; font-size: 24px; font-weight: 600; }
+    .price-value { font-size: 88px; font-weight: 580; line-height: .82; letter-spacing: -.06em; }
+    .price-period { padding-bottom: 9px; color: var(--muted); font-size: 15px; }
+    .privileges { margin: 36px 0 28px; border-block: 1px solid var(--line); }
+    .privilege { display: grid; grid-template-columns: 88px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .privilege:last-child { border-bottom: 0; }
+    .privilege-tag { color: var(--muted); font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: .08em; }
+    .privilege strong { display: block; font-size: 14px; }
+    .privilege p { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+    .price-card .button { width: 100%; background: var(--signal); }
+    .price-note { margin: 14px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; text-align: center; }
+
+    .faq { padding: 120px 0; }
+    .faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 88px; }
+    .faq-list { border-top: 1px solid var(--line-strong); }
+    details { border-bottom: 1px solid var(--line-strong); }
+    summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 0; font-size: 15px; font-weight: 600; cursor: pointer; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { display: grid; width: 30px; height: 30px; flex: 0 0 auto; place-items: center; border: 1px solid var(--line-strong); border-radius: 50%; content: "+"; font-size: 18px; font-weight: 400; }
+    details[open] summary::after { content: "−"; }
+    details p { max-width: 680px; margin: -4px 50px 22px 0; color: var(--body); font-size: 14px; line-height: 1.72; }
+
+    footer { padding: 28px 0 44px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; }
+    .footer-links { display: flex; gap: 24px; }
+
+    @media (max-width: 900px) {
+      :root { --rail: calc(100vw - 24px); }
+      .container { padding-inline: 20px; }
+      .nav-link { display: none; }
+      .nav-link.active { display: block; }
+      .hero { min-height: 620px; }
+      .manifesto-grid, .spectrum-grid, .membership-grid, .faq-grid { grid-template-columns: 1fr; }
+      .manifesto-grid, .membership-grid, .faq-grid { gap: 56px; }
+      .spectrum-heading { display: block; }
+      .spectrum-heading .section-copy { margin-top: 20px; }
+      .feature-visual { min-height: 470px; }
+      .ready-card { align-items: flex-start; flex-direction: column; padding: 44px 32px; }
+      .ready-card .button { align-self: flex-start; }
+    }
+    @media (max-width: 560px) {
+      .nav { padding-left: 14px; }
+      .nav-link { display: none !important; }
+      .hero h1 { font-size: 64px; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .manifesto, .spectrum, .membership, .faq { padding-block: 88px; }
+      .manifesto-card { min-height: 340px; }
+      .feature-visual { min-height: 380px; }
+      .ready { padding-block: 64px; }
+      .ready-copy h2 { font-size: 34px; }
+      .ready-card { min-height: 320px; }
+      .price-card { padding: 32px 24px; }
+      .price-value { font-size: 72px; }
+      .privilege { grid-template-columns: 72px 1fr; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-wrap" aria-label="主导航">
+    <div class="nav">
+      <a class="brand" href="#top">NOVA Island</a>
+      <a class="nav-link active" href="#top">AI社群</a>
+      <a class="nav-link" href="#spectrum">社群内容</a>
+      <a class="nav-link" href="#membership">加入计划</a>
+      <a class="button nav-cta" href="#membership">加入 AI 社群</a>
+    </div>
+  </nav>
+
+  <div class="page" id="top">
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="hero-kicker">AI社群</p>
+        <h1>AI社群</h1>
+        <p class="hero-copy">保持对行业前沿的持续感知，<br>与同频的人一起走得更远。</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#membership">联系我们</a>
+          <a class="button button-light" href="#about">了解更多</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="manifesto" id="about">
+        <div class="container manifesto-grid">
+          <div>
+            <p class="eyebrow">WHY NOVA COMMUNITY</p>
+            <h2 class="section-title">为什么加入<br>AI社群？</h2>
+            <p class="section-copy">AI 领域信息更新极快，噪音极多。新岛 AI社群专注于去噪与提炼——每周筛选真正值得关注的前沿动态、工具与方法论，帮助你把注意力花在刀刃上。</p>
+            <p class="section-copy">这里既有内容消费，也有主动连接。社群成员来自产品、工程、运营、管理等各个方向，共同的底色是对 AI 落地的真实兴趣。</p>
+          </div>
+          <div class="manifesto-card" aria-label="代表社群连接和行业信号的轨道图形">
+            <div class="signal-orbit"></div>
+            <div class="orbit-line"></div>
+            <span class="coordinate top">SIGNAL / 31.2304° N</span>
+            <span class="coordinate bottom">NOVA / COMMUNITY 001</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="spectrum" id="spectrum">
+        <div class="container">
+          <div class="spectrum-heading">
+            <div>
+              <p class="eyebrow">COMMUNITY SPECTRUM</p>
+              <h2 class="section-title">社群包含什么</h2>
+            </div>
+            <p class="section-copy">从前沿信号到真实连接，六条航线构成一套持续更新的 AI 实践网络。</p>
+          </div>
+
+          <div class="spectrum-grid">
+            <div class="feature-visual" aria-hidden="true">
+              <div class="visual-grid"></div>
+              <svg class="dot-field" viewBox="0 0 640 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(342 278) rotate(90) scale(260)">
+                    <stop stop-color="#5474FF" stop-opacity=".78"/><stop offset="1" stop-color="#5474FF" stop-opacity="0"/>
+                  </radialGradient>
+                  <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2.2" cy="2.2" r="1.9" fill="white" fill-opacity=".74"/></pattern>
+                  <mask id="islandMask"><path fill="white" d="M117 323C139 229 224 135 321 124c89-10 176 45 207 128 30 81-8 181-91 218-79 35-175 5-235-46-53-46-100-38-85-101Z"/></mask>
+                </defs>
+                <rect width="640" height="600" fill="url(#glow)"/>
+                <g mask="url(#islandMask)"><rect x="80" y="84" width="490" height="430" fill="url(#dots)"/><path d="M76 382C188 307 225 251 296 250c75-1 102 68 214 19" stroke="white" stroke-opacity=".7"/><path d="M84 421c127-41 168-94 251-79 67 13 105 70 182 42" stroke="white" stroke-opacity=".34"/></g>
+                <circle cx="116" cy="323" r="5" fill="white"/><circle cx="529" cy="251" r="5" fill="white"/><circle cx="437" cy="469" r="5" fill="white"/>
+              </svg>
+              <div class="visual-caption"><strong id="visualTitle">每周风向</strong><span id="visualCode">SIGNAL 01 / 06</span></div>
+            </div>
+
+            <div class="feature-list">
+              <article class="feature open" data-label="每周风向" data-code="SIGNAL 01 / 06">
+                <button type="button" aria-expanded="true"><span class="feature-index">01</span><span class="feature-title">每周风向</span><span class="feature-toggle">−</span></button>
+                <p class="feature-copy">每周精选 AI 行业值得关注的动态与趋势，从模型发布、产品迭代到资本与政策变化，替你过滤掉重复的噪音与炒作，只留下真正影响判断的信息。</p>
+              </article>
+              <article class="feature" data-label="超级内容" data-code="DEPTH 02 / 06">
+                <button type="button" aria-expanded="false"><span class="feature-index">02</span><span class="feature-title">超级内容</span><span class="feature-toggle">+</span></button>
+                <p class="feature-copy">深度长文、真实案例拆解与可复用的方法论沉淀，覆盖从技术原理到落地路径的完整链条。不追热点标题，只把一件事背后的逻辑讲透。</p>
+              </article>
+              <article class="feature" data-label="工具教程" data-code="TOOL 03 / 06">
+                <button type="button" aria-expanded="false"><span class="feature-index">03</span><span class="feature-title">工具教程</span><span class="feature-toggle">+</span></button>
+                <p class="feature-copy">精选值得投入时间的 AI 工具，提供从注册配置、核心用法到进阶技巧的完整教程，并附上真实使用场景与避坑提示，帮你把工具真正嵌进工作流。</p>
+              </article>
+              <article class="feature" data-label="精选沙龙" data-code="SALON 04 / 06">
+                <button type="button" aria-expanded="false"><span class="feature-index">04</span><span class="feature-title">精选沙龙</span><span class="feature-toggle">+</span></button>
+                <p class="feature-copy">定期举办线上与线下沙龙，每场只聚焦一个具体议题，邀请一线实践者分享真实经验，并留足自由讨论的时间。</p>
+              </article>
+              <article class="feature" data-label="同频集会" data-code="CONNECT 05 / 06">
+                <button type="button" aria-expanded="false"><span class="feature-index">05</span><span class="feature-title">同频集会</span><span class="feature-toggle">+</span></button>
+                <p class="feature-copy">连接真实在做 AI 落地的人——创业者、产品、工程师与研究者，按行业和方向自然形成小圈子，交换一手资源与踩坑经验。</p>
+              </article>
+              <article class="feature" data-label="成为领航员" data-code="NAVIGATE 06 / 06">
+                <button type="button" aria-expanded="false"><span class="feature-index">06</span><span class="feature-title">成为领航员</span><span class="feature-toggle">+</span></button>
+                <p class="feature-copy">持续输出内容、组织活动或帮助他人的活跃成员，可申请成为社群领航员，获得专属资源、优先曝光机会与更深度的圈层连接。</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ready">
+        <div class="container">
+          <div class="ready-card">
+            <svg class="ready-dots" viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><pattern id="rd" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="white"/></pattern><mask id="wave"><path fill="white" d="M10 171c65-88 116-137 188-129 71 7 92 73 155 83 47 7 91-21 127-63v208H10Z"/></mask></defs><rect width="480" height="270" fill="url(#rd)" mask="url(#wave)"/></svg>
+            <div class="ready-copy"><h2>准备好了吗？</h2><p>加入新岛 AI社群，与真正在做 AI 的人同行。</p></div>
+            <a class="button button-white" href="#membership">立即加入 <span>↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="membership" id="membership">
+        <div class="container membership-grid">
+          <div>
+            <p class="eyebrow">JOIN NOVA</p>
+            <h2 class="section-title">成为第一批岛民</h2>
+            <p class="section-copy">NOVA Island 是 AI 时代的原住民聚集地。我们相信，通过连接、共创与探索，每个人都能在这里找到属于自己的方向。</p>
+            <div class="benefits">
+              <div class="benefit"><span class="check">✓</span><span>优先参与岛屿内测活动与独家计划</span></div>
+              <div class="benefit"><span class="check">✓</span><span>加入专属社群，与早期岛民共同共创</span></div>
+              <div class="benefit"><span class="check">✓</span><span>获取前沿 AI 工具、资源与学习内容</span></div>
+            </div>
+          </div>
+          <div class="price-card">
+            <p class="eyebrow">首发 PRO · 岛民年费</p>
+            <div class="price"><span class="price-currency">¥</span><span class="price-value">599</span><span class="price-period">/ 年</span></div>
+            <div class="privileges">
+              <div class="privilege"><span class="privilege-tag">限量</span><div><strong>首期资格与岛民身份</strong><p>优先加入，锁定首批岛民身份</p></div></div>
+              <div class="privilege"><span class="privilege-tag">解锁</span><div><strong>8 大岛民核心权益</strong><p>专属内容、工具与资源持续更新</p></div></div>
+              <div class="privilege"><span class="privilege-tag">岛民专享</span><div><strong>主流 AI 工具优惠</strong><p>精选合作伙伴权益，长期价值回馈</p></div></div>
+            </div>
+            <a class="button button-dark" href="#top">立即登岛</a>
+            <p class="price-note">付费年费暂未开通。现在可免费注册，进入社区浏览与发帖。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq">
+        <div class="container faq-grid">
+          <div>
+            <p class="eyebrow">FAQ</p>
+            <h2 class="section-title">常见问题</h2>
+            <p class="section-copy">以下是大家最关心的问题，如还有其他疑问，欢迎联系我们。</p>
+            <a class="button button-light" href="#top" style="margin-top:28px">联系我们</a>
+          </div>
+          <div class="faq-list">
+            <details><summary>NOVA Island 是什么？</summary><p>NOVA Island 是一个 AI Native 的行动型社区，连接全球的创造者、开发者与探索者，一起探索 AI 如何重塑认知、工具与生活方式。</p></details>
+            <details><summary>加入岛屿需要费用吗？</summary><p>正式岛民年费计划为 ¥599/年，目前付费通道尚未开放。现阶段可免费注册账号，使用浏览、发帖、互动等社区基础功能。</p></details>
+            <details><summary>如何成为正式岛民？</summary><p>点击「立即登岛」前往注册。支付与审核流程暂未上线；注册完成后即可登录进入社区参与讨论。</p></details>
+            <details><summary>岛屿目前有哪些活动或计划？</summary><p>社区内可浏览精华、最新动态、航海与活动信息。部分运营活动仍在筹备中，已上线的内容均可直接使用。</p></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner"><span>© 2026 新岛 AI · NOVA Island</span><div class="footer-links"><a href="#top">隐私政策</a><a href="#top">用户协议</a></div></div>
+    </footer>
+  </div>
+
+  <script>
+    const features = [...document.querySelectorAll('.feature')];
+    const visualTitle = document.querySelector('#visualTitle');
+    const visualCode = document.querySelector('#visualCode');
+    features.forEach((feature) => {
+      feature.querySelector('button').addEventListener('click', () => {
+        const wasOpen = feature.classList.contains('open');
+        features.forEach((item) => {
+          item.classList.remove('open');
+          item.querySelector('button').setAttribute('aria-expanded', 'false');
+          item.querySelector('.feature-toggle').textContent = '+';
+        });
+        if (!wasOpen) {
+          feature.classList.add('open');
+          feature.querySelector('button').setAttribute('aria-expanded', 'true');
+          feature.querySelector('.feature-toggle').textContent = '−';
+          visualTitle.textContent = feature.dataset.label;
+          visualCode.textContent = feature.dataset.code;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+/* Detail pages retain the product sidebar and their own reading layout. */
+.ds-topbar .page-back{margin-right:auto}.ds-topbar{justify-content:flex-start}.ds-topbar .ds-row{margin-left:auto}.product-sidebar .account-trigger{flex-shrink:0}.product-sidebar .sidebar-bottom{padding-top:24px}@media(min-width:761px){.ds-topbar>.mobile-menu{display:none}}@media(max-width:760px){.ds-topbar{gap:8px;flex-wrap:nowrap}.ds-topbar .ds-row{gap:8px}.ds-topbar .ds-button{padding-inline:10px}}

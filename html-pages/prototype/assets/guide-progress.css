@@ -1,0 +1,154 @@
+.guide-progress{position:relative;margin:8px 0 32px;padding:0;border:1px solid var(--border-subtle);border-radius:var(--radius-card);background:var(--surface-default)}
+.guide-progress-link{display:block;padding:20px 24px 24px;border-radius:inherit;color:inherit}
+.guide-progress-heading{padding-right:48px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.guide-progress-tools{position:absolute;top:20px;right:24px;z-index:2;flex:none;width:max-content;margin:0}
+.guide-progress-more{display:grid;place-items:center;width:36px;height:32px;padding:0;background:transparent;border:0;border-radius:var(--radius-md);color:var(--text-secondary);font-size:24px;line-height:1;cursor:pointer}
+.guide-progress-more:hover,.guide-progress-more[aria-expanded=true]{background:var(--surface-hover);color:var(--text-heading)}
+.guide-progress-more:hover{color:var(--text-hover)}
+.guide-progress-menu{position:absolute;right:0;top:calc(100% + 4px);z-index:5;min-width:156px;padding:4px;background:var(--surface-default);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-popover)}
+.guide-progress-menu[hidden]{display:none}
+.guide-progress-menu button{display:block;width:100%;border:0;background:transparent;color:var(--text-primary);text-align:left;font:inherit;font-size:13px;padding:10px 12px;border-radius:var(--radius-md);cursor:pointer}
+.guide-progress-menu button:hover{background:var(--surface-hover)}
+.guide-progress-content{display:flex;align-items:center;justify-content:space-between;gap:32px}
+.guide-progress-content>div{flex:1;min-width:0}
+.guide-progress h2{margin:0;font-size:20px;font-weight:500;line-height:1.4}
+.guide-progress p{margin:8px 0 16px;font-size:13px;line-height:1.7;color:var(--text-secondary)}
+.guide-progress-status{display:flex;align-items:center;gap:16px;font-size:12px;color:var(--text-secondary)}
+.guide-progress-track{display:flex;gap:6px;max-width:320px;flex:1}
+.guide-progress-track span{flex:1;height:4px;border-radius:2px;background:var(--border-subtle)}
+.guide-progress-track .is-complete{background:var(--nova-accent)}
+.guide-progress-continue{position:static;flex:none;white-space:nowrap}
+.guide-progress:has(.guide-progress-link:hover){border-color:var(--border-subtle)}
+.guide-progress-link:focus-visible{outline:2px solid var(--focus-ring);outline-offset:4px}
+.guide-step-completion{display:flex;align-items:center;gap:8px;margin-top:16px;font-size:13px;color:var(--text-secondary)}
+.guide-step-completion input{accent-color:var(--nova-accent);width:16px;height:16px}
+.guide-progress button:focus-visible{outline:2px solid var(--nova-accent);outline-offset:2px}
+@media(max-width:600px){.guide-progress-link{padding:16px 16px 20px}.guide-progress-tools{top:16px;right:16px}.guide-progress-content{flex-direction:column;align-items:stretch;gap:20px}.guide-progress-continue{align-self:start}}
+
+/* Course overview: learning identity and curriculum with a progress sidebar. */
+
+.journey-page{--journey-blue:#E2EDFA;--journey-green:#DDF5EC;--journey-hover:#D3E4F7;--journey-line:#B8CFEA;--journey-muted:#F3F4F6;--journey-dark:#4F6FE0;--journey-on-dark:#FFFFFF;--journey-dark-overlay:rgba(255,255,255,.12);--journey-accent:#7692FF;--journey-accent-text:#365F9B;--journey-peach:#FFE8DA;--journey-success-text:#326653;--text-heading:#343849;--text-primary:#343849;--text-secondary:#62677B;--text-tertiary:#6C7185;--surface-default:#FFFFFF;--focus-ring:#7692FF;color:var(--text-primary);max-width:1040px;margin:0 auto;padding:8px 0 32px}
+.journey-header{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:40px}
+.journey-eyebrow{font-size:12px;color:var(--text-secondary)}
+.journey-header h1{font-size:28px;line-height:1.4;letter-spacing:-.03em;margin:8px 0 12px}
+.journey-header p{font-size:13px;color:var(--text-secondary);line-height:1.8;margin:0;max-width:340px}
+.journey-stats{display:flex;gap:8px;flex:none}
+.journey-stats>div{display:grid;gap:4px;place-items:center;min-width:80px;padding:16px;background:var(--badge-blue-bg);color:var(--badge-blue-text);border-radius:var(--radius-card)}
+.journey-stats .stat-complete{background:var(--badge-green-bg);color:var(--badge-green-text)}
+.journey-stats>div:last-child{background:var(--badge-amber-bg);color:var(--badge-amber-text)}
+.journey-stats strong{font-size:28px;font-weight:600;line-height:1.2;font-variant-numeric:tabular-nums}
+.journey-stats span{font-size:11px;color:inherit}
+.journey-tree{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(5,1fr);gap:16px 72px;align-items:stretch;isolation:isolate}
+/* Row 4 starts at 60% of the grid height + 9.6px (three of four 16px gaps).
+   Extend the trunk to its connector at 60px, including the 2px stroke. */
+.journey-tree:before{content:"";position:absolute;left:50%;top:60px;bottom:calc(40% - 71.6px);border-left:2px dashed var(--journey-line);z-index:-1}
+.journey-week{position:relative;min-width:0;background:var(--journey-muted);border-radius:var(--radius-card);padding:28px;grid-column:1;grid-row:1 / span 2;box-shadow:0 4px 24px rgb(52 56 73 / 3%)}
+.journey-week:nth-child(2){grid-column:2;grid-row:2 / span 2}
+.journey-week:nth-child(3){grid-column:1;grid-row:3 / span 2}
+.journey-week:nth-child(4){grid-column:2;grid-row:4 / span 2}
+
+.journey-week:before{content:"";position:absolute;top:60px;left:100%;width:36px;border-top:2px dashed var(--journey-line)}
+.journey-week:nth-child(even):before{left:auto;right:100%}
+.journey-node{position:absolute;top:56px;right:-5px;width:9px;height:9px;border-radius:50%;background:var(--journey-line)}
+.journey-week:nth-child(even) .journey-node{right:auto;left:-5px}
+.journey-week.current{--text-heading:var(--journey-on-dark);--text-primary:#F0F4FF;--text-secondary:#DCE5FF;--text-tertiary:#C5D2F5;--journey-accent-text:var(--journey-on-dark);--journey-hover:var(--journey-dark-overlay);background:var(--journey-dark);color:var(--journey-on-dark)}
+.journey-week-icon{position:absolute;top:16px;right:16px;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--journey-muted);color:var(--text-heading)}
+.journey-week-icon svg{width:23px;height:23px}
+.completed .journey-week-icon{background:var(--journey-green)}
+.current .journey-week-icon{background:var(--journey-dark-overlay)}
+.journey-week-meta{display:flex;gap:12px;align-items:center;padding-right:40px;font-size:11px;color:var(--text-secondary);flex-wrap:wrap}
+.journey-week-meta>span:first-child{font-weight:600;color:var(--text-primary)}
+.journey-week.current .journey-week-meta{color:var(--text-tertiary)}
+.journey-week.current .journey-week-meta>span:first-child{color:var(--text-secondary)}
+.journey-week.current h2{color:var(--text-heading)}
+.journey-week h2{font-size:24px;letter-spacing:-.03em;line-height:1.4;margin:16px 28px 8px 0}
+.journey-week-description{font-size:12px;line-height:1.8;color:var(--text-secondary);margin:0 0 20px}
+.journey-page .journey-resources{display:grid;gap:8px;margin:24px 0}
+.journey-resources a{display:flex;align-items:center;gap:10px;min-height:48px;padding:12px;box-sizing:border-box;border-radius:10px;font-size:12px;font-weight:500;line-height:1.6;color:var(--text-primary);background:var(--surface-default);border:1px solid var(--border-subtle);box-shadow:none;cursor:pointer;transition:transform 160ms ease-out}
+.journey-lesson-title{flex:1;min-width:0}
+.journey-lesson-check{display:grid;place-items:center;flex:none;width:20px;height:20px;border:1px solid var(--border-control);border-radius:6px;background:var(--surface-default);color:var(--badge-blue-text);font-size:14px;font-weight:600}
+.journey-lesson.is-visited .journey-lesson-check{background:var(--badge-blue-bg);border-color:var(--badge-blue-text)}
+.journey-week.current .journey-lesson{background:var(--journey-dark-overlay);border-color:rgba(255,255,255,.24)}
+.journey-week.current .journey-lesson-check{background:transparent;border-color:rgba(255,255,255,.6);color:var(--journey-on-dark)}
+.journey-week.current .journey-lesson.is-visited .journey-lesson-check{background:var(--journey-on-dark);border-color:var(--journey-on-dark);color:var(--journey-dark)}
+.journey-week.current .journey-lesson:hover{background:rgba(255,255,255,.22)}
+.journey-resources a:active{transform:scale(.98)}
+@media(prefers-reduced-motion:reduce){.journey-resources a{transition:none}.journey-resources a:active{transform:none}}
+.journey-week footer{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.journey-stage-status{display:inline-flex;align-items:center;gap:6px;border-radius:24px;padding:8px 12px;font-size:11px;background:var(--journey-muted);white-space:nowrap}
+.completed .journey-stage-status{background:var(--journey-green);color:var(--journey-success-text)}
+.current .journey-stage-status{background:var(--journey-dark-overlay);color:var(--journey-on-dark)}
+.journey-complete-control{display:flex;align-items:center;gap:6px;min-height:44px;font-size:11px;cursor:pointer;color:var(--text-secondary)}
+.journey-complete-control input{width:18px;height:18px;accent-color:var(--journey-accent-text);cursor:pointer}
+.journey-page :is(a,input,button):focus-visible{outline:2px solid var(--focus-ring);outline-offset:4px}
+.journey-restore{margin-top:24px}
+@media(max-width:1100px){.journey-header{align-items:start;flex-direction:column;gap:24px}.journey-stats>div{min-width:88px}.journey-week{padding:24px}.journey-tree{column-gap:48px}.journey-week:before{width:24px}}
+@media(max-width:650px){.journey-header h1{font-size:25px}.journey-header{margin-bottom:32px}.journey-tree{display:flex;flex-direction:column;gap:24px;padding-left:24px}.journey-tree:before{left:0;top:60px;bottom:60px}.journey-week,.journey-week:nth-child(n+2){width:100%;margin:0}.journey-week:before,.journey-week:nth-child(even):before{left:auto;right:100%;width:24px}.journey-node,.journey-week:nth-child(even) .journey-node{left:-5px;right:auto}.journey-stats{width:100%}.journey-stats>div{flex:1;min-width:0}.journey-week h2{font-size:22px}}
+
+/* Deep blue current stage; light gray inactive stages. */
+.journey-week.current .journey-node{background:var(--journey-accent)}
+.journey-week.current .journey-week-icon{color:var(--journey-accent-text)}
+.journey-week.completed .journey-week-icon{color:var(--journey-success-text)}
+.journey-resources a:hover{color:var(--text-hover);background:var(--journey-hover);box-shadow:none}
+.journey-complete-control:hover{color:var(--text-hover)}
+.journey-page .journey-restore{background:var(--journey-blue);color:var(--journey-accent-text);border-color:transparent}
+.journey-page .journey-restore:hover{background:var(--journey-hover)}
+
+/* Onboarding banner: live text and progress, decorative blue geometric sculpture. */
+.guide-banner{width:100%;box-sizing:border-box;background:#E2EDFA;border:0;border-radius:var(--radius-card);color:#242429;isolation:isolate;overflow:visible;margin:40px 0 56px}
+.guide-banner .guide-progress-link{position:relative;display:flex;align-items:center;padding:32px 36px;min-height:212px;overflow:visible;isolation:isolate}
+.guide-banner-art{position:absolute;z-index:-1;right:0;top:auto;bottom:0;width:38%;height:calc(100% + 40px);pointer-events:none}
+.guide-banner-art img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.guide-banner .guide-progress-heading{padding:0;max-width:70%}
+.guide-banner h2{font-size:clamp(28px,3vw,44px);font-weight:500;letter-spacing:-.035em;line-height:1.3;color:#242429}
+.guide-banner .guide-progress-content{max-width:67%;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:20px;margin-top:20px}
+.guide-banner .guide-progress-content>div{flex:0 1 auto}
+.guide-banner p{margin:0;color:#53657A;font-size:16px;line-height:1.75}
+.guide-banner .guide-progress-status{margin-top:12px;gap:10px;font-size:11px;color:#53657A}
+.guide-banner .guide-progress-track{max-width:100px;gap:4px}
+.guide-banner .guide-progress-track span{background:#C0D2E9}
+.guide-banner .guide-progress-track .is-complete{background:#7692FF}
+.guide-banner .guide-progress-continue{display:inline-flex;align-items:center;gap:14px;border:0;border-radius:999px;background:#242429;color:#FFFFFF;padding:12px 20px;min-height:44px;font-size:14px}
+.guide-banner .guide-progress-link:hover .guide-progress-continue{background:#3D3D47}
+.guide-banner .guide-progress-continue>span{font-size:20px;line-height:1}
+.guide-banner .guide-progress-tools{top:12px;right:16px}
+.guide-banner .guide-progress-more{background:transparent;color:#343849}
+.guide-banner .guide-progress-more:hover,.guide-banner .guide-progress-more[aria-expanded=true]{background:#D3E4F7;color:#365F9B}
+.guide-banner .guide-progress-more:hover{color:var(--text-hover)}
+.guide-banner .guide-progress-link:focus-visible{outline:2px solid #435BB5;outline-offset:4px}
+@media(max-width:1000px){.guide-banner .guide-progress-link{padding:28px}.guide-banner .guide-progress-content{max-width:65%;gap:16px;flex-wrap:wrap}.guide-banner .guide-progress-content>div{flex-basis:auto}.guide-banner-art{width:38%;right:0}}
+@media(max-width:600px){.guide-banner .guide-progress-link{padding:24px;min-height:260px}.guide-banner .guide-progress-heading{max-width:90%;padding-right:16px}.guide-banner h2{font-size:28px}.guide-banner .guide-progress-content{max-width:100%;align-items:flex-start;margin-top:16px;gap:16px}.guide-banner .guide-progress-content>div{flex-basis:auto}.guide-banner p{font-size:14px}.guide-banner-art{width:42%;height:180px;top:auto;bottom:0;right:0}.guide-banner .guide-progress-status{max-width:220px}.guide-banner .guide-progress-continue{font-size:13px;padding:10px 16px}}
+
+/* Align the progress/action group with the title on wide banners. */
+.guide-banner-layout{display:flex;align-items:flex-end;gap:40px;width:70%}
+.guide-banner-copy{flex:1;min-width:0}
+.guide-banner .guide-progress-heading{max-width:none}
+.guide-banner-copy>p{margin-top:20px}
+.guide-banner-actions{display:flex;flex-direction:column;align-items:flex-start;gap:20px;flex:none;padding-top:4px}
+.guide-banner-actions .guide-progress-status{margin-top:0;white-space:nowrap}
+.guide-banner-actions .guide-progress-track{width:100px;flex:none}
+@media(max-width:1200px){.guide-banner-layout{flex-direction:column;align-items:flex-start;gap:24px;width:65%}}
+@media(max-width:600px){.guide-banner-layout{width:100%}.guide-banner-copy{padding-right:16px}.guide-banner-actions{max-width:58%;gap:16px}}
+
+/* Quiet continuous progress, using the same blue as the page's interactive text. */
+.guide-banner-actions .guide-progress-status{gap:12px;font-size:var(--font-sm);color:#53657A}
+.guide-banner-actions .guide-progress-track{display:block;width:104px;max-width:104px;height:4px;flex:none;overflow:hidden;border-radius:var(--radius-full);background:#C0D2E9}
+.guide-banner-actions .guide-progress-track .guide-progress-fill{display:block;height:100%;border-radius:inherit;background:#365F9B}
+.guide-banner-actions .guide-progress-status strong{font-weight:500;color:#365F9B;font-variant-numeric:tabular-nums}
+
+/* Independent glass layers separate in depth when the journey card is active. */
+.home-feature-row .guide-banner-art .guide-sculpture{transform:none;perspective:900px}
+.sculpture-piece{transform-box:fill-box;transform-origin:center;transition:transform 750ms cubic-bezier(.22,1,.36,1);will-change:auto}
+.sculpture-arc{--piece-motion:translate(4px,3px) rotate(2deg) scale(.98)}
+.sculpture-orb{--piece-motion:translate(-24px,-18px) rotate(-8deg) scale(1.08);transition-delay:40ms}
+.sculpture-ring{--piece-motion:translate(24px,-14px) rotate(12deg) scaleX(.84);transition-delay:70ms}
+.sculpture-prism{--piece-motion:translate(-20px,-10px) rotate(-14deg);transition-delay:100ms}
+.sculpture-beam{--piece-motion:translate(-8px,-6px) rotate(-3deg) scale(.97);transition-delay:25ms}
+.sculpture-tube{--piece-motion:translate(20px,-16px) rotate(8deg) scale(.96);transition-delay:110ms}
+@media(hover:hover){.home-feature-row .guide-banner:hover .sculpture-piece{transform:var(--piece-motion)}}
+.home-feature-row .guide-banner:focus-within .sculpture-piece{transform:var(--piece-motion)}
+@media(prefers-reduced-motion:reduce){
+ .sculpture-piece{transition:none}
+ .home-feature-row .guide-banner:hover .sculpture-piece,
+ .home-feature-row .guide-banner:focus-within .sculpture-piece{transform:none}
+}

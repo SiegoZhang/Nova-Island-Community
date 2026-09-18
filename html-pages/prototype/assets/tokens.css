@@ -1,0 +1,54 @@
+/* Nova Island product tokens. Scoped independently from brand UI. */
+.nova-ds {
+ --radius-card:24px;
+ --blue-950:#091540; --blue-700:#1B2CC1; --blue-400:#7692FF; --blue-200:#ABD2FA;
+ --text-hover:var(--blue-400);
+ /* Reference primitives: neutral palette, independent of semantic roles. */
+ --neutral-ink:#000000; --neutral-graphite:#333333; --neutral-slate:#707070;
+ --neutral-cool-gray:#6B7280; --neutral-steel:#7E8389; --neutral-fog:#949494;
+ --neutral-mist:#CCCCCF; --neutral-pearl:#DEDEE0; --neutral-ash:#F2F2F2;
+ --neutral-linen:#F7F7F9; --neutral-paper:#FFFFFF;
+ --shell-bg:var(--neutral-linen); --shell-surface:var(--neutral-paper); --shell-gap:6px; --shell-radius:var(--radius-card);
+ --bg-primary:var(--neutral-paper); --bg-secondary:var(--neutral-ash); --surface-default:var(--neutral-paper); --surface-secondary:var(--neutral-ash); --surface-hover:var(--neutral-linen);
+ --text-heading:var(--neutral-ink); --text-primary:var(--neutral-graphite); --text-secondary:var(--neutral-slate); --text-helper:var(--neutral-cool-gray); --text-tertiary:var(--neutral-fog); --text-disabled:var(--neutral-fog);
+ --border-strong:var(--neutral-mist); --border-default:var(--neutral-pearl); --border-subtle:var(--neutral-ash); --border-control:var(--neutral-mist); --border-muted:var(--neutral-pearl); --border-card-hover:#C7D5E5;
+ --action-primary:var(--neutral-ink); --action-primary-hover:var(--neutral-graphite); --text-on-action:var(--neutral-paper);
+ --nova-accent:var(--blue-400); --brand-primary:var(--nova-accent); --brand-hover:var(--nova-accent); --brand-subtle:var(--surface-secondary); --text-on-brand:#FFFFFF;
+ --selection-bg:var(--surface-secondary); --selection-text:var(--text-heading);
+ --status-success:var(--nova-accent); --status-success-bg:var(--surface-secondary); --status-warning:#DFA85D; --status-warning-bg:#FFF9F0; --status-warning-text:#80551E; --status-danger:#EE8C94; --status-danger-bg:#FFF5F6; --status-danger-text:#A23845; --status-success-text:#435BB5; --status-info:var(--text-secondary); --status-info-bg:var(--surface-secondary);
+ --control-bg:var(--surface-secondary); --control-border:var(--border-control); --focus-ring:var(--action-primary);
+ --font-sans:"Inter","PingFang SC","Microsoft YaHei",sans-serif; --font-mono:"SFMono-Regular",Consolas,monospace;
+ --font-xs:11px; --font-sm:12px; --font-md:14px; --font-lg:16px; --font-xl:20px; --font-2xl:24px; --font-3xl:36px;
+ --weight-regular:400; --weight-medium:500; --weight-semibold:600; --line-tight:1.25; --line-body:1.65; --tracking-heading:-.035em;
+ --space-0:0px; --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:20px; --space-6:24px; --space-8:32px; --space-10:40px; --space-12:48px; --space-16:64px;
+ --radius-none:0px; --radius-sm:4px; --radius-md:6px; --radius-lg:8px; --radius-full:999px;
+ --border-width:1px; --shadow-none:none; --shadow-sm:none; --shadow-popover:0 4px 16px #1A1A1814;
+ --orb-size:96px; --card-padding:24px; --card-gap:16px;
+ --grid-columns:12; --grid-gutter:24px; --grid-max:1120px; --sidebar-width:224px; --control-sm:32px; --control-md:40px; --control-lg:48px; --icon-size:16px; --motion-fast:150ms;
+}
+.nova-ds[data-theme="dark"] {
+ --shell-bg:#242424; --shell-surface:#191919;
+ --bg-primary:#191919; --bg-secondary:#242424; --surface-default:#191919; --surface-secondary:#242424; --surface-hover:#333333;
+ --text-heading:#FFFFFF; --text-helper:#B3B8C2; --border-control:#949494; --border-muted:#707070; --border-default:#707070;
+ --text-primary:#DEDEE0; --text-secondary:#B3B3AC; --text-tertiary:#93938C;
+ --border-strong:#949494; --border-subtle:#333333;
+ --action-primary:#F7F7F5; --action-primary-hover:#DEDED8; --text-on-action:#1A1A18;
+ --nova-accent:var(--blue-400); --text-on-brand:#1A1A18;
+ --status-warning:#DFA85D; --status-warning-bg:#30291F; --status-warning-text:#EBC38C; --status-danger:#EE8C94; --status-danger-bg:#322326; --status-danger-text:#F3AEB4; --status-success-text:#A9B9FF;
+}
+
+/* Soft category badge palettes, with readable text in both themes. */
+.nova-ds {
+ --badge-green-bg:#EAF6EF; --badge-green-text:#276545;
+ --badge-red-bg:#FDEDEE; --badge-red-text:#A53C47;
+ --badge-blue-bg:#EBF1FF; --badge-blue-text:#3C5FA6;
+ --badge-amber-bg:#FFF4DE; --badge-amber-text:#845B16;
+ --badge-purple-bg:#F2ECFB; --badge-purple-text:#74509E;
+}
+.nova-ds[data-theme="dark"] {
+ --badge-green-bg:#203B2D; --badge-green-text:#9DDBB5;
+ --badge-red-bg:#44292F; --badge-red-text:#F1ADB5;
+ --badge-blue-bg:#263550; --badge-blue-text:#ACC5FF;
+ --badge-amber-bg:#42361E; --badge-amber-text:#EDCC89;
+ --badge-purple-bg:#392C49; --badge-purple-text:#D1B7F0;
+}

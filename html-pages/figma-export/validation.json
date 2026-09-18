@@ -1,0 +1,9 @@
+{
+  "pages": 103,
+  "javaScriptDisabled": true,
+  "failures": [],
+  "sourceErrors": [
+    "Cannot read properties of null (reading 'addEventListener')",
+    "Cannot read properties of null (reading 'addEventListener')"
+  ]
+}

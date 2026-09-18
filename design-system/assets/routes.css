@@ -1,0 +1,35 @@
+/* Top-level product routes share the existing neutral navigation. */
+@media(max-width:760px){.html-pages-nav{display:flex!important;flex-wrap:wrap;gap:8px}.html-pages-nav .ds-sidebar-item{white-space:nowrap}}
+/* Separate product identity from navigation, matching the prototype rhythm. */
+.ds-sidebar>.ds-brand{padding-inline:var(--space-2);flex-shrink:0}
+.ds-sidebar>.html-pages-nav{margin-top:var(--space-8);gap:var(--space-2)}
+.ds-sidebar>.html-pages-nav .ds-sidebar-item{min-height:44px;padding:var(--space-3);border-radius:var(--radius-lg);font-size:var(--font-md);line-height:1.4}
+.ds-sidebar>.html-pages-nav .ds-sidebar-item[aria-current="page"]{font-weight:var(--weight-semibold)}
+@media(max-width:760px){
+ .ds-sidebar>.html-pages-nav{margin-top:var(--space-6)}
+ .ds-sidebar>.html-pages-nav .ds-sidebar-item{padding:var(--space-3) var(--space-2)}
+}
+
+/* Reuse ArticleContents inside main: local contents beside specimens. */
+.community-main-layout{display:grid;grid-template-columns:200px minmax(0,1fr);gap:var(--space-8);align-items:start}
+.community-main-content{min-width:0}
+.community-main-layout>.ds-article-contents{top:0}
+@media(max-width:1100px){.community-main-layout{grid-template-columns:180px minmax(0,1fr);gap:var(--space-6)}}
+@media(max-width:760px){.community-main-layout{grid-template-columns:1fr}.community-main-layout>.ds-article-contents{position:static}}
+
+/* Match the main navigation's left edge to the Workspace header at every width. */
+.ds-main:has(>.community-main-layout){max-width:none;margin-inline:0;padding-inline:var(--space-10)}
+@media(max-width:760px){.ds-main:has(>.community-main-layout){padding-inline:var(--space-4)}}
+
+/* The AI community contents navigation sits directly on the page surface. */
+.community-main-layout>.community-subnav{background:transparent}
+
+/* Foundation references remain readable alongside the local contents navigation. */
+.foundation-table-wrap{max-width:100%;overflow-x:auto}
+.foundation-table{width:100%;border-collapse:collapse;font-size:var(--font-sm);text-align:left}
+.foundation-table th{font-weight:var(--weight-medium);color:var(--text-secondary);background:var(--surface-hover)}
+.foundation-table th,.foundation-table td{padding:var(--space-3);border-bottom:1px solid var(--border-subtle);vertical-align:middle}
+.foundation-table td:first-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.foundation-table code{font-size:11px;overflow-wrap:anywhere}
+.foundation-space-bar{display:inline-block;height:8px;background:var(--nova-accent);border-radius:2px;margin-right:12px;vertical-align:middle}
+@media(max-width:760px){.foundation-table th,.foundation-table td{padding:8px}}

@@ -1,0 +1,23 @@
+/* One return control across lists, readers, editors and detail pages. */
+.nova-ds .back-button{
+ display:inline-flex;align-items:center;justify-content:center;flex:0 0 44px;
+ width:44px;height:44px;min-width:44px;min-height:44px;padding:0;gap:0;
+ border:1px solid var(--border-subtle);border-radius:var(--radius-full);
+ background:var(--surface-default);color:var(--text-secondary);
+ box-shadow:none;text-decoration:none;line-height:1;vertical-align:middle;
+}
+.nova-ds .back-button svg{display:block;width:20px;height:20px;flex:none}
+.nova-ds .back-button:hover{background:var(--surface-hover);border-color:var(--border-subtle);color:var(--text-hover);text-decoration:none;box-shadow:none}
+.nova-ds .back-button:focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px}
+.nova-ds .back-button[hidden]{display:none!important}
+
+/* Keep the return control equally inset from the main panel's top and left. */
+.nova-ds{--back-edge:32px}
+.nova-ds .ds-topbar:has(#page-back:not([hidden])),
+.nova-ds .ds-topbar:has([data-detail-back]){
+ padding:var(--back-edge) var(--back-edge) 0;
+ align-items:flex-start;
+}
+.nova-ds .ds-topbar .page-back{order:-1}
+@media(max-width:1150px){.nova-ds{--back-edge:24px}}
+@media(max-width:760px){.nova-ds{--back-edge:16px}}

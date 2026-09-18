@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<rect width="1440" height="1000" fill="#172b40"/>
+<g fill="none" stroke="#aabbce" stroke-opacity=".14"><circle cx="1130" cy="500" r="350"/><circle cx="1130" cy="500" r="270"/><circle cx="1130" cy="500" r="190"/></g>
+<g font-family="PingFang SC, Microsoft YaHei, sans-serif">
+<text x="80" y="116" fill="#bbcbd9" font-size="23" letter-spacing="3">新岛 · 学习与实践</text>
+<g font-size="94" font-weight="600"><text x="80" y="310" fill="#fff">让 AI，</text><text x="80" y="438" fill="#fff">成为你的</text><text x="80" y="566" fill="#a8b7ff">下一种可能。</text></g>
+<text x="84" y="714" fill="#bbcbd9" font-size="26">从一个好问题，到一个能用的作品。</text>
+<text x="84" y="760" fill="#bbcbd9" font-size="26">在新岛，把新方法用进真实的生活。</text>
+<g transform="translate(926 248) rotate(10)"><rect x="-12" y="10" width="320" height="452" rx="12" fill="#8297ac"/><rect width="320" height="450" rx="12" fill="#e6edf3"/><path d="M15 0v450" stroke="#b7c7d6" stroke-width="12"/><text x="46" y="70" fill="#31475e" font-size="18">新岛 / 实践手册</text><text x="46" y="170" fill="#172b40" font-size="44" font-weight="600">从想法</text><text x="46" y="232" fill="#172b40" font-size="44" font-weight="600">到第一版。</text><text x="40" y="350" fill="#7a8eff" font-size="112" font-weight="600">n.</text><text x="46" y="411" fill="#52677b" font-size="16">学习方法 · 连接工具 · 做出作品</text></g>
+<path d="M84 864h1272" stroke="#aabbce" stroke-opacity=".24"/>
+<text x="84" y="918" fill="#bbcbd9" font-size="20">学习，实践，再向前一步。</text>
+</g></svg>

@@ -1,0 +1,23 @@
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}body{font-family:"Inter","PingFang SC","Microsoft YaHei",sans-serif}button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:none!important}.html-pages-nav{display:flex;flex-direction:column;gap:var(--space-1)}.ds-topbar .ds-breadcrumb{display:flex}.ds-article-contents li{list-style:none}@media(max-width:760px){.ds-topbar{flex-wrap:wrap}.ds-sidebar .html-pages-nav{display:flex;flex-direction:row;gap:var(--space-2);margin-top:var(--space-3)}.html-pages-nav .ds-nav-label{display:none}.html-pages-nav .ds-sidebar-item{flex:1;justify-content:center}}
+
+/* Shared main layout: local navigation | primary content | context.
+   Course reserves the local column; article reserves the context column. */
+.nova-ds{--main-local-width:144px;--main-context-width:336px;--main-column-gap:var(--space-8);--main-max:1440px}
+.nova-ds .three-column-main{max-width:var(--main-max);padding:var(--space-12) var(--space-8) var(--space-16)}
+.nova-ds .main-columns{display:grid;grid-template-columns:var(--main-local-width) minmax(0,1fr) var(--main-context-width);gap:var(--main-column-gap);align-items:start;justify-content:normal}
+.main-columns>.main-primary,.main-columns>.main-context,.main-columns>.main-local{min-width:0}
+.main-columns>.main-local{grid-column:1}
+.main-columns>.main-primary{grid-column:2}
+.main-columns>.main-context{grid-column:3}
+.main-columns>.article-outline{position:sticky;top:var(--space-8)}
+.three-column-main>.main-below{margin-left:calc(var(--main-local-width) + var(--main-column-gap))}
+@media(min-width:1440px){.nova-ds{--main-local-width:180px;--main-context-width:336px}}
+@media(max-width:1100px){
+ .nova-ds .main-columns{grid-template-columns:minmax(0,1fr);gap:var(--space-8)}
+ .main-columns>.main-primary,.main-columns>.main-context,.main-columns>.main-local{grid-column:1}
+ .main-columns>.main-empty{display:none}
+ .main-columns>.article-outline{position:static}
+ .three-column-main>.main-below{margin-left:0}
+}
+@media(max-width:760px){.nova-ds .three-column-main{padding:var(--space-6) var(--space-4) var(--space-12)}}

@@ -1,0 +1,35 @@
+{
+  "name": "新岛中文设计体系",
+  "source": "https://www.oxigen.sa/",
+  "mode": "design-system extraction",
+  "observed": "2026-09-07",
+  "design_system": {
+    "tokens": "tokens.json",
+    "css": "tokens.css",
+    "components": "components.css",
+    "typography": {
+      "family": "苹方 / 思源黑体 / 微软雅黑 / sans-serif",
+      "rule": "所有中文、正文与标注统一无衬线，数字使用 tabular-nums"
+    },
+    "spacing_base": 4,
+    "radius": {
+      "tag": 8,
+      "control": 12,
+      "card": 20,
+      "section": 28
+    }
+  },
+  "design_style": {
+    "signature": "四阶品牌蓝、中文层级、分级圆角与编辑式留白",
+    "depth": "surface color shifts",
+    "density": "Generous editorial sections with compact controls"
+  },
+  "visual_effects": {
+    "effect_intensity": "lightweight CSS",
+    "motion": "250ms controls; 1000ms narrative token",
+    "reduced_motion": true,
+    "webgl": "Not reproduced"
+  },
+  "evidence": "NOTES.md and RECON/reference.html",
+  "palette_source": "用户提供图片：#091540 #1B2CC1 #7692FF #ABD2FA"
+}

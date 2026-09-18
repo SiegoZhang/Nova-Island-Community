@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nova Island 文章阅读</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/styles.css?v=back-nav">
+<link rel="stylesheet" href="assets/page-entrance.css">
+<link rel="stylesheet" href="assets/article-contents.css">
+<link rel="stylesheet" href="assets/article-reader.css">
+<link rel="stylesheet" href="assets/html-pages.css">
+<link rel="stylesheet" href="assets/home.css?v=detail-shell">
+<link rel="stylesheet" href="assets/detail-shell.css">
+<script src="assets/shared.js" defer></script>
+<script src="assets/article.js" defer></script>
+<script src="assets/page-back.js" defer></script>
+<script src="assets/detail-shell.js" defer></script>
+<link rel="stylesheet" href="assets/workspace-header.css?v=white-search"><script src="assets/workspace-header.js" defer></script><link rel="stylesheet" href="assets/site-tour.css"><script src="assets/site-tour.js" defer></script><link rel="stylesheet" href="assets/back-buttons.css"><script src="assets/back-buttons.js" defer></script></head>
+<body>
+<div class="nova-ds article-reader" data-theme="light">
+<aside class="ds-sidebar product-sidebar" id="sidebar"><a class="ds-brand" href="index.html#home"><span class="ds-logo">n.</span>Nova Island</a><button class="mobile-close" data-menu aria-label="关闭导航">×</button><nav aria-label="主导航" class="product-nav"><a class="ds-sidebar-item" href="index.html#home" data-page="home"><span data-icon="home"></span>首页</a><a class="ds-sidebar-item" href="index.html#courses" data-page="courses"><span data-icon="book"></span>课程</a><a class="ds-sidebar-item selected" href="index.html#articles" data-page="articles" aria-current="page"><span data-icon="file"></span>资讯</a><a class="ds-sidebar-item" href="index.html#community" data-page="community"><span data-icon="chat"></span>论坛</a><a class="ds-sidebar-item" href="index.html#events" data-page="events"><span data-icon="calendar"></span>活动</a><a class="ds-sidebar-item" href="index.html#practice" data-page="practice"><span data-icon="layers"></span>实战</a><a class="ds-sidebar-item" href="index.html#ranking" data-page="ranking"><span data-icon="trophy"></span>榜单</a></nav><div class="sidebar-bottom"><a class="onboarding-card" id="guide-card" href="index.html#home" data-site-tour><img class="guide-card-artwork" src="assets/feature-guide-card.png" alt="功能导览：一步步认识网站功能，学会搜索、阅读与分享。开始导览" width="1293" height="1216"></a><button class="profile-row account-trigger" id="account-trigger" popovertarget="account-menu" aria-label="打开个人菜单" aria-expanded="false"><span class="profile-avatar">S</span><span><strong>Sage</strong><small>我的账号</small></span><span aria-hidden="true">⌄</span></button></div></aside><button class="menu-scrim" data-menu aria-label="关闭导航" hidden></button>
+<div id="account-menu" class="account-menu" popover aria-label="个人菜单"><div class="account-identity"><span class="profile-avatar">S</span><div><strong>Sage</strong><small>@u737cb59688dd35…</small></div></div><nav aria-label="个人功能"><a href="index.html#notifications"><span data-icon="bell"></span>通知<span class="notification-dot" hidden aria-label="有未读通知"></span></a><a href="index.html#saved"><span data-icon="bookmark"></span>我的收藏</a><a href="index.html#drafts"><span data-icon="file"></span>我的草稿</a><a href="index.html#settings"><span data-icon="settings"></span>账号设置</a><a href="index.html#guide"><span data-icon="book"></span>入门指南</a><a href="index.html#admin"><span data-icon="grid"></span>管理后台</a></nav><button class="account-logout" data-logout><span data-icon="logout"></span>退出登录</button></div>
+<div class="ds-workspace">
+<div class="ds-page-entrance">
+<header class="ds-topbar"><button class="mobile-menu" data-menu aria-label="打开导航" aria-expanded="false">☰</button>
+<a class="page-back" data-detail-back href="index.html#articles"><span aria-hidden="true">←</span> 返回</a>
+<div class="ds-row">
+<button type="button" aria-pressed="false" aria-label="切换大字号阅读" class="ds-button ghost md ">Aa</button>
+<button type="button" aria-pressed="false" class="ds-button secondary md ">收藏文章</button>
+</div>
+</header>
+<main class="ds-main article-main three-column-main" id="article-top">
+<div class="article-grid main-columns">
+<aside class="article-outline main-local">
+<nav class="ds-article-contents" aria-label="文章目录">
+<h2>本文目录</h2>
+<div class="ds-hook-list"><svg class="ds-hook-rail is-muted" data-visible="false" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"></path></svg><svg class="ds-hook-rail" data-visible="false" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"></path></svg>
+<ol>
+<li><a href="#start-small" aria-current="location"><span>从一个小问题开始</span></a>
+</li>
+<li><a href="#define-output"><span>先定义好的结果</span></a>
+</li>
+<li><a href="#build-loop"><span>搭建最小工作闭环</span></a>
+</li>
+<li><a href="#human-review"><span>把人的判断留在流程里</span></a>
+</li>
+<li><a href="#next-step"><span>让每次实践留下积累</span></a>
+</li>
+</ol>
+</div>
+</nav>
+</aside>
+<div class="article-column main-primary">
+<header class="article-header">
+<div class="ds-row"><span class="ds-badge neutral">实践手记</span><span class="ds-meta">AI 工作流</span><span class="ds-meta">文章示例</span>
+</div>
+<h1>让 AI 工作流真正落地：<br/>从一个具体问题开始</h1>
+<p class="article-deck">不急着搭建复杂的系统。先把一件小事做好，再让它成为可以不断复用的方法。</p>
+<div class="article-byline"><span role="img" aria-label="林然" class="ds-avatar sm">林然</span>
+<div><a href="#article-author">林然</a><span>AI 产品设计师</span>
+</div><time dateTime="2026-09-09">2026 年 9 月 9 日</time><span>约 4 分钟阅读</span>
+</div>
+</header>
+<article class="article-prose" aria-label="文章正文">
+<p class="article-opening">第一次尝试 AI 工作流时，我们很容易把注意力放在工具上：选择哪个模型，接入哪些服务，要不要加一个智能体。但真正决定工作流是否有用的，往往是更朴素的问题——<strong>它到底替谁，解决了哪件具体的事？</strong>
+</p>
+<section id="start-small"><span class="article-section-index">01 / 起点</span>
+<h2>从一个小问题开始</h2>
+<p>一个好的起点，通常就藏在你每周重复做的事情里。整理会议记录、归纳用户反馈、准备一份周报，这些工作未必复杂，却不断消耗注意力。</p>
+<p>与其给自己一个「用 AI 提升效率」的大目标，不如把它缩小为：「每周五，把散落在三个文档里的用户反馈，整理成一份可以直接讨论的问题清单。」</p><blockquote>越具体的问题，越容易判断 AI 是否真的帮上了忙。</blockquote>
+<p>先问自己三个问题：这件事多久发生一次？现在最费时间的是哪一步？如果做好了，我会看到什么变化？答案越清楚，后面的选择就越简单。</p>
+</section>
+<section id="define-output"><span class="article-section-index">02 / 标准</span>
+<h2>先定义好的结果</h2>
+<p>在写第一句提示词之前，先手动完成一份你满意的结果。它既是参考样例，也是后续评估的起点。对于用户反馈整理，我们可以先约定以下标准：</p><ul>
+<li><strong>可追溯：</strong>每个问题都保留对应的原始反馈。</li>
+<li><strong>不混淆：</strong>把用户描述的事实与我们的推测分开。</li>
+<li><strong>能行动：</strong>说明下一步需要验证什么，而不是只给出摘要。</li></ul>
+<p>当「看起来不错」变成这些可检查的条件，我们才有办法比较不同版本，也能知道一次修改究竟带来了改善，还是只是换了一种表达。</p>
+</section>
+<section id="build-loop"><span class="article-section-index">03 / 实践</span>
+<h2>搭建最小工作闭环</h2>
+<p>第一版只保留必需的环节：接收输入、整理信息、检查结果。先让流程完整跑通，再决定是否值得添加更多能力。</p>
+<figure class="article-flow">
+<ol>
+<li><span>01</span><strong>收集输入</strong><small>原始反馈与背景</small>
+</li>
+<li><span>02</span><strong>AI 整理</strong><small>分类、归纳与引用</small>
+</li>
+<li><span>03</span><strong>人工检查</strong><small>核对事实与下一步</small>
+</li>
+</ol><figcaption>一个可以从今天开始尝试的最小流程</figcaption>
+</figure>
+<p>例如，让模型按固定格式整理反馈。不要一次要求它同时完成优先级判断、产品规划和对外回复；每多一个目标，就多了一处难以定位的误差。</p>
+<pre><code>任务：整理本周的用户反馈
+
+对每一类问题，输出：
+- 问题描述
+- 原始反馈引用
+- 需要进一步确认的信息
+
+没有足够证据时，请标注「待确认」。</code>
+</pre>
+</section>
+<section id="human-review"><span class="article-section-index">04 / 判断</span>
+<h2>把人的判断留在流程里</h2>
+<p>自动化并不意味着把所有决定都交给模型。相反，好的工作流会明确告诉我们：哪些地方可以放心交给工具，哪些地方仍然需要人来判断。</p>
+<p>在这个例子中，模型负责整理和提出候选分类；人负责核对引用、判断问题的重要性，以及决定是否采取行动。遇到缺失信息时，让流程停下来提出问题，比生成一个流畅但没有依据的答案更有价值。</p>
+<aside class="article-note"><strong>一个实用的检查习惯</strong>
+<p>每次运行后，挑选一条结论，回到原始材料检查它的依据。把发现的问题记下来，作为下一次迭代的测试样例。</p>
+</aside>
+</section>
+<section id="next-step"><span class="article-section-index">05 / 积累</span>
+<h2>让每次实践留下积累</h2>
+<p>一个工作流的价值，不只在于这次节省了多少时间。它还可以帮助你把隐性的工作经验变成明确的输入要求、判断标准和处理步骤。</p>
+<p>保留每次实践中的输入样例、输出结果与失败记录。先用同一组样例比较修改前后的表现，确认改善后，再扩大使用范围。</p>
+<p><strong>今天就选一件小事，写下一份理想结果，跑通一次最小流程。</strong>下一步往往不是再学一个新工具，而是带着实际结果，回来改进刚刚完成的这一小步。</p>
+</section>
+</article>
+<div class="article-author" id="article-author"><span role="img" aria-label="林然" class="ds-avatar md">林然</span>
+<div>
+<h3>林然</h3>
+<p>关注 AI 产品与工作流设计。在新岛，分享从想法到实践的过程。</p>
+</div><span class="ds-badge neutral">作者</span>
+</div><a class="article-next" href="course.html">
+<div><span class="ds-meta">继续学习相关课程</span>
+<h3>从零构建 AI 工作流</h3>
+<p>用六节课，把阅读中的方法变成一次完整实践。</p>
+</div></a>
+</div>
+<div class="main-context main-empty" aria-hidden="true"></div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* Member identity first, then the shared community reading feed. */
+.member-page{padding:var(--space-6) 0 var(--space-8);max-width:1120px;margin:0 auto}
+.member-identity{display:grid;grid-template-columns:80px minmax(0,1fr) auto;align-items:center;gap:24px;padding:32px;border:1px solid var(--border-subtle);border-radius:var(--radius-card);background:var(--surface-default)}
+.member-avatar{width:80px;height:80px;display:grid;place-items:center;border-radius:var(--radius-full);background:var(--surface-secondary);color:var(--text-heading);font-size:32px;font-weight:500}
+.member-name-line{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.member-name-line h1{font-size:30px;line-height:1.4;margin:0;font-weight:600;letter-spacing:-.03em}
+.member-role{padding:4px 12px;border-radius:var(--radius-full);background:var(--surface-hover);color:var(--text-secondary);font-size:12px}
+.member-handle{margin:8px 0 0;color:var(--text-tertiary);font-size:12px;overflow-wrap:anywhere}
+.member-status{margin:8px 0 0;color:var(--text-secondary);font-size:12px}
+.member-source{border-radius:var(--radius-full);min-height:44px;font-size:12px}
+.member-stats{grid-column:2/-1;display:flex;gap:48px;margin:0;padding:24px 0 0;border-top:1px solid var(--border-subtle)}
+.member-stats>div{display:flex;flex-direction:column-reverse;gap:4px;min-width:48px}
+.member-stats dt{font-size:12px;color:var(--text-secondary)}
+.member-stats dd{font-size:24px;line-height:1.4;font-weight:600;font-variant-numeric:tabular-nums;margin:0}
+.member-stats a:hover{text-decoration:underline}
+.member-posts,.member-relations{margin-top:36px}
+.member-feed-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.member-feed-heading h2,.member-relations h2{font-size:22px;font-weight:500;margin:0}
+.member-feed-heading>span{font-size:12px;color:var(--text-secondary)}
+.member-tabs{display:flex;width:max-content;max-width:100%;gap:4px;padding:4px;margin:20px 0 24px;border:1px solid var(--border-subtle);border-radius:var(--radius-full)}
+.member-tabs a{display:flex;align-items:center;justify-content:center;padding:10px 24px;min-height:44px;border-radius:var(--radius-full);font-size:13px;color:var(--text-secondary)}
+.member-tabs a:hover{background:var(--surface-hover)}
+.member-tabs a[aria-current]{background:var(--selection-bg);color:var(--selection-text);font-weight:600}
+.member-empty{padding:48px 24px;text-align:center;border:1px solid var(--border-subtle);border-radius:var(--radius-card);margin-top:24px}
+.member-empty h3{font-size:16px;font-weight:500}.member-empty p,.member-empty a{font-size:13px;color:var(--text-secondary);margin:12px 0}
+.member-feed-footer{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;padding:24px 0;color:var(--text-secondary);font-size:12px}
+.member-feed-footer .ds-button{border-radius:var(--radius-full)}
+.member-snapshot{font-size:11px;color:var(--text-tertiary);text-align:center;margin-top:16px}
+.home-leaderboard-list .member-profile-link{grid-column:1/-1;display:grid;grid-template-columns:inherit;align-items:center;gap:inherit;border-radius:12px;color:inherit}
+.member-profile-link:hover .home-leaderboard-person strong{color:var(--text-hover);text-decoration:none}
+.member-page a:focus-visible,.member-profile-link:focus-visible{outline:2px solid var(--focus-ring);outline-offset:4px}
+@media(max-width:760px){.member-page{padding-top:16px}.member-identity{grid-template-columns:56px minmax(0,1fr);padding:24px;gap:16px}.member-avatar{width:56px;height:56px;font-size:24px}.member-name-line h1{font-size:24px}.member-source{grid-column:1/-1;justify-self:start}.member-stats{grid-column:1/-1;gap:40px;padding-top:20px}.member-posts{margin-top:28px}.member-tabs a{padding-inline:20px}}

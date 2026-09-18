@@ -1,0 +1,49 @@
+/* Source: https://www.oxigen.sa/ — see NOTES.md for provenance. */
+:root {
+  --ox-deep: #112D4E;
+  --ox-light: #F9F7F7;
+  --ox-soft: #DBE2EF;
+  --ox-teal: #3F72AF;
+  --ox-quiet: #73869C;
+  --ox-paper: #F9F7F7;
+  --ox-mist: #DBE2EF;
+  --ox-ink: #112D4E;
+  --ox-body: #455D76;
+  --ox-gold: #DBE2EF;
+  --ox-white: #FFFFFF;
+  --ox-sans: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --ox-serif: var(--ox-sans); /* 兼容旧变量，统一无衬线 */
+  --ox-mono: var(--ox-sans);
+  --ox-display: clamp(28px, 3.6vw, 50px);
+  --ox-title: clamp(24px, 2.6vw, 36.8px);
+  --ox-body-size: clamp(15px, 1.45vw, 18px);
+  --ox-label-size: 13px;
+  --ox-radius: 12px;
+  --ox-radius-tag: 8px;
+  --ox-radius-card: 20px;
+  --ox-radius-section: 28px;
+  --ox-brand: #3F72AF;
+  --ox-periwinkle: #DBE2EF;
+  --ox-sky: #DBE2EF;
+  --ox-tint: #DBE2EF;
+  --ox-duration: 250ms;
+  --ox-reveal-duration: 1000ms;
+  --ox-ease: cubic-bezier(.22,.61,.36,1);
+  --ox-space-4: 4px;
+  --ox-space-8: 8px;
+  --ox-space-12: 12px;
+  --ox-space-16: 16px;
+  --ox-space-20: 20px;
+  --ox-space-24: 24px;
+  --ox-space-28: 28px;
+  --ox-space-32: 32px;
+  --ox-space-48: 48px;
+  --ox-space-64: 64px;
+  --ox-space-80: 80px;
+  --ox-space-96: 96px;
+}
+.ox-theme { --ox-surface: var(--ox-paper); --ox-text:var(--ox-ink); --ox-secondary:var(--ox-body); --ox-border:rgba(17,45,78,.14); --ox-card:var(--ox-white); --ox-control:var(--ox-tint); --ox-focus:var(--ox-brand); color:var(--ox-text); background:var(--ox-surface); }
+.ox-theme[data-theme="dark"] { --ox-surface:var(--ox-deep); --ox-text:var(--ox-light); --ox-secondary:var(--ox-soft); --ox-border:rgba(219,226,239,.24); --ox-card:#183858; --ox-control:#0B223C; --ox-focus:var(--ox-periwinkle); }
+
+.ox-theme { --ox-action:var(--ox-brand); --ox-action-text:var(--ox-white); --ox-action-hover:#315C90; }
+.ox-theme[data-theme="dark"] { --ox-action:var(--ox-periwinkle); --ox-action-text:var(--ox-deep); --ox-action-hover:var(--ox-sky); }

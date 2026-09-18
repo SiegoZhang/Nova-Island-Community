@@ -1,0 +1,46 @@
+.landing-sample{--lg-paper:#f2f3f5;--lg-ink:#20201f;--lg-line:#2222;background:var(--lg-paper);color:var(--lg-ink);padding:24px;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+.landing-sample+.landing-sample{margin-top:16px}
+.guide-description{font-size:12px!important;line-height:1.8!important;color:var(--text-secondary)!important;margin:16px 0!important}
+.lg-header-demo{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.lg-header-demo nav{display:flex;flex-wrap:wrap;gap:36px;font-size:13px;color:#514c48}
+.lg-brand{font-size:18px;letter-spacing:-.8px}
+.nova-ds .lg-eyebrow{font:11px/1.5 SFMono-Regular,Consolas,monospace;letter-spacing:.1em;color:#69635f;margin:0 0 24px}
+.nova-ds .lg-heading{font:500 clamp(36px,4vw,66px)/1.15 Arial,"PingFang SC",sans-serif;letter-spacing:-.055em;margin:0 0 28px}
+.nova-ds .lg-description{font-size:15px;line-height:1.95;letter-spacing:.01em;color:#625d5a;max-width:500px}
+.nova-ds .lg-cta{display:inline-flex;justify-content:center;align-items:center;gap:24px;min-height:48px;max-width:100%;padding:13px 24px;border:1px solid rgba(23,23,23,.22);border-radius:999px;background:transparent;color:#171717;font:600 14px/1.35 Arial,"PingFang SC",sans-serif;cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s}
+.lg-cta span{font-size:19px;line-height:1;transition:transform .2s}
+.nova-ds .lg-cta:hover{background:rgba(23,23,23,.04);border-color:rgba(23,23,23,.4)}
+.lg-cta:hover span{transform:translate(2px,-2px)}
+.nova-ds .lg-cta:active{background:rgba(23,23,23,.08)}
+.nova-ds .lg-cta:focus-visible{outline:3px solid #7692ff;outline-offset:4px}
+.nova-ds .lg-dark{background:#25212b;color:#eee9e2}
+.nova-ds .lg-dark .lg-cta{color:#eee9e2;border-color:rgba(238,233,226,.3)}
+.nova-ds .lg-dark .lg-cta:hover{background:#ffffff0d;border-color:rgba(238,233,226,.5)}
+.nova-ds .lg-dark .lg-cta:active{background:#ffffff18}
+.lg-values{display:grid;grid-template-columns:1fr 1fr;column-gap:44px;max-width:390px}
+.nova-ds .lg-values p{border-top:1px solid #2222;padding:12px 0;font-size:13px;color:#20201f}
+.lg-values span{font:10px monospace;color:#887891;margin-right:18px}
+.nova-ds .lg-footer-slogan{font-size:24px;line-height:1.5;color:#eee9e2;margin-bottom:24px}
+.lg-footer-mark{font-size:clamp(28px,5vw,80px);letter-spacing:-.08em;margin:30px 0 24px;line-height:1.35;overflow-wrap:anywhere}
+.nova-ds .lg-footer-meta{color:#c2b8c8;border-top:1px solid #ffffff22;padding-top:24px;font-size:10px}
+.lg-qr{max-width:310px;margin:8px auto;background:#faf9f5;padding:25px;transform:rotate(2deg);box-shadow:0 14px 60px #5b456710}
+.lg-qr-heading{display:flex;justify-content:space-between;font:9px monospace;letter-spacing:.1em;color:#63586b;margin-bottom:24px}
+.lg-qr img{width:100%;display:block;border:12px solid white}
+.lg-qr figcaption{display:flex;flex-direction:column;gap:8px;margin-top:22px}
+.lg-qr figcaption strong{font-size:15px;font-weight:500}.lg-qr figcaption span{font-size:11px;color:#7a716b}
+.lg-qr>a{display:inline-block;font-size:11px;margin-top:15px;padding:5px 0;border-bottom:1px solid #ccc}
+.lg-dialog{position:fixed;background:#faf9f6;color:#20201f;border:1px solid #ddd;border-radius:24px;width:min(360px,calc(100vw - 32px));max-height:90svh;padding:32px;text-align:center;margin:auto;overflow:auto;box-shadow:0 20px 80px #0003;font-family:Arial,"PingFang SC",sans-serif}
+.lg-dialog::backdrop{background:rgba(20,18,27,.4)}
+.nova-ds .lg-dialog h2{font-size:24px;font-weight:600;margin:0 0 8px}.lg-dialog h2:focus{outline:none}
+.nova-ds .lg-dialog p{font-size:14px;color:#666;margin-bottom:24px}.lg-dialog img{display:block;width:100%;max-width:256px;border:12px solid white;margin:0 auto 24px}
+.lg-dialog .lg-cta{width:100%}.lg-close{position:absolute;right:10px;top:8px;width:44px;height:44px;display:grid;place-items:center;border:0;border-radius:50%;background:none;font-size:26px!important;color:#20201f}
+@media(max-width:759px){.landing-sample{padding:20px}.lg-header-demo nav{display:none}.lg-header-demo{gap:16px}.lg-brand{font-size:14px}.nova-ds .lg-cta{font-size:13px;gap:18px;min-height:46px;padding:12px 20px}.lg-header-demo .lg-cta{min-height:44px;font-size:12px;padding:10px 16px}.lg-values{column-gap:28px}.lg-qr{max-width:180px;padding:13px 13px 16px}.lg-qr img{border-width:8px}.lg-qr-heading{font-size:7px;margin-bottom:10px}.lg-qr figcaption{margin-top:12px;gap:5px}.lg-qr figcaption strong{font-size:12px}.lg-qr figcaption span{display:none}}
+@media(prefers-reduced-motion:reduce){.lg-cta,.lg-cta span{transition:none!important}}
+
+
+
+/* Visual direction uses the actual website capture. */
+.nova-ds .vd-summary{font-size:20px;line-height:1.6;font-weight:500;margin:0 0 24px;letter-spacing:-.02em}
+.vd-reference{margin:0}.vd-reference img{display:block;width:100%;height:auto}.vd-reference a{display:block}.vd-reference figcaption{font-size:11px;line-height:1.7;color:#65625f;margin-top:12px}.vd-reference figcaption a{display:inline}
+.vd-notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:32px}.vd-notes article{border-top:1px solid #2222;padding-top:20px}.nova-ds .vd-notes h3{font-size:16px;font-weight:500;margin:0 0 12px}.nova-ds .vd-notes p{font-size:13px;line-height:1.9;color:#625d5a;margin:0}
+@media(max-width:1100px){.vd-notes{grid-template-columns:1fr;gap:20px}}

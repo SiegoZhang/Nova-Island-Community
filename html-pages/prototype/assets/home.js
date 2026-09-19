@@ -56,11 +56,11 @@ function render(){
  const pending=preview||result instanceof Promise;
  novaPageLoading.shell(valid==='home'&&pending&&(version===1||route().params.get('shell')==='1'));
  content.setAttribute('aria-busy',String(pending));
- content.innerHTML=pending?novaPageLoading.render(valid):result;
+ content.innerHTML=pending?novaPageLoading.render(valid):result;fitGuideFolderCover();
  if(result instanceof Promise)result.then(html=>{
   if(version!==pageRenderVersion)return;
   novaPageLoading.shell(false);setMenu(false);
-  content.innerHTML=html;content.setAttribute('aria-busy','false');layoutChannelMasonry();
+  content.innerHTML=html;fitGuideFolderCover();content.setAttribute('aria-busy','false');layoutChannelMasonry();
   if(currentChannel)content.scrollTop=channelFeedState(currentChannel.id).scroll;
  }).catch(()=>{
   if(version!==pageRenderVersion)return;
@@ -88,7 +88,8 @@ document.querySelector('#account-menu').addEventListener('click',e=>{if(e.target
 
 
 function homeRankTrophy(rank){
- return `<span class="rank-glass-trophy rank-glass-trophy-${rank}" aria-hidden="true"></span>`;
+ const metal=['gold','silver','bronze'][rank-1];
+ return `<img class="rank-glass-trophy rank-glass-trophy-${rank}" src="assets/rank-trophy-${metal}.svg" width="40" height="40" alt="" aria-hidden="true">`;
 }
 function homeLeaderboardCard(){
  // Prototype entries; positions are illustrative, not live contribution totals.

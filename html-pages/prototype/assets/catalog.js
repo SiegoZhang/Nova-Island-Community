@@ -71,8 +71,9 @@ function channelMasonry(items) {
 }
 function channelCard(item) {
   const hasCover=Boolean(item.image||item.cover)&&item.channelCover!==false;
+  const articleTone=item.type==='course'?'':` article-tone-${Array.from(String(item.id)).reduce((sum,char)=>sum+char.codePointAt(0),0)%2?'cream':'blue'}`;
   const href=item.cardHref||(item.href?item.href+'?return='+encodeURIComponent(location.hash||'#home'):'#read/'+item.id);
-  return `<a class="content-card channel-card ${hasCover?'channel-card-image':'channel-card-text'}" href="${escapeHtml(href)}" data-content-id="${escapeHtml(item.id)}">${hasCover?coverMarkup(item):''}<div class="card-body">${contentTypeBadge(item)}<h3>${escapeHtml(item.title)}</h3><p class="channel-card-description">${escapeHtml(item.desc)}</p><div class="card-meta"><span class="card-avatar">${escapeHtml(item.author.slice(0,1))}</span><span>${escapeHtml(item.author)}</span></div>${item.articleTags?`<div class="forum-card-tags" aria-label="文章标签">${item.articleTags.map(tag=>`<span class="article-tag">${escapeHtml(tag)}</span>`).join('')}</div>`:''}</div></a>`;
+  return `<a class="content-card channel-card ${hasCover?'channel-card-image':'channel-card-text'}${articleTone}" href="${escapeHtml(href)}" data-content-id="${escapeHtml(item.id)}">${hasCover?coverMarkup(item):''}<div class="card-body">${contentTypeBadge(item)}<h3>${escapeHtml(item.title)}</h3><p class="channel-card-description">${escapeHtml(item.desc)}</p><div class="card-meta"><span class="card-avatar">${escapeHtml(item.author.slice(0,1))}</span><span>${escapeHtml(item.author)}</span></div>${item.articleTags?`<div class="forum-card-tags" aria-label="文章标签">${item.articleTags.map(tag=>`<span class="article-tag">${escapeHtml(tag)}</span>`).join('')}</div>`:''}</div></a>`;
 }
 
 let channelLayoutObserver;

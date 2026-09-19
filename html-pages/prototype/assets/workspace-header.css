@@ -8,3 +8,11 @@
 /* Search actions follow the shared rounded controls. */
 .workspace-header .top-search button{border-radius:var(--radius-card)}
 .workspace-header .top-search button:hover{background:var(--surface-hover)}
+
+/* Keep account actions together with the existing quiet header controls. */
+.workspace-header-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.workspace-header .header-notifications{position:relative;display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;border-radius:50%;color:var(--text-secondary);text-decoration:none}
+.workspace-header .header-notifications svg{display:block;width:20px;height:20px}
+.workspace-header .header-notifications:hover{background:var(--surface-default);color:var(--text-primary)}
+.workspace-header .header-notifications:focus-visible{outline:2px solid var(--nova-accent);outline-offset:2px}
+.workspace-header .header-notifications .notification-dot{position:absolute;top:9px;right:9px;margin:0}

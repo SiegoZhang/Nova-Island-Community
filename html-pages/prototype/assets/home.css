@@ -342,7 +342,7 @@
 
 .home-feature-row .guide-banner-copy>p{font-size:var(--font-sm)}
 
-/* Crystal trophy asset shares the blue sculpture material. */
+/* Gold, silver and bronze trophies share the navigation glass geometry. */
 .home-leaderboard-rank{position:relative;width:40px;height:40px}
 .home-leaderboard-rank .rank-glass-trophy{display:block;width:100%;height:100%;object-fit:contain}
 .home-leaderboard-list li{grid-template-columns:40px 36px minmax(0,1fr)}
@@ -385,3 +385,32 @@
  .home-main .channel-nav a:hover{background:color-mix(in srgb,var(--surface-hover) 72%,transparent)}
  .home-main .channel-nav a[aria-current]{background:color-mix(in srgb,var(--selection-bg) 82%,transparent)}
 }
+
+/* Article backgrounds stay consistent across home and channel feeds. */
+.channel-card.article-tone-blue{--article-card-surface:var(--article-surface-blue)}
+.channel-card.article-tone-cream{--article-card-surface:var(--article-surface-cream)}
+.channel-masonry .channel-card[class*="article-tone-"],.portal-card-grid .channel-card[class*="article-tone-"]{background:var(--article-card-surface);border-color:transparent}
+.channel-card[class*="article-tone-"] .card-body{background:var(--article-card-surface)}
+
+/* Cobalt and frosted-glass navigation, kept crisp at sidebar scale. */
+.product-nav .ds-sidebar-item>[data-icon]{flex:0 0 28px;width:28px;height:28px}
+.product-nav .ds-sidebar-item .nav-glass-icon{display:block;width:28px;height:28px;overflow:visible}
+
+/* Separate the glass layers on hover without shifting the navigation label. */
+.product-nav .nav-glass-icon,.product-nav .nav-glass-back,.product-nav .nav-glass-front{transform-box:view-box;transform-origin:50% 55%;transition:transform 280ms cubic-bezier(.2,.8,.2,1),filter 280ms ease}
+.product-nav .ds-sidebar-item:focus-visible .nav-glass-icon{transform:scale(1.08)}
+.product-nav .ds-sidebar-item:focus-visible .nav-glass-back{transform:translate(3px,-5px) rotate(6deg)}
+.product-nav .ds-sidebar-item:focus-visible .nav-glass-front{transform:translate(-2px,1px) rotate(-5deg)}
+@media(hover:hover){
+ .product-nav .ds-sidebar-item:hover .nav-glass-icon{transform:translateY(-1px) scale(1.08);filter:drop-shadow(0 3px 3px #29364a26)}
+ .product-nav .ds-sidebar-item:hover .nav-glass-back{transform:translate(3px,-5px) rotate(6deg)}
+ .product-nav .ds-sidebar-item:hover .nav-glass-front{transform:translate(-2px,1px) rotate(-5deg)}
+}
+.product-nav .ds-sidebar-item:active .nav-glass-icon{transform:scale(.96)}
+@media(prefers-reduced-motion:reduce){
+ .product-nav .ds-sidebar-item .nav-glass-icon,.product-nav .ds-sidebar-item .nav-glass-back,.product-nav .ds-sidebar-item .nav-glass-front{transition:none;transform:none}
+}
+
+/* White glass navigation keeps a subtle edge on the light sidebar. */
+.product-nav .ds-sidebar-item .nav-glass-icon{filter:drop-shadow(0 1px 1px #29364a40)}
+@media(hover:hover){.product-nav .ds-sidebar-item:hover .nav-glass-icon{filter:drop-shadow(0 3px 3px #29364a26)}}

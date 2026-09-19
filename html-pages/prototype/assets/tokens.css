@@ -52,3 +52,7 @@
  --badge-amber-bg:#42361E; --badge-amber-text:#EDCC89;
  --badge-purple-bg:#392C49; --badge-purple-text:#D1B7F0;
 }
+
+/* Soft article surfaces inspired by the blue and cream reference cards. */
+.nova-ds{--article-surface-blue:#E1EBFC;--article-surface-cream:#FFF6DF}
+.nova-ds[data-theme="dark"]{--article-surface-blue:#253247;--article-surface-cream:#393324}

@@ -1,14 +1,26 @@
-# AI社区组件来源
+# AI 社区规范来源 v0.5
 
-依据用户指定的 http://127.0.0.1:8091/html-pages/prototype/index.html#home 及其当前本地源文件整理。
+日期：2026-09-24。本轮仅以本地 `html-pages/prototype/` 的当前实现为依据，未重新采集线上网站。原型含已有未提交修改，整理以工作区实际文件为准。
 
-- 工作空间：prototype/index.html、workspace-header.css/js。
-- 频道、卡片、封面：catalog.js、home.js、home.css、home-banner.svg。
-- 论坛标签、帖子和编辑器：forum.js、forum.css。
-- 课程模块与课时：prototype/course.html。
-- 文章目录及阅读工具：prototype/article.html、article-contents.css。
-- 通知、账号、榜单和已有空状态：home.js。
+| 规范 | 直接来源 |
+| --- | --- |
+| 语义变量、深色、标签、正文对比 | assets/tokens.css（包含文件末尾的条件覆盖） |
+| 导航与工作空间 | index.html、assets/workspace-header.css/js、detail-shell.css/js |
+| 内容卡片、频道、真实图片 | assets/home.css/js、catalog.js、channel-gooey.css/js、original-media/sources.json |
+| 论坛和资讯 | assets/forum.css/js、articles.js |
+| 筛选与玻璃弹层 | assets/feed-filters.css/js |
+| 标题、滚动与底部边缘 | assets/section-headings.css/js、scroll-glass.css/js |
+| 阅读与作者 | article.html、assets/article-contents.css、article-interactions.css/js、member-profiles.css/js |
+| 学习 | course.html、assets/guide-progress.css/js、site-tour.css/js |
+| Token 榜 | assets/ranking.css/js、ranking-data.js；数据快照 2026-09-20 |
+| 加载与空状态 | assets/page-loading.css/js、home.css/js |
 
-删除旧通用库中未用于当前原型的学习计划表单、Switch、Tooltip、可移除 Tag、多套演示状态、通用栅格与占位卡片。当前仅按真实页面记录样式，不把 CSS 中声明但页面未使用的类当作已设计组件。
+路径均相对 `html-pages/prototype/`。可视规范的筛选胶囊直接引用当前 feed-filters.css；文字与色板使用同步的 community-tokens.css。页面模式跳转当前原型，不宣称概括表格还原了完整页面交互。
 
-工作空间的搜索是产品组件展示，设计系统自身没有组件搜索。官网落地页和 Unico 分区不属于本次更新范围。
+同期同步规则：运行 `design-system/scripts/sync-tokens.py` 生成 Token 快照与导出，JSON 包含源文件 SHA-256 和完整声明块顺序。官网、Unico、旧 Figma 导出和历史主题不混入当前社区设计事实。
+
+## 组件级来源
+
+详见 [COMPONENTS.md](COMPONENTS.md) 与 `library/catalog.json` 的 source / variants 字段。`source-fixtures.json` 是原型函数输出快照，由 `scripts/extract-specimens.cjs` 自动提取。`component-preview.html` 直接加载原型 CSS；`preview.css` 只负责展示舞台与隔离固定布局。`preview.js` 的内存演示不能代替原型业务脚本。
+
+最终视觉例外：收藏颜色由 article-interactions.css 覆盖为 #F5C842；目录轨道由 shared.js 实现；导航玻璃图标由 nav-glass.js 实现；榜单的部分周期/趋势数据为生成演示。

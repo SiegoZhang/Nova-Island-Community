@@ -6,37 +6,55 @@ const guideSteps=[
  {title:'把经验留下',days:'DAY 22–30',label:'复盘一次，让成果成为可复用的方法',heading:'从做出来，到下次还能做出来。',desc:'回顾你的项目：哪些步骤可以复用，哪里需要补课？再选一篇进阶内容，把你学到的东西整理成自己的工作流。',result:'分享作品与复盘：做了什么、卡在哪里、下次怎么改。',links:[['Agent Skill：从使用到原理','把可复用的方法，变成 AI 的装备','Skill'],['搭建专属于你的私人助教','用自己的资料，尝试一个 RAG 项目','RAG'],['新岛内容导航','根据兴趣，找到下一段学习路线','内容导航']]}
 ];
 const guideSearchHref=q=>'https://novaisland.cn/community/search?q='+encodeURIComponent(q);
-const guideVisitedKey='nova-guide-visited-v1';
-let guideVisited=new Set();
-try{const saved=JSON.parse(localStorage.getItem(guideVisitedKey)||'[]');if(Array.isArray(saved))guideVisited=new Set(saved.filter(id=>typeof id==='string'));}catch{}
+// Manual completion is separate from historical lesson visits.
+const guideCheckedKey='nova-guide-checked-v1';
+let guideChecked=new Set();
+try{const saved=JSON.parse(localStorage.getItem(guideCheckedKey)||'[]');if(Array.isArray(saved))guideChecked=new Set(saved.filter(id=>typeof id==='string'));}catch{}
 function guideLessonLink(title,desc,q){
- const id=encodeURIComponent(q),visited=guideVisited.has(id),label=title.replace(' · ','：');
- return `<a class="journey-lesson${visited?' is-visited':''}" data-guide-lesson="${id}" href="${guideSearchHref(q)}" target="_blank" rel="noopener" title="${desc}" aria-label="${label}，${visited?'已访问':'打开课程'}，在新标签页打开"><span class="journey-lesson-check" aria-hidden="true">${visited?'✓':''}</span><span class="journey-lesson-title">${label}</span></a>`;
+ const id=encodeURIComponent(q),done=guideChecked.has(id),label=title.replace(' · ','：');
+ return `<div class="journey-lesson${done?' is-checked':''}"><button type="button" class="journey-task" role="checkbox" aria-label="标记完成：${label}" aria-checked="${done}" data-guide-check="${id}"><svg class="journey-task-check" viewBox="0 0 24 24" aria-hidden="true"><circle class="task-ring" cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 ${(2*Math.PI*11)/13-1}"/><circle class="task-fill" cx="12" cy="12" r="12"/><path class="task-tick" d="M7.4 12.4 10.6 15.5 16.6 8.9" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg></button><a class="journey-lesson-open" href="${guideSearchHref(q)}" target="_blank" rel="noopener" title="${desc}" aria-label="打开${label}，在新标签页打开"><span class="journey-task-label"><span class="journey-lesson-title">${label}</span></span><span class="journey-lesson-arrow" aria-hidden="true">↗</span></a></div>`;
 }
-function markGuideLessonVisited(e){
- if(e.type==='auxclick'&&e.button!==1)return;
- const link=e.target.closest('[data-guide-lesson]');if(!link)return;
- guideVisited.add(link.dataset.guideLesson);
- try{localStorage.setItem(guideVisitedKey,JSON.stringify([...guideVisited]));}catch{}
- link.classList.add('is-visited');
- link.querySelector('.journey-lesson-check').textContent='✓';
- link.setAttribute('aria-label',link.querySelector('.journey-lesson-title').textContent+'，已访问，在新标签页打开');
+async function toggleGuideLesson(e){
+ const button=e.target.closest('[data-guide-check]');if(!button||button.dataset.animating)return;
+ const row=button.closest('.journey-lesson'),id=button.dataset.guideCheck,done=!guideChecked.has(id);
+ done?guideChecked.add(id):guideChecked.delete(id);
+ button.setAttribute('aria-checked',String(done));
+ try{localStorage.setItem(guideCheckedKey,JSON.stringify([...guideChecked]));}catch{notify('当前浏览器无法保存，完成记录仅在本次访问生效。');}
  syncGuideCompletion();
- refreshGuideJourney();
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const play=(el,frames,duration,easing='cubic-bezier(.22,1,.36,1)',delay=0)=>el.animate(frames,{duration:reduced?0:duration,easing,delay:reduced?0:delay,fill:'forwards'});
+ const svg=button.querySelector('svg'),ring=button.querySelector('.task-ring'),fill=button.querySelector('.task-fill'),tick=button.querySelector('.task-tick'),label=row.querySelector('.journey-lesson-title');
+ const animations=[];
+ const run=(...args)=>{const animation=play(...args);animations.push(animation);return animation.finished;};
+ button.dataset.animating='true';
+ try{
+  const check=()=>Promise.all([
+   run(ring,{opacity:done?[1,0]:[0,1]},240),
+   run(fill,{transform:done?['scale(0)','scale(1)']:['scale(1)','scale(0)']},240),
+   run(tick,{strokeDashoffset:done?[1,0]:[0,1],opacity:done?[0,1]:[1,0]},220,undefined,60),
+   ...(done?[run(svg,[{transform:'scale(1)',offset:0},{transform:'scale(1.08)',offset:.4},{transform:'scale(1)',offset:1}],340)]:[])
+  ]);
+  const strike=()=>run(label,{backgroundSize:done?['0% 1.5px','100% 1.5px']:['100% 1.5px','0% 1.5px']},380,'cubic-bezier(.65,0,.35,1)');
+  if(done){await check();row.classList.add('is-struck');await strike();await run(svg,[{transform:'translateX(0)',offset:0},{transform:'translateX(8px)',offset:.35},{transform:'translateX(-2px)',offset:.7},{transform:'translateX(0)',offset:1}],300);}
+  else{row.classList.remove('is-struck');await strike();await check();}
+ }finally{
+  row.classList.toggle('is-checked',done);row.classList.remove('is-struck');
+  animations.forEach(animation=>animation.cancel());delete button.dataset.animating;
+  refreshGuideJourney();
+ }
 }
-document.addEventListener('click',markGuideLessonVisited);
-document.addEventListener('auxclick',markGuideLessonVisited);
+document.addEventListener('click',toggleGuideLesson);
 let guideProgress={completed:[],hidden:false};
 try{const saved=JSON.parse(localStorage.getItem(guideProgressKey)||'null');if(saved)guideProgress={completed:[...new Set((Array.isArray(saved.completed)?saved.completed:[]).filter(i=>Number.isInteger(i)&&i>=0&&i<guideSteps.length))],hidden:false};}catch{}
-// A week is complete when every lesson has been opened.
+// A week is complete only when the user checks every lesson.
 function syncGuideCompletion(){
- guideProgress.completed=guideSteps.flatMap((step,i)=>step.links.every(([, ,q])=>guideVisited.has(encodeURIComponent(q)))?[i]:[]);
+ guideProgress.completed=guideSteps.flatMap((step,i)=>step.links.every(([, ,q])=>guideChecked.has(encodeURIComponent(q)))?[i]:[]);
 }
 syncGuideCompletion();
 function saveGuideProgress(next){guideProgress=next;try{localStorage.setItem(guideProgressKey,JSON.stringify(next));return true;}catch{notify('当前浏览器无法保存，设置仅在本次访问生效。');return false;}}
 function guideProgressComponent(){
  const count=guideProgress.completed.length,next=guideSteps.findIndex((_,i)=>!guideProgress.completed.includes(i));
- return `<section class="guide-progress guide-banner" aria-labelledby="guide-progress-title"><a class="guide-progress-link" href="#guide${next>=0?'?step='+next:''}"><span class="guide-banner-art guide-folder guide-editorial-stack" aria-hidden="true"><span class="guide-folder-sheet guide-mini-article mini-one"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-mini-article mini-two"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-mini-article mini-three"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-mini-article mini-four"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-mini-article mini-five"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-mini-article mini-six"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-loose-logo loose-workbuddy"><img src="assets/brand-logos/workbuddy.svg" alt="" width="80" height="80"></span><span class="guide-folder-sheet guide-loose-logo loose-openai"><img src="assets/brand-logos/openai.svg" alt="" width="80" height="80"></span><span class="guide-folder-sheet guide-loose-logo loose-claude"><img src="assets/brand-logos/claude.svg" alt="" width="80" height="80"></span><span class="guide-folder-sheet guide-loose-logo loose-kimi"><img src="assets/brand-logos/kimi.png" alt="" width="80" height="80"></span><span class="guide-folder-sheet guide-loose-logo loose-doubao"><img src="assets/brand-logos/doubao.png" alt="" width="80" height="80"></span></span><span class="guide-folder-front" aria-hidden="true"></span><svg class="guide-folder-rim" viewBox="0 0 640 156" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M1 21Q1 1 21 1H177Q185 1 191 7L211 27Q217 33 225 33H619Q639 33 639 53V135Q639 155 619 155H21Q1 155 1 135Z" stroke="white" stroke-opacity=".7" stroke-width="2" vector-effect="non-scaling-stroke"/></svg><div class="guide-banner-layout"><div class="guide-banner-copy"><header class="guide-progress-heading"><h2 id="guide-progress-title">30 天 AI 实践之旅</h2></header><p>${count===guideSteps.length?'你已完成入门指南，可以继续探索感兴趣的内容。':'从认识工具，到完成作品。每周前进一步，把 AI 用起来。'}</p></div><div class="guide-banner-actions"><div class="guide-progress-status"><div class="guide-progress-track" role="progressbar" aria-label="入门指南完成进度" aria-valuemin="0" aria-valuemax="${guideSteps.length}" aria-valuenow="${count}" aria-valuetext="已完成 ${count} / ${guideSteps.length}"><span class="guide-progress-fill" style="width:${count/guideSteps.length*100}%"></span></div><span>已完成 <strong>${count}</strong> / ${guideSteps.length} 周</span></div><span class="ds-button guide-progress-continue">${count===guideSteps.length?'查看指南':count?'继续旅程':'开始旅程'}</span></div></div></a></section>`;
+ return `<section class="guide-progress guide-banner" aria-labelledby="guide-progress-title"><a class="guide-progress-link" href="#guide${next>=0?'?step='+next:''}"><span class="guide-banner-art guide-folder guide-editorial-stack" aria-hidden="true"><span class="guide-folder-sheet guide-mini-article mini-one"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-mini-article mini-two"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-mini-article mini-three"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-mini-article mini-four"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-mini-article mini-five"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-mini-article mini-six"><span class="guide-mini-cover"><i></i><i></i><i></i></span><span class="guide-mini-heading"></span><span class="guide-mini-copy"></span><span class="guide-mini-copy short"></span></span><span class="guide-folder-sheet guide-loose-logo loose-workbuddy"><img src="assets/brand-logos/workbuddy.svg" alt="" width="80" height="80"></span><span class="guide-folder-sheet guide-loose-logo loose-openai"><img src="assets/brand-logos/openai.svg" alt="" width="80" height="80"></span><span class="guide-folder-sheet guide-loose-logo loose-claude"><img src="assets/brand-logos/claude.svg" alt="" width="80" height="80"></span><span class="guide-folder-sheet guide-loose-logo loose-kimi"><img src="assets/brand-logos/kimi.png" alt="" width="80" height="80"></span><span class="guide-folder-sheet guide-loose-logo loose-doubao"><img src="assets/brand-logos/doubao.png" alt="" width="80" height="80"></span></span><div class="guide-folder-cover"><span class="guide-folder-front" aria-hidden="true"></span><svg class="guide-folder-rim" viewBox="0 0 640 156" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M1 21Q1 1 21 1H177Q185 1 191 7L211 27Q217 33 225 33H619Q639 33 639 53V135Q639 155 619 155H21Q1 155 1 135Z" stroke="white" stroke-opacity=".7" stroke-width="2" vector-effect="non-scaling-stroke"/></svg><div class="guide-banner-layout"><div class="guide-banner-copy"><header class="guide-progress-heading"><h2 id="guide-progress-title">30 天 AI 实践之旅</h2></header><p>${count===guideSteps.length?'你已完成入门指南，可以继续探索感兴趣的内容。':'从认识工具，到完成作品。每周前进一步，把 AI 用起来。'}</p></div><div class="guide-banner-actions"><div class="guide-progress-status"><div class="guide-progress-track" role="progressbar" aria-label="入门指南完成进度" aria-valuemin="0" aria-valuemax="${guideSteps.length}" aria-valuenow="${count}" aria-valuetext="已完成 ${count} / ${guideSteps.length}"><span class="guide-progress-fill" style="width:${count/guideSteps.length*100}%"></span></div><span>已完成 <strong>${count}</strong> / ${guideSteps.length} 周</span></div><span class="ds-button guide-progress-continue">${count===guideSteps.length?'查看指南':count?'继续旅程':'开始旅程'}</span></div></div></div></a></section>`;
 }
 function guideJourneyProgress(){
  const count=guideProgress.completed.length,next=guideSteps.findIndex((_,i)=>!guideProgress.completed.includes(i)),done=next<0,step=guideSteps[done?3:next];
@@ -50,9 +68,9 @@ const journeyIcons=[
 ];
 function guideProgressPage(){
  const next=guideSteps.findIndex((_,i)=>!guideProgress.completed.includes(i)),count=guideProgress.completed.length;
- return `<div class="journey-page"><header class="journey-header"><div><span class="journey-eyebrow">一步一步，把 AI 用起来</span><h1>30 天 AI 实践之旅</h1><p>从认识工具，到完成作品。沿着你的路线，每周前进一步。</p></div><div class="journey-stats" aria-label="学习进度"><div><strong>4</strong><span>学习周</span></div><div class="stat-complete"><strong>${count}</strong><span>完成</span></div><div><strong>${next<0?0:3-count}</strong><span>未开始</span></div></div></header><section class="journey-tree" aria-label="四周学习路线">${guideSteps.map((step,i)=>{
+ return `<div class="journey-page"><div class="journey-toolbar"><a class="reader-back" href="${escapeHtml(safeReturn(guideOrigin))}">← 返回</a><div class="journey-stats" aria-label="学习进度"><div><strong>4</strong><span>学习周</span></div><div class="stat-complete"><strong>${count}</strong><span>完成</span></div><div><strong>${next<0?0:3-count}</strong><span>未开始</span></div></div></div><header class="journey-header"><div><h1>30 天 AI 实践之旅</h1><p>从认识工具，到完成作品。沿着你的路线，每周前进一步。完成后手动打勾，记录会自动保存。</p></div></header><section class="journey-tree" aria-label="四周学习路线">${guideSteps.map((step,i)=>{
  const completed=guideProgress.completed.includes(i),current=i===next;
- return `<article class="journey-week ${completed?'completed':current?'current':'upcoming'}" id="guide-step-${i}"><span class="journey-node" aria-hidden="true"></span><span class="journey-week-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${journeyIcons[i]}</svg></span><div class="journey-week-meta"><span>${['第一周','第二周','第三周','第四周'][i]}</span><span>${step.days}</span></div><h2>${step.title}</h2><p class="journey-week-description">${step.label}</p><nav class="journey-resources" aria-label="第 ${i+1} 周教程">${step.links.map(([title,desc,q])=>guideLessonLink(title,desc,q)).join('')}</nav></article>`;
+ return `<article class="journey-week ${completed?'completed':current?'current':'upcoming'}" id="guide-step-${i}"><span class="journey-node" aria-hidden="true"></span><span class="journey-week-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${journeyIcons[i]}</svg></span><div class="journey-week-meta"><span>${['第一周','第二周','第三周','第四周'][i]}</span></div><h2>${step.title}</h2><p class="journey-week-description">${step.label}</p><nav class="journey-resources" aria-label="第 ${i+1} 周教程">${step.links.map(([title,desc,q])=>guideLessonLink(title,desc,q)).join('')}</nav></article>`;
  }).join('')}</section></div>`;
 }
 function refreshGuideJourney(){
@@ -87,3 +105,57 @@ function fitGuideFolderCover(){
  });
  guideFolderResize.observe(front);
 }
+
+// Draw connectors in one coordinate system instead of joining CSS borders.
+(() => {
+ let activeTree,resize,frame;
+ const ns='http://www.w3.org/2000/svg';
+ function mount(){
+  const tree=document.querySelector('.journey-tree');
+  if(tree===activeTree)return;
+  resize?.disconnect();activeTree=tree;
+  if(!tree)return;
+  const cards=[...tree.querySelectorAll('.journey-week')];
+  const svg=document.createElementNS(ns,'svg');
+  svg.classList.add('journey-connectors');
+  svg.setAttribute('aria-hidden','true');
+  tree.append(svg);tree.classList.add('has-connectors');
+  function draw(){
+   if(!tree.isConnected)return;
+   const mobile=matchMedia('(max-width:650px)').matches;
+   const points=cards.map(card=>{
+    const node=card.querySelector('.journey-node');
+    return {x:card.offsetLeft+node.offsetLeft+node.offsetWidth/2,y:card.offsetTop+node.offsetTop+node.offsetHeight/2};
+   });
+   if(points.length<2)return;
+   const first=points[0],last=points.at(-1),mid=mobile?1:tree.clientWidth/2,r=14;
+   svg.setAttribute('viewBox',`0 0 ${tree.clientWidth} ${tree.clientHeight}`);
+   const paths=[];
+   const add=(d,offset=0)=>{
+    const path=document.createElementNS(ns,'path');
+    path.setAttribute('d',d);path.setAttribute('stroke-dashoffset',String(offset));paths.push(path);
+   };
+   if(mobile){
+    add(`M${first.x} ${first.y}H${mid+r}Q${mid} ${first.y} ${mid} ${first.y+r}V${last.y-r}Q${mid} ${last.y} ${mid+r} ${last.y}H${last.x}`);
+   }else{
+    add(`M${first.x} ${first.y}H${mid-r}Q${mid} ${first.y} ${mid} ${first.y+r}V${last.y-r}Q${mid} ${last.y} ${mid+r} ${last.y}H${last.x}`);
+   }
+   // Match each branch's dash phase to the trunk at the shared tangent.
+   const curveLength=1.62322524*r;
+   const trunkStartLength=Math.abs(first.x-mid)-r+curveLength;
+   points.slice(1,-1).forEach(p=>{
+    const side=p.x<mid?-1:1;
+    const branchLength=Math.abs(p.x-mid)-r+curveLength;
+    const trunkLength=trunkStartLength+p.y-first.y;
+    add(`M${p.x} ${p.y}H${mid+side*r}Q${mid} ${p.y} ${mid} ${p.y+r}`,trunkLength-branchLength);
+   });
+   svg.replaceChildren(...paths);
+  }
+  resize=new ResizeObserver(()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(draw)});
+  resize.observe(tree);cards.forEach(card=>resize.observe(card));
+  draw();
+ }
+ const main=document.querySelector('.ds-main');
+ if(main)new MutationObserver(mount).observe(main,{childList:true,subtree:true});
+ mount();
+})();

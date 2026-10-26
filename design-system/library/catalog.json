@@ -1,0 +1,4655 @@
+{
+  "version": "0.5",
+  "components": [
+    {
+      "id": "buttons",
+      "group": "基础控件",
+      "name": "按钮",
+      "en": "Button",
+      "summary": "按操作优先级选主按钮、次按钮或弱操作。",
+      "variants": [
+        {
+          "label": "主操作",
+          "html": "<button class=\"ds-button primary\">继续学习</button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "次操作",
+          "html": "<button class=\"ds-button secondary\">保存草稿</button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "弱操作",
+          "html": "<button class=\"ds-button ghost\">取消</button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "悬停",
+          "html": "<button class=\"ds-button primary spec-hover\">继续学习</button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": "冻结 :hover，真实悬停同样生效。"
+        },
+        {
+          "label": "按下",
+          "html": "<button class=\"ds-button primary spec-active\">继续学习</button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "键盘焦点",
+          "html": "<button class=\"ds-button primary spec-focus\">继续学习</button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "禁用",
+          "html": "<button class=\"ds-button primary\" disabled>继续学习</button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "加载中",
+          "html": "<button class=\"ds-button primary\" disabled aria-busy=\"true\"><span class=\"ds-spinner\" aria-hidden=\"true\"></span>保存中</button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        },
+        {
+          "label": "小 / 中 / 大",
+          "html": "<div class=\"ds-row\"><button class=\"ds-button primary sm\">32px</button><button class=\"ds-button primary\">40px</button><button class=\"ds-button primary lg\">48px</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "危险操作",
+          "html": "<button class=\"ds-button danger\">删除草稿</button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "基础样式",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "一个局部任务保留一个主要行动，如发布或继续学习。",
+        "跳转使用 a，执行操作使用 button；图标放入按钮内部。"
+      ],
+      "avoid": "不要用多个黑色主按钮争夺同一区域的注意力；不要把禁用按钮作为错误说明。",
+      "anatomy": [
+        "容器",
+        "可选图标 / 加载标记",
+        "动词标签"
+      ],
+      "props": [
+        [
+          "class",
+          "primary / secondary / ghost / danger",
+          "决定层级"
+        ],
+        [
+          "size",
+          "sm / 默认 / lg",
+          "32 / 40 / 48px 基础高度"
+        ],
+        [
+          "disabled / aria-busy",
+          "布尔",
+          "阻止重复提交并表达处理中"
+        ]
+      ],
+      "behavior": "Tab 聚焦，Enter / Space 触发。加载时锁定重复提交；成功后恢复按钮并给出结果。",
+      "source": [
+        "styles.css"
+      ],
+      "size": "基础圆角 6px；左右 padding 12 / 16 / 20px。页面胶囊动作可有明确覆盖。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "icon-buttons",
+      "group": "基础控件",
+      "name": "图标按钮与返回",
+      "en": "Icon button",
+      "summary": "返回、通知与紧凑工具操作。",
+      "variants": [
+        {
+          "label": "返回",
+          "html": "<a class=\"back-button\" href=\"#\" aria-label=\"返回来源列表\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg></a>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "悬停",
+          "html": "<a class=\"back-button spec-hover\" href=\"#\" aria-label=\"返回来源列表\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg></a>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "焦点",
+          "html": "<a class=\"back-button spec-focus\" href=\"#\" aria-label=\"返回来源列表\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg></a>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "通知",
+          "html": "<div class=\"workspace-header\"><a class=\"header-notifications\" href=\"#\" aria-label=\"通知\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4\"/></svg></a></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "未读通知",
+          "html": "<div class=\"workspace-header\"><a class=\"header-notifications\" href=\"#\" aria-label=\"有未读通知\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4\"/></svg><span class=\"notification-dot\"></span></a></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "返回目标由来源路由决定，保留筛选条件。",
+        "图标按钮必须有 aria-label，提示文字不能只存在于图标形状。"
+      ],
+      "avoid": "不要将视觉上 18px 的图标直接当作整个点击区域。",
+      "anatomy": [
+        "44px 点击容器",
+        "18–20px 图标",
+        "可选未读点"
+      ],
+      "props": [
+        [
+          "href",
+          "来源路由",
+          "返回原列表"
+        ],
+        [
+          "aria-label",
+          "动作描述",
+          "屏幕阅读器名称"
+        ],
+        [
+          "notification-dot",
+          "显示 / hidden",
+          "未读状态"
+        ]
+      ],
+      "behavior": "Tab / Enter；悬停只改变背景。返回按钮不使用按压缩放。",
+      "source": [
+        "back-buttons.css",
+        "workspace-header.css",
+        "home.css"
+      ],
+      "size": "返回 44×44px，20px 图标，全圆角。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "fields",
+      "group": "基础控件",
+      "name": "输入框",
+      "en": "Text field",
+      "summary": "为标题和短文本提供明确标签、限制与校验反馈。",
+      "variants": [
+        {
+          "label": "空值",
+          "html": "<label class=\"ds-field\">帖子标题<input class=\"ds-input\" placeholder=\"用一句话说清楚你想讨论的事\" maxlength=\"200\"></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "已填写",
+          "html": "<label class=\"ds-field\">帖子标题<input class=\"ds-input\" value=\"我的第一个 AI 工作流\" maxlength=\"200\"></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "焦点",
+          "html": "<label class=\"ds-field\">帖子标题<input class=\"ds-input spec-focus\" value=\"我的第一个 AI 工作流\"></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "错误",
+          "html": "<label class=\"ds-field\">帖子标题<input class=\"ds-input\" aria-invalid=\"true\" aria-describedby=\"title-error\" value=\"\"><span id=\"title-error\" class=\"ds-error\">请填写标题，不能只包含空格。</span></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        },
+        {
+          "label": "禁用",
+          "html": "<label class=\"ds-field\">帖子标题<input class=\"ds-input\" value=\"当前角色不可发布资讯\" disabled></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "标签常驻；placeholder 只补充输入示例。",
+        "字段错误放在字段附近，并以 aria-describedby 关联。"
+      ],
+      "avoid": "不要仅用红框表达错误；不要隐藏已经填写的内容。",
+      "anatomy": [
+        "标签",
+        "输入容器",
+        "提示 / 错误"
+      ],
+      "props": [
+        [
+          "maxlength",
+          "标题 200",
+          "原型编辑器限制"
+        ],
+        [
+          "required",
+          "布尔",
+          "非空要求"
+        ],
+        [
+          "aria-invalid / aria-describedby",
+          "true / 提示 ID",
+          "表达校验结果"
+        ]
+      ],
+      "behavior": "错误发生后保留输入。原型对纯空格进行额外校验。此处错误形态为已有基础样式的组合。",
+      "source": [
+        "styles.css",
+        "forum.css",
+        "forum.js"
+      ],
+      "size": "通用 min-height 40px、圆角 6px；编辑器内有页面覆盖。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "textarea",
+      "group": "基础控件",
+      "name": "多行输入",
+      "en": "Textarea",
+      "summary": "帖子正文与评论使用不同的长度限制。",
+      "variants": [
+        {
+          "label": "帖子正文",
+          "html": "<label class=\"ds-field\">正文<textarea class=\"ds-input ds-textarea\" rows=\"4\" maxlength=\"50000\" placeholder=\"背景、尝试过的方法，以及期待的帮助\"></textarea><span class=\"ds-meta\" data-demo-count>0 / 50000</span></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "已有内容",
+          "html": "<label class=\"ds-field\">正文<textarea class=\"ds-input ds-textarea\" maxlength=\"50000\">我先明确了任务目标，再整理输入材料。</textarea></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "评论输入",
+          "html": "",
+          "fixture": "forum-comments",
+          "selector": ".forum-comment-form",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "错误",
+          "html": "<label class=\"ds-field\">正文<textarea class=\"ds-input ds-textarea\" aria-invalid=\"true\" aria-describedby=\"body-error\"></textarea><span class=\"ds-error\" id=\"body-error\">正文不能为空。</span></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "长内容使用顶部对齐的多行输入；允许纵向调整。",
+        "帖子最多 50000 字，评论最多 2000 字。"
+      ],
+      "avoid": "不要把评论限制照搬到帖子正文；不要发送空格评论。",
+      "anatomy": [
+        "标签",
+        "多行输入",
+        "字数 / 错误",
+        "提交动作"
+      ],
+      "props": [
+        [
+          "rows",
+          "正文 12；评论 3",
+          "预览压缩正文高度"
+        ],
+        [
+          "maxlength",
+          "50000 / 2000",
+          "分别对应正文 / 评论"
+        ],
+        [
+          "required",
+          "布尔",
+          "提交前校验"
+        ]
+      ],
+      "behavior": "可输入并查看字数。预览中的提交只显示结果提示，不保存或发送内容。",
+      "source": [
+        "styles.css",
+        "forum.css",
+        "forum.js"
+      ],
+      "size": "基础 textarea 最小高 96px；评论按 3 行展开。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "selection",
+      "group": "基础控件",
+      "name": "复选与单选",
+      "en": "Selection controls",
+      "summary": "多选标签与单选月份的原生选择语义。",
+      "variants": [
+        {
+          "label": "未选择",
+          "html": "<label class=\"feed-filter-option\"><input type=\"checkbox\"><span>知识管理</span></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "已选择",
+          "html": "<label class=\"feed-filter-option\"><input type=\"checkbox\" checked><span>知识管理</span></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "键盘焦点",
+          "html": "<label class=\"feed-filter-option\"><input class=\"spec-focus\" type=\"checkbox\" checked><span>知识管理</span></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "禁用",
+          "html": "<label class=\"feed-filter-option\"><input type=\"checkbox\" disabled><span>暂无可选内容</span></label>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        },
+        {
+          "label": "单选月份",
+          "html": "<div class=\"feed-filter-options\"><label class=\"feed-filter-option\"><input type=\"radio\" name=\"month-demo\" checked><span>2026 年 9 月</span></label><label class=\"feed-filter-option\"><input type=\"radio\" name=\"month-demo\"><span>2026 年 8 月</span></label></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "多项可以同时成立用 checkbox；互斥项用同名 radio。",
+        "点击整行标签也应改变选中状态。"
+      ],
+      "avoid": "不要用复选框模拟单选；不要只做图形而不保留原生 input。",
+      "anatomy": [
+        "选择框",
+        "整行标签",
+        "选中背景"
+      ],
+      "props": [
+        [
+          "type",
+          "checkbox / radio",
+          "多选 / 互斥"
+        ],
+        [
+          "checked",
+          "布尔",
+          "选择状态"
+        ],
+        [
+          "name",
+          "相同 radio 组名",
+          "保持单选分组"
+        ]
+      ],
+      "behavior": "Space 切换；radio 支持原生方向键；Tab 不进入 disabled 控件。",
+      "source": [
+        "feed-filters.css",
+        "feed-filters.js"
+      ],
+      "size": "选择框 16px；选项最小高 42px，触控 44px。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "badges",
+      "group": "基础控件",
+      "name": "状态与分类标签",
+      "en": "Badge & tag",
+      "summary": "状态标签与内容分类拥有独立语义，不混用。",
+      "variants": [
+        {
+          "label": "业务状态",
+          "html": "<div class=\"ds-row\"><span class=\"ds-badge success\">已完成</span><span class=\"ds-badge warning\">待处理</span><span class=\"ds-badge danger\">保存失败</span><span class=\"ds-badge info\">未开始</span></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "基础样式",
+          "note": ""
+        },
+        {
+          "label": "内容类型",
+          "html": "<div class=\"ds-row\"><span class=\"content-type-badge\" data-tone=\"blue\">资讯</span><span class=\"content-type-badge\" data-tone=\"yellow\">经验</span><span class=\"content-type-badge\" data-tone=\"red\">课程</span></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "六种色阶",
+          "html": "<div class=\"ds-row\"><span class=\"content-type-badge\" style=\"background:var(--badge-blue-bg);color:var(--badge-blue-text)\">蓝</span><span class=\"content-type-badge\" style=\"background:var(--badge-green-bg);color:var(--badge-green-text)\">绿</span><span class=\"content-type-badge\" style=\"background:var(--badge-red-bg);color:var(--badge-red-text)\">红</span><span class=\"content-type-badge\" style=\"background:var(--badge-amber-bg);color:var(--badge-amber-text)\">琥珀</span><span class=\"content-type-badge\" style=\"background:var(--badge-purple-bg);color:var(--badge-purple-text)\">紫</span><span class=\"content-type-badge\" style=\"background:var(--badge-yellow-bg);color:var(--badge-yellow-text)\">黄</span></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "帖子标签",
+          "html": "",
+          "fixture": "forum-row",
+          "selector": ".forum-card-tags",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "完成 / 警告 / 错误使用状态色；内容类型使用分类映射。",
+        "可点击标签用 a 或 button；纯元信息用 span。"
+      ],
+      "avoid": "不要把任意分类颜色当成成功或危险状态。",
+      "anatomy": [
+        "浅色背景",
+        "小字号标签",
+        "可选跳转语义"
+      ],
+      "props": [
+        [
+          "ds-badge",
+          "success / warning / danger / info",
+          "系统反馈"
+        ],
+        [
+          "content-type-badge",
+          "内容映射",
+          "内容元信息"
+        ],
+        [
+          "forum-card-tags",
+          "标签链接组",
+          "进入筛选"
+        ]
+      ],
+      "behavior": "纯标签不进入 Tab 顺序；可点击标签要有可见焦点。",
+      "source": [
+        "tokens.css",
+        "styles.css",
+        "home.css",
+        "forum.css"
+      ],
+      "size": "基础 11px 字号；具体类别标签以来源 CSS 为准。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "avatars",
+      "group": "基础控件",
+      "name": "头像与身份",
+      "en": "Avatar",
+      "summary": "尺寸随列表、作者卡与成员主页层级变化。",
+      "variants": [
+        {
+          "label": "列表 20px",
+          "html": "<div class=\"card-meta\"><span class=\"card-avatar\">S</span><span>Sage</span></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "顶栏 32px",
+          "html": "<div class=\"workspace-header\"><button class=\"account-trigger\" aria-label=\"打开 Sage 的账号菜单\"><span class=\"profile-avatar\">S</span></button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "榜单 36px",
+          "html": "<span class=\"ranking-avatar\">S</span>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "阅读作者 48px",
+          "html": "<span class=\"reader-author-avatar\">S</span>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "成员 80px",
+          "html": "<span class=\"member-avatar\">S</span>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "长名字",
+          "html": "<div class=\"card-meta\"><span class=\"card-avatar\">岛</span><span>一位持续分享方法与经验的岛民</span></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "没有头像图片时显示名字首字符。",
+        "如果旁边已有姓名，头像设 aria-hidden；单独可点击头像需要动作名称。"
+      ],
+      "avoid": "不要把头像外形当作在线或认证状态。",
+      "anatomy": [
+        "圆形底色",
+        "首字符 / 图片",
+        "相邻姓名"
+      ],
+      "props": [
+        [
+          "class",
+          "card-avatar / profile-avatar / ranking-avatar / reader-author-avatar / member-avatar",
+          "按场景选用"
+        ],
+        [
+          "aria-hidden",
+          "true",
+          "已由相邻姓名表达身份时"
+        ],
+        [
+          "aria-label",
+          "动作 + 用户名",
+          "独立按钮"
+        ]
+      ],
+      "behavior": "可点击身份入口应指向作者或成员资料，不能仅视觉像链接。",
+      "source": [
+        "home.css",
+        "workspace-header.css",
+        "ranking.css",
+        "member-profiles.css"
+      ],
+      "size": "列表、顶栏、榜单、作者与主页分别为 20 / 32 / 36 / 48 / 80px。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "icons",
+      "group": "基础控件",
+      "name": "功能图标",
+      "en": "Iconography",
+      "summary": "复用现有 SVG 图标的描边、尺寸和语义。",
+      "variants": [
+        {
+          "label": "常用功能",
+          "html": "<div class=\"ds-row\"><span class=\"icon-spec\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"10\" cy=\"10\" r=\"6\"/><path d=\"m15 15 5 5\"/></svg><small>search</small></span><span class=\"icon-spec\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><small>back</small></span><span class=\"icon-spec\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4\"/></svg><small>bell</small></span><span class=\"icon-spec\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 10v11H3V10h4Zm0 0 5-8c3 0 2 5 1 7h6a2 2 0 0 1 2 2l-2 8a2 2 0 0 1-2 2H7\"/></svg><small>like</small></span><span class=\"icon-spec\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 7C9 5 5 5 3 6v14c3-1 6-1 9 1 3-2 6-2 9-1V6c-3-1-6-1-9 1Zm0 0v14\"/></svg><small>book</small></span></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "图标 + 文字",
+          "html": "<button class=\"ds-button secondary\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 7C9 5 5 5 3 6v14c3-1 6-1 9 1 3-2 6-2 9-1V6c-3-1-6-1-9 1Zm0 0v14\"/></svg>浏览课程</button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "独立动作",
+          "html": "<button class=\"ds-button secondary ds-icon-button\" aria-label=\"通知\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4\"/></svg></button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "禁用动作",
+          "html": "<button class=\"ds-button secondary ds-icon-button\" aria-label=\"通知\" disabled><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4\"/></svg></button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "优先使用产品现有 SVG 路径。",
+        "与文字重复的图标 aria-hidden=true；只有图标的按钮提供名称。"
+      ],
+      "avoid": "不要在同一工具条混用粗细差异很大的填充图标与描边图标。",
+      "anatomy": [
+        "24×24 viewBox",
+        "1.5–1.6px 描边",
+        "容器命中区域"
+      ],
+      "props": [
+        [
+          "stroke",
+          "currentColor",
+          "继承语义颜色"
+        ],
+        [
+          "aria-hidden",
+          "true",
+          "装饰图标"
+        ],
+        [
+          "aria-label",
+          "动作名称",
+          "独立按钮"
+        ]
+      ],
+      "behavior": "图标自身没有交互；点击与焦点属于其按钮或链接。",
+      "source": [
+        "home.js",
+        "forum.js",
+        "styles.css"
+      ],
+      "size": "常规 16–20px；导航 18px，返回 20px。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "sidebar",
+      "group": "导航与筛选",
+      "name": "主导航",
+      "en": "Sidebar navigation",
+      "summary": "首页、知识学习和社区参与组成产品主导航。",
+      "variants": [
+        {
+          "label": "完整分组",
+          "html": "",
+          "fixture": "current-sidebar-document",
+          "selector": ".product-sidebar",
+          "patch": [
+            {
+              "selector": ".sidebar-bottom",
+              "remove": true
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "文章选中",
+          "html": "",
+          "fixture": "current-sidebar-document",
+          "selector": ".product-sidebar",
+          "patch": [
+            {
+              "selector": ".sidebar-bottom",
+              "remove": true
+            },
+            {
+              "selector": "[data-page=\"articles\"]",
+              "addClass": "selected",
+              "attrs": {
+                "aria-current": "page"
+              }
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "悬停 / 焦点",
+          "html": "",
+          "fixture": "current-sidebar-document",
+          "selector": ".product-sidebar",
+          "patch": [
+            {
+              "selector": ".sidebar-bottom",
+              "remove": true
+            },
+            {
+              "selector": "[data-page=\"courses\"]",
+              "addClass": "spec-hover"
+            },
+            {
+              "selector": "[data-page=\"ranking\"]",
+              "addClass": "spec-focus"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "一级导航按产品领域分组；同一时刻只有一个 aria-current。",
+        "详情页延续其所属导航高亮；手机端使用原型抽屉。"
+      ],
+      "avoid": "不要为每个详情页增加新的一级导航。",
+      "anatomy": [
+        "品牌",
+        "首页",
+        "分组名称",
+        "图标 + 导航文字",
+        "选中态"
+      ],
+      "props": [
+        [
+          "data-page",
+          "home / courses / articles / community…",
+          "路由映射"
+        ],
+        [
+          "selected + aria-current",
+          "当前入口",
+          "同步视觉与语义"
+        ],
+        [
+          "menu-open",
+          "移动抽屉",
+          "由原型菜单脚本维护"
+        ]
+      ],
+      "behavior": "Tab 导航、Enter 跳转；移动抽屉关闭后不可被键盘访问。静态样本展示分组，抽屉交互见完整原型。",
+      "source": [
+        "home.css",
+        "home.js",
+        "nav-glass.js"
+      ],
+      "size": "桌面 224px；主导航与底部区域保持至少 32px 间距。",
+      "layout": "grid",
+      "status": "产品已有",
+      "confirmedRules": {
+        "status": "design-confirmed-implementation-unverified",
+        "entries": [
+          "首页",
+          "实战",
+          "专栏",
+          "文章",
+          "论坛",
+          "活动",
+          "Token 榜"
+        ],
+        "selection": "点击立即选中；图标从灰色模糊变为蓝色模糊，文字加粗。",
+        "loading": "右侧显示骨架屏；成功后替换为正式内容。",
+        "error": {
+          "message": "加载失败，请重试",
+          "actionLabel": "重新加载",
+          "retry": "保留选中入口，显示骨架屏并重新加载当前页面。"
+        }
+      }
+    },
+    {
+      "id": "global-search",
+      "group": "导航与筛选",
+      "name": "全局搜索",
+      "en": "Global search",
+      "summary": "常驻顶栏，支持跨内容搜索。",
+      "variants": [
+        {
+          "label": "默认",
+          "html": "<header class=\"workspace-header\"><form class=\"top-search\" role=\"search\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"10\" cy=\"10\" r=\"6\"/><path d=\"m15 15 5 5\"/></svg><input name=\"query\" aria-label=\"搜索岛内内容\" placeholder=\"搜索问题、工具、作者或课程\"><button type=\"submit\">搜索</button></form></header>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "输入内容",
+          "html": "<header class=\"workspace-header\"><form class=\"top-search\" role=\"search\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"10\" cy=\"10\" r=\"6\"/><path d=\"m15 15 5 5\"/></svg><input name=\"query\" value=\"工作流\" aria-label=\"搜索岛内内容\" placeholder=\"搜索问题、工具、作者或课程\"><button type=\"submit\">搜索</button></form></header>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "聚焦",
+          "html": "<header class=\"workspace-header\"><form class=\"top-search spec-within\" role=\"search\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"10\" cy=\"10\" r=\"6\"/><path d=\"m15 15 5 5\"/></svg><input name=\"query\" aria-label=\"搜索岛内内容\" placeholder=\"搜索问题、工具、作者或课程\"><button type=\"submit\">搜索</button></form></header>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "结果反馈",
+          "html": "<div class=\"search-summary\">找到 3 条与「工作流」相关的内容</div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "无结果",
+          "html": "<div class=\"account-empty\"><h2>没有找到相关内容</h2><p>试试更短的关键词，或回到全部资讯。</p><a class=\"ds-button secondary\" href=\"#\">浏览资讯</a></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "搜索跨页面内容，关键词提交后保留在路由。",
+        "空字符串不跳转，将焦点留在输入框。"
+      ],
+      "avoid": "不要将全局搜索与筛选面板的“搜索标签”混为一项。",
+      "anatomy": [
+        "搜索图标",
+        "输入框",
+        "提交按钮",
+        "结果反馈"
+      ],
+      "props": [
+        [
+          "query",
+          "去除两端空格的字符串",
+          "路由参数"
+        ],
+        [
+          "role",
+          "search",
+          "搜索区域语义"
+        ],
+        [
+          "aria-label",
+          "搜索岛内内容",
+          "独立输入名称"
+        ]
+      ],
+      "behavior": "Enter 提交；此处演示只返回本页提示，不启动产品搜索。",
+      "source": [
+        "workspace-header.css",
+        "workspace-header.js",
+        "home.js"
+      ],
+      "size": "最大宽 560px，min-height 40px；聚焦 2px 蓝色轮廓。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "account-menu",
+      "group": "导航与筛选",
+      "name": "账号菜单",
+      "en": "Account menu",
+      "summary": "集中放置通知、收藏、草稿、设置和指南入口。",
+      "variants": [
+        {
+          "label": "展开菜单",
+          "html": "",
+          "fixture": "index-document",
+          "selector": "#account-menu",
+          "patch": [
+            {
+              "selector": "",
+              "attrs": {
+                "popover": null,
+                "id": null
+              }
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "触发器",
+          "html": "<header class=\"workspace-header\"><button class=\"account-trigger\" aria-label=\"打开账号菜单\" data-demo-account><span class=\"profile-avatar\">S</span></button></header>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": "点击在样本内打开原生 Popover。"
+        },
+        {
+          "label": "焦点入口",
+          "html": "",
+          "fixture": "index-document",
+          "selector": "#account-menu",
+          "patch": [
+            {
+              "selector": "",
+              "attrs": {
+                "popover": null,
+                "id": null
+              }
+            },
+            {
+              "selector": "a[href=\"#saved\"]",
+              "addClass": "spec-focus"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "菜单对齐右上角头像；页面切换后关闭。",
+        "退出登录和普通导航分区，避免误触。"
+      ],
+      "avoid": "不要把业务一级导航全部搬入账号菜单。",
+      "anatomy": [
+        "身份信息",
+        "个人功能导航",
+        "分隔后的退出"
+      ],
+      "props": [
+        [
+          "popover",
+          "auto",
+          "原生轻关闭"
+        ],
+        [
+          "popovertarget",
+          "菜单 ID",
+          "关联触发按钮"
+        ],
+        [
+          "aria-expanded",
+          "true / false",
+          "保持开合语义一致"
+        ]
+      ],
+      "behavior": "点击头像打开，Escape 或点击外部关闭；关闭后焦点回到触发器。",
+      "source": [
+        "home.css",
+        "home.js",
+        "workspace-header.css"
+      ],
+      "size": "账号头像点击区域 44px；菜单位置随桌面 / 手机调整。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "channel-nav",
+      "group": "导航与筛选",
+      "name": "频道导航",
+      "en": "Channel navigation",
+      "summary": "在推荐和主题频道之间切换，保留内容位置关系。",
+      "variants": [
+        {
+          "label": "推荐选中",
+          "html": "",
+          "fixture": "channel-nav",
+          "selector": null,
+          "patch": [],
+          "context": "home-main",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "主题选中",
+          "html": "",
+          "fixture": "channel-nav",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "a",
+              "attrs": {
+                "aria-current": null
+              }
+            },
+            {
+              "selector": "a:nth-child(3)",
+              "attrs": {
+                "aria-current": "page"
+              }
+            }
+          ],
+          "context": "home-main",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "悬停 / 焦点",
+          "html": "",
+          "fixture": "channel-nav",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "a:nth-child(2)",
+              "addClass": "spec-hover"
+            },
+            {
+              "selector": "a:nth-child(4)",
+              "addClass": "spec-focus"
+            }
+          ],
+          "context": "home-main",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "主题导航是路由链接，切换后 URL 保留频道。",
+        "窄屏允许横向浏览，不能截断某个频道名称。"
+      ],
+      "avoid": "不要给所有频道同时加上选中背景。",
+      "anatomy": [
+        "推荐入口",
+        "主题链接",
+        "选中胶囊 / 玻璃表面"
+      ],
+      "props": [
+        [
+          "aria-current",
+          "page",
+          "唯一当前频道"
+        ],
+        [
+          "href",
+          "#home?channel=…",
+          "保留历史导航"
+        ],
+        [
+          "channel-gooey",
+          "动态增强",
+          "完整页面脚本生成玻璃轮廓"
+        ]
+      ],
+      "behavior": "可点击切换选中样本。动态连接轮廓依赖 channel-gooey.js，在完整原型中核对。",
+      "source": [
+        "home.css",
+        "catalog.js",
+        "channel-gooey.css",
+        "channel-gooey.js"
+      ],
+      "size": "标签单行；横向溢出由频道容器滚动承接。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "tabs",
+      "group": "导航与筛选",
+      "name": "分段导航",
+      "en": "Tabs & segmented navigation",
+      "summary": "账号、成员和榜单使用不同密度的分段导航。",
+      "variants": [
+        {
+          "label": "通知",
+          "html": "<nav class=\"account-tabs\" aria-label=\"通知筛选\"><a href=\"#\" aria-current=\"page\">全部</a><a href=\"#\">未读</a></nav>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "成员内容",
+          "html": "<nav class=\"member-tabs\" aria-label=\"作者内容\"><a href=\"#\" aria-current=\"page\">全部</a><a href=\"#\">精选</a></nav>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "作者主页",
+          "html": "<div class=\"author-home\"><nav class=\"member-tabs\" aria-label=\"作者内容\"><a href=\"#\">全部</a><a href=\"#\" aria-current=\"page\">精选</a></nav></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "统计口径",
+          "html": "<nav class=\"ranking-metrics\" aria-label=\"统计口径\"><a href=\"#\" aria-current=\"page\">含缓存</a><a href=\"#\">不含缓存</a><a href=\"#\">预估费用</a></nav>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "操作系统",
+          "html": "<div class=\"ranking-os-tabs\"><button aria-pressed=\"true\" data-demo-os>macOS / Linux</button><button aria-pressed=\"false\" data-demo-os>Windows</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "路由切换使用带 aria-current 的链接。",
+        "局部模式切换使用按钮和 aria-pressed，避免伪造 tab 角色。"
+      ],
+      "avoid": "不要把链接式导航和复杂 ARIA tabs 键盘约定混用。",
+      "anatomy": [
+        "容器",
+        "等层级选项",
+        "唯一选中态"
+      ],
+      "props": [
+        [
+          "aria-current",
+          "page",
+          "链接状态"
+        ],
+        [
+          "aria-pressed",
+          "true / false",
+          "按钮状态"
+        ],
+        [
+          "class",
+          "account-tabs / member-tabs / ranking-metrics",
+          "按真实场景选用"
+        ]
+      ],
+      "behavior": "点击切换选中；路由导航遵循 Tab / Enter，按钮支持 Space。",
+      "source": [
+        "home.css",
+        "member-profiles.css",
+        "ranking.css"
+      ],
+      "size": "成员标签 min-height 44px；其他场景保留紧凑样式。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "filter-capsule",
+      "group": "导航与筛选",
+      "name": "筛选胶囊",
+      "en": "Filter capsule",
+      "summary": "同一个胶囊包含打开筛选和移除已选项。",
+      "variants": [
+        {
+          "label": "无筛选",
+          "html": "<div class=\"feed-filter-group\"><button class=\"feed-filter-trigger\" data-demo-filter>筛选 ⌄</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "单项",
+          "html": "<div class=\"feed-filter-group\"><button class=\"feed-filter-trigger\" data-demo-filter>筛选 ⌄</button><button class=\"feed-filter-chip\" data-demo-remove aria-label=\"移除知识管理\">知识管理 <span aria-hidden=\"true\">×</span></button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "多项",
+          "html": "<div class=\"feed-filter-group\"><button class=\"feed-filter-trigger\" data-demo-filter>筛选 ⌄</button><button class=\"feed-filter-chip\" data-demo-remove>工具使用 <span>×</span></button><button class=\"feed-filter-chip\" data-demo-remove>知识管理 <span>×</span></button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "溢出折叠",
+          "html": "<div class=\"feed-filter-group\"><button class=\"feed-filter-trigger\" data-demo-filter>筛选 ⌄</button><button class=\"feed-filter-chip\" data-demo-remove>工具使用 <span>×</span></button><button class=\"feed-filter-chip\" data-demo-filter aria-label=\"查看其余 3 个已选项\">+3</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": "+N 为固定状态样本；原型依据实际宽度计算。"
+        },
+        {
+          "label": "精选开关",
+          "html": "<div class=\"feed-filter-group feed-filter-toggle\"><button class=\"feed-filter-trigger\" aria-pressed=\"false\" data-demo-toggle>精选</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "我的帖子已选",
+          "html": "<div class=\"feed-filter-group feed-filter-toggle\"><button class=\"feed-filter-trigger\" aria-pressed=\"true\" data-demo-toggle>我的帖子</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "显示完整标签；放不下时折叠数量，而不是从中间裁断。",
+        "触发器与移除按钮是并列元素，不互相嵌套。"
+      ],
+      "avoid": "不要嵌套 button；不要把 +N 变成没有操作结果的文本。",
+      "anatomy": [
+        "外层玻璃胶囊",
+        "打开按钮",
+        "已选芯片",
+        "移除图标",
+        "溢出计数"
+      ],
+      "props": [
+        [
+          "data-filter-tag",
+          "标签值",
+          "原型移除行为"
+        ],
+        [
+          "aria-pressed",
+          "布尔",
+          "精选 / 我的帖子"
+        ],
+        [
+          "popovertarget",
+          "面板 ID",
+          "打开完整选项"
+        ]
+      ],
+      "behavior": "点击标签移除；点击触发器打开面板；Escape 关闭。演示状态仅存在于当前组件实例。",
+      "source": [
+        "feed-filters.css",
+        "feed-filters.js"
+      ],
+      "size": "外层 padding 3px / radius 20px；内层桌面 30px，触控 38px。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "filter-panel",
+      "group": "导航与筛选",
+      "name": "筛选面板",
+      "en": "Filter popover",
+      "summary": "支持标签搜索、多选、清空与应用。",
+      "variants": [
+        {
+          "label": "展开 / 已选",
+          "html": "<div class=\"feed-filter-popover\"><div class=\"feed-filter-search\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"10\" cy=\"10\" r=\"6\"/><path d=\"m15 15 5 5\"/></svg><input type=\"search\" aria-label=\"搜索标签\" placeholder=\"搜索标签\"></div><div class=\"feed-filter-options\"><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"工具使用\" checked><span>工具使用</span></label><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"Agent / Skill\" ><span>Agent / Skill</span></label><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"内容写作\" ><span>内容写作</span></label><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"知识管理\" ><span>知识管理</span></label><p class=\"feed-filter-empty\" hidden>没有匹配的标签</p></div><footer><button data-demo-clear>清空</button><button class=\"ds-button primary\" data-demo-apply>应用筛选</button></footer></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "搜索结果",
+          "html": "<div class=\"feed-filter-popover\"><div class=\"feed-filter-search\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"10\" cy=\"10\" r=\"6\"/><path d=\"m15 15 5 5\"/></svg><input type=\"search\" aria-label=\"搜索标签\" placeholder=\"搜索标签\" value=\"知识\"></div><div class=\"feed-filter-options\"><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"工具使用\" checked><span>工具使用</span></label><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"Agent / Skill\" ><span>Agent / Skill</span></label><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"内容写作\" ><span>内容写作</span></label><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"知识管理\" ><span>知识管理</span></label><p class=\"feed-filter-empty\" hidden>没有匹配的标签</p></div><footer><button data-demo-clear>清空</button><button class=\"ds-button primary\" data-demo-apply>应用筛选</button></footer></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": "",
+          "init": "filter"
+        },
+        {
+          "label": "搜索无结果",
+          "html": "<div class=\"feed-filter-popover\"><div class=\"feed-filter-search\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"10\" cy=\"10\" r=\"6\"/><path d=\"m15 15 5 5\"/></svg><input type=\"search\" aria-label=\"搜索标签\" placeholder=\"搜索标签\" value=\"不存在的标签\"></div><div class=\"feed-filter-options\"><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"工具使用\" checked><span>工具使用</span></label><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"Agent / Skill\" ><span>Agent / Skill</span></label><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"内容写作\" ><span>内容写作</span></label><label class=\"feed-filter-option\"><input type=\"checkbox\" value=\"知识管理\" ><span>知识管理</span></label><p class=\"feed-filter-empty\" hidden>没有匹配的标签</p></div><footer><button data-demo-clear>清空</button><button class=\"ds-button primary\" data-demo-apply>应用筛选</button></footer></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": "",
+          "init": "filter"
+        },
+        {
+          "label": "单选",
+          "html": "<div class=\"feed-filter-popover\"><div class=\"feed-filter-options\"><label class=\"feed-filter-option\"><input type=\"radio\" name=\"metric\" checked>含缓存</label><label class=\"feed-filter-option\"><input type=\"radio\" name=\"metric\">不含缓存</label><label class=\"feed-filter-option\"><input type=\"radio\" name=\"metric\">预估费用</label></div></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "多选需要应用动作；月份与统计口径等单选可以立即生效。",
+        "打开后优先定位到搜索框或当前选项。"
+      ],
+      "avoid": "不要在搜索无结果时清空原有已选项。",
+      "anatomy": [
+        "搜索区",
+        "可滚动选项区",
+        "空结果提示",
+        "底部操作"
+      ],
+      "props": [
+        [
+          "popover",
+          "auto",
+          "顶层显示与轻关闭"
+        ],
+        [
+          "data-key / data-page",
+          "筛选字段 / 路由",
+          "原型参数回写"
+        ],
+        [
+          "data-preserve-order",
+          "可选",
+          "月份顺序不因选中重排"
+        ]
+      ],
+      "behavior": "可在样本中搜索、选择和清空。选项搜索不影响未显示选项的状态。",
+      "source": [
+        "feed-filters.css",
+        "feed-filters.js"
+      ],
+      "size": "弹层宽最多 320px；选项区 max-height 300px；外侧保留 16px。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "outline",
+      "group": "导航与筛选",
+      "name": "阅读目录",
+      "en": "Article contents",
+      "summary": "目录与正文标题对应，突出当前阅读位置。",
+      "variants": [
+        {
+          "label": "默认",
+          "html": "",
+          "fixture": "article-document",
+          "selector": ".article-outline",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "当前第二节",
+          "html": "",
+          "fixture": "article-document",
+          "selector": ".article-outline",
+          "patch": [
+            {
+              "selector": "a",
+              "attrs": {
+                "aria-current": null
+              }
+            },
+            {
+              "selector": "li:nth-child(2) a",
+              "attrs": {
+                "aria-current": "location"
+              }
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "焦点",
+          "html": "",
+          "fixture": "article-document",
+          "selector": ".article-outline",
+          "patch": [
+            {
+              "selector": "li:nth-child(3) a",
+              "addClass": "spec-focus"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "每个目录链接对应唯一正文锚点。",
+        "当前章节由正文滚动驱动；保持所有目录条目可访问。"
+      ],
+      "avoid": "不要让每次滚动都抢走键盘焦点。",
+      "anatomy": [
+        "目录标题",
+        "章节链接",
+        "弯钩轨道 / 当前标记"
+      ],
+      "props": [
+        [
+          "href",
+          "#正文标题ID",
+          "定位章节"
+        ],
+        [
+          "aria-current",
+          "location",
+          "当前阅读段落"
+        ],
+        [
+          "data-visible",
+          "true / false",
+          "轨道标记可见性"
+        ]
+      ],
+      "behavior": "点击样本切换当前项；真实滚动定位与轨道几何在 shared.js 中维护。",
+      "source": [
+        "article-contents.css",
+        "article-reader.css",
+        "shared.js"
+      ],
+      "size": "阅读页面目录 12px / 40px 最小行高；桌面 sticky，手机回归文档流。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "content-card",
+      "group": "内容与交流",
+      "name": "图文内容卡",
+      "en": "Content card",
+      "summary": "真实封面、纯文字和不同内容色调共享同一信息结构。",
+      "variants": [
+        {
+          "label": "带封面",
+          "html": "",
+          "fixture": "image-card",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "纯文字 / 蓝",
+          "html": "",
+          "fixture": "blue-card",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "",
+              "addClass": "article-tone-blue",
+              "removeClass": "article-tone-yellow article-tone-red"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "纯文字 / 黄",
+          "html": "",
+          "fixture": "blue-card",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "",
+              "addClass": "article-tone-yellow",
+              "removeClass": "article-tone-blue article-tone-red"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "纯文字 / 红",
+          "html": "",
+          "fixture": "blue-card",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "",
+              "addClass": "article-tone-red",
+              "removeClass": "article-tone-blue article-tone-yellow"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "悬停",
+          "html": "",
+          "fixture": "image-card",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "",
+              "addClass": "spec-hover"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "长标题",
+          "html": "",
+          "fixture": "blue-card",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "h3",
+              "text": "从一次很小的工作尝试开始：如何把输入材料、人的判断与输出检查整理成一套可复用的 AI 工作方法"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "图片只使用已有来源；无图时使用纯文字卡。",
+        "阅读链接和底部互动按钮是并列结构，避免点收藏进入文章。"
+      ],
+      "avoid": "不要给没有来源的内容自动配假封面；不要将整个卡片包进另一个按钮。",
+      "anatomy": [
+        "可选原图",
+        "内容标签",
+        "标题",
+        "摘要",
+        "作者",
+        "独立赞藏操作"
+      ],
+      "props": [
+        [
+          "item.image",
+          "本地资源路径",
+          "真实配图"
+        ],
+        [
+          "channelCover",
+          "false 可关闭封面",
+          "保留原始内容"
+        ],
+        [
+          "article-tone-*",
+          "blue / yellow / red",
+          "纯文字背景"
+        ],
+        [
+          "aria-pressed",
+          "互动状态",
+          "独立操作"
+        ]
+      ],
+      "behavior": "悬停变为相邻色阶；标题保持可读，互动不触发阅读跳转。窄屏自然纵向排列。",
+      "source": [
+        "catalog.js",
+        "home.css",
+        "article-interactions.css"
+      ],
+      "size": "卡片圆角 24px；内边距依据 card-body；封面保持自身比例。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "forum-post",
+      "group": "内容与交流",
+      "name": "论坛帖子卡",
+      "en": "Discussion card",
+      "summary": "以作者、标题、摘要、标签与讨论操作组成一条帖子。",
+      "variants": [
+        {
+          "label": "默认",
+          "html": "",
+          "fixture": "forum-row",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "悬停",
+          "html": "",
+          "fixture": "forum-row",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "",
+              "addClass": "spec-hover"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "长内容",
+          "html": "",
+          "fixture": "forum-row",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "h2",
+              "text": "从一个工具使用问题，到一次完整的工作流复盘：分享我最近的尝试与仍然没有解决的问题"
+            },
+            {
+              "selector": "p",
+              "text": "我尝试过调整提示词、拆解输入和增加人工检查，想听听大家如何处理长任务中的上下文丢失。这里保留摘要，完整内容在详情页阅读。"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "草稿",
+          "html": "<article class=\"forum-row\"><span class=\"eyebrow\">本地草稿</span><a href=\"#\"><h2>尚未完成的工作流复盘</h2><p>记录尝试过程，准备补充结果。</p><span class=\"forum-read\">继续编辑</span></a></article>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "帖子列表强调讨论标题；作者与标签服务于判断相关性。",
+        "草稿必须清楚标明未发布。"
+      ],
+      "avoid": "不要把草稿当成线上帖子；不要将摘要伪装成完整正文。",
+      "anatomy": [
+        "作者元信息",
+        "标题 / 摘要链接",
+        "话题标签",
+        "互动栏"
+      ],
+      "props": [
+        [
+          "post.title / body",
+          "文本",
+          "转义后渲染"
+        ],
+        [
+          "tags",
+          "数组",
+          "多个话题"
+        ],
+        [
+          "sample / source",
+          "来源信息",
+          "区分样例与本地发布"
+        ]
+      ],
+      "behavior": "正文链接打开详情；标签筛选；互动按钮独立处理。样本不写入帖子存储。",
+      "source": [
+        "forum.css",
+        "forum.js",
+        "article-interactions.css"
+      ],
+      "size": "论坛布局内占 2fr 主栏；卡片几何直接引用当前 CSS。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "reactions",
+      "group": "内容与交流",
+      "name": "点赞、评论与收藏",
+      "en": "Content actions",
+      "summary": "列表、内容卡与详情使用同一互动语义，密度不同。",
+      "variants": [
+        {
+          "label": "帖子默认",
+          "html": "",
+          "fixture": "forum-row",
+          "selector": ".forum-actions",
+          "patch": [],
+          "context": "forum-row",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "已点赞 / 已收藏",
+          "html": "",
+          "fixture": "forum-row",
+          "selector": ".forum-actions",
+          "patch": [
+            {
+              "selector": "[data-forum-action=\"liked\"],[data-forum-action=\"saved\"]",
+              "attrs": {
+                "aria-pressed": "true"
+              }
+            }
+          ],
+          "context": "forum-row",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "卡片紧凑",
+          "html": "",
+          "fixture": "image-card",
+          "selector": ".forum-actions",
+          "patch": [],
+          "context": "article-interactive-card",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "详情",
+          "html": "",
+          "fixture": "forum-row",
+          "selector": ".forum-actions",
+          "patch": [],
+          "context": "catalog-reader",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "悬停 / 焦点",
+          "html": "",
+          "fixture": "forum-row",
+          "selector": ".forum-actions",
+          "patch": [
+            {
+              "selector": "[data-forum-action=\"liked\"]",
+              "addClass": "spec-hover"
+            },
+            {
+              "selector": "[data-forum-action=\"saved\"]",
+              "addClass": "spec-focus"
+            }
+          ],
+          "context": "forum-row",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "数量为 0 时，普通列表可显示动词，紧凑卡片保留数字。",
+        "aria-label 应说明动作和数量；aria-pressed 表达赞藏状态。"
+      ],
+      "avoid": "不要把收藏色误写成只由 Token 决定：当前互动 CSS 的已收藏使用 #F5C842。",
+      "anatomy": [
+        "图标",
+        "动词 / 数量",
+        "选中填充",
+        "可选短暂粒子反馈"
+      ],
+      "props": [
+        [
+          "data-forum-action",
+          "liked / comment / saved / share",
+          "操作类型"
+        ],
+        [
+          "data-post-id",
+          "内容 ID",
+          "绑定数据"
+        ],
+        [
+          "data-compact",
+          "true / false",
+          "紧凑模式"
+        ]
+      ],
+      "behavior": "样本支持赞藏切换并更新数值。真实原型写本地存储；粒子动效须尊重减少动效设置。",
+      "source": [
+        "forum.js",
+        "forum.css",
+        "article-interactions.css"
+      ],
+      "size": "卡片紧凑按钮高 28px、图标 15px；详情与列表使用更大的胶囊。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "metadata",
+      "group": "内容与交流",
+      "name": "作者、阅读数与元信息",
+      "en": "Content metadata",
+      "summary": "将身份、分类和阅读数据放在标题附近，避免与操作混淆。",
+      "variants": [
+        {
+          "label": "文章元信息",
+          "html": "<div class=\"catalog-reader\"><div class=\"card-meta\"><span class=\"card-avatar\">S</span><span>Sage</span><span>经验分享</span><span class=\"post-read-count\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>128</span></div></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "课程信息",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".course-header .ds-row",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "长姓名",
+          "html": "<div class=\"catalog-reader\"><div class=\"card-meta\"><span class=\"card-avatar\">岛</span><span>一位持续记录学习与实践过程的岛民</span><span class=\"post-read-count\">1,280 次阅读</span></div></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "并列元信息用独立元素和 gap；不要用居中圆点串成一句。",
+        "阅读数表达浏览，不应画成可点击的点赞按钮。"
+      ],
+      "avoid": "不要展示没有数据依据的观看量或完成量。",
+      "anatomy": [
+        "头像",
+        "姓名 / 时间 / 分类",
+        "靠右阅读数"
+      ],
+      "props": [
+        [
+          "post-read-count",
+          "只读",
+          "带可访问名称"
+        ],
+        [
+          "card-meta",
+          "横向可换行",
+          "长内容保留"
+        ],
+        [
+          "course-header .ds-row",
+          "头像 / 讲师 / 课程信息",
+          "随内容换行"
+        ]
+      ],
+      "behavior": "元信息默认不交互；作者若可访问主页则用真实链接。",
+      "source": [
+        "home.css",
+        "article-interactions.css",
+        "course-detail.css"
+      ],
+      "size": "辅助文字 11–12px；阅读数 12px，数值使用 tabular-nums。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "author-card",
+      "group": "内容与交流",
+      "name": "作者信息卡",
+      "en": "Author card",
+      "summary": "在文章与帖子详情中介绍作者，并提供继续阅读入口。",
+      "variants": [
+        {
+          "label": "文章作者",
+          "html": "",
+          "fixture": "reader-author",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "帖子作者",
+          "html": "",
+          "fixture": "forum-author",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "更多作品",
+          "html": "",
+          "fixture": "forum-author",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "",
+              "htmlAppend": "<div class=\"forum-author-posts\"><h3>作者的其他帖子</h3><a href=\"#\">一次工作流复盘</a><a href=\"#\">把资料整理成知识库</a></div>"
+            }
+          ],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "作者身份与正文分栏；窄屏移到正文之后。",
+        "其他帖子不重复当前文章。"
+      ],
+      "avoid": "不要用随机数字填充作者统计；无数据时省略字段。",
+      "anatomy": [
+        "关于作者",
+        "头像姓名",
+        "统计",
+        "其他内容 / 主页链接"
+      ],
+      "props": [
+        [
+          "author",
+          "姓名 / 身份",
+          "沿用原内容"
+        ],
+        [
+          "stats",
+          "已有统计",
+          "缺失时不补造"
+        ],
+        [
+          "others",
+          "排除当前文章",
+          "最多展示有限条目"
+        ]
+      ],
+      "behavior": "作者和作品入口使用链接，键盘可达。",
+      "source": [
+        "home.js",
+        "home.css",
+        "forum.js",
+        "forum.css"
+      ],
+      "size": "作者头像 48px；容器 24px padding / radius。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "member-profile",
+      "group": "内容与交流",
+      "name": "成员身份与统计",
+      "en": "Member profile",
+      "summary": "成员主页突出身份，其次是贡献与关系数量。",
+      "variants": [
+        {
+          "label": "普通成员",
+          "html": "<header class=\"member-identity\"><span class=\"member-avatar\">S</span><div><div class=\"member-name-line\"><h1>Sage</h1><span class=\"member-role\">岛民</span></div><p class=\"member-handle\">@sage</p><p class=\"member-status\">记录学习与实践</p></div><a class=\"ds-button secondary member-source\" href=\"#\">查看资料 ↗</a><dl class=\"member-stats\"><div><dt>内容</dt><dd>12</dd></div><div><dt>关注者</dt><dd>8</dd></div><div><dt>关注</dt><dd>6</dd></div></dl></header>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        },
+        {
+          "label": "作者主页",
+          "html": "<div class=\"author-home\"><header class=\"member-identity\"><span class=\"member-avatar\">S</span><div><div class=\"member-name-line\"><h1>Sage</h1></div><p class=\"author-home-subtitle\">在这里查看作者分享的全部内容。</p></div><dl class=\"member-stats\"><div><dt>内容</dt><dd>12</dd></div><div><dt>精选</dt><dd>3</dd></div></dl></header></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        },
+        {
+          "label": "没有内容",
+          "html": "<div class=\"member-empty\"><h3>暂时没有发布内容</h3><p>新的分享会显示在这里。</p></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "姓名是主页核心；统计字段使用定义列表。",
+        "样本数值只用于布局，不是用户真实数据。"
+      ],
+      "avoid": "不要给普通成员添加没有来源的认证或管理员徽章。",
+      "anatomy": [
+        "大头像",
+        "姓名 / 身份",
+        "描述",
+        "统计",
+        "内容区"
+      ],
+      "props": [
+        [
+          "role",
+          "实际身份",
+          "不推断认证"
+        ],
+        [
+          "stats",
+          "非负数",
+          "动态数字等宽"
+        ],
+        [
+          "member-source",
+          "来源链接",
+          "外部目标需明确"
+        ]
+      ],
+      "behavior": "窄屏头像降为 56px，统计换到下一行；内容筛选复用成员分段导航。",
+      "source": [
+        "member-profiles.css",
+        "member-profiles.js"
+      ],
+      "size": "桌面头像 80px、padding 32px；手机头像 56px、padding 24px。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "active-members",
+      "group": "内容与交流",
+      "name": "活跃讨论者",
+      "en": "Active members",
+      "summary": "论坛右栏的成员与近期内容列表。",
+      "variants": [
+        {
+          "label": "成员列表",
+          "html": "",
+          "fixture": "active-members",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "悬停",
+          "html": "",
+          "fixture": "active-members",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "li:first-child a",
+              "addClass": "spec-hover"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "键盘焦点",
+          "html": "",
+          "fixture": "active-members",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "li:nth-child(2) a",
+              "addClass": "spec-focus"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "使用当前收录发帖数排序，展示最多 5 位。",
+        "每行姓名与近期帖子共同构成点击目标。"
+      ],
+      "avoid": "不要将当前收录数描述为全站实时活跃度。",
+      "anatomy": [
+        "标题与统计口径",
+        "头像",
+        "姓名",
+        "帖子摘要",
+        "篇数"
+      ],
+      "props": [
+        [
+          "ranked",
+          "最多 5 位",
+          "按收录数排序"
+        ],
+        [
+          "title",
+          "单行省略",
+          "保留完整可访问文本"
+        ],
+        [
+          "href",
+          "作者相关帖子",
+          "原型现有入口"
+        ]
+      ],
+      "behavior": "悬停与焦点使用同一黄色浅背景；点击打开对应内容。",
+      "source": [
+        "forum.js",
+        "feed-filters.css"
+      ],
+      "size": "容器 padding / radius 24px；头像 32px；行间距 20px。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "comments",
+      "group": "内容与交流",
+      "name": "评论与回复",
+      "en": "Comment thread",
+      "summary": "支持评论、点赞、回复层级及自己的评论操作。",
+      "variants": [
+        {
+          "label": "评论列表",
+          "html": "",
+          "fixture": "forum-comments",
+          "selector": ".forum-comment-list",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "回复层级",
+          "html": "<div class=\"forum-comment-list\"><article><div class=\"forum-comment-author\"><span class=\"card-avatar\">S</span><strong>Sage</strong><time>刚刚</time></div><p>这一步的判断标准很有帮助。</p><div class=\"forum-comment-actions\"><button aria-pressed=\"false\" data-demo-toggle>赞 0</button><button data-demo-reply>回复</button></div><div class=\"forum-comment-replies\"><article><div class=\"forum-comment-author\"><span class=\"card-avatar\">岛</span><strong>岛民</strong><time>刚刚</time></div><p>我也试着加了人工检查。</p></article></div></article></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        },
+        {
+          "label": "无评论",
+          "html": "<div class=\"forum-comment-list\"><p>暂无评论，来分享你的想法吧。</p></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "回复输入",
+          "html": "<form class=\"forum-comment-form\"><label>回复 Sage<textarea maxlength=\"2000\" rows=\"3\" placeholder=\"写下你的回复…\" required></textarea></label><div><button type=\"button\" class=\"forum-reply-cancel\" data-demo-cancel>取消回复</button><button class=\"ds-button primary\">发布评论</button></div></form>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "回复保留父评论关系；输入框明确正在回复谁。",
+        "仅自己的本地评论展示删除操作。"
+      ],
+      "avoid": "不要让回复无限横向缩进；不要清空尚未提交的正文。",
+      "anatomy": [
+        "头像 / 作者 / 时间",
+        "正文",
+        "赞与回复",
+        "嵌套回复",
+        "输入区"
+      ],
+      "props": [
+        [
+          "parentId",
+          "可空",
+          "关联父评论"
+        ],
+        [
+          "maxlength",
+          "2000",
+          "评论长度"
+        ],
+        [
+          "aria-pressed",
+          "评论点赞",
+          "布尔状态"
+        ]
+      ],
+      "behavior": "演示中的回复、取消与发布只修改当前样本，不触碰原型 localStorage。真实原型限制递归展示深度。",
+      "source": [
+        "forum.css",
+        "forum.js"
+      ],
+      "size": "输入区域 3 行；回复缩进与边界直接采用原型样式。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "editor",
+      "group": "内容与交流",
+      "name": "发布编辑器",
+      "en": "Post composer",
+      "summary": "标签、标题、正文、草稿状态与发布动作组成完整输入流程。",
+      "variants": [
+        {
+          "label": "空白编辑器",
+          "html": "",
+          "fixture": "forum-compose",
+          "selector": null,
+          "patch": [
+            {
+              "selector": ".reader-back,.home-heading",
+              "remove": true
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "恢复草稿",
+          "html": "",
+          "fixture": "forum-compose",
+          "selector": null,
+          "patch": [
+            {
+              "selector": ".reader-back,.home-heading",
+              "remove": true
+            },
+            {
+              "selector": "[name=\"title\"]",
+              "attrs": {
+                "value": "我的工作流复盘"
+              }
+            },
+            {
+              "selector": "textarea",
+              "text": "## 我的尝试\n我先整理输入，再检查结果。"
+            },
+            {
+              "selector": "#draft-status",
+              "text": "已恢复本地草稿"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "正文预览",
+          "html": "<div class=\"forum-body\"><h2>我的尝试</h2><p>我先整理输入，再检查结果。</p><blockquote>先定义成功标准。</blockquote></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "论坛成员可发布；资讯编辑器需要独立角色检查。",
+        "保存失败时保留正文并提示恢复方式。"
+      ],
+      "avoid": "不要把原型本地发布描述为已发布到线上。",
+      "anatomy": [
+        "多选标签",
+        "标题",
+        "排版工具栏",
+        "正文 / 预览",
+        "字数与草稿状态",
+        "提交区"
+      ],
+      "props": [
+        [
+          "title / body",
+          "200 / 50000 字",
+          "必填并去除纯空格"
+        ],
+        [
+          "tags",
+          "数组",
+          "保留多选"
+        ],
+        [
+          "draft-status",
+          "role=status",
+          "保存状态播报"
+        ]
+      ],
+      "behavior": "可试加粗、小标题、列表、引用和预览；所有编辑只存在于预览实例，重置即清空。",
+      "source": [
+        "forum.js",
+        "forum.css",
+        "articles.js"
+      ],
+      "size": "编辑器按容器宽度展开；手机操作区换行。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "editor-toolbar",
+      "group": "内容与交流",
+      "name": "排版工具与标签选择",
+      "en": "Editor tools",
+      "summary": "编辑器中的轻量 Markdown 操作和多选标签。",
+      "variants": [
+        {
+          "label": "工具栏",
+          "html": "",
+          "fixture": "forum-compose",
+          "selector": ".forum-format-tools",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "标签选择",
+          "html": "",
+          "fixture": "forum-compose",
+          "selector": ".forum-tag-picker",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "保存中反馈",
+          "html": "<div class=\"forum-editor-status\"><span role=\"status\">草稿已保存到当前浏览器</span><span>128 / 50000</span></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "保存失败",
+          "html": "<div class=\"forum-editor-status\"><span role=\"alert\">草稿未保存，请保留当前页面</span><span>128 / 50000</span></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "选中正文后插入格式；没有选区时插入可替换示例。",
+        "工具按钮使用 type=button，避免误提交。"
+      ],
+      "avoid": "不要通过 innerHTML 直接渲染未转义的用户正文。",
+      "anatomy": [
+        "格式按钮",
+        "预览切换",
+        "标签复选框",
+        "保存状态与字数"
+      ],
+      "props": [
+        [
+          "data-format",
+          "bold / heading / list / quote",
+          "格式操作"
+        ],
+        [
+          "aria-pressed",
+          "预览开关",
+          "状态"
+        ],
+        [
+          "name=tags",
+          "多选",
+          "FormData.getAll"
+        ]
+      ],
+      "behavior": "独立工具栏样本用于查看形态，完整编辑交互在“发布编辑器”组件中体验。",
+      "source": [
+        "forum.css",
+        "forum.js"
+      ],
+      "size": "工具栏自动换行；元信息使用 12px 辅助字号。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "article-prose",
+      "group": "内容与交流",
+      "name": "阅读正文与信息块",
+      "en": "Reading content",
+      "summary": "正文、引用、代码、步骤与延伸阅读保持稳定阅读节奏。",
+      "variants": [
+        {
+          "label": "正文与引用",
+          "html": "<article class=\"article-reader\"><div class=\"article-prose\"><h2>先定义好的结果</h2><p>从一个小问题开始，明确输入、输出和检查标准，再逐步加入工具。</p><blockquote>先让一次任务可以被验证，再扩大自动化范围。</blockquote><ul><li>整理输入材料</li><li>检查关键判断</li></ul></div></article>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "大字号阅读",
+          "html": "<article class=\"article-reader\"><div class=\"article-prose is-large\"><h2>先定义好的结果</h2><p>从一个小问题开始，明确输入、输出和检查标准，再逐步加入工具。</p></div></article>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "步骤信息",
+          "html": "<figure class=\"article-flow\"><ol><li><span>01</span><strong>明确问题</strong><small>定义输入和输出</small></li><li><span>02</span><strong>完成尝试</strong><small>保留人的判断</small></li><li><span>03</span><strong>检查结果</strong><small>用真实样例验证</small></li></ol><figcaption>一个可验证的工作闭环</figcaption></figure>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "提示与代码",
+          "html": "<article class=\"article-reader\"><div class=\"article-prose\"><aside class=\"article-note\"><strong>实践提示</strong><p>保留原始材料，方便回溯每次判断。</p></aside><pre><code>输入 → 处理 → 人工检查 → 输出</code></pre></div></article>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "延伸阅读",
+          "html": "",
+          "fixture": "article-document",
+          "selector": ".article-next",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "h2 对应目录锚点；长正文使用宽松行高。",
+        "步骤、引用、代码保留原生语义。"
+      ],
+      "avoid": "不要把长段正文压成卡片摘要的字号和行高。",
+      "anatomy": [
+        "小标题",
+        "正文",
+        "引用 / 列表",
+        "代码 / 提示",
+        "延伸阅读"
+      ],
+      "props": [
+        [
+          "is-large",
+          "正文 class",
+          "16 → 20px"
+        ],
+        [
+          "blockquote / pre / ol",
+          "语义标签",
+          "内容类型"
+        ],
+        [
+          "id",
+          "章节锚点",
+          "与目录同步"
+        ]
+      ],
+      "behavior": "正文中的实际链接需要真实目标；大字模式不改变标题结构。",
+      "source": [
+        "article-reader.css",
+        "article.js"
+      ],
+      "size": "正文 16px / 1.9；大字 20px；二级标题 24px / 1.5。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "course-modules",
+      "group": "学习与导览",
+      "name": "课程模块",
+      "en": "Course module",
+      "summary": "以原生 details 组织课程章节和完成进度。",
+      "variants": [
+        {
+          "label": "已完成 / 展开",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".ds-module.completed",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "进行中 / 展开",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".ds-module.current",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "未解锁 / 展开",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".ds-module.locked",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "收起",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".ds-module.current",
+          "patch": [
+            {
+              "selector": "",
+              "attrs": {
+                "open": null
+              }
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "一个模块包含相关课时；状态与进度同时呈现。",
+        "未解锁模块仍可了解内容，但课时操作不可用。"
+      ],
+      "avoid": "不要为了显示课程锁定而隐藏整个学习路径。",
+      "anatomy": [
+        "章节序号",
+        "标题与总时长",
+        "状态标签",
+        "进度条",
+        "课时列表"
+      ],
+      "props": [
+        [
+          "open",
+          "布尔",
+          "展开状态"
+        ],
+        [
+          "class",
+          "completed / current / locked",
+          "学习状态"
+        ],
+        [
+          "summary",
+          "原生控件",
+          "展开触发器"
+        ]
+      ],
+      "behavior": "点击章节头或 Enter / Space 展开收起。未解锁课时使用 disabled。",
+      "source": [
+        "styles.css",
+        "course-detail.css",
+        "course.js"
+      ],
+      "size": "模块头 padding 20px，课时列表 padding 12px。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "lessons",
+      "group": "学习与导览",
+      "name": "课时条目",
+      "en": "Lesson row",
+      "summary": "已完成、当前、可学习和未解锁是四种独立状态。",
+      "variants": [
+        {
+          "label": "已完成",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".ds-lesson.completed",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "当前课时",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".ds-lesson.current",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "可学习",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".ds-lesson.available",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "未解锁",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".ds-lesson.locked",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "焦点",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".ds-lesson.available",
+          "patch": [
+            {
+              "selector": "",
+              "addClass": "spec-focus"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "当前课时标记 aria-current=step。",
+        "课程索引和状态图标不要依赖颜色区分。"
+      ],
+      "avoid": "不要使锁定条目看起来和普通条目一样可点击。",
+      "anatomy": [
+        "索引 / 状态图标",
+        "课时名称",
+        "时长",
+        "文字状态",
+        "方向提示"
+      ],
+      "props": [
+        [
+          "class",
+          "completed / current / available / locked",
+          "四种学习状态"
+        ],
+        [
+          "disabled",
+          "锁定课时",
+          "不可启动"
+        ],
+        [
+          "aria-current",
+          "step",
+          "当前课时"
+        ]
+      ],
+      "behavior": "可用课时通过键盘启动；禁用课时不接受点击。样本点击只显示演示反馈。",
+      "source": [
+        "styles.css",
+        "course.js"
+      ],
+      "size": "min-height 48px，内部 padding 16px 12px；手机元信息纵向排列。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "progress",
+      "group": "学习与导览",
+      "name": "进度与继续学习",
+      "en": "Progress & resume",
+      "summary": "使用进度条和文字共同表达学习完成情况。",
+      "variants": [
+        {
+          "label": "未开始",
+          "html": "<div class=\"ds-progress-wrap\"><span>已完成 0 / 4 周</span><div class=\"ds-progress\" role=\"progressbar\" aria-label=\"学习进度\" aria-valuemin=\"0\" aria-valuemax=\"4\" aria-valuenow=\"0\"><span style=\"width:0%\"></span></div></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "进行中",
+          "html": "<div class=\"ds-progress-wrap\"><span>已完成 2 / 4 周</span><div class=\"ds-progress\" role=\"progressbar\" aria-label=\"学习进度\" aria-valuemin=\"0\" aria-valuemax=\"4\" aria-valuenow=\"2\"><span style=\"width:50%\"></span></div></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "全部完成",
+          "html": "<div class=\"ds-progress-wrap\"><span>已完成 4 / 4 周</span><div class=\"ds-progress\" role=\"progressbar\" aria-label=\"学习进度\" aria-valuemin=\"0\" aria-valuemax=\"4\" aria-valuenow=\"4\"><span style=\"width:100%\"></span></div></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "继续学习卡",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".ds-continue-card",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "指南继续卡",
+          "html": "",
+          "fixture": "continue",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "进度必须有数值与可访问名称。",
+        "课程和入门指南分别存储，不能用同一个百分比混淆。"
+      ],
+      "avoid": "不要用视觉宽度替代 aria-valuenow。",
+      "anatomy": [
+        "完成文字",
+        "轨道 / 填充",
+        "当前任务",
+        "继续行动"
+      ],
+      "props": [
+        [
+          "aria-valuenow / min / max",
+          "当前 / 下限 / 上限",
+          "与视觉宽度一致"
+        ],
+        [
+          "width",
+          "当前数 / 总数",
+          "填充比例"
+        ],
+        [
+          "href",
+          "下一步位置",
+          "继续学习"
+        ]
+      ],
+      "behavior": "完成后行动文案变为查看或继续探索。此处数值为固定状态样本。",
+      "source": [
+        "styles.css",
+        "guide-progress.css",
+        "guide-progress.js"
+      ],
+      "size": "基础进度条高 4px；卡片 padding 24px / radius 24px。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "guide-folder",
+      "group": "学习与导览",
+      "name": "入门指南文件夹",
+      "en": "Learning folder",
+      "summary": "首页的标志性蓝色文件夹承载四周学习入口。",
+      "variants": [
+        {
+          "label": "开始旅程",
+          "html": "",
+          "fixture": "folder",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "进行中",
+          "html": "",
+          "fixture": "folder",
+          "selector": null,
+          "patch": [
+            {
+              "selector": ".guide-progress-fill",
+              "attrs": {
+                "style": "width:50%"
+              }
+            },
+            {
+              "selector": "[role=\"progressbar\"]",
+              "attrs": {
+                "aria-valuenow": "2",
+                "aria-valuetext": "已完成 2 / 4"
+              }
+            },
+            {
+              "selector": ".guide-progress-status strong",
+              "text": "2"
+            },
+            {
+              "selector": ".guide-progress-continue",
+              "text": "继续旅程"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "已完成",
+          "html": "",
+          "fixture": "folder",
+          "selector": null,
+          "patch": [
+            {
+              "selector": ".guide-progress-fill",
+              "attrs": {
+                "style": "width:100%"
+              }
+            },
+            {
+              "selector": "[role=\"progressbar\"]",
+              "attrs": {
+                "aria-valuenow": "4",
+                "aria-valuetext": "已完成 4 / 4"
+              }
+            },
+            {
+              "selector": ".guide-progress-status strong",
+              "text": "4"
+            },
+            {
+              "selector": ".guide-progress-continue",
+              "text": "查看指南"
+            },
+            {
+              "selector": ".guide-banner-copy p",
+              "text": "你已完成入门指南，可以继续探索感兴趣的内容。"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "作为学习入口，不作为所有内容卡的通用装饰。",
+        "文件夹中工具 Logo 保留原样，蓝色主体使用 illustration-blue。"
+      ],
+      "avoid": "不要用一张截图替代可响应的文件夹与进度信息。",
+      "anatomy": [
+        "叠放内容 / 工具标志",
+        "文件夹封面与边缘",
+        "标题说明",
+        "完成进度",
+        "入口按钮"
+      ],
+      "props": [
+        [
+          "completed",
+          "0–4",
+          "完成周数"
+        ],
+        [
+          "guide-progress-fill",
+          "百分比宽度",
+          "进度"
+        ],
+        [
+          "guide-progress-link",
+          "下一周路由",
+          "整个学习入口"
+        ]
+      ],
+      "behavior": "预览使用真实 HTML/CSS 文件夹；页面中 cover 几何由 fitGuideFolderCover 计算。样本提供静态可缩放几何。",
+      "source": [
+        "guide-progress.css",
+        "guide-progress.js",
+        "home.css"
+      ],
+      "size": "文件夹根据容器响应；标题和操作区在窄屏重新排列。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "journey-week",
+      "group": "学习与导览",
+      "name": "学习周与任务",
+      "en": "Learning week",
+      "summary": "四周路线中的当前周、已完成周和未开始周。",
+      "variants": [
+        {
+          "label": "当前周",
+          "html": "",
+          "fixture": "journey",
+          "selector": ".journey-week.current",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "未开始",
+          "html": "",
+          "fixture": "journey",
+          "selector": ".journey-week.upcoming",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "已完成",
+          "html": "",
+          "fixture": "journey",
+          "selector": ".journey-week.current",
+          "patch": [
+            {
+              "selector": "",
+              "addClass": "completed",
+              "removeClass": "current"
+            },
+            {
+              "selector": ".journey-lesson",
+              "addClass": "is-checked"
+            },
+            {
+              "selector": "[role=\"checkbox\"]",
+              "attrs": {
+                "aria-checked": "true"
+              }
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "单个任务",
+          "html": "",
+          "fixture": "journey",
+          "selector": ".journey-lesson",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "任务完成",
+          "html": "",
+          "fixture": "journey",
+          "selector": ".journey-lesson",
+          "patch": [
+            {
+              "selector": "",
+              "addClass": "is-checked"
+            },
+            {
+              "selector": "[role=\"checkbox\"]",
+              "attrs": {
+                "aria-checked": "true"
+              }
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "任务的完成勾选和打开教程是两个独立操作。",
+        "周状态根据其任务完成情况汇总。"
+      ],
+      "avoid": "不要让点击教程直接等于完成任务。",
+      "anatomy": [
+        "周节点 / 图标",
+        "周名称",
+        "阶段说明",
+        "任务复选",
+        "独立教程链接"
+      ],
+      "props": [
+        [
+          "class",
+          "current / completed / upcoming",
+          "周状态"
+        ],
+        [
+          "role=checkbox",
+          "aria-checked",
+          "任务完成语义"
+        ],
+        [
+          "data-guide-check",
+          "任务 ID",
+          "关联本地记录"
+        ]
+      ],
+      "behavior": "点击任务勾选可切换；教程链接只演示入口。样本不更改用户原型学习记录。",
+      "source": [
+        "guide-progress.css",
+        "guide-progress.js"
+      ],
+      "size": "周卡内按标题、说明与任务分组；手机保留独立命中区域。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "instructor",
+      "group": "学习与导览",
+      "name": "课程讲师卡",
+      "en": "Instructor card",
+      "summary": "课程详情中的讲师介绍与学习要求。",
+      "variants": [
+        {
+          "label": "讲师",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".ds-instructor-card",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "学习要求",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".course-requirements",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "课程概览",
+          "html": "",
+          "fixture": "course-document",
+          "selector": ".course-header",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "讲师资料与课程事实分开表达。",
+        "学习要求应说明前置能力和工具，不添加没有依据的背书。"
+      ],
+      "avoid": "不要用虚构认证、人数和完成率填补空白。",
+      "anatomy": [
+        "头像 / 身份",
+        "讲师介绍",
+        "课程信息 / 前置要求"
+      ],
+      "props": [
+        [
+          "course-facts",
+          "dl",
+          "课程数据"
+        ],
+        [
+          "course-requirements",
+          "dl",
+          "前置要求"
+        ],
+        [
+          "instructor",
+          "实际信息",
+          "介绍"
+        ]
+      ],
+      "behavior": "静态信息组件；讲师链接若存在需使用真实目标。",
+      "source": [
+        "styles.css",
+        "course-detail.css"
+      ],
+      "size": "与课程主栏形成上下文区；小屏落在课程内容之后。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "onboarding",
+      "group": "学习与导览",
+      "name": "功能导览",
+      "en": "Onboarding",
+      "summary": "首次引导邀请与步骤浮层，各自有完整的退出路径。",
+      "variants": [
+        {
+          "label": "邀请卡",
+          "html": "<div class=\"site-tour-invite\"><div class=\"tour-invite-image\"><img src=\"assets/feature-guide-card.png\" alt=\"认识社区功能\"></div><div class=\"tour-invite-content\"><span class=\"tour-invite-label\">欢迎来到新岛</span><h2>从这里开始探索</h2><p>了解搜索、阅读与分享，找到适合你的学习路径。</p><div class=\"tour-invite-actions\"><button data-demo-dismiss>稍后再说</button><button data-invite-start data-demo-tour>开始导览</button></div></div></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        },
+        {
+          "label": "第一步",
+          "html": "<div class=\"site-tour\"><section class=\"site-tour-panel\"><span class=\"site-tour-count\">1 / 4</span><h2>先找到你感兴趣的内容</h2><p>通过搜索定位问题、工具、作者或课程。</p><footer><button data-demo-dismiss>跳过导览</button><div><button disabled>上一步</button><button class=\"ds-button\" data-demo-tour-next>下一步</button></div></footer></section></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        },
+        {
+          "label": "最后一步",
+          "html": "<div class=\"site-tour\"><section class=\"site-tour-panel\"><span class=\"site-tour-count\">4 / 4</span><h2>把实践分享给其他岛民</h2><p>提出一个好问题，分享一次新尝试。</p><footer><button data-demo-dismiss>关闭</button><button class=\"ds-button\" data-demo-dismiss>开始探索</button></footer></section></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "首次引导允许跳过，并提供再次进入的入口。",
+        "目标高亮与浮层应跟随目标位置，不能遮住下一步动作。"
+      ],
+      "avoid": "不要把用户困在没有关闭按钮的教程中。",
+      "anatomy": [
+        "邀请插画",
+        "步骤计数",
+        "标题与说明",
+        "退出 / 上一步 / 下一步"
+      ],
+      "props": [
+        [
+          "dialog",
+          "原生模态",
+          "真实产品聚焦管理"
+        ],
+        [
+          "step",
+          "索引 / 总数",
+          "第一步禁用返回"
+        ],
+        [
+          "prefers-reduced-motion",
+          "系统偏好",
+          "关闭非必要移动"
+        ]
+      ],
+      "behavior": "样本展示可交互的步骤内容；完整页面导览负责遮罩、目标高亮和焦点恢复。",
+      "source": [
+        "site-tour.css",
+        "site-tour.js"
+      ],
+      "size": "邀请宽最多 440px；浮层 padding / radius 24px。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "fluid-orb",
+      "group": "学习与导览",
+      "name": "学习动态球体",
+      "en": "Fluid orb",
+      "summary": "课程继续学习卡中的装饰性动态标记。",
+      "variants": [
+        {
+          "label": "动态",
+          "html": "<div class=\"ds-stack\"><span class=\"ds-fluid-orb\" aria-hidden=\"true\"><canvas></canvas></span><button class=\"ds-motion-toggle\" aria-pressed=\"false\" data-demo-motion>暂停动态</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "暂停",
+          "html": "<div class=\"ds-stack\"><span class=\"ds-fluid-orb is-paused\" aria-hidden=\"true\"><canvas></canvas></span><button class=\"ds-motion-toggle\" aria-pressed=\"true\" data-demo-motion>继续动态</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "无 WebGL 回退",
+          "html": "<span class=\"ds-fluid-orb\" aria-hidden=\"true\"></span>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": "无法创建 WebGL 时保留表面，不阻止学习行动。"
+        }
+      ],
+      "usage": [
+        "仅作为课程学习身份的装饰，不表达唯一进度信息。",
+        "提供暂停动作，尊重减少动效偏好。"
+      ],
+      "avoid": "不要把球体动画是否运行当作课程加载是否完成。",
+      "anatomy": [
+        "圆形容器",
+        "WebGL canvas",
+        "独立暂停按钮"
+      ],
+      "props": [
+        [
+          "is-paused",
+          "容器 class",
+          "暂停动画"
+        ],
+        [
+          "aria-pressed",
+          "暂停开关",
+          "按钮状态"
+        ],
+        [
+          "aria-hidden",
+          "true",
+          "装饰内容"
+        ]
+      ],
+      "behavior": "预览加载原型 orb.js。离屏或页面隐藏时暂停；WebGL 失败有静态表面回退。",
+      "source": [
+        "styles.css",
+        "orb.js"
+      ],
+      "size": "默认 96px，部分窄屏场景 80px。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "ranking-row",
+      "group": "榜单与数据",
+      "name": "成员排名行",
+      "en": "Ranking row",
+      "summary": "将排名、成员身份、模型分布和用量放在同一行。",
+      "variants": [
+        {
+          "label": "前三名",
+          "html": "",
+          "fixture": "ranking",
+          "selector": ".ranking-table",
+          "patch": [
+            {
+              "selector": "tbody tr:nth-child(n+4)",
+              "remove": true
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "悬停",
+          "html": "",
+          "fixture": "ranking",
+          "selector": ".ranking-table",
+          "patch": [
+            {
+              "selector": "tbody tr:nth-child(n+2)",
+              "remove": true
+            },
+            {
+              "selector": "tbody tr",
+              "addClass": "spec-hover"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "定位自己",
+          "html": "",
+          "fixture": "ranking",
+          "selector": ".ranking-table",
+          "patch": [
+            {
+              "selector": "tbody tr:nth-child(n+2)",
+              "remove": true
+            },
+            {
+              "selector": "tbody tr",
+              "addClass": "ranking-match"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "无匹配成员",
+          "html": "<div class=\"ranking-empty\"><h3>没有匹配的成员</h3><p>试试其他昵称，或清除搜索条件。</p><button class=\"ds-button secondary\" data-demo-dismiss>清除列表筛选</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "数值右对齐或保持稳定列宽；排名有文字含义。",
+        "表格较宽时在组件容器内横向滚动，不能撑宽整页。"
+      ],
+      "avoid": "不要把演示统计当成当前实时排行。",
+      "anatomy": [
+        "排名 / 奖杯",
+        "成员 / 身份标记",
+        "模型分布",
+        "用量 / 费用",
+        "关注 / 分享"
+      ],
+      "props": [
+        [
+          "metric",
+          "total / fresh / cost",
+          "含缓存 / 不含缓存 / 费用"
+        ],
+        [
+          "ranking-match",
+          "高亮行",
+          "定位自己"
+        ],
+        [
+          "aria-pressed",
+          "关注",
+          "布尔"
+        ]
+      ],
+      "behavior": "可体验关注切换；行内按钮独立于成员链接。原型搜索只改变成员列表。",
+      "source": [
+        "ranking.css",
+        "ranking.js"
+      ],
+      "size": "表头 11px、内容 12px；行单元 padding 20px 16px；行边角 24px。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "trophies",
+      "group": "榜单与数据",
+      "name": "排名奖杯与首页榜单",
+      "en": "Podium & compact ranking",
+      "summary": "前三名用金、银、铜材质区分，同时保留名次语义。",
+      "variants": [
+        {
+          "label": "第一名 / 金",
+          "html": "<span class=\"home-leaderboard-rank\" role=\"img\" aria-label=\"第 1 名\"><img class=\"rank-glass-trophy rank-glass-trophy-1\" src=\"assets/rank-trophy-gold.svg\" width=\"40\" height=\"40\" alt=\"\"></span>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "第二名 / 银",
+          "html": "<span class=\"home-leaderboard-rank\" role=\"img\" aria-label=\"第 2 名\"><img class=\"rank-glass-trophy rank-glass-trophy-2\" src=\"assets/rank-trophy-silver.svg\" width=\"40\" height=\"40\" alt=\"\"></span>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "第三名 / 铜",
+          "html": "<span class=\"home-leaderboard-rank\" role=\"img\" aria-label=\"第 3 名\"><img class=\"rank-glass-trophy rank-glass-trophy-3\" src=\"assets/rank-trophy-bronze.svg\" width=\"40\" height=\"40\" alt=\"\"></span>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "普通名次",
+          "html": "<span class=\"ranking-position\">04</span>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "首页三人榜",
+          "html": "",
+          "fixture": "rank-home",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "奖杯仅用于前三名；其余使用数字。",
+        "装饰图像 alt 留空，由外层 aria-label 表达名次。"
+      ],
+      "avoid": "不要只依赖材质颜色区分名次。",
+      "anatomy": [
+        "奖杯资源",
+        "可访问名次",
+        "成员头像",
+        "姓名与数值"
+      ],
+      "props": [
+        [
+          "rank",
+          "1 / 2 / 3",
+          "对应金银铜"
+        ],
+        [
+          "width / height",
+          "40",
+          "图片固有尺寸"
+        ],
+        [
+          "score",
+          "当前口径",
+          "以 Token 或 USD 标单位"
+        ]
+      ],
+      "behavior": "原型前三名行悬停有短暂星形反馈；减少动效时关闭。此处展示静态材质与真实行形态。",
+      "source": [
+        "home.css",
+        "home.js",
+        "ranking.css"
+      ],
+      "size": "奖杯 40×40px；首页紧凑榜以三行展示。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "ranking-summary",
+      "group": "榜单与数据",
+      "name": "社区用量总览",
+      "en": "Community usage",
+      "summary": "突出总量，统计口径与时间范围紧随数字。",
+      "variants": [
+        {
+          "label": "总览",
+          "html": "",
+          "fixture": "ranking",
+          "selector": ".ranking-community-card",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "当前筛选",
+          "html": "",
+          "fixture": "ranking",
+          "selector": ".ranking-community-card",
+          "patch": [
+            {
+              "selector": ".ranking-community-stats dd",
+              "text": "—"
+            },
+            {
+              "selector": ".ranking-community-stats>div:first-child dd",
+              "text": "128.4 万"
+            },
+            {
+              "selector": ".ranking-community-header h2",
+              "text": "当前筛选用量趋势"
+            }
+          ],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "数字必须说明时间范围和口径。",
+        "筛选结果汇总与全站汇总明确区分。"
+      ],
+      "avoid": "不要把演示折线或估算费用描述为账单。",
+      "anatomy": [
+        "总量",
+        "单位 / 口径",
+        "成员 / 工具统计",
+        "趋势入口"
+      ],
+      "props": [
+        [
+          "month",
+          "YYYY-MM",
+          "统计区间"
+        ],
+        [
+          "metric",
+          "Token / USD",
+          "单位跟随口径"
+        ],
+        [
+          "entries",
+          "当前筛选数据",
+          "一致汇总"
+        ]
+      ],
+      "behavior": "展开趋势后不丢失当前筛选；数值使用 tabular-nums。",
+      "source": [
+        "ranking.css",
+        "ranking.js"
+      ],
+      "size": "总量为主视觉；统计辅助信息使用 12px。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "trend-chart",
+      "group": "榜单与数据",
+      "name": "用量趋势图",
+      "en": "Trend chart",
+      "summary": "用折线和填充展示每天的使用趋势。",
+      "variants": [
+        {
+          "label": "每日趋势",
+          "html": "",
+          "fixture": "chart",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "数据点焦点",
+          "html": "",
+          "fixture": "chart",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "circle:nth-of-type(8)",
+              "attrs": {
+                "r": "6"
+              },
+              "addClass": "spec-focus"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": "图中数据来自原型演示序列，不代表真实日统计。"
+        },
+        {
+          "label": "提示气泡",
+          "html": "<div class=\"ranking-point-tooltip\"><small>2026-09-08</small><strong>1,280,000 Token</strong></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "图表配 aria-label 和文本数值；不能只靠形状传达结果。",
+        "原型趋势为演示计算数据，需要明确来源。"
+      ],
+      "avoid": "不要把只剩一个数据点的图表拉成有意义的增长趋势。",
+      "anatomy": [
+        "网格线",
+        "坐标标签",
+        "面积 / 折线",
+        "数据点",
+        "提示气泡"
+      ],
+      "props": [
+        [
+          "viewBox",
+          "按容器缩放",
+          "SVG"
+        ],
+        [
+          "data-trend-date / value",
+          "日期 / 数值",
+          "提示信息"
+        ],
+        [
+          "role / aria-label",
+          "img / 描述",
+          "可访问替代"
+        ]
+      ],
+      "behavior": "预览支持悬停数据点显示日期和数值；图表获取焦点后用左右方向键查看点。",
+      "source": [
+        "ranking.css",
+        "ranking.js"
+      ],
+      "size": "详情图 viewBox 1000×260；小图保留页面自身比例。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "distribution",
+      "group": "榜单与数据",
+      "name": "模型分布",
+      "en": "Model distribution",
+      "summary": "条形分布适合排名行，矩形树图适合个人概览。",
+      "variants": [
+        {
+          "label": "行内条形",
+          "html": "",
+          "fixture": "ranking",
+          "selector": ".ranking-distribution",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "矩形树图",
+          "html": "",
+          "fixture": "treemap",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "单一模型",
+          "html": "<div class=\"ranking-distribution\" role=\"group\" aria-label=\"Codex 用量 100%\"><button class=\"ranking-distribution-segment ranking-tool-codex\" style=\"flex-grow:100\" data-distribution-model=\"gpt-5.5\" data-distribution-value=\"128 万\" data-distribution-share=\"100%\" aria-label=\"Codex 128 万，占比 100%\"></button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "面积与数值同源；图例同时给出工具名和比例。",
+        "图表颜色表达不同工具，不复用为业务成功 / 危险。"
+      ],
+      "avoid": "不要通过装饰性最小面积误导模型占比。",
+      "anatomy": [
+        "分段面积",
+        "工具 / 模型名",
+        "数值 / 百分比",
+        "图例"
+      ],
+      "props": [
+        [
+          "score",
+          "非负数",
+          "决定面积"
+        ],
+        [
+          "data-distribution-*",
+          "模型 / 数值 / 占比",
+          "悬停与焦点提示"
+        ],
+        [
+          "aria-label",
+          "完整描述",
+          "非视觉替代"
+        ]
+      ],
+      "behavior": "悬停、聚焦或点击区块显示对应数据；键盘可逐个访问。",
+      "source": [
+        "ranking.css",
+        "ranking.js"
+      ],
+      "size": "树图使用百分比定位，随容器缩放。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "personal-rank",
+      "group": "榜单与数据",
+      "name": "我的排行",
+      "en": "Personal rank",
+      "summary": "连接前、连接后和筛选无数据拥有不同表达。",
+      "variants": [
+        {
+          "label": "未连接",
+          "html": "",
+          "fixture": "sidebar-rank",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "已连接",
+          "html": "",
+          "fixture": "connected-rank",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "筛选无记录",
+          "html": "",
+          "fixture": "connected-rank",
+          "selector": null,
+          "patch": [
+            {
+              "selector": ".ranking-side-rank",
+              "text": "—"
+            },
+            {
+              "selector": "dd",
+              "text": "暂无记录"
+            },
+            {
+              "selector": ".ranking-person-tool-map",
+              "html": "<h3>模型用量分布</h3><p>当前筛选下暂无用量</p>"
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "未连接状态解释接入价值并给出单一行动。",
+        "已连接但筛选无数据不等于连接断开。"
+      ],
+      "avoid": "不要在无记录时显示伪造的 0 名或排名变化。",
+      "anatomy": [
+        "标题 / 详情入口",
+        "连接状态",
+        "排名",
+        "用量",
+        "模型分布 / 接入引导"
+      ],
+      "props": [
+        [
+          "connection",
+          "connected / 未连接",
+          "原型状态"
+        ],
+        [
+          "rank",
+          "数值 / —",
+          "无记录占位"
+        ],
+        [
+          "metric",
+          "当前口径",
+          "与榜单一致"
+        ]
+      ],
+      "behavior": "定位我的排名应滚到对应行；查看详情保留月份与筛选。此处动作仅显示演示反馈。",
+      "source": [
+        "ranking.css",
+        "ranking.js"
+      ],
+      "size": "侧栏卡片与主体 24px 圆角保持一致。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "connection",
+      "group": "榜单与数据",
+      "name": "接入步骤与命令",
+      "en": "Connection flow",
+      "summary": "公开名称、操作系统命令、同步状态形成连续步骤。",
+      "variants": [
+        {
+          "label": "接入流程",
+          "html": "",
+          "fixture": "connect",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "状态完成",
+          "html": "<div class=\"ranking-connect-status is-done\"><span class=\"ranking-connect-status-dot\"></span><strong>接入已完成</strong><p>可以返回查看你的使用详情。</p><button class=\"ds-button primary\" data-demo-dismiss>返回排行</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "公开名称在命令生成前填写；区分 macOS / Linux 和 Windows。",
+        "命令与使用说明一起提供；同步确认不能冒充服务端验证。"
+      ],
+      "avoid": "规范样本不提供可执行接入命令，也不请求真实名称或联网同步。",
+      "anatomy": [
+        "步骤指示",
+        "名称输入",
+        "系统选择",
+        "命令块",
+        "复制动作",
+        "同步反馈"
+      ],
+      "props": [
+        [
+          "publicName",
+          "公开名称",
+          "避免当作认证信息"
+        ],
+        [
+          "os",
+          "unix / windows",
+          "命令差异"
+        ],
+        [
+          "stage",
+          "current / complete",
+          "步骤状态"
+        ]
+      ],
+      "behavior": "本库命令已替换为不可执行的注释。可试系统切换与复制示例；完成状态单独展示；不运行安装，不联网。",
+      "source": [
+        "ranking.css",
+        "ranking.js"
+      ],
+      "size": "桌面主流程与辅助区分栏；手机转为单栏。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "empty-states",
+      "group": "反馈与页面模式",
+      "name": "空状态",
+      "en": "Empty state",
+      "summary": "区分尚无内容、搜索无结果和未开始行动。",
+      "variants": [
+        {
+          "label": "专栏未开放",
+          "html": "",
+          "fixture": "empty",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "搜索无结果",
+          "html": "<div class=\"account-empty\"><h2>没有找到相关讨论</h2><p>换个关键词试试，或看看全部讨论。</p><button class=\"ds-button secondary\" data-demo-dismiss>查看全部</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "没有收藏",
+          "html": "<div class=\"account-empty\"><h2>还没有收藏内容</h2><p>收藏的资讯和论坛帖子会显示在这里。</p><button class=\"ds-button secondary\" data-demo-dismiss>浏览资讯</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "没有草稿",
+          "html": "<div class=\"account-empty\"><h2>还没有保存的草稿</h2><p>写帖时会自动保存，可随时回来继续。</p><button class=\"ds-button primary\" data-demo-dismiss>开始写帖</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "说清没有什么，以及下一步能做什么。",
+        "只有明确业务空状态时使用插画，搜索无结果保持简洁。"
+      ],
+      "avoid": "不要用空状态掩盖请求失败或权限不足。",
+      "anatomy": [
+        "可选卡片插画",
+        "原因标题",
+        "解释",
+        "恢复 / 探索入口"
+      ],
+      "props": [
+        [
+          "title / description",
+          "具体原因",
+          "避免笼统无数据"
+        ],
+        [
+          "action",
+          "一项主要行动",
+          "恢复路径"
+        ],
+        [
+          "illustration",
+          "可选",
+          "不承载唯一信息"
+        ]
+      ],
+      "behavior": "动作应可恢复到有内容的页面；空态不自动抢焦点。",
+      "source": [
+        "home.css",
+        "home.js"
+      ],
+      "size": "插画空态手机高度 208px；文字空态按内容自然展开。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "skeletons",
+      "group": "反馈与页面模式",
+      "name": "加载骨架",
+      "en": "Skeleton loading",
+      "summary": "加载结构对应将出现的内容，而不是统一转圈。",
+      "variants": [
+        {
+          "label": "图文卡片",
+          "html": "",
+          "fixture": "skeleton",
+          "selector": ".skeleton-card",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "纯文字卡片",
+          "html": "",
+          "fixture": "skeleton",
+          "selector": ".skeleton-card:nth-child(2)",
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "论坛帖子",
+          "html": "<article class=\"skeleton-post\"><div class=\"skeleton-meta\"><i class=\"skeleton-block skeleton-avatar\"></i><i class=\"skeleton-block skeleton-line short\"></i></div><i class=\"skeleton-block skeleton-line title\"></i><i class=\"skeleton-block skeleton-line\"></i><i class=\"skeleton-block skeleton-line medium\"></i><div class=\"skeleton-tags\"><i class=\"skeleton-block skeleton-line tag\"></i></div></article>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        },
+        {
+          "label": "榜单行",
+          "html": "<div class=\"skeleton-rank\"><i class=\"skeleton-block skeleton-line rank-number\"></i><i class=\"skeleton-block skeleton-avatar\"></i><div class=\"skeleton-rank-name\"><i class=\"skeleton-block skeleton-line medium\"></i></div><i class=\"skeleton-block skeleton-line rank-value\"></i></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "容器 aria-busy=true，提供一次正在加载的状态播报。",
+        "骨架自身 aria-hidden，避免读出无意义占位内容。"
+      ],
+      "avoid": "不要让骨架无限循环而没有失败恢复。",
+      "anatomy": [
+        "标题占位",
+        "封面 / 内容占位",
+        "头像与元信息占位"
+      ],
+      "props": [
+        [
+          "aria-busy",
+          "true / false",
+          "异步区域状态"
+        ],
+        [
+          "role=status",
+          "加载说明",
+          "辅助技术播报"
+        ],
+        [
+          "aria-hidden",
+          "骨架图形",
+          "排除重复朗读"
+        ]
+      ],
+      "behavior": "此处骨架持续展示用于检查；实际成功时整体替换，失败时进入错误组件。",
+      "source": [
+        "page-loading.css",
+        "page-loading.js"
+      ],
+      "size": "卡片 / 帖子 / 排名行分别对应最终内容几何。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "error-states",
+      "group": "反馈与页面模式",
+      "name": "错误与恢复",
+      "en": "Error & recovery",
+      "summary": "页面失败、表单错误和存储失败分别提供恢复路径。",
+      "variants": [
+        {
+          "label": "页面加载失败",
+          "html": "<div class=\"quiet-empty\" role=\"alert\"><h2>暂时无法加载</h2><p>请稍后再试</p><button class=\"ds-button\" data-demo-retry>重新加载</button></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "帖子不存在",
+          "html": "<div class=\"home-heading\"><h1>帖子不存在</h1><a class=\"ds-button secondary\" href=\"#\">返回论坛</a></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "本地保存失败",
+          "html": "<div class=\"forum-editor-status\" role=\"alert\">保存失败：浏览器存储不可用，正文仍保留在编辑器中。</div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "字段错误",
+          "html": "<p class=\"ds-error\" role=\"alert\">标题和正文不能只包含空格。</p>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "短错误说明原因，给出一个明确恢复动作。",
+        "保存失败仍保留用户输入；不要把错误状态等同于空态。"
+      ],
+      "avoid": "不要显示内部异常堆栈或提示用户重复发布来“试试”。",
+      "anatomy": [
+        "错误标题",
+        "可理解原因",
+        "重试 / 返回",
+        "保留内容"
+      ],
+      "props": [
+        [
+          "role=alert",
+          "新增错误",
+          "及时播报"
+        ],
+        [
+          "data-retry-page",
+          "重试动作",
+          "避免重复并发"
+        ],
+        [
+          "input value",
+          "失败后保留",
+          "保护用户工作"
+        ]
+      ],
+      "behavior": "演示重试会经历加载和恢复提示；不会改变实际页面数据。",
+      "source": [
+        "home.js",
+        "home.css",
+        "forum.js",
+        "styles.css"
+      ],
+      "size": "错误说明采用正文层级；不额外引入大面积红色。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "toast",
+      "group": "反馈与页面模式",
+      "name": "轻提示",
+      "en": "Toast",
+      "summary": "复制、收藏、保存等操作后的短反馈。",
+      "variants": [
+        {
+          "label": "成功提示",
+          "html": "<div class=\"home-toast\" role=\"status\">已收藏</div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "失败提示",
+          "html": "<div class=\"home-toast\" role=\"status\">保存失败，请保留当前页面。</div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "交互演示",
+          "html": "<button class=\"ds-button secondary\" data-demo-toast>显示轻提示</button>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "用于不阻断操作的简短结果。",
+        "重要错误同时保留在相关区域，不只依赖短暂提示。"
+      ],
+      "avoid": "不要用 Toast 承载需要阅读的长文或唯一恢复按钮。",
+      "anatomy": [
+        "高对比容器",
+        "一句结果文字",
+        "自动消失"
+      ],
+      "props": [
+        [
+          "role",
+          "status",
+          "礼貌播报"
+        ],
+        [
+          "hidden",
+          "布尔",
+          "显隐"
+        ],
+        [
+          "duration",
+          "原型约 3500ms",
+          "新反馈重置计时"
+        ]
+      ],
+      "behavior": "点击可显示 3.5 秒提示；连续触发替换当前文本，不堆满屏幕。",
+      "source": [
+        "home.css",
+        "home.js"
+      ],
+      "size": "小字号、紧凑 padding；固定在可见视口内。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "tooltips",
+      "group": "反馈与页面模式",
+      "name": "数据提示",
+      "en": "Data tooltip",
+      "summary": "解释图表数据与图标含义，不替代可访问名称。",
+      "variants": [
+        {
+          "label": "趋势数据",
+          "html": "<div class=\"ranking-point-tooltip\"><small>2026-09-08</small><strong>1,280,000 Token</strong></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "模型数据",
+          "html": "<div class=\"ranking-distribution-tooltip\"><small>Codex / gpt-5.5</small><strong>128 万 Token</strong><span>占比 58%</span></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "基础提示",
+          "html": "<span class=\"ds-tooltip\"><button class=\"ds-button secondary\" aria-describedby=\"help-tip\">统计口径</button><span role=\"tooltip\" id=\"help-tip\">含缓存读取与写入</span></span>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "基础样式",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "悬停与键盘焦点应获得相同信息。",
+        "触控图表可点击数据块查看。"
+      ],
+      "avoid": "不要在 tooltip 放必须点击的表单或长操作流程。",
+      "anatomy": [
+        "上下文标签",
+        "主要数值",
+        "比例 / 说明"
+      ],
+      "props": [
+        [
+          "role=tooltip",
+          "基础提示",
+          "非交互浮层"
+        ],
+        [
+          "aria-describedby",
+          "提示 ID",
+          "关联触发器"
+        ],
+        [
+          "position",
+          "视口内",
+          "避免被边缘裁切"
+        ]
+      ],
+      "behavior": "具体触发效果可在“模型分布”和“用量趋势图”中体验。",
+      "source": [
+        "ranking.css",
+        "ranking.js",
+        "styles.css"
+      ],
+      "size": "内容决定宽度，最大宽度受视口约束。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "feed-footer",
+      "group": "反馈与页面模式",
+      "name": "列表终点",
+      "en": "Feed end",
+      "summary": "告诉读者当前列表已经到底，避免把留白误认为仍在加载。",
+      "variants": [
+        {
+          "label": "全部展示",
+          "html": "",
+          "fixture": "footer",
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "加载更多",
+          "html": "",
+          "fixture": "footer",
+          "selector": null,
+          "patch": [
+            {
+              "selector": "[data-load-channel]",
+              "attrs": {
+                "hidden": null
+              }
+            },
+            {
+              "selector": ".channel-feed-end",
+              "attrs": {
+                "hidden": ""
+              }
+            }
+          ],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        },
+        {
+          "label": "结束标记",
+          "html": "",
+          "fixture": "footer",
+          "selector": null,
+          "patch": [
+            {
+              "selector": ".channel-feed-end",
+              "attrs": {
+                "style": "opacity:1"
+              }
+            }
+          ],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "根据当前筛选列表是否还有数据，切换加载更多与结束提示。",
+        "底部渐显跟随滚动位置。"
+      ],
+      "avoid": "不要在还有分页数据时显示“已到底”。",
+      "anatomy": [
+        "加载更多按钮",
+        "终点标记",
+        "底部留白"
+      ],
+      "props": [
+        [
+          "count / total",
+          "已显示 / 总数",
+          "决定加载按钮是否显示，不直接展示数值"
+        ],
+        [
+          "--feed-end-opacity",
+          "0–1",
+          "滚动驱动"
+        ],
+        [
+          "prefers-reduced-motion",
+          "减少动效",
+          "直接显示"
+        ]
+      ],
+      "behavior": "真实列表在距离主卡底边 24px 处结束；示例固定显示用于检查。",
+      "source": [
+        "catalog.js",
+        "home.css",
+        "section-headings.css",
+        "section-headings.js"
+      ],
+      "size": "底部 padding 28px 0 24px；不保留额外尾部滚动空间。",
+      "layout": "grid",
+      "status": "产品已有"
+    },
+    {
+      "id": "section-heading",
+      "group": "反馈与页面模式",
+      "name": "页面标题与分区标题",
+      "en": "Section heading",
+      "summary": "页面标题、模块标题和操作按钮各有明确层级。",
+      "variants": [
+        {
+          "label": "页面标题",
+          "html": "<div class=\"home-heading\"><h1>资讯</h1><p>随时打开一篇，把好方法带回自己的实践。</p></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "heading-context",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "带发布动作",
+          "html": "<header class=\"forum-heading\"><div><h1>论坛</h1><p>岛民的经验分享、学习记录与交流讨论。</p></div><button class=\"ds-button\" data-demo-toast>＋ 发布帖子</button></header>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "heading-context",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "内容分区",
+          "html": "<div class=\"portal-section-head\"><div><h2>课程</h2><p>围绕一个目标，把方法完整地学一遍。</p></div><a href=\"#\">查看全部</a></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "滚动后",
+          "html": "<header class=\"forum-heading\"><div style=\"visibility:hidden\"><h1>论坛</h1><p>岛民的经验分享</p></div><button class=\"ds-button\" data-demo-toast>＋ 发布帖子</button></header>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "heading-context",
+          "status": "已有",
+          "note": "标题淡出，操作仍保持可用。"
+        }
+      ],
+      "usage": [
+        "页面 h1 唯一；模块标题使用 h2。",
+        "滚动时淡出标题不会让发布操作一起失效。"
+      ],
+      "avoid": "不要每个页面随意更换标题字号与起始位置。",
+      "anatomy": [
+        "标题",
+        "一句说明",
+        "可选主要行动 / 查看全部"
+      ],
+      "props": [
+        [
+          "h1 / h2",
+          "页面 / 模块",
+          "语义层级"
+        ],
+        [
+          "--heading-opacity",
+          "0–1",
+          "滚动驱动"
+        ],
+        [
+          "pointer-events",
+          "标题容器与操作分离",
+          "保留操作可用性"
+        ]
+      ],
+      "behavior": "实际滚动联动在原型实现；此处并排展示开始和滚动后的形态。",
+      "source": [
+        "section-headings.css",
+        "section-headings.js",
+        "home.css"
+      ],
+      "size": "页面 30px / 42px / 500；手机 26px / 36px；说明 13px / 22px。",
+      "layout": "stack",
+      "status": "产品已有"
+    },
+    {
+      "id": "glass-surfaces",
+      "group": "反馈与页面模式",
+      "name": "玻璃与滚动边缘",
+      "en": "Glass surfaces",
+      "summary": "玻璃用于浮动控件和滚动边缘，不用于遮住整篇内容。",
+      "variants": [
+        {
+          "label": "普通表面",
+          "html": "<div class=\"ds-card\"><h3>内容表面</h3><p>阅读区域保持清晰的白色表面。</p></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "已有",
+          "note": ""
+        },
+        {
+          "label": "玻璃筛选",
+          "html": "<div class=\"glass-demo\"><div class=\"glass-demo-under\">内容在此继续阅读</div><div class=\"feed-filter-group\"><button class=\"feed-filter-trigger\" data-demo-filter>筛选 ⌄</button><button class=\"feed-filter-chip\" data-demo-remove>知识管理 <span>×</span></button></div></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        },
+        {
+          "label": "连续滚动边缘",
+          "html": "<div class=\"glass-demo\"><div class=\"glass-demo-under\">阅读内容<br>沿着滚动方向继续<br>接近边缘时柔和过渡</div><div class=\"workspace-scroll-glass workspace-scroll-glass--top\" style=\"--glass-opacity:1\" aria-hidden=\"true\"></div></div>",
+          "fixture": null,
+          "selector": null,
+          "patch": [],
+          "context": "",
+          "status": "组合示例",
+          "note": ""
+        }
+      ],
+      "usage": [
+        "一个表面采样一次背景，避免多个模糊层叠加。",
+        "不支持 backdrop-filter 时，筛选保持实色可读。"
+      ],
+      "avoid": "不要对文字本身施加模糊；不要让装饰遮罩拦截点击。",
+      "anatomy": [
+        "背景内容",
+        "半透明表面",
+        "模糊采样",
+        "连续遮罩",
+        "控件"
+      ],
+      "props": [
+        [
+          "backdrop-filter",
+          "16 / 24px",
+          "筛选 / 弹层"
+        ],
+        [
+          "--glass-opacity",
+          "0–1",
+          "滚动驱动"
+        ],
+        [
+          "pointer-events",
+          "none",
+          "边缘装饰不拦截操作"
+        ]
+      ],
+      "behavior": "实际位置由 scroll-glass.js 追踪主卡边界；这里提供固定状态和材质样本。",
+      "source": [
+        "feed-filters.css",
+        "scroll-glass.css",
+        "scroll-glass.js"
+      ],
+      "size": "筛选 62% / blur16；弹层 78% / blur24；边缘 blur24。",
+      "layout": "grid",
+      "status": "产品已有"
+    }
+  ]
+}

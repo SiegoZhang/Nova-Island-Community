@@ -1,19 +1,75 @@
 (()=>{
  function tourFolder(id,decorative=false){return "<div class=\"tour-folder\" tabindex=\"0\" role=\"img\" aria-label=\"AI 知识和课程收纳文件夹，悬浮或聚焦可展开卡片\"><div class=\"tour-folder-back\" aria-hidden=\"true\"></div><div class=\"tour-folder-sheet sheet-course\" aria-hidden=\"true\"><span></span><div class=\"folder-course-cover\"><img src=\"assets/course-ai-media-16x9.png\" alt=\"\"><em>▶</em></div><b></b><b class=\"short\"></b></div><div class=\"tour-folder-sheet sheet-news\" aria-hidden=\"true\"><span></span><div class=\"folder-knowledge-map\"><i></i><i></i><i></i><i></i></div><b></b><b class=\"short\"></b></div><div class=\"tour-folder-sheet sheet-notes\" aria-hidden=\"true\"><span></span><div class=\"folder-editorial-cover\"><i></i><i></i><i></i></div><div class=\"folder-editorial-lines\"><b></b><b class=\"short\"></b></div></div><div class=\"tour-folder-frost\" aria-hidden=\"true\"></div><svg class=\"tour-folder-front\" viewBox=\"0 0 300 180\" fill=\"none\" aria-hidden=\"true\"><defs><linearGradient id=\"tour-folder-fill\" x1=\"24\" y1=\"0\" x2=\"256\" y2=\"180\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FFFFFF\" stop-opacity=\".76\"/><stop offset=\".6\" stop-color=\"#F7F7F9\" stop-opacity=\".56\"/><stop offset=\"1\" stop-color=\"#E8E9ED\" stop-opacity=\".7\"/></linearGradient></defs><path d=\"M1 29C1 13 13 1 29 1H98C110 1 116 5 123 14L139 35C144 42 151 45 161 45H271C287 45 299 57 299 73V151C299 167 287 179 271 179H29C13 179 1 167 1 151V29Z\" fill=\"url(#tour-folder-fill)\" stroke=\"white\" stroke-opacity=\".7\" stroke-width=\"2\"/><path d=\"M23 149H276\" stroke=\"white\" stroke-opacity=\".25\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg></div>".replaceAll('tour-folder-fill','tour-folder-fill-'+id).replace('tabindex="0"',decorative?'aria-hidden="true"':'tabindex="0"');}
+
+ // Same mass=1, stiffness=120 spring as the supplied Motion component.
+ // Keep velocity on interruption so leaving/re-entering never snaps the artwork.
+ function bindFolderMotion(host){
+  const folder=host.matches('.tour-folder')?host:host.querySelector('.tour-folder');
+  const reduced=matchMedia('(prefers-reduced-motion:reduce)');
+  const poses={idle:[[40,-10,10],[3,-20,2],[-40,-22,-5],[-15]],hover:[[40,-30,14],[3,-35,-1],[-40,-44,-9],[-45]]};
+  const parts=[...folder.querySelectorAll('.tour-folder-sheet'),folder.querySelector('.tour-folder-front')];
+  const frost=folder.querySelector('.tour-folder-frost');
+  const springs=parts.map((element,i)=>({element,value:[...poses.idle[i]],velocity:poses.idle[i].map(()=>0),target:poses.idle[i],delay:0}));
+  let frame=0,last=0,hovered=false,focused=false;
+  function paint(){
+   const scale=folder.offsetWidth/321;
+   springs.forEach((spring,i)=>{
+    const v=spring.value;
+    const transform=i===3?`perspective(${800*scale}px) rotateX(${v[0]}deg)`:`translate(${v[0]*scale}px,${v[1]*scale}px) rotate(${v[2]}deg)`;
+    spring.element.style.transform=transform;
+    if(i===3)frost.style.transform=transform;
+   });
+  }
+  function tick(now){
+   const dt=Math.min((now-last)/1000,0.032);last=now;
+   let moving=false;
+   springs.forEach((spring,i)=>{
+    if(now<spring.delay){moving=true;return;}
+    // Small integration steps keep the spring stable at low frame rates.
+    const steps=Math.max(1,Math.ceil(dt/(1/240))),h=dt/steps;
+    spring.value.forEach((value,j)=>{
+     for(let n=0;n<steps;n++){
+      spring.velocity[j]+=(120*(spring.target[j]-spring.value[j])-(i===3?14:13)*spring.velocity[j])*h;
+      spring.value[j]+=spring.velocity[j]*h;
+     }
+     if(Math.abs(spring.target[j]-spring.value[j])>.001||Math.abs(spring.velocity[j])>.001)moving=true;
+     else{spring.value[j]=spring.target[j];spring.velocity[j]=0;}
+    });
+   });
+   paint();frame=moving&&folder.isConnected?requestAnimationFrame(tick):0;
+  }
+  function update(){
+   const state=hovered||focused?'hover':'idle',now=performance.now();
+   springs.forEach((spring,i)=>{
+    spring.target=poses[state][i];
+    spring.delay=now+(state==='hover'?[120,60,0,0][i]:0);
+    if(reduced.matches){spring.value=[...spring.target];spring.velocity.fill(0);}
+   });
+   if(reduced.matches){cancelAnimationFrame(frame);frame=0;paint();}
+   else if(!frame){last=now;frame=requestAnimationFrame(tick);}
+  }
+  host.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch'){hovered=true;update();}});
+  host.addEventListener('pointerleave',()=>{hovered=false;update();});
+  host.addEventListener('focusin',()=>{focused=true;update();});
+  host.addEventListener('focusout',event=>{if(!host.contains(event.relatedTarget)){focused=false;update();}});
+  reduced.addEventListener('change',update);
+  paint();
+ }
  const sidebarCard=document.querySelector('.product-sidebar [data-site-tour]');
  if(sidebarCard){
   sidebarCard.classList.add('sidebar-tour-card');
   sidebarCard.setAttribute('aria-label','功能导览：快速熟悉新岛');
   sidebarCard.innerHTML=tourFolder('sidebar',true)+'<div class="sidebar-tour-copy"><h2>快速熟悉新岛</h2><p>探索 AI 知识与课程</p><span class="guide-card-action">开始导览</span></div>';
+  bindFolderMotion(sidebarCard);
  }
 
  const steps=[
  ['首页推荐','在首页查看精选内容，也可以按学习方向切换频道，找到适合自己的起点。','[data-page="home"]'],
  ['搜索内容','输入问题、工具、作者或课程名称，快速查找岛内内容。','.workspace-header .top-search'],
- ['课程','进入课程查看系统学习内容，打开课程后按目录逐节学习。','[data-page="courses"]'],
- ['资讯','按标签筛选文章，点击卡片阅读全文。你也可以通过「发布资讯」整理自己的经验。','[data-page="articles"]'],
+ ['实战','进入实战查看系统学习内容，打开后按目录逐节学习。','[data-page="courses"]'],
+ ['文章','按标签筛选文章，点击卡片阅读全文。你也可以通过「发布文章」整理自己的经验。','[data-page="articles"]'],
  ['论坛','通过多个标签寻找讨论，发布问题或经验；在帖子详情中点赞、收藏和分享。','[data-page="community"]'],
- ['活动与实战','在活动中查看相聚安排，在实战中寻找项目与参与方式。当前未开放的内容会显示准备状态。','[data-page="practice"]'],
+ ['活动','在活动中查看相聚安排与参与方式。当前未开放的内容会显示准备状态。','[data-page="events"]'],
  ['榜单','在这里查看岛民贡献榜及不同时间范围的数据；暂无数据时显示空状态。','[data-page="ranking"]'],
  ['我的账号','点击头像打开个人菜单，管理收藏、草稿和账号设置，也能再次进入入门指南。','#account-trigger']
  ];
@@ -50,22 +106,19 @@
   dialog.addEventListener('click',e=>{if(e.target.closest('[data-tour-exit]'))close();else if(e.target.closest('[data-tour-prev]')&&index>0){index--;show();}else if(e.target.closest('[data-tour-next]')){if(index===steps.length-1)close();else{index++;show();}}});
  }
  // Invite once per browsing session, after the initial homepage is ready.
- const inviteKey='nova-site-tour-invited-v1';
  let invitationShown=false;
- try{invitationShown=sessionStorage.getItem(inviteKey)==='1'}catch{}
  const invitePreview=new URLSearchParams(location.hash.split('?')[1]||'').get('tour')==='preview';
- if(invitePreview)invitationShown=false;
  function invite(){
   const content=document.querySelector('#content');
-  if(invitationShown||dialog||!content?.classList.contains('home-scroll')||content.getAttribute('aria-busy')==='true'||document.documentElement.classList.contains('site-boot-loading'))return;
+  if(!invitePreview||invitationShown||dialog||!content?.classList.contains('home-scroll')||content.getAttribute('aria-busy')==='true'||document.documentElement.classList.contains('site-boot-loading'))return;
   invitationShown=true;
-  if(!invitePreview)try{sessionStorage.setItem(inviteKey,'1')}catch{}
   const card=document.querySelector('[data-site-tour]');
   const invitation=document.createElement('dialog');invitation.className='site-tour-invite';
   invitation.setAttribute('aria-labelledby','tour-invite-title');invitation.setAttribute('aria-describedby','tour-invite-description');
-  invitation.innerHTML='<div class="tour-invite-content">'+tourFolder('invite')+'<h2 id="tour-invite-title" tabindex="-1" autofocus>快速熟悉新岛</h2><p id="tour-invite-description">跟着导览，了解如何找课程、读资讯和参与讨论。<br>也可以稍后从左下角打开。</p><div class="tour-invite-actions"><button type="button" data-invite-later>暂不需要</button><button type="button" data-invite-start>开始导览</button></div></div>';
+  invitation.innerHTML='<div class="tour-invite-content">'+tourFolder('invite')+'<h2 id="tour-invite-title" tabindex="-1" autofocus>快速熟悉新岛</h2><p id="tour-invite-description">跟着导览，了解如何找课程、读文章和参与讨论。<br>也可以稍后从左下角打开。</p><div class="tour-invite-actions"><button type="button" data-invite-later>暂不需要</button><button type="button" data-invite-start>开始导览</button></div></div>';
   document.querySelector('.nova-ds').append(invitation);invitation.showModal();
   invitation.querySelector('#tour-invite-title').focus({preventScroll:true});
+  bindFolderMotion(invitation.querySelector('.tour-folder'));
   let closing=false;
   function dismiss(begin){
    if(closing)return;closing=true;
@@ -82,7 +135,7 @@
  }
  const initialContent=document.querySelector('#content');
  const inviteObserver=new MutationObserver(()=>{invite();if(invitationShown)inviteObserver.disconnect()});
- if(initialContent)inviteObserver.observe(initialContent,{attributes:true,attributeFilter:['aria-busy'],childList:true});
+ if(invitePreview&&initialContent)inviteObserver.observe(initialContent,{attributes:true,attributeFilter:['aria-busy'],childList:true});
  invite();
  document.addEventListener('click',e=>{const trigger=e.target.closest('[data-site-tour]');if(trigger){e.preventDefault();start(trigger);}});
  window.addEventListener('resize',position);

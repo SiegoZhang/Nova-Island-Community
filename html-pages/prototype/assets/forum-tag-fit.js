@@ -1,6 +1,6 @@
 // Keep only complete tags that fit the first line, in their original order.
 (()=>{
- const selector='.forum-card-tags';
+ const selector='.forum-card-tags:not([data-wrap-tags])';
  const observed=new Set();
  function fit(row){
   const links=[...row.children];

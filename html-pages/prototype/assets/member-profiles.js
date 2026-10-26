@@ -297,17 +297,35 @@ const memberProfiles={
   }
 };
 
+function authorCatalog(){
+ return [...new Map([...catalog,...startChannelCatalog].map(item=>[item.id,item])).values()];
+}
+function authorProfile(params=route().params){
+ const id=params.get('user');
+ const known=memberProfiles[id];
+ const name=known?.name||params.get('author');
+ if(!name)return null;
+ const local=authorCatalog().filter(item=>item.author===name);
+ if(!known&&!local.length)return null;
+ const posts=new Map((known?.all||[]).map(post=>[post.id,{...post,author:name,type:'article',channels:[],label:'文章',channelCover:false,cardHref:'https://novaisland.cn/community/'+post.id}]));
+ for(const item of local)posts.set(item.id,{...posts.get(item.id),...item});
+ const featuredIds=new Set([...(known?.featured||[]).map(post=>post.id),...homeFeaturedIds]);
+ const all=[...posts.values()];
+ return {id,name,known,all,featured:all.filter(post=>post.featured||featuredIds.has(post.id))};
+}
+function authorHref(name,origin=location.hash){
+ const match=Object.entries(memberProfiles).find(([,person])=>person.name===name);
+ const params=new URLSearchParams(match?{user:match[0]}:{author:name});
+ if(origin)params.set('return',origin);
+ return '#member?'+params.toString();
+}
 function memberPage(){
- const params=route().params,id=params.get('user'),person=memberProfiles[id];
- if(!person)return `<section class="member-page"><div class="account-empty"><h1>没有找到这位岛民</h1><p>请从贡献榜选择一位岛民。</p><a class="ds-button secondary" href="#home">返回首页</a></div></section>`;
- const view=['all','featured','saved'].includes(params.get('view'))?params.get('view'):'all';
- const relation=['followers','following'].includes(params.get('view'))?params.get('view'):null;
- const origin=params.get('from')==='ranking'?'ranking':'home';
- const href=(view)=>`#member?user=${encodeURIComponent(id)}&view=${view}&from=${origin}`;
- const source='https://novaisland.cn/u/'+id;
- const titles={all:'TA 的帖子',featured:'TA 的精华',saved:'TA 的收藏'};
- const entries=person[view];
- const complete=view==='all'?person.complete:person[view+'Complete'];
- const body=relation?`<section class="member-relations"><h2>${relation==='followers'?'粉丝':'关注'}</h2><div class="member-empty"><p>${relation==='followers'?'还没有粉丝':'还没有关注其他岛民'}</p><a href="${href('all')}">返回 TA 的内容</a></div></section>`:`<section class="member-posts" aria-labelledby="member-posts-title"><div class="member-feed-heading"><h2 id="member-posts-title">${titles[view]}</h2><span>${complete?'共 '+entries.length+' 篇':'已收录 '+entries.length+' 篇'}</span></div><nav class="member-tabs" aria-label="主页内容筛选">${[['all','全部'],['featured','精华'],['saved','收藏']].map(([key,label])=>`<a href="${href(key)}" ${view===key?'aria-current="page"':''}>${label}</a>`).join('')}</nav>${entries.length?channelMasonry(entries.map(post=>({id:post.id,title:post.title,desc:post.desc,author:person.name,type:'article',channels:[],label:'文章',channelCover:false,cardHref:'https://novaisland.cn/community/'+post.id,articleTags:post.featured?['精华']:undefined}))):`<div class="member-empty"><h3>${complete?'暂无收藏':'收藏内容尚未收录'}</h3><p>${complete?'这位岛民还没有公开收藏的内容。':'可以前往原主页查看公开收藏。'}</p></div>`}<footer class="member-feed-footer">${!complete?`<span>${view==='all'?'当前展示最近 '+entries.length+' 篇帖子':'当前展示已收录内容'}</span><a class="ds-button secondary" href="${source}" target="_blank" rel="noopener noreferrer">${view==='all'?'查看全部 '+person.total+' 篇':'前往原主页查看更多'}</a>`:'<span>已经看完全部内容</span>'}</footer></section>`;
- return `<article class="member-page"><header class="member-identity"><div class="member-avatar" aria-hidden="true">${escapeHtml(person.name.slice(0,1))}</div><div class="member-info"><div class="member-name-line"><h1>${escapeHtml(person.name)}</h1><span class="member-role">${escapeHtml(person.role)}</span></div><p class="member-handle">@${escapeHtml(id)}</p>${!person.joined?'<p class="member-status">该岛民尚未加入新岛</p>':''}</div><a class="ds-button secondary member-source" href="${source}" target="_blank" rel="noopener noreferrer">关注</a><dl class="member-stats"><div><dt>帖子</dt><dd>${person.total}</dd></div><div><dt>粉丝</dt><dd><a href="${href('followers')}" aria-label="${person.followers} 位粉丝">${person.followers}</a></dd></div><div><dt>关注</dt><dd><a href="${href('following')}" aria-label="关注 ${person.following} 位岛民">${person.following}</a></dd></div></dl></header>${body}<p class="member-snapshot">资料更新于 2026 年 9 月 18 日</p></article>`;
+ const params=route().params,profile=authorProfile(params);
+ if(!profile)return `<section class="member-page"><div class="account-empty"><h1>没有找到这位作者</h1><p>请从文章的作者入口查看主页。</p><a class="ds-button secondary" href="#home">返回首页</a></div></section>`;
+ const {name,known,all,featured}=profile;
+ const view=params.get('view')==='featured'?'featured':'all';
+ const entries=view==='featured'?featured:all;
+ const href=key=>{const next=new URLSearchParams(params);next.set('view',key);return '#member?'+next.toString()};
+ const channelsUsed=[...new Set(all.flatMap(post=>post.channels||[]))].map(id=>channels.find(channel=>channel.id===id)?.name).filter(Boolean);
+ return `<article class="member-page author-home"><header class="member-identity"><div class="member-avatar" aria-hidden="true">${escapeHtml(name.slice(0,1))}</div><div class="member-info"><div class="member-name-line"><h1>${escapeHtml(name)}</h1>${known?.role?`<span class="member-role">${escapeHtml(known.role)}</span>`:''}</div><p class="author-home-subtitle">${channelsUsed.length?channelsUsed.map(escapeHtml).join(' · '):'分享与实践'}</p></div><dl class="member-stats"><div><dt>${known?'发布内容':'已收录内容'}</dt><dd>${known?.total??all.length}</dd></div><div><dt>${known?'精华内容':'精选内容'}</dt><dd>${known?.featured.length??featured.length}</dd></div>${known?`<div><dt>粉丝</dt><dd>${known.followers}</dd></div>`:''}</dl></header><section class="member-posts" aria-labelledby="member-posts-title"><div class="member-feed-heading"><h2 id="member-posts-title">创作内容</h2><span>${entries.length} 篇</span></div><nav class="member-tabs" aria-label="作者内容筛选">${[['all','全部内容'],['featured','精选内容']].map(([key,label])=>`<a href="${escapeHtml(href(key))}" ${key===view?'aria-current="page"':''}>${label}</a>`).join('')}</nav>${entries.length?channelMasonry(entries):'<div class="member-empty"><h3>暂无精选内容</h3><p>先看看作者发布的其他内容。</p><a href="'+escapeHtml(href('all'))+'">查看全部内容</a></div>'}</section>${known&&!known.complete?`<footer class="member-feed-footer"><span>当前展示已收录的 ${all.length} 篇内容</span><a class="ds-button secondary" href="https://novaisland.cn/u/${encodeURIComponent(profile.id)}" target="_blank" rel="noopener noreferrer">查看原主页 ↗</a></footer>`:''}</article>`;
 }

@@ -1,0 +1,10 @@
+Nova Island AI Community — Agent 入口（提案版，2026-10-15）
+1. 先读 design-system/SYSTEM.md 和 .interface-design/system.md。
+2. 在 design-system/strategy-20261015/agent-registry.json 按 id 查询组件，再读 contract 与 sourceReferences。完整契约继承现有 catalog，尚未逐组件重新验收。
+3. token 来源为 html-pages/prototype/assets/tokens.css。普通页面、ranking-page、深色覆盖必须分别解析，不能以最后一个正则匹配代替 CSS 级联。
+4. 当前使用 HTML/CSS/JS；不要虚构 @nova/ui 包、React props 或 import。
+5. 先复用真实组件结构和行为；仅用于文档的 spec-hover/spec-focus/spec-active 不进入业务页面。
+6. Figma 映射尚未验证时值为 null，不能猜 nodeId。设计资产映射不等于官方 Code Connect 已发布。
+7. 对新形态先补契约，再实现及验收。演示状态不得写成生产已实现。
+8. 验收桌面和 390px、长中文标题、键盘焦点、加载/空/错/重试及适用的禁用/选中状态。真实业务操作必须单独验证。
+9. 报告改动文件、复用组件、token、新增状态和未验证项。涉及外部发布遵循用户授权。

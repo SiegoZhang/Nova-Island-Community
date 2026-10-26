@@ -5,7 +5,7 @@
  document.querySelectorAll('[data-icon]').forEach(el=>el.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[el.dataset.icon]||paths.file}"/></svg>`);
  function setMenu(open){sidebar.classList.toggle('menu-open',open);sidebar.inert=matchMedia('(max-width:760px)').matches&&!open;document.querySelector('.menu-scrim').hidden=!open;document.querySelector('.mobile-menu').setAttribute('aria-expanded',String(open));}
  document.querySelectorAll('[data-menu]').forEach(b=>b.addEventListener('click',()=>setMenu(!sidebar.classList.contains('menu-open'))));
- document.querySelector('[data-dismiss]').addEventListener('click',()=>{document.querySelector('#guide-card').hidden=true;try{localStorage.setItem('nova-home-guide-hidden','true')}catch{}trigger.focus()});
+ document.querySelector('[data-dismiss]')?.addEventListener('click',()=>{document.querySelector('#guide-card').hidden=true;try{localStorage.setItem('nova-home-guide-hidden','true')}catch{}trigger.focus()});
  document.querySelector('[data-logout]').addEventListener('click',()=>{menu.hidePopover();window.nova.notify('当前为设计原型，未连接真实登录服务。')});
  menu.addEventListener('toggle',e=>trigger.setAttribute('aria-expanded',String(e.newState==='open')));
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&sidebar.classList.contains('menu-open')){setMenu(false);document.querySelector('.mobile-menu').focus()}});

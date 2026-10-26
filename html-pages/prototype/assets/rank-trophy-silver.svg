@@ -1,5 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-<path d="M18 16H10v8a12 12 0 0 0 12 12M46 16h8v8a12 12 0 0 1-12 12" stroke="#909DAE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M32 38v14M22 55h20" stroke="#909DAE" stroke-width="5" stroke-linecap="round"/>
-<path d="M17 12h30v15a15 15 0 0 1-30 0V12Z" fill="#D3DAE3" fill-opacity=".9"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+<defs>
+ <linearGradient id="metal" x1="17" y1="16" x2="46" y2="44" gradientUnits="userSpaceOnUse"><stop stop-color="#F3F7FC" stop-opacity=".96"/><stop offset=".52" stop-color="#C0CDDE" stop-opacity=".88"/><stop offset="1" stop-color="#7D90AC" stop-opacity=".9"/></linearGradient>
+ <linearGradient id="glass" x1="17" y1="17" x2="47" y2="43" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF" stop-opacity=".82"/><stop offset=".4" stop-color="#F7FAFF" stop-opacity=".35"/><stop offset="1" stop-color="#DFE7F1" stop-opacity=".64"/></linearGradient>
+ <linearGradient id="edge" x1="18" y1="15" x2="45" y2="46" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity=".95"/><stop offset=".55" stop-color="white" stop-opacity=".6"/><stop offset="1" stop-color="#B6C2D2" stop-opacity=".45"/></linearGradient>
+ <linearGradient id="handle" x1="8" y1="18" x2="53" y2="37" gradientUnits="userSpaceOnUse"><stop stop-color="#F3F7FC"/><stop offset=".45" stop-color="#F6F8FC"/><stop offset="1" stop-color="#C0CDDE" stop-opacity=".65"/></linearGradient>
+ <filter id="frost" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="3.2"/></filter>
+ <filter id="shadow" x="-40%" y="-30%" width="180%" height="180%" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="2" stdDeviation="1.7" flood-color="#39485F" flood-opacity=".12"/></filter>
+ <clipPath id="cup"><path d="M17 19Q17 16 20 16H44Q47 16 47 19V28C47 38 41 44 32 44S17 38 17 28Z"/></clipPath>
+</defs>
+<ellipse cx="32" cy="58" rx="15" ry="2" fill="#778499" opacity=".09"/>
+<g filter="url(#shadow)">
+ <path d="M18 20H10V25C10 32 14 36 21 36M46 20H54V25C54 32 50 36 43 36" stroke="url(#handle)" stroke-width="5" stroke-linejoin="round"/>
+ <path d="M17 18.5H10.5M47 18.5H53.5" stroke="white" stroke-opacity=".9" stroke-width="1.1" stroke-linecap="round"/>
+ <rect x="29" y="39" width="6" height="14" rx="3" fill="url(#glass)" stroke="url(#edge)"/>
+ <path d="M31 42V51" stroke="#AFBED0" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
+ <path d="M24 49H40C43 49 45 52 45 55Q45 57 42 57H22Q19 57 19 55C19 52 21 49 24 49Z" fill="url(#glass)" stroke="url(#edge)"/>
+ <ellipse cx="32" cy="53" rx="8" ry="1.7" fill="#AFBED0" opacity=".38" filter="url(#frost)"/>
+ <!-- Color belongs to the frosted glass surface; no separate object inside. -->
+ <g clip-path="url(#cup)">
+  <path d="M17 16H47V45H17Z" fill="url(#metal)"/>
+  <ellipse cx="18" cy="19" rx="11" ry="9" fill="white" opacity=".42" filter="url(#frost)"/>
+  <ellipse cx="40" cy="34" rx="21" ry="22" fill="#7D90AC" opacity=".28" filter="url(#frost)"/>
+  <ellipse cx="28" cy="39" rx="17" ry="5" fill="#F3F7FC" opacity=".7" filter="url(#frost)"/>
+  <path d="M17 16H47V45H17Z" fill="url(#glass)" opacity=".22"/>
+  <path d="M20 20V29Q20 37 26 39" stroke="white" stroke-opacity=".68" stroke-width="2.2" stroke-linecap="round" filter="url(#frost)"/>
+  <!-- A softly embossed star sits on the front surface of the cup. -->
+  <path d="m32 22 2.5 5.1 5.6.8-4.05 3.95.95 5.6-5-2.65-5 2.65.95-5.6-4.05-3.95 5.6-.8Z" fill="#7D90AC" opacity=".18" transform="translate(0 .7)"/>
+  <path d="m32 22 2.5 5.1 5.6.8-4.05 3.95.95 5.6-5-2.65-5 2.65.95-5.6-4.05-3.95 5.6-.8Z" fill="white" fill-opacity=".88" stroke="white" stroke-opacity=".65" stroke-width=".5" stroke-linejoin="round"/>
+ </g>
+ <path d="M17 19Q17 16 20 16H44Q47 16 47 19V28C47 38 41 44 32 44S17 38 17 28Z" stroke="url(#edge)" stroke-width="1"/>
+ <path d="M20 17.5H44" stroke="white" stroke-opacity=".72" stroke-width="1" stroke-linecap="round"/>
+ <path d="M23 55.5H41" stroke="white" stroke-opacity=".7" stroke-linecap="round"/>
+</g>
 </svg>

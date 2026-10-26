@@ -1,7 +1,7 @@
 /* Register a loader that resolves to page HTML; local pages remain immediate. */
 window.novaPageLoading = (() => {
  const loaders=new Map();
- const names={home:'首页',courses:'课程',articles:'资讯',community:'论坛',events:'活动',practice:'实战',ranking:'榜单'};
+ const names={home:'首页',courses:'实战',articles:'文章',community:'论坛',events:'活动',ranking:'榜单'};
  const bar=(size='')=>`<i class="skeleton-block skeleton-line ${size}"></i>`;
  const meta=()=>`<div class="skeleton-meta"><i class="skeleton-block skeleton-avatar"></i>${bar('short')}</div>`;
  function card(page,index){

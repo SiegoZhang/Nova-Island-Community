@@ -1,4 +1,4 @@
-// Live category snapshot, 2026-09-14. Paraphrased summaries and original links; local illustration covers are prototype placeholders.
+// Live category snapshot, 2026-09-14. Paraphrased summaries and original links; sourceImage points to the original post media and is rendered directly.
 const startChannelCatalog = [
   {
     "id": "p_5ff1215cba214f349b94",
@@ -97,6 +97,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/8d4aa100183a49c8b6501b4a049e065f5ec9e575fe5a7311c300061b6d60caf6.png",
+    "image": "assets/original-media/8d4aa100183a49c8b6501b4a049e065f5ec9e575fe5a7311c300061b6d60caf6.png",
     "cover": "review"
   },
   {
@@ -112,6 +113,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/c9be726f4ebf99d3c9bc35b3567078abe0e028915cda7610a183c14d19fb33f1.png",
+    "image": "assets/original-media/c9be726f4ebf99d3c9bc35b3567078abe0e028915cda7610a183c14d19fb33f1.png",
     "cover": "memory"
   },
   {
@@ -127,6 +129,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/e4ea64a46f0ec42622c926cee92c75d72d54de3a856b201b04c3a138cf2a5e86.jpg",
+    "image": "assets/original-media/e4ea64a46f0ec42622c926cee92c75d72d54de3a856b201b04c3a138cf2a5e86.jpg",
     "cover": "writing"
   },
   {
@@ -142,6 +145,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/531fc42a09b1b8edca27010f474bc7ded1cb2b6fb2334e3e9678fd12ee14e9ab.png",
+    "image": "assets/original-media/531fc42a09b1b8edca27010f474bc7ded1cb2b6fb2334e3e9678fd12ee14e9ab.png",
     "cover": "review"
   },
   {
@@ -171,6 +175,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/0530dbeed5165c813609bfe0b9536b757f7f72deab797deb934f0bdac2c95f4a.png",
+    "image": "assets/original-media/0530dbeed5165c813609bfe0b9536b757f7f72deab797deb934f0bdac2c95f4a.png",
     "cover": "process"
   },
   {
@@ -186,6 +191,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/b7086c54c8d97cc5e84fb4dcc85ea204891000ca3c16c1e362ea20aab50e10dd.png",
+    "image": "assets/original-media/b7086c54c8d97cc5e84fb4dcc85ea204891000ca3c16c1e362ea20aab50e10dd.png",
     "cover": "review"
   },
   {
@@ -229,6 +235,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/a6f1d10b1aed5e3b229c21efa726c7ca33e0612f303be9b49ab468fdaa3703df.png",
+    "image": "assets/original-media/a6f1d10b1aed5e3b229c21efa726c7ca33e0612f303be9b49ab468fdaa3703df.png",
     "cover": "writing"
   },
   {
@@ -272,6 +279,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/6c7c8514b3d4ac05592697c0fddd8beede10b1e7f6e943b2824779403ce432f9.png",
+    "image": "assets/original-media/6c7c8514b3d4ac05592697c0fddd8beede10b1e7f6e943b2824779403ce432f9.png",
     "cover": "review"
   },
   {
@@ -287,6 +295,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/a27f14702b7760982c7f3496bb138ed0871ed874e869f897ab67eb08ebb08379.png",
+    "image": "assets/original-media/a27f14702b7760982c7f3496bb138ed0871ed874e869f897ab67eb08ebb08379.png",
     "cover": "process"
   },
   {
@@ -316,6 +325,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/ff527249c44495868b5bf9d4720217ef263005e3c00169c036d707884b12cc92.png",
+    "image": "assets/original-media/ff527249c44495868b5bf9d4720217ef263005e3c00169c036d707884b12cc92.png",
     "cover": "review"
   },
   {
@@ -331,6 +341,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/2f1668e29716fc60cf6bd9fc9e5544f84420e9fb0d0c0fdfaf6d104f04f1ef13.png",
+    "image": "assets/original-media/2f1668e29716fc60cf6bd9fc9e5544f84420e9fb0d0c0fdfaf6d104f04f1ef13.png",
     "cover": "review"
   },
   {
@@ -346,6 +357,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/2eac8a8fdbf26e257b43a1ea37ce3e99dfab50db6d2f38083f1d6015e9bf57f5.png",
+    "image": "assets/original-media/2eac8a8fdbf26e257b43a1ea37ce3e99dfab50db6d2f38083f1d6015e9bf57f5.png",
     "cover": "process"
   },
   {
@@ -375,6 +387,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/76da364fc1ab0526bf05e5c8ec10a9455a5c920dbbb368632c476799b76ea23e.png",
+    "image": "assets/original-media/76da364fc1ab0526bf05e5c8ec10a9455a5c920dbbb368632c476799b76ea23e.png",
     "cover": "process"
   },
   {
@@ -390,6 +403,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/ea6de27f8cc9931c525b49e087213e0ddc0e9993be3d4f4ad0a086849f8a2215.png",
+    "image": "assets/original-media/ea6de27f8cc9931c525b49e087213e0ddc0e9993be3d4f4ad0a086849f8a2215.png",
     "cover": "review"
   },
   {
@@ -405,6 +419,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/d6830211b099d04a5b3c3fc4d9b97d0c5436bb732cf2770ff05c34b0109a02a1.png",
+    "image": "assets/original-media/d6830211b099d04a5b3c3fc4d9b97d0c5436bb732cf2770ff05c34b0109a02a1.png",
     "cover": "review"
   },
   {
@@ -420,6 +435,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/896a45473afc0db8c765bce7cc483ca6ee956751e654a260e76a1815737561b1.png",
+    "image": "assets/original-media/896a45473afc0db8c765bce7cc483ca6ee956751e654a260e76a1815737561b1.png",
     "cover": "writing"
   },
   {
@@ -435,6 +451,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/a6ee116997278ad1863d8b1246a0f9c1ae2dce2e4b14da85252c2681e20bee96.png",
+    "image": "assets/original-media/a6ee116997278ad1863d8b1246a0f9c1ae2dce2e4b14da85252c2681e20bee96.png",
     "cover": "review"
   },
   {
@@ -450,6 +467,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/e3c13f08a5ecf81d3e1ff1d194738ff05de146e83bbb071a7a903240357051b2.png",
+    "image": "assets/original-media/e3c13f08a5ecf81d3e1ff1d194738ff05de146e83bbb071a7a903240357051b2.png",
     "cover": "process"
   },
   {
@@ -465,6 +483,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/4546b3500673a83ca059298aecbe8a20c7824c8ffbedf4e2ec8352ab36560221.png",
+    "image": "assets/original-media/4546b3500673a83ca059298aecbe8a20c7824c8ffbedf4e2ec8352ab36560221.png",
     "cover": "process"
   },
   {
@@ -480,6 +499,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/3c125ff503c9483cc811802ffc1a71e3f1bf8d29590966a5354f4f0504d49c89.png",
+    "image": "assets/original-media/3c125ff503c9483cc811802ffc1a71e3f1bf8d29590966a5354f4f0504d49c89.png",
     "cover": "memory"
   },
   {
@@ -495,6 +515,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/baba88ff989b20d83db26dbeac478eff61a4afadc2729913ed4110be60d5981b.png",
+    "image": "assets/original-media/baba88ff989b20d83db26dbeac478eff61a4afadc2729913ed4110be60d5981b.png",
     "cover": "memory"
   },
   {
@@ -510,6 +531,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/b513302527c9d5814196a1826bc48f6fc6b8f702892762cd605f8311c5a80bec.png",
+    "image": "assets/original-media/b513302527c9d5814196a1826bc48f6fc6b8f702892762cd605f8311c5a80bec.png",
     "cover": "review"
   },
   {
@@ -525,6 +547,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/7b5e777b29890c41e72de83ff587576ddd3fe36792de7522d4a33e81cbdfe9db.png",
+    "image": "assets/original-media/7b5e777b29890c41e72de83ff587576ddd3fe36792de7522d4a33e81cbdfe9db.png",
     "cover": "review"
   },
   {
@@ -540,6 +563,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/b5e0fc454feea2d5ed520d05f0f2e2101651a0ee93314fc7e73ad747a2f3fc84.png",
+    "image": "assets/original-media/b5e0fc454feea2d5ed520d05f0f2e2101651a0ee93314fc7e73ad747a2f3fc84.png",
     "cover": "memory"
   },
   {
@@ -555,6 +579,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/d18c0a1f875d1605d6018abe46299d811c3baa32e2bb6d69977496afbd4c81c9.png",
+    "image": "assets/original-media/d18c0a1f875d1605d6018abe46299d811c3baa32e2bb6d69977496afbd4c81c9.png",
     "cover": "review"
   },
   {
@@ -570,6 +595,7 @@ const startChannelCatalog = [
     "label": "文章",
     "meta": "从零入门",
     "sourceImage": "https://novaisland.cn/media/import/zsxq/af337e1c27f20ed364b80dba8228ee12843909e5248194e571dd215073cc2f1a.png",
+    "image": "assets/original-media/af337e1c27f20ed364b80dba8228ee12843909e5248194e571dd215073cc2f1a.png",
     "cover": "review"
   }
 ];

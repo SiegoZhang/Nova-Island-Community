@@ -11,7 +11,7 @@
 | 筛选与玻璃弹层 | assets/feed-filters.css/js |
 | 标题、滚动与底部边缘 | assets/section-headings.css/js、scroll-glass.css/js |
 | 阅读与作者 | article.html、assets/article-contents.css、article-interactions.css/js、member-profiles.css/js |
-| 学习 | course.html、assets/guide-progress.css/js、site-tour.css/js |
+| 学习 | assets/guide-progress.css/js、site-tour.css/js |
 | Token 榜 | assets/ranking.css/js、ranking-data.js；数据快照 2026-09-20 |
 | 加载与空状态 | assets/page-loading.css/js、home.css/js |
 

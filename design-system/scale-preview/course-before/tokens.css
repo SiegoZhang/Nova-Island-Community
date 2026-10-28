@@ -1,0 +1,136 @@
+/* Nova Island product tokens. Scoped independently from brand UI.
+   Three tiers (TOKEN-PROPOSAL.md T1):
+   1. Primitive  — raw values. Only this file references them.
+   2. Semantic   — roles with light and dark values. Components use only this tier.
+   3. Component  — local knobs inside each component file, referencing semantic tokens.
+   Expressive palettes (--illus-*, --chart-*) serve illustrations and data only. */
+
+/* ---------- 1. Primitive ---------- */
+.nova-ds {
+ /* Folder blue */
+ --blue-50:#F2F5FF; --blue-100:#E0E8FF; --blue-200:#BDCDFF; --blue-300:#8FABFF;
+ --blue-400:#5C84FF; --blue-500:#0140FF; --blue-600:#0033CC; --blue-700:#082A99;
+ /* Neutral */
+ --neutral-0:#FFFFFF; --neutral-50:#F7F7F9; --neutral-100:#F2F2F2; --neutral-200:#DEDEE0; --neutral-300:#CCCCCF;
+ --neutral-400:#949494; --neutral-600:#626262; --neutral-800:#333333; --neutral-900:#000000;
+ /* Type scale: size and line height per role (SCALE-PROPOSAL D1) */
+ --type-micro:11px; --type-micro-lh:16px;
+ --type-caption:12px; --type-caption-lh:18px;
+ --type-small:13px; --type-small-lh:20px;
+ --type-body:14px; --type-body-lh:1.65;
+ --type-body-lg:16px; --type-body-lg-lh:1.75;
+ --type-title-sm:18px; --type-title-sm-lh:26px;
+ --type-title-md:20px; --type-title-md-lh:28px;
+ --type-title-lg:24px; --type-title-lg-lh:32px;
+ --type-page:30px; --type-page-lh:42px;
+ --type-display:40px; --type-display-lh:48px;
+ /* Spacing */
+ --space-0:0px; --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:20px; --space-6:24px; --space-8:32px; --space-10:40px; --space-12:48px; --space-16:64px;
+ /* Radius */
+ --radius-none:0px; --radius-xs:4px; --radius-sm:8px; --radius-md:12px; --radius-lg:20px; --radius-card:24px; --radius-full:999px;
+}
+
+/* ---------- 2. Semantic ---------- */
+.nova-ds {
+ /* Accent */
+ --accent:var(--blue-500); --accent-text:var(--blue-600); --accent-surface:var(--blue-100); --accent-surface-soft:var(--blue-50); --accent-border:var(--blue-200);
+ --text-link:var(--accent-text); --text-on-accent:var(--neutral-0);
+ --focus-ring:var(--accent); --progress-track:var(--accent-border); --progress-fill:var(--accent);
+ /* Surfaces */
+ --surface-canvas:var(--neutral-50); --surface-default:var(--neutral-0); --surface-secondary:var(--neutral-100); --surface-hover:var(--neutral-50);
+ /* Text */
+ --text-heading:var(--neutral-900); --text-primary:var(--neutral-800); --text-secondary:var(--neutral-600); --text-disabled:var(--neutral-400);
+ /* Borders */
+ --border-strong:var(--neutral-300); --border-default:var(--neutral-200); --border-subtle:var(--neutral-100); --border-width:1px;
+ /* Actions */
+ --action-primary:var(--neutral-900); --action-primary-hover:var(--neutral-800); --text-on-action:var(--neutral-0);
+ /* Status */
+ --status-success:var(--badge-green-text); --status-success-bg:var(--badge-green-bg); --status-success-text:var(--badge-green-text);
+ --status-danger:#EE8C94; --status-danger-bg:#FFF5F6; --status-danger-text:#A23845;
+ --status-info:var(--text-secondary); --status-info-bg:var(--surface-secondary);
+ /* Reading reactions (T10) */
+ --reaction-liked:#BF2531; --reaction-saved-icon:#F5C842; --reaction-saved-icon-deep:#E6AE25; --reaction-saved-text:#80631B; /* Typography */
+ --font-sans:"Inter","PingFang SC","Microsoft YaHei",sans-serif; --font-mono:"SFMono-Regular",Consolas,monospace;
+ --weight-regular:400; --weight-medium:500; --weight-semibold:600; --line-tight:1.25; --tracking-heading:-.035em;
+ /* Layout */
+ --shell-gap:6px; --card-padding:24px; --card-gap:16px; --orb-size:96px;
+ --grid-max:1120px; --sidebar-width:224px;
+ --control-sm:32px; --control-md:40px; --control-lg:48px; --motion-fast:150ms;
+}
+.nova-ds[data-theme="dark"] {
+ --accent:var(--blue-300); --accent-text:var(--blue-200);
+ --accent-surface-soft:color-mix(in srgb,var(--blue-500) 10%,var(--surface-default));
+ --accent-surface:color-mix(in srgb,var(--blue-500) 20%,var(--surface-default));
+ --accent-border:color-mix(in srgb,var(--blue-400) 50%,var(--surface-default));
+ --text-on-accent:#1A1A18;
+ --surface-canvas:#242424; --surface-default:#191919; --surface-secondary:#242424; --surface-hover:#333333;
+ --text-heading:#FFFFFF; --text-primary:#DEDEE0; --text-secondary:#B3B3AC;
+ --border-strong:#949494; --border-default:#707070; --border-subtle:#333333;
+ --action-primary:#F7F7F5; --action-primary-hover:#DEDED8; --text-on-action:#1A1A18;
+ --status-danger:#EE8C94; --status-danger-bg:#322326; --status-danger-text:#F3AEB4; --status-success-text:var(--badge-green-text);
+ --reaction-liked:#F3AEB4; --reaction-saved-text:#F0D77E;
+}
+
+/* Soft category badge palettes, with readable text in both themes. */
+.nova-ds {
+ --badge-green-bg:#EAF6EF; --badge-green-text:#276545;
+ --badge-red-bg:#F9D8C7; --badge-red-text:#8C4029;
+ --badge-blue-bg:var(--accent-surface); --badge-blue-text:var(--accent-text);
+ --badge-amber-bg:#FFF4DE; --badge-amber-text:#845B16;
+ --badge-purple-bg:#F0E8FA; --badge-purple-text:#65418B;
+ --badge-yellow-bg:#FFF3C9; --badge-yellow-text:#80631B;
+}
+.nova-ds[data-theme="dark"] {
+ --badge-green-bg:#203B2D; --badge-green-text:#9DDBB5;
+ --badge-red-bg:#684332; --badge-red-text:#FFDDCC;
+ --badge-blue-bg:var(--accent-surface); --badge-blue-text:var(--accent-text);
+ --badge-amber-bg:#42361E; --badge-amber-text:#EDCC89;
+ --badge-purple-bg:#352740; --badge-purple-text:#D8B9F2;
+ --badge-yellow-bg:#40371F; --badge-yellow-text:#F0D77E;
+}
+
+/* Text-only card surfaces match their category badge hue; hover uses the adjacent shade. */
+.nova-ds{
+ --article-surface-blue:var(--accent-surface-soft); --article-surface-yellow:#FFF6DF; --article-surface-red:#FFF3EB;
+ --article-surface-blue-hover:#EAF0FF; --article-surface-yellow-hover:#FFF0CC; --article-surface-red-hover:#FFEBDD;
+ --feed-surface-neutral-hover:#F0F0F4;
+ /* Post actions stay distinct above the hovered card surface. */
+ --forum-action-on-card:#E6E6EA;
+}
+.nova-ds[data-theme="dark"]{
+ --article-surface-blue:var(--accent-surface-soft); --article-surface-yellow:#393324; --article-surface-red:#442E25;
+ --article-surface-blue-hover:#1C2747; --article-surface-yellow-hover:#443C28; --article-surface-red-hover:#51362B;
+ --feed-surface-neutral-hover:#3B3B3F;
+ --forum-action-on-card:#45454B;
+}
+
+/* ---------- Expressive palettes (T12) ---------- */
+.nova-ds {
+ /* Folder illustration */
+ --illus-blue:var(--blue-500); --illus-blue-depth:var(--blue-700);
+ /* Content cover fallback */
+ --illus-cover-ink:#24354c; --illus-cover-blue:#e9effa;
+ /* Trophy stars */
+ --illus-star-gold-light:#FFF4C7; --illus-star-gold:#DFB452;
+ /* Mini guide previews */
+ --illus-mini-ink:#7E8389;
+ /* Data: one hue per tool */
+ --chart-codex:var(--blue-400); --chart-codex-ink:var(--neutral-900);
+ --chart-claude:#D99B80; --chart-claude-soft:#C7A794; --chart-claude-bright:#EB976D; --chart-claude-ink:#542712;
+}
+
+/* ---------- Visual batch (T8, T9, T11) ---------- */
+.nova-ds {
+ --shadow-color:9 21 64;
+ --shadow-sm:0 1px 3px rgb(var(--shadow-color) / .08);
+ --shadow-md:0 4px 16px rgb(var(--shadow-color) / .08);
+ --shadow-lg:0 12px 40px rgb(var(--shadow-color) / .12);
+ --glass-fill:color-mix(in srgb,var(--surface-default) 62%,transparent);
+ --glass-fill-strong:color-mix(in srgb,var(--surface-default) 78%,transparent);
+ --glass-blur:blur(16px) saturate(115%);
+ --glass-blur-strong:blur(24px) saturate(115%);
+ --fill-subtle:color-mix(in srgb,var(--text-heading) 3%,var(--surface-default));
+ --fill-hover:color-mix(in srgb,var(--text-heading) 6%,var(--surface-default));
+ --fill-selected:color-mix(in srgb,var(--text-heading) 10%,var(--surface-default));
+ --fill-border:color-mix(in srgb,var(--text-heading) 20%,var(--surface-default));
+}

@@ -11,13 +11,13 @@ html,body{margin:0;padding:0}body{font-family:"Inter","PingFang SC","Microsoft Y
 .main-columns>.main-primary{grid-column:2}
 .main-columns>.main-context{grid-column:3}
 .main-columns>.article-outline{position:sticky;top:var(--space-8)}
-.three-column-main>.main-below{margin-left:calc(var(--main-local-width) + var(--main-column-gap))}
+
 @media(min-width:1440px){.nova-ds{--main-local-width:180px;--main-context-width:336px}}
 @media(max-width:1100px){
  .nova-ds .main-columns{grid-template-columns:minmax(0,1fr);gap:var(--space-8)}
  .main-columns>.main-primary,.main-columns>.main-context,.main-columns>.main-local{grid-column:1}
  .main-columns>.main-empty{display:none}
  .main-columns>.article-outline{position:static}
- .three-column-main>.main-below{margin-left:0}
+ 
 }
 @media(max-width:760px){.nova-ds .three-column-main{padding:var(--space-6) var(--space-4) var(--space-12)}}

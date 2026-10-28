@@ -4,7 +4,7 @@
 
 ## 组件库与 Agent 使用
 
-入口 [组件库](ai-community.html)，基础规范移至 [foundations.html](foundations.html)。当前按六类组织 **50 个组件族、199 个可视形态与状态**；逐项索引见 [COMPONENTS.md](COMPONENTS.md)。
+入口 [组件库](ai-community.html)，基础规范移至 [foundations.html](foundations.html)。当前按六类组织 **47 个组件族、186 个可视形态与状态**；逐项索引见 [COMPONENTS.md](COMPONENTS.md)。
 
 开发时先在组件库搜索目标组件，再阅读它的使用场景、结构尺寸、属性、交互与键盘约定。选择需要的形态复制结构代码，并打开对应原型 CSS / JS 实现。`library/catalog.json` 提供相同的机器可读契约，Agent 应按组件 id 定位，避免全文猜测。
 
@@ -76,7 +76,7 @@ Token 分为原始值、语义、组件三层，另有插画与图表用的表�
 | 发布 | forum.js、articles.js | 论坛标题最多 200 字、正文 50000；草稿本地存储；资讯发布需要本地 admin 角色样例 |
 | 阅读 | article-contents.css、article-interactions.css/js、home.css | 目录、返回、赞藏、阅读数、作者卡共同构成阅读界面 |
 | 作者资料 | member-profiles.css/js | 作者入口与资料页复用成员信息 |
-| 学习进度 | guide-progress.css/js、course.html | 当前、完成、未解锁分开；课程与指南不是同一进度数据 |
+| 学习进度 | guide-progress.css/js | 当前、完成、未解锁分开 |
 | 榜单 | ranking.css/js、ranking-data.js | 工具 / 模型 / 月份筛选、数值、分布、排行；快照日期不能当实时状态 |
 | 加载与空状态 | page-loading.css/js、home.css/js | 明确无内容原因及可继续的入口 |
 

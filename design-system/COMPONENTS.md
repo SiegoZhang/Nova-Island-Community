@@ -1,6 +1,6 @@
 # 组件索引 v0.5
 
-50 个组件族，199 个可视形态与状态。详细用法与代码以可视页面和 `library/catalog.json` 为准。
+47 个组件族，186 个可视形态与状态。详细用法与代码以可视页面和 `library/catalog.json` 为准。
 
 ## 基础控件
 
@@ -35,7 +35,7 @@
 | [图文内容卡](ai-community.html#content-card) | 带封面、纯文字 / 蓝、纯文字 / 黄、纯文字 / 红、悬停、长标题 | catalog.js, home.css, article-interactions.css |
 | [论坛帖子卡](ai-community.html#forum-post) | 默认、悬停、长内容、草稿 | forum.css, forum.js, article-interactions.css |
 | [点赞、评论与收藏](ai-community.html#reactions) | 帖子默认、已点赞 / 已收藏、卡片紧凑、详情、悬停 / 焦点 | forum.js, forum.css, article-interactions.css |
-| [作者、阅读数与元信息](ai-community.html#metadata) | 文章元信息、课程信息、长姓名 | home.css, article-interactions.css, course-detail.css |
+| [作者、阅读数与元信息](ai-community.html#metadata) | 文章元信息、长姓名 | home.css, article-interactions.css |
 | [作者信息卡](ai-community.html#author-card) | 文章作者、帖子作者、更多作品 | home.js, home.css, forum.js, forum.css |
 | [成员身份与统计](ai-community.html#member-profile) | 普通成员、作者主页、没有内容 | member-profiles.css, member-profiles.js |
 | [活跃讨论者](ai-community.html#active-members) | 成员列表、悬停、键盘焦点 | forum.js, feed-filters.css |
@@ -48,12 +48,9 @@
 
 | 组件 | 形态与状态 | 实现来源 |
 | --- | --- | --- |
-| [课程模块](ai-community.html#course-modules) | 已完成 / 展开、进行中 / 展开、未解锁 / 展开、收起 | styles.css, course-detail.css, course.js |
-| [课时条目](ai-community.html#lessons) | 已完成、当前课时、可学习、未解锁、焦点 | styles.css, course.js |
 | [进度与继续学习](ai-community.html#progress) | 未开始、进行中、全部完成、继续学习卡、指南继续卡 | styles.css, guide-progress.css, guide-progress.js |
 | [入门指南文件夹](ai-community.html#guide-folder) | 开始旅程、进行中、已完成 | guide-progress.css, guide-progress.js, home.css |
 | [学习周与任务](ai-community.html#journey-week) | 当前周、未开始、已完成、单个任务、任务完成 | guide-progress.css, guide-progress.js |
-| [课程讲师卡](ai-community.html#instructor) | 讲师、学习要求、课程概览 | styles.css, course-detail.css |
 | [功能导览](ai-community.html#onboarding) | 邀请卡、第一步、最后一步 | site-tour.css, site-tour.js |
 | [学习动态球体](ai-community.html#fluid-orb) | 动态、暂停、无 WebGL 回退 | styles.css, orb.js |
 

@@ -3,11 +3,11 @@
 独立入口：index.html。课程、文章和 assets 均从设计系统复制到本目录后独立维护，不引用设计系统页面或资源。
 
 - index.html：首页与 sidebar，个人中心和入门指南。
-- course.html、article.html：原型内独立维护的课程和文章详情，使用与首页一致的产品导航及个人菜单。
+- article.html：原型内独立维护的文章详情，使用与首页一致的产品导航及个人菜单。（课程详情页 course.html 不在真实产品中，已于 2026-10-29 删除。）
 - assets/：原型自己的样式、交互脚本和设计变量副本。
 - 论坛暂显示空状态；旧 UX 对照原型副本已删除。
 
-设计系统唯一入口为 ../../design-system/index.html，规范、组件组合及课程和文章示例均在 design-system/ 维护。上一级 index.html、course.html、article.html 仅保留兼容跳转。原型使用本目录独立资源，设计系统更新不会自动同步到原型。
+设计系统唯一入口为 ../../design-system/index.html，规范与组件组合均在 design-system/ 维护。上一级 index.html、article.html 仅保留兼容跳转。原型使用本目录独立资源，设计系统更新不会自动同步到原型。
 
 上一级 home.html 保留为旧预览地址的兼容副本，其 base 指向本目录；不跳转设计系统。
 

@@ -66,3 +66,15 @@
 .decision h3 span{font-size:var(--type-caption);font-weight:500;color:var(--accent-text);font-variant-numeric:tabular-nums;flex-shrink:0}
 .decision p{font-size:var(--type-body-lg);line-height:var(--type-body-lg-lh);margin:0 0 12px;color:var(--text-primary)}
 .decision .decision-meta{font-size:var(--type-caption);line-height:var(--type-caption-lh);color:var(--text-secondary);margin:16px 0 0}
+/* Placeholder slots while a foundations page is being filled in. */
+.slot{border:1px dashed var(--border-strong);border-radius:var(--radius-md);padding:var(--space-4) var(--space-5);margin:var(--space-3) 0 var(--space-6);background:var(--surface-hover)}
+.slot p{margin:0;font-size:var(--type-small);line-height:var(--type-small-lh);color:var(--text-secondary)}
+.slot b{display:inline-block;margin-right:var(--space-2);color:var(--text-primary);font-weight:500}
+.slot .slot-have{margin-top:var(--space-2)}
+.dodont{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4);margin:var(--space-3) 0 var(--space-6)}
+.dodont>div>b{display:block;font-size:var(--type-caption);font-weight:500;padding-bottom:var(--space-2);border-bottom:2px solid}
+.dodont .do>b{color:var(--status-success-text);border-color:var(--status-success)}
+.dodont .dont>b{color:var(--status-danger-text);border-color:var(--status-danger)}
+.dodont .slot{margin-bottom:0}
+.manual-nav a.manual-sub{padding-left:24px;font-size:var(--type-caption)}
+@media(max-width:760px){.dodont{grid-template-columns:1fr}}

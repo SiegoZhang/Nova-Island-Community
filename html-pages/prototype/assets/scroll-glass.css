@@ -5,7 +5,7 @@
  --glass-direction:to bottom;
  position:fixed;
  z-index:10;
- border-radius:0 0 var(--shell-radius) var(--shell-radius);
+ border-radius:0 0 var(--radius-card) var(--radius-card);
  pointer-events:none;
  user-select:none;
  opacity:var(--glass-opacity);
@@ -15,5 +15,5 @@
  -webkit-mask-image:linear-gradient(var(--glass-direction),transparent 0%,rgb(0 0 0 / .06) 18%,rgb(0 0 0 / .24) 40%,rgb(0 0 0 / .55) 65%,rgb(0 0 0 / .84) 84%,#000 100%);
  mask-image:linear-gradient(var(--glass-direction),transparent 0%,rgb(0 0 0 / .06) 18%,rgb(0 0 0 / .24) 40%,rgb(0 0 0 / .55) 65%,rgb(0 0 0 / .84) 84%,#000 100%);
 }
-.workspace-scroll-glass--top{--glass-direction:to top;border-radius:var(--shell-radius) var(--shell-radius) 0 0}
+.workspace-scroll-glass--top{--glass-direction:to top;border-radius:var(--radius-card) var(--radius-card) 0 0}
 @media print{.workspace-scroll-glass{display:none}}

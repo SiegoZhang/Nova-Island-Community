@@ -140,7 +140,7 @@
       "source": [
         "styles.css"
       ],
-      "size": "基础圆角 8px（--radius-md）；左右 padding 12 / 16 / 20px。页面胶囊动作可有明确覆盖。",
+      "size": "基础圆角 8px（--radius-sm）；左右 padding 12 / 16 / 20px。页面胶囊动作可有明确覆盖。",
       "layout": "grid",
       "status": "产品已有"
     },

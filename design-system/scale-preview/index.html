@@ -100,7 +100,8 @@ aside h2{font-size:14px;margin:0;color:var(--ink)}
 </main>
 <script>
 const PROTO = new URL('../../html-pages/prototype/index.html', location.href).href;
-const BEFORE = new URL('before/', location.href).href;
+// ?before=token-before/ compares against another snapshot folder.
+const BEFORE = new URL(new URLSearchParams(location.search).get('before') || 'before/', location.href).href;
 const KIND = {'font-size': '字号', 'radius': '圆角', 'spacing': '间距', 'breakpoint': '断点', 'color': '颜色', 'font-weight': '字重'};
 const $ = s => document.querySelector(s);
 const frames = {before: $('#before'), after: $('#after')};

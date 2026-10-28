@@ -1,0 +1,215 @@
+/* Full-width feeds use the same column rhythm as the start channel. */
+#content>.forum-page>.forum-layout{display:block;grid-template-columns:1fr}
+#content>.forum-page .channel-masonry{grid-template-columns:repeat(3,minmax(0,1fr))}
+.feed-filter-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px;min-height:40px}
+.feed-filter-selection{display:flex;align-items:center;flex-wrap:wrap;gap:8px;min-width:0}
+.feed-filter-chip,.feed-filter-trigger{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:36px;padding:8px 12px;border:1px solid var(--border-subtle);border-radius:var(--radius-full);background:var(--surface-default);color:var(--text-secondary);font:inherit;font-size:12px;cursor:pointer}
+.feed-filter-chip{border-color:var(--text-heading);color:var(--text-heading)}
+.feed-filter-chip>span{display:grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--text-heading);color:var(--surface-default);font-size:13px;line-height:1}
+.feed-filter-trigger:hover,.feed-filter-trigger[aria-expanded="true"]{background:var(--surface-hover);color:var(--text-heading)}
+.feed-filter-links{display:flex;gap:16px;white-space:nowrap;font-size:12px;color:var(--text-secondary)}
+.feed-filter-popover{position:fixed;inset:auto;margin:0;padding:0;border:1px solid var(--border-subtle);border-radius:20px;background:var(--surface-default);color:var(--text-heading);box-shadow:0 12px 40px #00000018;max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);overflow:auto}
+.feed-filter-popover::backdrop{background:transparent}
+.feed-filter-search{display:flex;align-items:center;gap:8px;padding:16px;border-bottom:1px solid var(--border-subtle);color:var(--text-secondary)}
+.feed-filter-search input{width:100%;min-width:0;border:0;outline:none;background:transparent;color:var(--text-heading);font:inherit;font-size:13px}
+.feed-filter-search:focus-within{box-shadow:none}
+.feed-filter-options{padding:8px;max-height:300px;overflow-y:auto;overscroll-behavior:contain}
+.feed-filter-option{display:flex;align-items:center;gap:12px;min-height:42px;padding:8px 12px;border-radius:12px;font-size:13px;cursor:pointer}
+.feed-filter-option:hover{background:var(--tag-fill)}
+.feed-filter-option:has(input:checked){background:var(--surface-secondary);font-weight:var(--weight-medium)}
+.feed-filter-option input{width:16px;height:16px;margin:0;accent-color:var(--nova-accent)}
+.feed-filter-popover footer{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-top:1px solid var(--border-subtle)}
+.feed-filter-popover footer>button:first-child{border:0;background:transparent;color:var(--text-secondary);font:inherit;font-size:12px;cursor:pointer}
+.feed-filter-popover footer>.ds-button{border-radius:var(--radius-full);font-size:12px;min-height:34px;padding:8px 16px}
+.feed-filter-empty{padding:24px 12px;text-align:center;font-size:13px;color:var(--text-secondary)}
+.feed-filter-trigger:focus-visible,.feed-filter-chip:focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px}
+@media(max-width:1100px){#content>.forum-page .channel-masonry{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.feed-filter-toolbar{align-items:flex-start;flex-direction:column}.feed-filter-links{gap:12px}}
+
+/* Keep the original flow position; sticky takes effect only at the top boundary. */
+#content>.forum-page .feed-filter-toolbar{
+ position:sticky;
+ top:var(--page-sticky-inset);
+ z-index:3;
+ background:transparent;
+}
+#content>.forum-page.filter-docked .feed-filter-toolbar{
+ padding-right:156px;
+ flex-direction:row;
+ align-items:center;
+}
+#content>.forum-page.filter-docked .feed-filter-selection{
+ flex-wrap:nowrap;
+ overflow-x:auto;
+ scrollbar-width:none;
+}
+#content>.forum-page.filter-docked .feed-filter-selection::-webkit-scrollbar{display:none}
+#content>.forum-page.filter-docked .feed-filter-selection>button{flex-shrink:0;white-space:nowrap}
+@media(max-width:760px){
+ #content>.forum-page .feed-filter-toolbar{top:var(--page-sticky-inset)}
+ #content>.forum-page.filter-docked .feed-filter-toolbar{padding-right:132px}
+ #content>.forum-page.filter-docked .feed-filter-links{display:none}
+}
+
+/* Forum: an independent two-column-wide reading list and a stationary third column. */
+#content.section-index>.forum-discussions>.forum-layout{
+ display:grid;
+ grid-template-columns:minmax(0,2fr) minmax(0,1fr);
+ gap:32px;
+ overflow:hidden;
+ padding-top:0;
+ align-items:start;
+}
+#content.section-index>.forum-discussions .forum-feed-scroll{
+ height:100%;
+ min-height:0;
+ overflow-x:hidden;
+ overflow-y:auto;
+ padding-top:0;
+}
+#content>.forum-discussions.filter-docked .feed-filter-toolbar{padding-right:0}
+.forum-activity{padding-top:var(--feed-heading-space);min-width:0;max-height:100%;overflow-y:auto;scrollbar-width:none}
+.forum-activity>section{padding:24px;border:1px solid var(--border-subtle);border-radius:var(--radius-card);background:var(--surface-default)}
+.forum-activity h2{margin:0;font-size:16px;line-height:1.6;font-weight:500}
+.forum-activity header p{margin:8px 0 20px;font-size:11px;line-height:1.6;color:var(--text-tertiary)}
+.forum-activity ol{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+.forum-activity li a{display:flex;align-items:center;gap:8px;min-width:0;color:var(--text-heading)}
+.forum-activity .card-avatar{flex:none;width:32px;height:32px}
+.forum-activity-person{display:grid;gap:4px;flex:1;min-width:0}
+.forum-activity-person strong{font-size:12px;font-weight:500}
+.forum-activity-person>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:var(--font-sm);color:var(--text-secondary)}
+.forum-activity small{flex:none;font-size:var(--font-sm);color:var(--text-secondary)}
+.forum-activity li a:hover .forum-activity-person strong{text-decoration:none}
+.forum-activity li a:focus-visible{outline:2px solid var(--focus-ring);outline-offset:4px;border-radius:4px}
+@media(max-width:760px){
+ #content.section-index>.forum-discussions>.forum-layout{display:block;overflow-y:auto;padding-top:0}
+ #content.section-index>.forum-discussions .forum-feed-scroll{height:auto;overflow:visible;padding-top:0}
+ #content>.forum-discussions.filter-docked .feed-filter-toolbar{padding-right:132px}
+ .forum-activity{padding-top:24px;max-height:none;overflow:visible;padding-bottom:24px}
+}
+
+.forum-personal-links{display:grid;gap:4px;margin-top:16px}
+.forum-personal-links a{display:flex;align-items:center;justify-content:space-between;min-height:44px;padding:12px 16px;border-radius:12px;color:var(--text-secondary);font-size:13px}
+.forum-personal-links a:hover{background:var(--surface-hover);color:var(--text-heading)}
+.forum-personal-links a:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+
+
+.feed-filter-mine[aria-pressed="true"],.feed-filter-featured[aria-pressed="true"]{border-color:var(--text-heading);color:var(--text-heading);font-weight:var(--weight-semibold)}
+
+/* Search focus stays visually quiet, without an underline or input box. */
+.nova-ds .feed-filter-search input:focus,
+.nova-ds .feed-filter-search input:focus-visible{outline:none;box-shadow:none}
+
+/* Mouse selection stays clean; keyboard focus uses the theme color. */
+.nova-ds .feed-filter-option input:focus{outline:none}
+.feed-filter-option:has(input:focus-visible){outline:2px solid var(--focus-ring);outline-offset:-2px}
+
+/* Explicit white checkmark avoids platform-dependent native tick colors. */
+.feed-filter-option input{
+ appearance:none;-webkit-appearance:none;display:grid;place-content:center;
+ flex:0 0 16px;border:1px solid var(--border-control);border-radius:4px;
+ background:var(--surface-default);cursor:pointer;
+}
+.feed-filter-option input:checked{background:var(--action-primary);border-color:var(--action-primary)}
+.feed-filter-option input:checked::after{
+ content:"";width:8px;height:4px;border-left:2px solid var(--text-on-action);border-bottom:2px solid var(--text-on-action);
+ transform:translateY(-1px) rotate(-45deg);
+}
+
+/* Active discussants use the same yellow hover surface as forum posts. */
+.forum-activity li a{padding:12px;margin:-8px;border-radius:12px;transition:background-color 160ms ease}
+.forum-activity li a:hover,.forum-activity li a:focus-visible{background:var(--article-surface-yellow);text-decoration:none}
+@media(prefers-reduced-motion:reduce){.forum-activity li a{transition:none}}
+
+@media(pointer:coarse),(max-width:760px){
+ .feed-filter-trigger,.feed-filter-chip,.feed-filter-option,
+ .feed-filter-popover footer>button{min-height:44px}
+}
+
+/* One capsule groups the opener and removable selections; buttons remain siblings. */
+.feed-filter-group{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid var(--border-subtle);border-radius:var(--radius-full);background:var(--surface-default);max-width:100%;min-width:0}
+.feed-filter-group:has(.feed-filter-chip){border-color:var(--border-default)}
+.feed-filter-group>.feed-filter-trigger{flex-shrink:0;border:0;background:transparent;min-height:30px;padding:4px 12px;white-space:nowrap}
+.feed-filter-group>.feed-filter-chip{flex-shrink:0;border:0;min-height:30px;padding:4px 12px;background:var(--surface-secondary);color:var(--text-heading);white-space:nowrap;backdrop-filter:none;-webkit-backdrop-filter:none}
+.feed-filter-group>.feed-filter-trigger:hover,.feed-filter-group>.feed-filter-trigger[aria-expanded="true"],.feed-filter-group>.feed-filter-chip:hover{background:var(--surface-hover)}
+.feed-filter-group>.feed-filter-chip>span{width:14px;height:14px;font-size:12px}
+.feed-filter-group{flex-wrap:wrap;border-radius:20px}
+#content>.forum-page.filter-docked .feed-filter-group{flex-shrink:0;flex-wrap:nowrap;max-width:none}
+.feed-filter-group>button:focus-visible{outline-offset:-2px}
+@media(pointer:coarse),(max-width:760px){.feed-filter-group>.feed-filter-trigger,.feed-filter-group>.feed-filter-chip{min-height:38px}}
+
+/* Complete selected labels collapse into +N instead of scrolling or wrapping. */
+.feed-filter-selection{min-width:0;max-width:100%;flex-wrap:nowrap!important;overflow:hidden!important}
+.feed-filter-selection>.feed-filter-group{flex:0 1 auto;min-width:110px;flex-wrap:nowrap!important;overflow:hidden}
+.feed-filter-selection>button{flex-shrink:0}
+.feed-filter-group>[hidden]{display:none!important}
+#content>.forum-page.filter-docked .feed-filter-group{flex-shrink:1;max-width:100%}
+.ranking-filter-left{overflow:hidden;flex:1;min-width:0}
+.ranking-filter-control:has(.feed-filter-group){flex:0 1 auto;min-width:0}
+.ranking-filter-control:has(.feed-filter-group):not(:has([data-ranking-remove])){flex-shrink:0}
+.ranking-filter-control:has([data-ranking-remove]){min-width:110px}
+.ranking-filter-control .feed-filter-group{box-sizing:border-box;max-width:100%;overflow:hidden}
+.ranking-sticky-filters{width:100%}
+
+/* Empty filter capsules hug their opener rather than reserving chip space. */
+.feed-filter-selection>.feed-filter-group:not(:has([data-filter-tag])){min-width:0;flex:0 0 auto}
+
+/* Shared double capsule geometry for forum, news and Token ranking. */
+.feed-filter-group{box-sizing:border-box}
+.feed-filter-group>.feed-filter-trigger,.feed-filter-group>.feed-filter-chip{
+ box-sizing:border-box;height:30px;line-height:20px;font-size:12px;
+}
+.ranking-month-filter>.ranking-month-label{
+ position:static;width:auto;height:auto;overflow:visible;clip-path:none;
+ padding:4px 12px;font-size:12px;line-height:20px;color:var(--text-secondary);white-space:nowrap;
+}
+.ranking-month-filter>select.feed-filter-chip{padding-right:24px;cursor:pointer}
+.ranking-filter-left{flex-wrap:wrap;overflow:visible;align-items:center}
+.ranking-sticky-filters{align-items:center;flex-wrap:wrap}
+.ranking-filter-control .feed-filter-group{flex-wrap:nowrap}
+@media(pointer:coarse),(max-width:760px){
+ .feed-filter-group>.feed-filter-trigger,.feed-filter-group>.feed-filter-chip{height:38px;min-height:38px}
+}
+@media(max-width:760px){
+ .ranking-filter-left{flex-basis:100%}
+}
+/* Let each ranking capsule size to its labels before wrapping to the next row. */
+.ranking-filter-control:has(.feed-filter-group){flex:0 0 auto;max-width:100%}
+.ranking-filter-control:has(.feed-filter-group){width:max-content}
+.ranking-filter-control .feed-filter-group{width:max-content}
+
+/* Companion tabs use the forum filter's 3px shell and 30px inner capsule. */
+.feed-filter-selection>.feed-filter-toggle{flex:0 0 auto;min-width:0}
+.feed-filter-toggle:has([aria-pressed="true"]){border-color:var(--border-default)}
+.feed-filter-toggle>.feed-filter-trigger[aria-pressed="true"]{
+ background:var(--surface-secondary);color:var(--text-heading);font-weight:var(--weight-semibold);
+}
+.feed-filter-toggle>.feed-filter-trigger[aria-pressed="true"]:hover{background:var(--surface-hover)}
+
+/* Shared glass material: each capsule or dropdown samples the backdrop once. */
+.feed-filter-group,.feed-filter-trigger,.feed-filter-chip{box-shadow:none}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ .feed-filter-group,.feed-filter-popover,
+ .feed-filter-trigger:not(.feed-filter-group>*),.feed-filter-chip:not(.feed-filter-group>*){
+  background:color-mix(in srgb,var(--surface-default) 62%,transparent);
+  backdrop-filter:blur(16px) saturate(115%);
+  -webkit-backdrop-filter:blur(16px) saturate(115%);
+ }
+ .feed-filter-popover{
+  background:color-mix(in srgb,var(--surface-default) 78%,transparent);
+  backdrop-filter:blur(24px) saturate(115%);
+  -webkit-backdrop-filter:blur(24px) saturate(115%);
+ }
+ .feed-filter-group>.feed-filter-trigger,.feed-filter-group>.feed-filter-chip{
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+ }
+ .feed-filter-group>.feed-filter-trigger{background:transparent}
+ .feed-filter-group>.feed-filter-chip,
+ .feed-filter-toggle>.feed-filter-trigger[aria-pressed="true"],
+ .feed-filter-option:has(input:checked){background:color-mix(in srgb,var(--surface-secondary) 82%,transparent)}
+ .feed-filter-trigger:hover,.feed-filter-trigger[aria-expanded="true"],
+ .feed-filter-group>.feed-filter-trigger:hover,.feed-filter-group>.feed-filter-trigger[aria-expanded="true"],
+ .feed-filter-group>.feed-filter-chip:hover,.feed-filter-option:hover{
+  background:color-mix(in srgb,var(--surface-hover) 72%,transparent);
+ }
+}

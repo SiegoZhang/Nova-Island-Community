@@ -150,7 +150,7 @@ void main() {
             canvas.height = width;
             gl.viewport(0, 0, width, width);
             gl.uniform2f(resolution, width, width);
-            const hex = getComputedStyle(canvas).getPropertyValue("--nova-accent").trim().replace("#", "");
+            const hex = getComputedStyle(canvas).getPropertyValue("--accent").trim().replace("#", "");
             const rgb = parseInt(hex, 16);
             gl.uniform3f(color, ((rgb >> 16) & 255) / 255, ((rgb >> 8) & 255) / 255, (rgb & 255) / 255);
             refresh();

@@ -138,3 +138,7 @@
 .sm-danger{background:var(--status-danger-bg);color:var(--status-danger-text)}
 .sm-logout{font-size:var(--type-small);color:var(--status-danger-text)}
 @media(max-width:760px){.status-map{grid-template-columns:1fr}}
+
+.status-map-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sm-success-badge{background:var(--status-success-bg);color:var(--status-success-text)}
+@media(max-width:760px){.status-map-2{grid-template-columns:1fr}}

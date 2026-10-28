@@ -7,4 +7,4 @@
 .ds-page-entrance>.ds-main>#related,.ds-page-entrance>.ds-main>[role="tabpanel"]{animation-delay:calc(var(--motion-stagger)*3)}
 .ds-page-entrance>.ds-main>.ds-footer{animation-delay:calc(var(--motion-stagger)*4)}
 @media(prefers-reduced-motion:reduce){.ds-page-entrance *{animation:none!important;transform:none!important}}
-@media print{.ds-page-entrance *{animation:none!important;opacity:1!important;transform:none!important}}
+@media print{.ds-page-entrance *{}}

@@ -473,7 +473,7 @@
 .ranking-model-treemap{position:relative;aspect-ratio:100 / 90;margin-top:var(--space-4);border-radius:var(--radius-md);overflow:hidden;background:var(--surface-default)}
 .ranking-model-tile{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-2);box-sizing:border-box;min-width:0;min-height:0;padding:var(--space-3) var(--space-3);border:1px solid var(--surface-default);border-radius:0;text-align:left;background:var(--agent-fill,var(--badge-yellow-bg));color:var(--agent-ink,var(--badge-yellow-text));overflow:hidden;cursor:pointer;transition:filter 160ms ease}
 .ranking-model-tile:hover{filter:brightness(.96)}
-.ranking-model-tile:focus-visible{outline-offset:-3px!important;z-index:1}
+.ranking-model-tile:focus-visible{z-index:1}
 .ranking-tile-agent{font-size:var(--type-micro);line-height:1.4;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;opacity:.8}
 .ranking-model-tile strong{max-width:100%;font-size:var(--type-caption);line-height:1.45;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ranking-tile-share{margin-top:auto;font-size:var(--type-micro);font-variant-numeric:tabular-nums}

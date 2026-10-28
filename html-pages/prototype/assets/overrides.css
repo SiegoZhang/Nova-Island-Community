@@ -1,0 +1,18 @@
+/* Declarations that must win over component and page rules. Former !important, now ordered by the
+   overrides layer in nova.css. Keep this file short; prefer fixing the component instead. */
+.ds-sidebar-item{color:var(--text-secondary)}
+.ds-sidebar-item.selected{color:var(--accent-text)}
+.ds-button{font-weight:var(--weight-medium)}
+.ds-motion-toggle{font-size:var(--type-micro)}
+.ds-sidebar-item.selected{color:var(--text-heading)}
+.page-back{color:var(--text-secondary)}
+.page-back:hover{color:var(--accent-text)}
+@media print{.ds-page-entrance *{animation:none;opacity:1;transform:none}}
+.preview-note{color:var(--text-secondary);margin-top:var(--space-3)}
+.search-summary{margin:var(--space-6) 0;color:var(--text-secondary)}
+.reader-back{color:var(--text-secondary)}
+.forum-note{font-size:var(--type-micro);color:var(--text-secondary)}
+.ranking-model-tile:focus-visible{outline-offset:-3px}
+.nova-ds .back-button:hover{color:var(--text-secondary)}
+.feed-filter-selection{flex-wrap:nowrap;overflow:hidden}
+.feed-filter-selection>.feed-filter-group{flex-wrap:nowrap}

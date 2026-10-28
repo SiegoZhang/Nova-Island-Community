@@ -139,8 +139,8 @@
 @media(pointer:coarse),(max-width:760px){.feed-filter-group>.feed-filter-trigger,.feed-filter-group>.feed-filter-chip{min-height:38px}}
 
 /* Complete selected labels collapse into +N instead of scrolling or wrapping. */
-.feed-filter-selection{min-width:0;max-width:100%;flex-wrap:nowrap!important;overflow:hidden!important}
-.feed-filter-selection>.feed-filter-group{flex:0 1 auto;min-width:110px;flex-wrap:nowrap!important;overflow:hidden}
+.feed-filter-selection{min-width:0;max-width:100%}
+.feed-filter-selection>.feed-filter-group{flex:0 1 auto;min-width:110px;overflow:hidden}
 .feed-filter-selection>button{flex-shrink:0}
 .feed-filter-group>[hidden]{display:none!important}
 #content>.forum-page.filter-docked .feed-filter-group{flex-shrink:1;max-width:100%}

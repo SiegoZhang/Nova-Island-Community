@@ -8,7 +8,7 @@
 }
 .nova-ds .back-button svg{display:block;width:20px;height:20px;flex:none}
 /* Match the forum reader: a quiet gray surface and unchanged arrow color. */
-.nova-ds .back-button:hover{background:var(--surface-hover);border-color:var(--border-subtle);color:var(--text-secondary)!important;text-decoration:none;box-shadow:none;transform:none;opacity:1}
+.nova-ds .back-button:hover{background:var(--surface-hover);border-color:var(--border-subtle);text-decoration:none;box-shadow:none;transform:none;opacity:1}
 .nova-ds .back-button:focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px}
 .nova-ds .back-button[hidden]{display:none!important}
 

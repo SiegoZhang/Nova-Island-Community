@@ -137,6 +137,8 @@ function swapStyles(frame, dir){
   for (const link of links){
     const m = (link.getAttribute('href') || '').match(/assets\/([\w-]+\.css)/);
     if (!m) continue;
+    // A snapshot taken before nova.css existed keeps one entry file per page with that page's old load order.
+    if (m[1] === 'nova.css' && /-before\/$/.test(dir)) m[1] = 'nova-' + (frame.contentWindow.location.pathname.split('/').pop().replace('.html', '') || 'index') + '.css';
     pending++;
     const next = link.cloneNode();
     next.href = dir + m[1] + '?v=' + state.stamp;

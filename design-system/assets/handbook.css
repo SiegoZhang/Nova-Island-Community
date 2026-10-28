@@ -82,3 +82,34 @@
 .moved{background:var(--surface-hover);border-radius:var(--radius-md);padding:var(--space-4) var(--space-5);margin:var(--space-3) 0 var(--space-6)}
 .moved-label{font-size:var(--type-caption);color:var(--text-secondary);margin:0 0 var(--space-3)}
 .foundations-cards .handbook-card h3{margin-top:0}
+/* Colour pages: ramps, chips and live demos built from product tokens. */
+.ramp{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:var(--space-2);margin:var(--space-4) 0 var(--space-6)}
+.ramp-cell{border-radius:var(--radius-sm);padding:var(--space-3);min-height:88px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;border:1px solid var(--border-subtle)}
+.ramp-cell b{font-size:var(--type-small);font-weight:500}
+.ramp-cell code,.ramp-cell small{font-size:var(--type-micro);background:none!important;padding:0!important;color:inherit!important;opacity:.85}
+.chip{display:inline-block;width:14px;height:14px;border-radius:var(--radius-xs);border:1px solid var(--border-default);vertical-align:-2px;margin-right:6px}
+.demo-btn{display:inline-flex;align-items:center;min-height:32px;padding:0 var(--space-4);border-radius:var(--radius-sm);border:1px solid transparent;font-size:var(--type-small);font-weight:500;margin:0 var(--space-2) var(--space-2) 0}
+.demo-badge{display:inline-flex;align-items:center;min-height:24px;padding:0 var(--space-2);border-radius:var(--radius-full);font-size:var(--type-caption);font-weight:500;margin:0 var(--space-2) var(--space-2) 0}
+.dd-demo{padding:var(--space-5) var(--space-4) var(--space-3);background:var(--surface-default);border:1px solid var(--border-subtle);border-radius:var(--radius-md);margin-top:var(--space-3)}
+.dodont p{font-size:var(--type-small);line-height:var(--type-small-lh);color:var(--text-secondary);margin:var(--space-2) 0 0}
+.alpha-demo{margin:var(--space-4) 0 var(--space-6)}
+.alpha-bg{display:flex;gap:var(--space-3);padding:var(--space-6);border-radius:var(--radius-md);background:linear-gradient(120deg,var(--blue-300),var(--blue-50) 60%,var(--illus-star-gold-light))}
+.alpha-bg span,.alpha-row span{padding:var(--space-3) var(--space-4);border-radius:var(--radius-lg);font-size:var(--type-small);color:var(--text-primary)}
+.alpha-row{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-3)}
+.token-anatomy{margin:var(--space-4) 0;padding:var(--space-5);border-radius:var(--radius-md);background:var(--surface-hover);display:inline-block}
+.token-anatomy code{font-size:var(--type-title-sm)!important;background:none!important;padding:0!important}
+.token-anatomy code span:nth-child(1){color:var(--accent-text)}.token-anatomy code span:nth-child(2){color:var(--status-success-text)}.token-anatomy code span:nth-child(3){color:var(--status-warning-text)}
+.token-anatomy div{display:grid;grid-template-columns:repeat(3,auto);gap:var(--space-6);font-size:var(--type-caption);color:var(--text-secondary);margin-top:var(--space-2)}
+.button-anatomy{display:flex;gap:var(--space-8);align-items:center;padding:var(--space-5);border:1px solid var(--border-subtle);border-radius:var(--radius-md);margin:var(--space-3) 0 var(--space-6)}
+.button-anatomy ol{margin:0;font-size:var(--type-small)}
+.demo-row{display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;margin:var(--space-3) 0 var(--space-6)}
+.demo-note{font-size:var(--type-caption);color:var(--text-secondary);margin-right:var(--space-4)}
+.demo-chip{display:inline-flex;align-items:center;min-height:32px;padding:0 var(--space-4);border-radius:var(--radius-full);background:var(--fill-subtle);font-size:var(--type-small)}
+.demo-chip.selected{background:var(--accent-surface);color:var(--accent-text);font-weight:500}
+.demo-chip.focused{outline:2px solid var(--focus-ring);outline-offset:2px}
+.pass{color:var(--status-success-text);font-weight:500}.fail{color:var(--status-danger-text);font-weight:500}
+.badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--space-4);margin:var(--space-4) 0 var(--space-6)}
+.badge-grid>div{display:flex;flex-direction:column;gap:var(--space-1);font-size:var(--type-caption);color:var(--text-secondary)}
+.badge-grid .demo-badge{align-self:flex-start}
+.bar{display:flex;gap:2px;height:16px;border-radius:var(--radius-xs);overflow:hidden}.bar.tight{gap:0}.bar i{display:block}
+.related-list{padding-left:20px}.related-list li{margin-bottom:var(--space-2)}

@@ -1,0 +1,162 @@
+[
+[
+"R18|feed-filters.css|.feed-filter-search input|outline: none",
+1
+],
+[
+"R18|feed-filters.css|.nova-ds .feed-filter-option input:focus|outline: none",
+1
+],
+[
+"R18|feed-filters.css|.nova-ds .feed-filter-search input:focus,\n.nova-ds .feed-filter-search input:focus-visible|outline: none",
+1
+],
+[
+"R18|forum.css|.forum-document-editor textarea:focus-visible|outline: none",
+1
+],
+[
+"R18|forum.css|.forum-document-editor textarea:focus|outline: none",
+1
+],
+[
+"R18|home.css|.home-main:focus|outline: none",
+1
+],
+[
+"R18|ranking.css|.nova-ds .ranking-find input:focus,.nova-ds .ranking-find input:focus-visible|outline: none",
+1
+],
+[
+"R18|ranking.css|.nova-ds .ranking-trend:focus,.nova-ds .ranking-trend:focus-visible|outline: none",
+1
+],
+[
+"R18|ranking.css|.ranking-find input|outline: none",
+1
+],
+[
+"R18|ranking.css|.ranking-find:focus-within|outline: none",
+1
+],
+[
+"R18|site-tour.css|#tour-invite-title:focus|outline: none",
+1
+],
+[
+"R18|workspace-header.css|.workspace-header .top-search input|outline: 0",
+1
+],
+[
+"R1|guide-progress.css|.nova-ds .journey-week:not(.current) .journey-resources a:hover|background: color-mix(in srgb,var(--journey-muted) 45%,#FFFFFF)",
+1
+],
+[
+"R1|home.css|.content-cover::after|border: 1px solid #00000008",
+1
+],
+[
+"R1|home.css|.menu-scrim|background: #0004",
+1
+],
+[
+"R1|home.css|.product-nav .ds-sidebar-item .nav-glass-icon|filter: drop-shadow(0 1px 1px #29364a40)",
+1
+],
+[
+"R1|home.css|.product-nav .ds-sidebar-item:hover .nav-glass-icon|filter: drop-shadow(0 3px 3px #29364a26)",
+2
+],
+[
+"R1|home.css|.product-sidebar .onboarding-card:has(.guide-card-artwork)|background: #fff",
+1
+],
+[
+"R1|ranking.css|.ranking-distribution-tooltip>span|color: #E5E7EB",
+1
+],
+[
+"R1|ranking.css|.ranking-model-tile:is(.ranking-agent-codex,.ranking-agent-claude-code,.ranking-agent-claude) .ranking-tile-agent|color: rgb(255 255 255 / 76%)",
+1
+],
+[
+"R1|ranking.css|.ranking-model-tile:is(.ranking-agent-codex,.ranking-agent-claude-code,.ranking-agent-claude) .ranking-tile-share|color: rgb(255 255 255 / 92%)",
+1
+],
+[
+"R1|ranking.css|.ranking-model-tile:is(.ranking-agent-codex,.ranking-agent-claude-code,.ranking-agent-claude) strong|color: #FFFFFF",
+1
+],
+[
+"R1|ranking.css|.ranking-point-tooltip small|color: #C6C8CD",
+1
+],
+[
+"R1|ranking.css|.ranking-point-tooltip|background: #252628",
+1
+],
+[
+"R1|ranking.css|.ranking-point-tooltip|color: #fff",
+1
+],
+[
+"R1|scroll-glass.css|.workspace-scroll-glass|background: rgb(255 255 255 / .16)",
+1
+],
+[
+"R1|site-tour.css|.site-tour button.ds-button|background: #000",
+1
+],
+[
+"R1|site-tour.css|.site-tour button.ds-button|color: #fff",
+1
+],
+[
+"R1|site-tour.css|.site-tour button|background: #f7f7f9",
+1
+],
+[
+"R1|site-tour.css|.site-tour button|color: #333",
+1
+],
+[
+"R1|site-tour.css|.site-tour p|color: #707070",
+1
+],
+[
+"R1|site-tour.css|.site-tour-count|color: #707070",
+1
+],
+[
+"R1|site-tour.css|.site-tour-invite::backdrop|background: rgb(9 21 64 / 22%)",
+1
+],
+[
+"R1|site-tour.css|.site-tour-panel|background: #fff",
+1
+],
+[
+"R1|site-tour.css|.site-tour-panel|border: 1px solid #dedee0",
+1
+],
+[
+"R1|site-tour.css|.site-tour::backdrop|background: rgb(20 28 45 / 18%)",
+1
+],
+[
+"R1|site-tour.css|.site-tour|color: var(--text-primary,#333)",
+1
+],
+[
+"R1|site-tour.css|.tour-invite-image|background: #fff",
+1
+],
+[
+"R4|ranking.css|.ranking-point-tooltip::after|border-radius: 1px",
+1
+],
+[
+"R5|home.css|.product-nav .nav-group-label|padding: 0 var(--space-5) 4px",
+1
+]
+]

@@ -1,0 +1,100 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>决策记录 / Nova Island 设计系统</title><link rel="stylesheet" href="assets/community-tokens.css?v=tokens-20261028"><link rel="stylesheet" href="assets/handbook.css?v=tokens-20261028"><script src="assets/handbook-nav.js?v=rules-20261028" defer></script></head><body class="handbook"><a class="skip-link" href="#main" style="position:absolute;left:-10000px" onfocus="this.style.left='12px'" onblur="this.style.left='-10000px'">跳到正文</a><aside class="handbook-sidebar manual-sidebar" id="library-navigation"><a class="handbook-brand" href="index.html"><b>n.</b><span>Nova Island<small>AI Community · Design System</small></span></a><nav class="manual-nav" aria-label="设计系统手册"><details class="manual-group" data-section="start"><summary><span class="tree-chevron" aria-hidden="true"></span><span>Get Started<small>开始使用</small></span></summary><div class="manual-children"><a href="index.html">概览</a><a href="figma.html">使用 Figma</a><a href="develop.html">开发接入</a><a href="with-ai.html">使用 AI 开发</a></div></details><details class="manual-group" data-section="foundations"><summary><span class="tree-chevron" aria-hidden="true"></span><span>Foundations<small>设计基础</small></span></summary><div class="manual-children"><a href="foundations.html">设计基础概览</a><a href="foundations.html#principles">设计共识</a><a href="foundations.html#colors">颜色与语义</a><a href="foundations.html#typography">文字与节奏</a><a href="foundations.html#geometry">布局、圆角与材质</a><a href="foundations.html#components">组件与状态</a><a href="foundations.html#behavior">交互与响应式</a><a href="foundations.html#pages">页面模式</a><a href="foundations.html#tokens">Token 结构</a><a href="foundations.html#maintenance">来源与维护</a></div></details><details class="manual-group" data-section="guidelines"><summary><span class="tree-chevron" aria-hidden="true"></span><span>Guidelines<small>原则与扩展</small></span></summary><div class="manual-children"><a href="principles.html">设计规则</a><a href="decisions.html">决策记录</a><a href="extend.html">扩展协议</a><a href="pattern-feed.html">页面模式 · 内容流</a></div></details><details class="manual-group" data-section="components"><summary><span class="tree-chevron" aria-hidden="true"></span><span>Components<small>组件</small></span></summary><div class="manual-children"><a href="ai-community.html#overview">组件总览</a><div class="manual-search"><input id="component-search" type="search" placeholder="搜索组件" aria-label="搜索组件"></div><div id="component-nav"><div class="manual-category"><h2>基础控件</h2><a href="ai-community.html#buttons" data-search="按钮 Button 按操作优先级选主按钮、次按钮或弱操作。 主操作 次操作 弱操作 悬停 按下 键盘焦点 禁用 加载中 小 / 中 / 大 危险操作">按钮</a><a href="ai-community.html#icon-buttons" data-search="图标按钮与返回 Icon button 返回、通知与紧凑工具操作。 返回 悬停 焦点 通知 未读通知">图标按钮与返回</a><a href="ai-community.html#fields" data-search="输入框 Text field 为标题和短文本提供明确标签、限制与校验反馈。 空值 已填写 焦点 错误 禁用">输入框</a><a href="ai-community.html#textarea" data-search="多行输入 Textarea 帖子正文与评论使用不同的长度限制。 帖子正文 已有内容 评论输入 错误">多行输入</a><a href="ai-community.html#selection" data-search="复选与单选 Selection controls 多选标签与单选月份的原生选择语义。 未选择 已选择 键盘焦点 禁用 单选月份">复选与单选</a><a href="ai-community.html#badges" data-search="状态与分类标签 Badge &amp; tag 状态标签与内容分类拥有独立语义，不混用。 业务状态 内容类型 六种色阶 帖子标签">状态与分类标签</a><a href="ai-community.html#avatars" data-search="头像与身份 Avatar 尺寸随列表、作者卡与成员主页层级变化。 列表 20px 顶栏 32px 榜单 36px 阅读作者 48px 成员 80px 长名字">头像与身份</a><a href="ai-community.html#icons" data-search="功能图标 Iconography 复用现有 SVG 图标的描边、尺寸和语义。 常用功能 图标 + 文字 独立动作 禁用动作">功能图标</a></div><div class="manual-category"><h2>导航与筛选</h2><a href="ai-community.html#sidebar" data-search="主导航 Sidebar navigation 首页、知识学习和社区参与组成产品主导航。 完整分组 文章选中 悬停 / 焦点">主导航</a><a href="ai-community.html#global-search" data-search="全局搜索 Global search 常驻顶栏，支持跨内容搜索。 默认 输入内容 聚焦 结果反馈 无结果">全局搜索</a><a href="ai-community.html#account-menu" data-search="账号菜单 Account menu 集中放置通知、收藏、草稿、设置和指南入口。 展开菜单 触发器 焦点入口">账号菜单</a><a href="ai-community.html#channel-nav" data-search="频道导航 Channel navigation 在推荐和主题频道之间切换，保留内容位置关系。 推荐选中 主题选中 悬停 / 焦点">频道导航</a><a href="ai-community.html#tabs" data-search="分段导航 Tabs &amp; segmented navigation 账号、成员和榜单使用不同密度的分段导航。 通知 成员内容 作者主页 统计口径 操作系统">分段导航</a><a href="ai-community.html#filter-capsule" data-search="筛选胶囊 Filter capsule 同一个胶囊包含打开筛选和移除已选项。 无筛选 单项 多项 溢出折叠 精选开关 我的帖子已选">筛选胶囊</a><a href="ai-community.html#filter-panel" data-search="筛选面板 Filter popover 支持标签搜索、多选、清空与应用。 展开 / 已选 搜索结果 搜索无结果 单选">筛选面板</a><a href="ai-community.html#outline" data-search="阅读目录 Article contents 目录与正文标题对应，突出当前阅读位置。 默认 当前第二节 焦点">阅读目录</a></div><div class="manual-category"><h2>内容与交流</h2><a href="ai-community.html#content-card" data-search="图文内容卡 Content card 真实封面、纯文字和不同内容色调共享同一信息结构。 带封面 纯文字 / 蓝 纯文字 / 黄 纯文字 / 红 悬停 长标题">图文内容卡</a><a href="ai-community.html#forum-post" data-search="论坛帖子卡 Discussion card 以作者、标题、摘要、标签与讨论操作组成一条帖子。 默认 悬停 长内容 草稿">论坛帖子卡</a><a href="ai-community.html#reactions" data-search="点赞、评论与收藏 Content actions 列表、内容卡与详情使用同一互动语义，密度不同。 帖子默认 已点赞 / 已收藏 卡片紧凑 详情 悬停 / 焦点">点赞、评论与收藏</a><a href="ai-community.html#metadata" data-search="作者、阅读数与元信息 Content metadata 将身份、分类和阅读数据放在标题附近，避免与操作混淆。 文章元信息 课程信息 长姓名">作者、阅读数与元信息</a><a href="ai-community.html#author-card" data-search="作者信息卡 Author card 在文章与帖子详情中介绍作者，并提供继续阅读入口。 文章作者 帖子作者 更多作品">作者信息卡</a><a href="ai-community.html#member-profile" data-search="成员身份与统计 Member profile 成员主页突出身份，其次是贡献与关系数量。 普通成员 作者主页 没有内容">成员身份与统计</a><a href="ai-community.html#active-members" data-search="活跃讨论者 Active members 论坛右栏的成员与近期内容列表。 成员列表 悬停 键盘焦点">活跃讨论者</a><a href="ai-community.html#comments" data-search="评论与回复 Comment thread 支持评论、点赞、回复层级及自己的评论操作。 评论列表 回复层级 无评论 回复输入">评论与回复</a><a href="ai-community.html#editor" data-search="发布编辑器 Post composer 标签、标题、正文、草稿状态与发布动作组成完整输入流程。 空白编辑器 恢复草稿 正文预览">发布编辑器</a><a href="ai-community.html#editor-toolbar" data-search="排版工具与标签选择 Editor tools 编辑器中的轻量 Markdown 操作和多选标签。 工具栏 标签选择 保存中反馈 保存失败">排版工具与标签选择</a><a href="ai-community.html#article-prose" data-search="阅读正文与信息块 Reading content 正文、引用、代码、步骤与延伸阅读保持稳定阅读节奏。 正文与引用 大字号阅读 步骤信息 提示与代码 延伸阅读">阅读正文与信息块</a></div><div class="manual-category"><h2>学习与导览</h2><a href="ai-community.html#course-modules" data-search="课程模块 Course module 以原生 details 组织课程章节和完成进度。 已完成 / 展开 进行中 / 展开 未解锁 / 展开 收起">课程模块</a><a href="ai-community.html#lessons" data-search="课时条目 Lesson row 已完成、当前、可学习和未解锁是四种独立状态。 已完成 当前课时 可学习 未解锁 焦点">课时条目</a><a href="ai-community.html#progress" data-search="进度与继续学习 Progress &amp; resume 使用进度条和文字共同表达学习完成情况。 未开始 进行中 全部完成 继续学习卡 指南继续卡">进度与继续学习</a><a href="ai-community.html#guide-folder" data-search="入门指南文件夹 Learning folder 首页的标志性蓝色文件夹承载四周学习入口。 开始旅程 进行中 已完成">入门指南文件夹</a><a href="ai-community.html#journey-week" data-search="学习周与任务 Learning week 四周路线中的当前周、已完成周和未开始周。 当前周 未开始 已完成 单个任务 任务完成">学习周与任务</a><a href="ai-community.html#instructor" data-search="课程讲师卡 Instructor card 课程详情中的讲师介绍与学习要求。 讲师 学习要求 课程概览">课程讲师卡</a><a href="ai-community.html#onboarding" data-search="功能导览 Onboarding 首次引导邀请与步骤浮层，各自有完整的退出路径。 邀请卡 第一步 最后一步">功能导览</a><a href="ai-community.html#fluid-orb" data-search="学习动态球体 Fluid orb 课程继续学习卡中的装饰性动态标记。 动态 暂停 无 WebGL 回退">学习动态球体</a></div><div class="manual-category"><h2>榜单与数据</h2><a href="ai-community.html#ranking-row" data-search="成员排名行 Ranking row 将排名、成员身份、模型分布和用量放在同一行。 前三名 悬停 定位自己 无匹配成员">成员排名行</a><a href="ai-community.html#trophies" data-search="排名奖杯与首页榜单 Podium &amp; compact ranking 前三名用金、银、铜材质区分，同时保留名次语义。 第一名 / 金 第二名 / 银 第三名 / 铜 普通名次 首页三人榜">排名奖杯与首页榜单</a><a href="ai-community.html#ranking-summary" data-search="社区用量总览 Community usage 突出总量，统计口径与时间范围紧随数字。 总览 当前筛选">社区用量总览</a><a href="ai-community.html#trend-chart" data-search="用量趋势图 Trend chart 用折线和填充展示每天的使用趋势。 每日趋势 数据点焦点 提示气泡">用量趋势图</a><a href="ai-community.html#distribution" data-search="模型分布 Model distribution 条形分布适合排名行，矩形树图适合个人概览。 行内条形 矩形树图 单一模型">模型分布</a><a href="ai-community.html#personal-rank" data-search="我的排行 Personal rank 连接前、连接后和筛选无数据拥有不同表达。 未连接 已连接 筛选无记录">我的排行</a><a href="ai-community.html#connection" data-search="接入步骤与命令 Connection flow 公开名称、操作系统命令、同步状态形成连续步骤。 接入流程 状态完成">接入步骤与命令</a></div><div class="manual-category"><h2>反馈与页面模式</h2><a href="ai-community.html#empty-states" data-search="空状态 Empty state 区分尚无内容、搜索无结果和未开始行动。 专栏未开放 搜索无结果 没有收藏 没有草稿">空状态</a><a href="ai-community.html#skeletons" data-search="加载骨架 Skeleton loading 加载结构对应将出现的内容，而不是统一转圈。 图文卡片 纯文字卡片 论坛帖子 榜单行">加载骨架</a><a href="ai-community.html#error-states" data-search="错误与恢复 Error &amp; recovery 页面失败、表单错误和存储失败分别提供恢复路径。 页面加载失败 帖子不存在 本地保存失败 字段错误">错误与恢复</a><a href="ai-community.html#toast" data-search="轻提示 Toast 复制、收藏、保存等操作后的短反馈。 成功提示 失败提示 交互演示">轻提示</a><a href="ai-community.html#tooltips" data-search="数据提示 Data tooltip 解释图表数据与图标含义，不替代可访问名称。 趋势数据 模型数据 基础提示">数据提示</a><a href="ai-community.html#feed-footer" data-search="列表终点 Feed end 告诉读者当前列表已经到底，避免把留白误认为仍在加载。 全部展示 加载更多 结束标记">列表终点</a><a href="ai-community.html#section-heading" data-search="页面标题与分区标题 Section heading 页面标题、模块标题和操作按钮各有明确层级。 页面标题 带发布动作 内容分区 滚动后">页面标题与分区标题</a><a href="ai-community.html#glass-surfaces" data-search="玻璃与滚动边缘 Glass surfaces 玻璃用于浮动控件和滚动边缘，不用于遮住整篇内容。 普通表面 玻璃筛选 连续滚动边缘">玻璃与滚动边缘</a></div></div><p id="search-empty" hidden>没有匹配的组件</p><span id="component-count" hidden>50</span></div></details></nav></aside><div class="handbook-workspace"><header class="handbook-topbar"><span>Guidelines / 决策记录</span><a href="../html-pages/prototype/index.html#home">打开 AI Community ↗</a></header><main id="main" class="handbook-content">
+<div class="handbook-eyebrow">GUIDELINES / DECISIONS</div>
+<h1>决策记录</h1>
+<p class="handbook-lead">已经拍板的设计决定，每条写明当时的情况、选了什么、放弃了什么。遇到规范没覆盖的情况，先找最接近的一条决定，按它的理由推出答案；推不出来时，新增一条“待确认”的记录。</p>
+<div class="handbook-draft"><span class="handbook-status">已确认</span><span>本页只收录已经确认、并已在原型中实施的决定。原因没有留下书面记录的，标为“原因未记录”，不补写理由。</span></div>
+<ul class="handbook-toc" aria-label="分类">
+<li><a href="#scope">范围与来源</a></li>
+<li><a href="#scale">尺度</a></li>
+<li><a href="#color">颜色与材质</a></li>
+<li><a href="#content">内容呈现</a></li>
+<li><a href="#interaction">交互</a></li>
+<li><a href="#code">实现</a></li>
+<li><a href="#pending">待定</a></li>
+</ul>
+
+<section class="handbook-section" id="scope">
+<h2>范围与来源</h2>
+<div class="handbook-table"><table>
+<thead><tr><th>编号</th><th>决定</th><th>背景与理由</th><th>放弃的方案</th><th>来源</th></tr></thead>
+<tbody>
+<tr id="d01"><td>D01</td><td>设计系统只服务 AI Community 网站</td><td>仓库里同时有官网规范、Unico 占位页和多套历史配色，容易被当成同一套系统</td><td>产品改用官网的 #7692FF：白底对比度只有 2.87:1，不能做文字和链接；官网改用产品色：官网代码不在本仓库</td><td>VISUAL-LANGUAGE V2、V4 · 10-28</td></tr>
+<tr id="d02"><td>D02</td><td>设计系统定义标准，产品按标准修改；不再“记录原型现状”</td><td>以原型为准时，原型里有 27 种字号、17 种圆角都被写成“局部例外”，规范无法纠正任何问题</td><td>只记录现状</td><td>讨论 · 10-27</td></tr>
+<tr id="d03"><td>D03</td><td>Token 只有一个来源：<code>html-pages/prototype/assets/tokens.css</code>，其余副本由 <code>sync-tokens.py</code> 生成</td><td>手动维护多份副本会互相偏离</td><td>—</td><td>SYSTEM.md</td></tr>
+<tr id="d04"><td>D04</td><td>退役方案移入仓库根目录 <code>archive/</code>，不上线、不作为依据</td><td><code>legacy-brand/tokens.css</code> 与正式 <code>tokens.css</code> 同名，容易拿错</td><td>直接删除：会失去来历说明</td><td>VISUAL-LANGUAGE V3 · 10-28</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="handbook-section" id="scale">
+<h2>尺度</h2>
+<div class="handbook-table"><table>
+<thead><tr><th>编号</th><th>决定</th><th>背景与理由</th><th>放弃的方案</th><th>来源</th></tr></thead>
+<tbody>
+<tr id="d05"><td>D05</td><td>字号 10 档：11 / 12 / 13 / 14 / 16 / 18 / 20 / 24 / 30 / 40px；界面文字最小 11px</td><td>原型 28 种写死字号；12、13、11px 用量最高（149 / 66 / 61 次），说明界面需要细的小字层级</td><td>去掉 13px：卡片摘要会和元信息难以区分；保留 36px：没有任何地方使用</td><td>SCALE D1、D2 · 10-28</td></tr>
+<tr id="d06"><td>D06</td><td>页面标题桌面 30 / 42px，手机 24 / 32px；文章、课程详情标题同样用 30px</td><td>原来 H1 有 22、26、28、30、36px 五种；26px 不在阶梯内</td><td>手机保留 26px</td><td>SCALE D3、视觉批次 · 10-28</td></tr>
+<tr id="d07"><td>D07</td><td>阅读正文 16px / 1.75</td><td>论坛正文原为 15px</td><td>—</td><td>SCALE D4 · 10-28</td></tr>
+<tr id="d08"><td>D08</td><td>圆角按角色：小元素 4、按钮与输入框 8、嵌套面板 12、浮层 20、主卡 24、胶囊全圆角</td><td>原型有 17 种圆角；8px 与 6px 用量接近</td><td>控件保留 6px（阶梯改为 4 / 6 / 12 / 20 / 24）</td><td>SCALE D5 · 10-28</td></tr>
+<tr id="d09"><td>D09</td><td>间距以 4px 为基数，只有三个命名例外：外壳间隔 6、筛选胶囊内边距 3、2px 微调</td><td>原型有 65 种间距；10、28、36px 等用量大但不在阶梯内</td><td>把 28px 纳入阶梯</td><td>SCALE D6 · 10-28</td></tr>
+<tr id="d10"><td>D10</td><td>断点只有 600 / 760 / 1100 / 1440px</td><td>原型有 26 种断点，同一类布局切换写在不同宽度</td><td>保留 1150、1200</td><td>SCALE D7 · 10-28</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="handbook-section" id="color">
+<h2>颜色与材质</h2>
+<div class="handbook-table"><table>
+<thead><tr><th>编号</th><th>决定</th><th>背景与理由</th><th>放弃的方案</th><th>来源</th></tr></thead>
+<tbody>
+<tr id="d11"><td>D11</td><td>主操作是黑色；文件夹蓝只用于当前位置、选中、链接、进度和文件夹插画</td><td>原因未记录</td><td>旧强调色 #7692FF 已被替换</td><td>SYSTEM.md v0.5 · 09-24</td></tr>
+<tr id="d12"><td>D12</td><td>成功使用独立的绿色，不借用蓝色；“完成”类状态（学习周完成、接入完成、增长数字）都用成功色</td><td>原因未记录；10-28 把三处自定义绿色统一到成功色</td><td>学习旅程保留自定义绿 #DDF5EC</td><td>SYSTEM.md v0.5、视觉批次 · 10-28</td></tr>
+<tr id="d13"><td>D13</td><td>可读文字只有两级灰：正文 #333、次要 #626262；#949494 只用于禁用和占位</td><td>#949494 白底对比度 3.0:1，低于 4.5:1；原来普通页和榜单页的次要灰取值不同</td><td>保留三级灰（tertiary #666666 与 #626262 几乎看不出差别）</td><td>SCALE D8 · 10-28</td></tr>
+<tr id="d14"><td>D14</td><td>阴影只有三级，色相统一为深蓝 <code>rgb(9 21 64)</code>：小控件 sm、提示 md、菜单与弹层 lg；普通卡片没有阴影</td><td>原来 30 处写死的阴影混用深蓝、暖黑和纯黑</td><td>—</td><td>TOKEN T8 · 10-28</td></tr>
+<tr id="d15"><td>D15</td><td>玻璃只有两档（62% / 78% 表面色），只用于浮动控件、弹层和滚动边缘；中性填充只有 3% / 6% / 10% / 20% 四档</td><td>原来有 8 种黑色透明度和多种模糊组合</td><td>—</td><td>TOKEN T9、T11 · 10-28</td></tr>
+<tr id="d16"><td>D16</td><td>收藏色拆成图标色 #F5C842 和文字色 #80631B</td><td>Token 写的是 #80631B，页面实际显示 #F5C842，两者长期不一致</td><td>—</td><td>TOKEN T10 · 10-28</td></tr>
+<tr id="d17"><td>D17</td><td>插画和数据图的颜色单独放在 <code>--illus-*</code>、<code>--chart-*</code>，不进入界面语义色；数据图每个工具一种颜色</td><td>Codex、Claude 在不同图表里曾用过不同颜色</td><td>—</td><td>TOKEN T12 · 10-28</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="handbook-section" id="content">
+<h2>内容呈现</h2>
+<div class="handbook-table"><table>
+<thead><tr><th>编号</th><th>决定</th><th>背景与理由</th><th>放弃的方案</th><th>来源</th></tr></thead>
+<tbody>
+<tr id="d18"><td>D18</td><td>内容卡不强制等高，用瀑布流；标题完整换行</td><td>原因未记录</td><td>统一高度的网格</td><td>SYSTEM.md v0.5 · 09-24</td></tr>
+<tr id="d19"><td>D19</td><td>封面只用真实配图并保留来源；没有配图时用纯文字色卡；不使用生成的插画封面；第三方品牌标志不统一染色</td><td>插画封面已被真实配图取代，相关样式于 10-28 删除</td><td>生成封面（<code>cover-*</code> 系列）</td><td>SYSTEM.md v0.5、组件层 C3 · 10-28</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="handbook-section" id="interaction">
+<h2>交互</h2>
+<div class="handbook-table"><table>
+<thead><tr><th>编号</th><th>决定</th><th>背景与理由</th><th>放弃的方案</th><th>来源</th></tr></thead>
+<tbody>
+<tr id="d20"><td>D20</td><td>主导航 7 个入口：首页；知识学习（实战、专栏、文章）；社区参与（论坛、活动、Token 榜）</td><td>沿用当前设计</td><td>—</td><td>讨论 · 10-15</td></tr>
+<tr id="d21"><td>D21</td><td>点击导航入口后立即选中，内容区显示骨架屏；加载失败时导航保持选中，内容区原位显示“加载失败，请重试”和“重新加载”按钮；不用短暂弹出的提示</td><td>切换要有即时反馈，失败要有原位的恢复路径</td><td>等加载完成再切换选中状态；用轻提示报错</td><td>讨论 · 10-15</td></tr>
+<tr id="d22"><td>D22</td><td>筛选和路由状态写在地址 hash 里；从详情返回时回到来源，而不是首页</td><td>原因未记录</td><td>—</td><td>SYSTEM.md v0.5 · 09-24</td></tr>
+</tbody></table></div>
+<div class="handbook-note"><strong>已知差异：</strong>原型 <code>home.js</code> 的加载失败文案仍是“暂时无法加载 / 请稍后再试”，与 D21 不一致，待修正。</div>
+</section>
+
+<section class="handbook-section" id="code">
+<h2>实现</h2>
+<div class="handbook-table"><table>
+<thead><tr><th>编号</th><th>决定</th><th>背景与理由</th><th>放弃的方案</th><th>来源</th></tr></thead>
+<tbody>
+<tr id="d23"><td>D23</td><td>Token 分三层：原始值、语义、组件；组件只能引用语义层，色值只写在 tokens.css</td><td>同一个蓝曾有 7 个名字；1,855 处数值写死在组件里</td><td>—</td><td>TOKEN T1 · 10-28</td></tr>
+<tr id="d24"><td>D24</td><td>样式按层级 tokens &lt; components &lt; overrides 组织；<code>!important</code> 只用于减少动效和隐藏元素</td><td>原来 28 处 <code>!important</code> 用来抢优先级</td><td>直接按“组件 &lt; 页面”分层：现有样式依赖加载顺序互相覆盖，详情页布局会出错</td><td>组件层 C2 · 10-28</td></tr>
+<tr id="d25"><td>D25</td><td>类名暂不统一，等某个组件被实际修改时再改</td><td>改类名需要同时改大量 JS 模板</td><td>一次性全部改名</td><td>组件层 C7 · 10-28</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="handbook-section" id="pending">
+<h2>待定</h2>
+<p>以下问题已经提出，还没有结论。新设计碰到它们时，先在 <code>DISCUSSION.md</code> 的“待确认”中给出方案，由人确认。</p>
+<ul class="handbook-list">
+<li><div><strong>导航图标的模糊效果参数</strong><small>“灰色模糊”和“蓝色模糊”的具体颜色、模糊值、字重</small></div><span class="handbook-status pending">待定</span></li>
+<li><div><strong>骨架屏与错误占位的外观</strong><small>布局、尺寸、图标</small></div><span class="handbook-status pending">待定</span></li>
+<li><div><strong>Guidelines 是否作为第四个一级板块</strong><small>原计划只有 Get Started、Foundations、Components</small></div><span class="handbook-status pending">待定</span></li>
+</ul>
+</section>
+<footer class="handbook-foot">Nova Island 设计系统 · 决策记录 · 2026-10-28</footer>
+</main></div></body></html>

@@ -4,7 +4,7 @@
  const groups=[...sidebar.querySelectorAll('.manual-group')];
  const links=[...sidebar.querySelectorAll('.manual-nav a')];
  const page=location.pathname.split('/').pop()||'index.html';
- const section=page==='foundations.html'?'foundations':page==='ai-community.html'?'components':['principles.html','extend.html','pattern-feed.html'].includes(page)?'guidelines':'start';
+ const section=page==='foundations.html'?'foundations':page==='ai-community.html'?'components':['principles.html','decisions.html','extend.html','pattern-feed.html'].includes(page)?'guidelines':'start';
  const key='nova-handbook-nav-v1';
  let saved={};try{saved=JSON.parse(sessionStorage.getItem(key)||'{}')}catch{}
  for(const g of groups)g.open=g.dataset.section===section || saved[g.dataset.section]===true;

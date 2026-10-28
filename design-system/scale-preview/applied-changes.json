@@ -1,0 +1,4089 @@
+{
+ "summary": {
+  "spacing": 247,
+  "breakpoint": 59,
+  "radius": 37,
+  "font-size": 108,
+  "font-weight": 1,
+  "color": 1
+ },
+ "changes": [
+  {
+   "file": "article-contents.css",
+   "media": "",
+   "selector": ".ds-article-contents ol",
+   "prop": "gap",
+   "old": "2px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "article-contents.css",
+   "media": "",
+   "selector": ".ds-article-contents a",
+   "prop": "padding",
+   "old": "6px 8px 6px 20px",
+   "new": "8px 8px 8px 20px",
+   "kind": "spacing"
+  },
+  {
+   "file": "article-interactions.css",
+   "media": "",
+   "selector": ".article-interactive-card .forum-actions",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "article-interactions.css",
+   "media": "",
+   "selector": ".catalog-reader>.forum-actions",
+   "prop": "margin",
+   "old": "28px 0",
+   "new": "32px 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "article-interactions.css",
+   "media": "",
+   "selector": ".article-card-footer",
+   "prop": "padding",
+   "old": "0 20px 18px",
+   "new": "0 20px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "article-interactions.css",
+   "media": "",
+   "selector": ".article-card-footer>.card-meta",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "article-interactions.css",
+   "media": "",
+   "selector": ".post-read-count",
+   "prop": "gap",
+   "old": "5px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "article-reader.css",
+   "media": "",
+   "selector": ".article-outline .ds-article-contents ol",
+   "prop": "gap",
+   "old": "2px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "article-reader.css",
+   "media": "",
+   "selector": "@media(max-width:1200px)",
+   "prop": "@media",
+   "old": "@media(max-width:1200px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "article-reader.css",
+   "media": "",
+   "selector": "@media(max-width:980px)",
+   "prop": "@media",
+   "old": "@media(max-width:980px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "back-buttons.css",
+   "media": "",
+   "selector": "@media(max-width:1150px)",
+   "prop": "@media",
+   "old": "@media(max-width:1150px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "course-detail.css",
+   "media": "",
+   "selector": "@media(min-width:901px)",
+   "prop": "@media",
+   "old": "@media(min-width:901px)",
+   "new": "\u00002\u0000\n@media(min-width:1101px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "course-detail.css",
+   "media": "",
+   "selector": "@media(max-width:900px)",
+   "prop": "@media",
+   "old": "@media(max-width:900px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "course-detail.css",
+   "media": "",
+   "selector": "@media(min-width:901px)",
+   "prop": "@media",
+   "old": "@media(min-width:901px)",
+   "new": "@media(min-width:1101px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "detail-shell.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ds-topbar .ds-button",
+   "prop": "padding-inline",
+   "old": "10px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".feed-filter-chip,.feed-filter-trigger",
+   "prop": "padding",
+   "old": "6px 12px",
+   "new": "8px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".feed-filter-search",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".feed-filter-option",
+   "prop": "border-radius",
+   "old": "10px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": "@media(max-width:1150px)",
+   "prop": "@media",
+   "old": "@media(max-width:1150px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": "@media(max-width:540px)",
+   "prop": "@media",
+   "old": "@media(max-width:540px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".forum-activity header p",
+   "prop": "margin",
+   "old": "6px 0 20px",
+   "new": "8px 0 20px",
+   "kind": "spacing"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".forum-activity li a",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".forum-personal-links a",
+   "prop": "padding",
+   "old": "10px 16px",
+   "new": "12px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".feed-filter-option input",
+   "prop": "border-radius",
+   "old": "3px",
+   "new": "4px",
+   "kind": "radius"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".forum-activity li a",
+   "prop": "padding",
+   "old": "10px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".forum-activity li a",
+   "prop": "margin",
+   "old": "-10px",
+   "new": "-8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".forum-activity li a",
+   "prop": "border-radius",
+   "old": "16px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".feed-filter-group>.feed-filter-trigger",
+   "prop": "padding",
+   "old": "5px 10px",
+   "new": "4px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".feed-filter-group>.feed-filter-chip",
+   "prop": "padding",
+   "old": "5px 10px",
+   "new": "4px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".ranking-month-filter>.ranking-month-label",
+   "prop": "padding",
+   "old": "5px 10px",
+   "new": "4px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": ".ranking-month-filter>select.feed-filter-chip",
+   "prop": "padding-right",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-page",
+   "prop": "padding-top",
+   "old": "36px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-heading",
+   "prop": "margin-bottom",
+   "old": "36px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-filters",
+   "prop": "gap",
+   "old": "22px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-meta",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-aside h2",
+   "prop": "font-size",
+   "old": "17px",
+   "new": "18px",
+   "kind": "font-size"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-aside li",
+   "prop": "margin-top",
+   "old": "10px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-editor,.forum-detail",
+   "prop": "margin",
+   "old": "36px auto",
+   "new": "32px auto",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-editor label",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-body",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-body",
+   "prop": "margin",
+   "old": "36px 0 56px",
+   "new": "32px 0 64px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".forum-heading h1",
+   "prop": "font-size",
+   "old": "26px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "forum.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".forum-heading .eyebrow",
+   "prop": "font-size",
+   "old": "9px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-tag-picker span",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-body h2",
+   "prop": "font-size",
+   "old": "21px",
+   "new": "20px",
+   "kind": "font-size"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-heading>.ds-button,.forum-editor-actions>.ds-button:first-child",
+   "prop": "padding",
+   "old": "12px 18px",
+   "new": "12px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-tags-panel .forum-filters a",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-tags-panel .forum-filters a",
+   "prop": "padding",
+   "old": "8px 10px",
+   "new": "8px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-actions",
+   "prop": "margin",
+   "old": "28px 0",
+   "new": "32px 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-actions button",
+   "prop": "padding",
+   "old": "10px 16px",
+   "new": "12px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-actions button",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-card-tags a",
+   "prop": "padding",
+   "old": "4px 10px",
+   "new": "4px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-card-tags a",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".article-tag",
+   "prop": "padding",
+   "old": "4px 10px",
+   "new": "4px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".article-tag",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".article-published-body",
+   "prop": "margin-top",
+   "old": "28px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-tags-panel .forum-filters button",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-tags-panel .forum-filters button",
+   "prop": "padding",
+   "old": "8px 10px",
+   "new": "8px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ":is(.forum-row,.forum-detail)>.forum-actions",
+   "prop": "margin",
+   "old": "18px 0 0",
+   "new": "20px 0 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ":is(.forum-row,.forum-detail)>.forum-actions button",
+   "prop": "padding",
+   "old": "7px 12px",
+   "new": "8px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-comment-form textarea",
+   "prop": "padding",
+   "old": "14px 16px",
+   "new": "12px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-comment-form textarea",
+   "prop": "border-radius",
+   "old": "16px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-comment-author",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-comment-list article>p",
+   "prop": "margin-left",
+   "old": "42px",
+   "new": "40px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-comment-actions",
+   "prop": "margin",
+   "old": "12px 0 0 42px",
+   "new": "12px 0 0 40px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-comment-actions button,.forum-reply-cancel",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-comment-replies",
+   "prop": "margin",
+   "old": "16px 0 0 42px",
+   "new": "16px 0 0 40px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": "@media(max-width:480px)",
+   "prop": "@media",
+   "old": "@media(max-width:480px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "forum.css",
+   "media": "@media(max-width:480px)",
+   "selector": ".forum-comment-author time",
+   "prop": "margin-left",
+   "old": "42px",
+   "new": "40px",
+   "kind": "spacing"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-body,.forum-document-editor .forum-document-body",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-compose-tags .forum-card-tags button",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "forum.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".forum-document-editor .forum-editor-status",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-title-required",
+   "prop": "font-size",
+   "old": "22px",
+   "new": "20px",
+   "kind": "font-size"
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": ".forum-document-editor .article-compose-summary textarea",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".guide-progress-menu button",
+   "prop": "padding",
+   "old": "10px 12px",
+   "new": "12px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".guide-progress-track",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".guide-progress-track span",
+   "prop": "border-radius",
+   "old": "2px",
+   "new": "4px",
+   "kind": "radius"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-header h1",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-stats strong",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-week",
+   "prop": "padding",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-week h2",
+   "prop": "margin",
+   "old": "16px 28px 8px 0",
+   "new": "16px 32px 8px 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-lesson",
+   "prop": "border-radius",
+   "old": "10px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-task",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-task",
+   "prop": "border-radius",
+   "old": "10px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-page .journey-resources .journey-lesson-open",
+   "prop": "border-radius",
+   "old": "10px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-stage-status",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-complete-control",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": "@media(max-width:650px)",
+   "prop": "@media",
+   "old": "@media(max-width:650px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(max-width:650px)",
+   "selector": ".journey-header h1",
+   "prop": "font-size",
+   "old": "25px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(max-width:650px)",
+   "selector": ".journey-week h2",
+   "prop": "font-size",
+   "old": "22px",
+   "new": "20px",
+   "kind": "font-size"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".guide-banner",
+   "prop": "margin",
+   "old": "40px 0 56px",
+   "new": "40px 0 64px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".guide-banner .guide-progress-link",
+   "prop": "padding",
+   "old": "32px 36px",
+   "new": "32px 32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".guide-banner .guide-progress-status",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".guide-banner .guide-progress-continue",
+   "prop": "gap",
+   "old": "14px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": "@media(max-width:1000px)",
+   "prop": "@media",
+   "old": "@media(max-width:1000px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(max-width:1000px)",
+   "selector": ".guide-banner .guide-progress-link",
+   "prop": "padding",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(max-width:600px)",
+   "selector": ".guide-banner h2",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(max-width:600px)",
+   "selector": ".guide-banner .guide-progress-continue",
+   "prop": "padding",
+   "old": "10px 16px",
+   "new": "12px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": "@media(max-width:1200px)",
+   "prop": "@media",
+   "old": "@media(max-width:1200px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".home-feature-row .guide-banner .guide-progress-link",
+   "prop": "padding",
+   "old": "28px 32px",
+   "new": "24px 32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(max-width:600px)",
+   "selector": ".home-feature-row .guide-banner h2",
+   "prop": "font-size",
+   "old": "26px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": "@media(min-width:1001px)",
+   "prop": "@media",
+   "old": "@media(min-width:1001px)",
+   "new": "\u000010\u0000\n@media(min-width:1101px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(min-width:1001px)",
+   "selector": ".home-feature-row>.guide-banner",
+   "prop": "margin-top",
+   "old": "10px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".home-feature-row .guide-loose-logo",
+   "prop": "padding",
+   "old": "10px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(max-width:600px)",
+   "selector": ".home-feature-row .guide-loose-logo",
+   "prop": "padding",
+   "old": "5px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".home-feature-row .guide-banner h2",
+   "prop": "font-weight",
+   "old": "700",
+   "new": "600",
+   "kind": "font-weight"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-toolbar .journey-stats>div",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-toolbar .journey-stats>div",
+   "prop": "padding",
+   "old": "0 14px",
+   "new": "0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".journey-toolbar .journey-stats",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".journey-toolbar .journey-stats>div",
+   "prop": "padding",
+   "old": "0 10px",
+   "new": "0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(max-width:600px)",
+   "selector": ".journey-header",
+   "prop": "padding-top",
+   "old": "56px",
+   "new": "48px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-toolbar .journey-stats strong",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": "#content.feed-scrolled .journey-toolbar .journey-stats>div",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": "#content.feed-scrolled .journey-toolbar .journey-stats>div",
+   "prop": "padding",
+   "old": "0 14px",
+   "new": "0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(max-width:760px)",
+   "selector": "#content.feed-scrolled .journey-toolbar .journey-stats>div",
+   "prop": "padding",
+   "old": "0 10px",
+   "new": "0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": "@media(min-width:651px)",
+   "prop": "@media",
+   "old": "@media(min-width:651px)",
+   "new": "\u000027\u0000\n@media(min-width:601px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(min-width:651px)",
+   "selector": ".journey-week:before",
+   "prop": "border-top-right-radius",
+   "old": "14px",
+   "new": "20px",
+   "kind": "radius"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(min-width:651px)",
+   "selector": ".journey-week:nth-child(even):before",
+   "prop": "border-top-left-radius",
+   "old": "14px",
+   "new": "20px",
+   "kind": "radius"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "@media(min-width:651px)",
+   "selector": ".journey-week:last-child:before",
+   "prop": "border-bottom-left-radius",
+   "old": "14px",
+   "new": "20px",
+   "kind": "radius"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-lesson>.journey-task",
+   "prop": "border-radius",
+   "old": "10px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": ".journey-page .journey-resources .journey-lesson-open",
+   "prop": "padding",
+   "old": "12px 12px 12px 46px",
+   "new": "12px 12px 12px 48px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".product-sidebar",
+   "prop": "padding",
+   "old": "28px 16px 12px",
+   "new": "24px 16px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".product-nav",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".guide-mark",
+   "prop": "margin-bottom",
+   "old": "14px",
+   "new": "16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".profile-row",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".home-main",
+   "prop": "padding",
+   "old": "44px 48px 64px",
+   "new": "40px 48px 64px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".home-heading h1",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".course-copy",
+   "prop": "padding",
+   "old": "32px 0 28px 28px",
+   "new": "32px 0 24px 24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".course-copy h2",
+   "prop": "font-size",
+   "old": "32px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".course-meta",
+   "prop": "margin",
+   "old": "18px 0 24px",
+   "new": "20px 0 24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".course-cta",
+   "prop": "gap",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".course-cta",
+   "prop": "padding",
+   "old": "10px 16px",
+   "new": "12px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".article-number",
+   "prop": "padding-top",
+   "old": "3px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".island-note",
+   "prop": "padding",
+   "old": "28px 0 32px",
+   "new": "24px 0 32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".island-agenda",
+   "prop": "margin-top",
+   "old": "28px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".practice-link strong",
+   "prop": "margin-top",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".preview-note",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".guide-page-step",
+   "prop": "padding",
+   "old": "28px 0",
+   "new": "24px 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".guide-page-step p",
+   "prop": "margin",
+   "old": "10px 0 16px",
+   "new": "12px 0 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".guide-page>.ds-button",
+   "prop": "margin-top",
+   "old": "28px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".quiet-empty",
+   "prop": "padding",
+   "old": "56px 0",
+   "new": "48px 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:1500px)",
+   "prop": "@media",
+   "old": "@media(min-width:1500px)",
+   "new": "@media(min-width:1440px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(min-width:1500px)",
+   "selector": ".home-main",
+   "prop": "padding-top",
+   "old": "56px",
+   "new": "48px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:1150px)",
+   "prop": "@media",
+   "old": "@media(max-width:1150px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".home-main",
+   "prop": "padding",
+   "old": "28px 20px 48px",
+   "new": "24px 20px 48px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".home-heading",
+   "prop": "margin-bottom",
+   "old": "28px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".home-context",
+   "prop": "gap",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".channel-nav a",
+   "prop": "padding",
+   "old": "10px 16px",
+   "new": "12px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".feed-heading h1",
+   "prop": "font-size",
+   "old": "22px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".channel-heading h1",
+   "prop": "font-size",
+   "old": "26px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".content-grid",
+   "prop": "gap",
+   "old": "28px 20px",
+   "new": "24px 20px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".card-meta",
+   "prop": "margin-top",
+   "old": "10px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".mini-browser",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".review-scale",
+   "prop": "gap",
+   "old": "5px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".feed-divider",
+   "prop": "margin",
+   "old": "44px 0 36px",
+   "new": "48px 0 32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".channel-shelf",
+   "prop": "margin-bottom",
+   "old": "44px",
+   "new": "48px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".shelf-heading p",
+   "prop": "margin-top",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".reader-intro",
+   "prop": "font-size",
+   "old": "17px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:1800px)",
+   "prop": "@media",
+   "old": "@media(min-width:1800px)",
+   "new": "@media(min-width:1440px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:1150px)",
+   "prop": "@media",
+   "old": "@media(max-width:1150px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".channel-nav",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".channel-nav a",
+   "prop": "padding",
+   "old": "10px 14px",
+   "new": "12px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".feed-heading h1",
+   "prop": "font-size",
+   "old": "20px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".feed-heading>span",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".card-meta",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".reader-intro",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:540px)",
+   "prop": "@media",
+   "old": "@media(max-width:540px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:540px)",
+   "selector": ".card-body h3",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:540px)",
+   "selector": ".channel-shelf",
+   "prop": "margin-bottom",
+   "old": "36px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-front",
+   "prop": "gap",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-front",
+   "prop": "margin",
+   "old": "8px 0 56px",
+   "new": "8px 0 64px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-kicker",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-hero h1",
+   "prop": "margin",
+   "old": "28px 0 24px",
+   "new": "32px 0 24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-actions",
+   "prop": "margin-top",
+   "old": "28px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-primary",
+   "prop": "gap",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-primary",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-hero-foot",
+   "prop": "margin-top",
+   "old": "36px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-hero-foot",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-highlight-heading>span:last-child",
+   "prop": "font-size",
+   "old": "9px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-highlight-label",
+   "prop": "font-size",
+   "old": "9px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-highlight-label",
+   "prop": "margin",
+   "old": "12px 0 6px",
+   "new": "12px 0 8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-highlight h2",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-highlight-author",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-highlight-author",
+   "prop": "margin-top",
+   "old": "10px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-section-head h2",
+   "prop": "font-size",
+   "old": "25px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-section-head h2",
+   "prop": "margin-top",
+   "old": "10px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-course",
+   "prop": "gap",
+   "old": "36px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-stories",
+   "prop": "margin-top",
+   "old": "56px",
+   "new": "64px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-community",
+   "prop": "margin-top",
+   "old": "56px",
+   "new": "64px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-community h2",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-conversation>div",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-footer>span:last-child",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:1600px)",
+   "prop": "@media",
+   "old": "@media(min-width:1600px)",
+   "new": "@media(min-width:1440px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:1200px)",
+   "prop": "@media",
+   "old": "@media(max-width:1200px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:1200px)",
+   "selector": ".portal-course h3",
+   "prop": "font-size",
+   "old": "21px",
+   "new": "20px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".portal-front",
+   "prop": "margin-bottom",
+   "old": "36px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".portal-hero",
+   "prop": "padding",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".portal-hero h1",
+   "prop": "font-size",
+   "old": "42px",
+   "new": "40px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".portal-section-head h2",
+   "prop": "font-size",
+   "old": "21px",
+   "new": "20px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".portal-community",
+   "prop": "gap",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".portal-community",
+   "prop": "margin-top",
+   "old": "36px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".portal-community h2",
+   "prop": "font-size",
+   "old": "25px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".portal-stories",
+   "prop": "margin-top",
+   "old": "36px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".portal-highlight-heading>span:last-child",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".account-menu",
+   "prop": "border-radius",
+   "old": "14px",
+   "new": "20px",
+   "kind": "radius"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".account-identity",
+   "prop": "gap",
+   "old": "14px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".account-identity small",
+   "prop": "margin-top",
+   "old": "3px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".account-menu nav",
+   "prop": "padding",
+   "old": "10px 0",
+   "new": "12px 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".account-menu nav",
+   "prop": "gap",
+   "old": "2px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".account-menu nav a,.account-logout",
+   "prop": "gap",
+   "old": "14px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".account-menu nav a,.account-logout",
+   "prop": "padding",
+   "old": "10px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".account-menu nav a,.account-logout",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".card-body .card-meta",
+   "prop": "margin-top",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-directory-section .portal-section-head h2",
+   "prop": "font-size",
+   "old": "26px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-directory-section .portal-section-head p",
+   "prop": "margin",
+   "old": "10px 0 0",
+   "new": "12px 0 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-section-empty",
+   "prop": "padding",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".portal-directory-section .portal-section-head h2",
+   "prop": "font-size",
+   "old": "22px",
+   "new": "20px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".editorial-heading>span",
+   "prop": "font-size",
+   "old": "9px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".editorial-heading h2 span",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".editorial-entry",
+   "prop": "padding",
+   "old": "22px 0 24px",
+   "new": "24px 0 24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".editorial-index>span:first-child",
+   "prop": "font-size",
+   "old": "26px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".editorial-index>span:last-child",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".editorial-entry h3",
+   "prop": "font-size",
+   "old": "17px",
+   "new": "18px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".editorial-entry h3",
+   "prop": "margin",
+   "old": "14px 0 10px",
+   "new": "16px 0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".editorial-byline",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".editorial-byline",
+   "prop": "margin-top",
+   "old": "18px",
+   "new": "20px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".editorial-more",
+   "prop": "padding-top",
+   "old": "18px",
+   "new": "16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:1201px)",
+   "prop": "@media",
+   "old": "@media(min-width:1201px)",
+   "new": "\u00008\u0000\n@media(min-width:1441px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:601px) and (max-width:1200px)",
+   "prop": "@media",
+   "old": "@media(min-width:601px) and (max-width:1200px)",
+   "new": "@media(min-width:601px) and (max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-editorial .editorial-entry h3",
+   "prop": "margin",
+   "old": "0 0 10px",
+   "new": "0 0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:900px)",
+   "prop": "@media",
+   "old": "@media(max-width:900px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:900px)",
+   "selector": ".portal-front",
+   "prop": "gap",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:520px)",
+   "prop": "@media",
+   "old": "@media(max-width:520px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".editorial-column",
+   "prop": "gap",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-editorial .editorial-columns h3",
+   "prop": "font-size",
+   "old": "19px",
+   "new": "18px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:520px)",
+   "prop": "@media",
+   "old": "@media(max-width:520px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:901px)",
+   "prop": "@media",
+   "old": "@media(min-width:901px)",
+   "new": "@media(min-width:1101px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:901px)",
+   "prop": "@media",
+   "old": "@media(min-width:901px)",
+   "new": "@media(min-width:1101px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:1150px)",
+   "prop": "@media",
+   "old": "@media(max-width:1150px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:540px)",
+   "prop": "@media",
+   "old": "@media(max-width:540px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:540px)",
+   "selector": ".channel-card .card-body .card-meta",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".channel-feed-footer",
+   "prop": "padding",
+   "old": "28px 0 20px",
+   "new": "24px 0 20px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:1150px)",
+   "prop": "@media",
+   "old": "@media(max-width:1150px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:540px)",
+   "prop": "@media",
+   "old": "@media(max-width:540px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:901px)",
+   "prop": "@media",
+   "old": "@media(min-width:901px)",
+   "new": "\u000020\u0000\n@media(min-width:1101px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:901px)",
+   "prop": "@media",
+   "old": "@media(min-width:901px)",
+   "new": "\u000022\u0000\n@media(min-width:1101px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:901px)",
+   "prop": "@media",
+   "old": "@media(min-width:901px)",
+   "new": "\u000023\u0000\n@media(min-width:1101px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:1200px)",
+   "prop": "@media",
+   "old": "@media(min-width:1200px)",
+   "new": "@media(min-width:1440px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:900px)",
+   "prop": "@media",
+   "old": "@media(max-width:900px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(min-width:901px)",
+   "prop": "@media",
+   "old": "@media(min-width:901px)",
+   "new": "\u000024\u0000\n@media(min-width:1101px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".reference-picks",
+   "prop": "gap",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".reference-pick h3",
+   "prop": "font-size",
+   "old": "19px",
+   "new": "18px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".reference-pick>p",
+   "prop": "margin",
+   "old": "0 0 28px",
+   "new": "0 0 32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:900px)",
+   "prop": "@media",
+   "old": "@media(max-width:900px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:900px)",
+   "selector": ".reference-pick h3",
+   "prop": "font-size",
+   "old": "17px",
+   "new": "18px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-front-editorial .reference-pick",
+   "prop": "margin",
+   "old": "0 0 28px",
+   "new": "0 0 32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-front-editorial .reference-pick",
+   "prop": "padding-bottom",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".portal-front-editorial .editorial-heading h2",
+   "prop": "font-size",
+   "old": "26px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".portal-front-editorial .editorial-heading h2",
+   "prop": "font-size",
+   "old": "22px",
+   "new": "20px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".reference-type",
+   "prop": "margin",
+   "old": "0 0 10px",
+   "new": "0 0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".reference-type",
+   "prop": "padding",
+   "old": "3px 8px",
+   "new": "4px 8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".home-leaderboard",
+   "prop": "padding",
+   "old": "20px 24px 28px",
+   "new": "20px 24px 24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".home-leaderboard-person p",
+   "prop": "margin",
+   "old": "6px 0 0",
+   "new": "8px 0 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:1000px)",
+   "prop": "@media",
+   "old": "@media(max-width:1000px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:540px)",
+   "prop": "@media",
+   "old": "@media(max-width:540px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".home-leaderboard-stats>span",
+   "prop": "gap",
+   "old": "2px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:1150px)",
+   "prop": "@media",
+   "old": "@media(max-width:1150px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:540px)",
+   "prop": "@media",
+   "old": "@media(max-width:540px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".empty-preview-author",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".empty-preview-author>div",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".empty-preview-content",
+   "prop": "gap",
+   "old": "9px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".section-empty-copy .section-empty-action,.ranking-connect-empty .section-empty-action,.ranking-side-actions .section-empty-action",
+   "prop": "padding",
+   "old": "10px 20px",
+   "new": "12px 20px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".catalog-reader-layout .reader-category",
+   "prop": "padding-left",
+   "old": "60px",
+   "new": "64px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".reader-author-identity",
+   "prop": "gap",
+   "old": "14px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".reader-author-identity p",
+   "prop": "margin",
+   "old": "6px 0 0",
+   "new": "8px 0 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".reader-author-stats",
+   "prop": "margin",
+   "old": "28px 0",
+   "new": "32px 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".reader-author-stats>div",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": ".reader-author-stats dd",
+   "prop": "font-size",
+   "old": "22px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "@media(max-width:900px)",
+   "prop": "@media",
+   "old": "@media(max-width:900px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "member-profiles.css",
+   "media": "",
+   "selector": ".member-posts,.member-relations",
+   "prop": "margin-top",
+   "old": "36px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "member-profiles.css",
+   "media": "",
+   "selector": ".member-feed-heading h2,.member-relations h2",
+   "prop": "font-size",
+   "old": "22px",
+   "new": "20px",
+   "kind": "font-size"
+  },
+  {
+   "file": "member-profiles.css",
+   "media": "",
+   "selector": ".member-tabs a",
+   "prop": "padding",
+   "old": "10px 24px",
+   "new": "12px 24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "member-profiles.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".member-posts",
+   "prop": "margin-top",
+   "old": "28px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "member-profiles.css",
+   "media": "",
+   "selector": ".author-home-subtitle",
+   "prop": "margin",
+   "old": "10px 0 0",
+   "new": "12px 0 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "member-profiles.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".author-home .member-stats",
+   "prop": "gap",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "page-loading.css",
+   "media": "",
+   "selector": ".skeleton-card-body",
+   "prop": "gap",
+   "old": "14px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "page-loading.css",
+   "media": "",
+   "selector": ".skeleton-meta",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "page-loading.css",
+   "media": "",
+   "selector": ".skeleton-post",
+   "prop": "gap",
+   "old": "14px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "page-loading.css",
+   "media": "",
+   "selector": "@media(max-width:1150px)",
+   "prop": "@media",
+   "old": "@media(max-width:1150px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "page-loading.css",
+   "media": "@media(max-width:600px)",
+   "selector": ".page-loading .home-heading h1",
+   "prop": "font-size",
+   "old": "26px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "page-loading.css",
+   "media": "",
+   "selector": "@media(max-width:1150px)",
+   "prop": "@media",
+   "old": "@media(max-width:1150px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "page-loading.css",
+   "media": "",
+   "selector": ".skeleton-home-tabs",
+   "prop": "margin",
+   "old": "20px auto 36px",
+   "new": "20px auto 32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "page-loading.css",
+   "media": "",
+   "selector": ".skeleton-home-tabs",
+   "prop": "padding",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "page-loading.css",
+   "media": "",
+   "selector": ".skeleton-home-feature",
+   "prop": "margin-bottom",
+   "old": "36px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "page-loading.css",
+   "media": "",
+   "selector": "@media(max-width:1000px)",
+   "prop": "@media",
+   "old": "@media(max-width:1000px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "page-loading.css",
+   "media": "",
+   "selector": ".skeleton-sidebar-links",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-links .ranking-join",
+   "prop": "padding",
+   "old": "10px 16px",
+   "new": "12px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-boards",
+   "prop": "margin",
+   "old": "28px 0 20px",
+   "new": "32px 0 20px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-boards a",
+   "prop": "padding",
+   "old": "10px 14px",
+   "new": "12px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-select select",
+   "prop": "padding",
+   "old": "0 28px 0 12px",
+   "new": "0 24px 0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-metrics a",
+   "prop": "padding",
+   "old": "7px 12px",
+   "new": "8px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-my-rank",
+   "prop": "padding",
+   "old": "14px 20px",
+   "new": "12px 20px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-position",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-follow",
+   "prop": "font-size",
+   "old": "19px!important",
+   "new": "18px!important",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-share",
+   "prop": "font-size",
+   "old": "10px!important",
+   "new": "11px!important",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-badges",
+   "prop": "margin",
+   "old": "5px 0 7px",
+   "new": "4px 0 8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-badges span",
+   "prop": "font-size",
+   "old": "9px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-badges span",
+   "prop": "padding",
+   "old": "0 5px",
+   "new": "0 4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-primary-tool",
+   "prop": "gap",
+   "old": "5px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-primary-tool",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-empty>span",
+   "prop": "font-size",
+   "old": "32px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "@media(max-width:1200px)",
+   "prop": "@media",
+   "old": "@media(max-width:1200px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-boards a",
+   "prop": "padding",
+   "old": "10px 16px",
+   "new": "12px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-select",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-metrics a",
+   "prop": "padding",
+   "old": "7px 10px",
+   "new": "8px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-table td.ranking-score",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-badges span",
+   "prop": "font-size",
+   "old": "8px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-details summary",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-detail-content small",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "@media(max-width:1000px)",
+   "prop": "@media",
+   "old": "@media(max-width:1000px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-table td.ranking-score",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-summary-total>strong",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-summary-tools dt",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-summary-stats>div",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-my-overview dd",
+   "prop": "font-size",
+   "old": "26px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-dashboard h2,.ranking-results-heading h2",
+   "prop": "font-size",
+   "old": "17px",
+   "new": "18px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-chart-kpis>div:first-child dd",
+   "prop": "font-size",
+   "old": "32px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-chart-kpis>div:first-child dd",
+   "prop": "margin",
+   "old": "0 0 6px",
+   "new": "0 0 8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-chart-note",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-person-kpis>div",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-person-kpis strong",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-person-kpis b",
+   "prop": "font-size",
+   "old": "22px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-treemap-section h3",
+   "prop": "margin",
+   "old": "0 0 10px",
+   "new": "0 0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-treemap",
+   "prop": "gap",
+   "old": "2px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-tree-rest",
+   "prop": "gap",
+   "old": "2px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-tree-claude",
+   "prop": "padding",
+   "old": "10px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-tree-bottom",
+   "prop": "gap",
+   "old": "2px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-tree-gemini",
+   "prop": "padding",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-tree-other",
+   "prop": "padding",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-tree-bottom",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-demo-dialog button",
+   "prop": "font-size",
+   "old": "22px",
+   "new": "20px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:1100px)",
+   "selector": ".ranking-chart-kpis>div:first-child dd",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "@media(max-width:850px)",
+   "prop": "@media",
+   "old": "@media(max-width:850px)",
+   "new": "@media(max-width:760px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-chart-kpis dt",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-results-heading",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-person-kpis strong",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-rank-sidebar dd",
+   "prop": "margin",
+   "old": "6px 0 0",
+   "new": "8px 0 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-main-layout .ranking-snapshot-summary",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "@media(max-width:1000px)",
+   "prop": "@media",
+   "old": "@media(max-width:1000px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-side-rank",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-main-layout .ranking-details summary",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-main-layout .ranking-list-status",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-community-total",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-support-column .ranking-community-card .ranking-chart-note",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "@media(max-width:1000px)",
+   "prop": "@media",
+   "old": "@media(max-width:1000px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-community-stats",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-community-stats>div",
+   "prop": "padding",
+   "old": "14px 16px",
+   "new": "12px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-community-stats dd",
+   "prop": "font-size",
+   "old": "22px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-community-stats dd.ranking-stat-method",
+   "prop": "font-size",
+   "old": "17px",
+   "new": "18px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(min-width:761px) and (max-width:1100px)",
+   "selector": ".ranking-community-stats dd.ranking-stat-method",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-filter-control>.feed-filter-trigger",
+   "prop": "padding",
+   "old": "6px 10px",
+   "new": "8px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-filter-control>.feed-filter-trigger",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-person-tool-map h3",
+   "prop": "margin",
+   "old": "0 0 10px",
+   "new": "0 0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-person-treemap",
+   "prop": "gap",
+   "old": "3px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-person-treemap",
+   "prop": "border-radius",
+   "old": "10px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-community-stats>div",
+   "prop": "padding",
+   "old": "12px 10px",
+   "new": "12px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(min-width:761px) and (max-width:1100px)",
+   "selector": ".ranking-community-stats",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(min-width:761px) and (max-width:1100px)",
+   "selector": ".ranking-community-stats>div",
+   "prop": "padding",
+   "old": "10px 6px",
+   "new": "12px 8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(min-width:761px) and (max-width:1100px)",
+   "selector": ".ranking-community-stats dd",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(min-width:761px) and (max-width:1100px)",
+   "selector": ".ranking-community-stats dt",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-rules-link",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-empty",
+   "prop": "padding",
+   "old": "28px 0 4px",
+   "new": "24px 0 4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-symbol",
+   "prop": "border-radius",
+   "old": "18px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-empty h3",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-empty h3",
+   "prop": "margin",
+   "old": "0 0 10px",
+   "new": "0 0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-empty small",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-page>header",
+   "prop": "margin",
+   "old": "28px 0",
+   "new": "32px 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-page h1",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-panel",
+   "prop": "padding",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-tabs",
+   "prop": "border-radius",
+   "old": "24px",
+   "new": "999px",
+   "kind": "radius"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-tabs button",
+   "prop": "padding",
+   "old": "10px 16px",
+   "new": "12px 16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-aside ul",
+   "prop": "padding-left",
+   "old": "18px",
+   "new": "16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-flow input[data-connect-name]",
+   "prop": "margin-top",
+   "old": "10px",
+   "new": "12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "@media(max-width:900px)",
+   "prop": "@media",
+   "old": "@media(max-width:900px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-step",
+   "prop": "padding",
+   "old": "0 0 28px 52px",
+   "new": "0 0 24px 48px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-step>.ranking-connect-panel",
+   "prop": "border-radius",
+   "old": "16px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connect-status h2",
+   "prop": "font-size",
+   "old": "15px",
+   "new": "16px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:600px)",
+   "selector": ".ranking-connect-step",
+   "prop": "padding-left",
+   "old": "42px",
+   "new": "40px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:600px)",
+   "selector": ".ranking-connect-step>.ranking-connect-panel",
+   "prop": "padding",
+   "old": "18px",
+   "new": "16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-point-tooltip",
+   "prop": "padding",
+   "old": "9px 14px",
+   "new": "8px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-point-tooltip",
+   "prop": "border-radius",
+   "old": "18px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-point-tooltip small",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-point-tooltip small",
+   "prop": "margin-bottom",
+   "old": "3px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-person>.ranking-badges span",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-person>.ranking-badges span",
+   "prop": "padding",
+   "old": "0 6px",
+   "new": "0 8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-person>.ranking-badges span",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-distribution",
+   "prop": "gap",
+   "old": "2px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".ranking-person>.ranking-badges span",
+   "prop": "font-size",
+   "old": "9px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-distribution",
+   "prop": "gap",
+   "old": "3px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-distribution-heading>span",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-person-tool-map .ranking-distribution-hint",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-model-treemap",
+   "prop": "margin-top",
+   "old": "14px",
+   "new": "16px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-model-treemap",
+   "prop": "border-radius",
+   "old": "10px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-model-tile",
+   "prop": "gap",
+   "old": "7px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-model-tile",
+   "prop": "padding",
+   "old": "12px 10px",
+   "new": "12px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-tile-agent",
+   "prop": "font-size",
+   "old": "9px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-treemap-legend>span",
+   "prop": "gap",
+   "old": "5px",
+   "new": "4px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-treemap-legend>span",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-treemap-legend i",
+   "prop": "border-radius",
+   "old": "3px",
+   "new": "4px",
+   "kind": "radius"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-connected-status",
+   "prop": "gap",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-rank-value",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-side-actions>a.ranking-demo-detail",
+   "prop": "padding",
+   "old": "10px 20px",
+   "new": "12px 20px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-usage-header",
+   "prop": "margin",
+   "old": "28px 0",
+   "new": "32px 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-usage-header h1",
+   "prop": "font-size",
+   "old": "28px",
+   "new": "30px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-usage-header h1",
+   "prop": "margin",
+   "old": "0 0 10px",
+   "new": "0 0 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-usage-summary",
+   "prop": "margin",
+   "old": "0 0 28px",
+   "new": "0 0 32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-usage-summary dd",
+   "prop": "margin",
+   "old": "10px 0 0",
+   "new": "12px 0 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-usage-summary dd",
+   "prop": "font-size",
+   "old": "26px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-usage-days :is(th,td)",
+   "prop": "padding",
+   "old": "14px 0",
+   "new": "12px 0",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:600px)",
+   "selector": ".ranking-usage-summary>div",
+   "prop": "padding",
+   "old": "14px 10px",
+   "new": "12px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "@media(max-width:600px)",
+   "selector": ".ranking-usage-summary dd",
+   "prop": "font-size",
+   "old": "19px",
+   "new": "18px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ":is(#ranking-month-picker,#ranking-filter-metric,#ranking-filter-city) .feed-filter-option",
+   "prop": "padding",
+   "old": "10px 12px",
+   "new": "12px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-main-layout .ranking-creator",
+   "prop": "gap",
+   "old": "10px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-tags .ranking-badges span",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-tags .ranking-badges span",
+   "prop": "padding",
+   "old": "0 6px",
+   "new": "0 8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": ".ranking-tags .ranking-badges span",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "@media(max-width:1200px)",
+   "prop": "@media",
+   "old": "@media(max-width:1200px)",
+   "new": "@media(max-width:1100px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "section-headings.css",
+   "media": "@media(max-width:760px)",
+   "selector": "#content.section-index>.home-heading h1,\n #content.section-index>.forum-page>.forum-heading h1",
+   "prop": "font-size",
+   "old": "26px",
+   "new": "24px",
+   "kind": "font-size"
+  },
+  {
+   "file": "section-headings.css",
+   "media": "",
+   "selector": "#content.feed-end-page .channel-feed-footer",
+   "prop": "padding",
+   "old": "28px 0 24px",
+   "new": "24px 0 24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".site-tour button",
+   "prop": "padding",
+   "old": "8px 10px",
+   "new": "8px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".site-tour button",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".tour-invite-actions",
+   "prop": "margin-top",
+   "old": "28px",
+   "new": "32px",
+   "kind": "spacing"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".site-tour button",
+   "prop": "border-radius",
+   "old": "24px",
+   "new": "999px",
+   "kind": "radius"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".tour-invite-content",
+   "prop": "padding",
+   "old": "28px",
+   "new": "24px",
+   "kind": "spacing"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": "@media(max-width:480px)",
+   "prop": "@media",
+   "old": "@media(max-width:480px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "@media(max-width:480px)",
+   "selector": ".site-tour-invite h2",
+   "prop": "font-size",
+   "old": "22px",
+   "new": "20px",
+   "kind": "font-size"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".folder-news-lines",
+   "prop": "gap",
+   "old": "7px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".folder-news-lines",
+   "prop": "margin-top",
+   "old": "18px",
+   "new": "20px",
+   "kind": "spacing"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": "@media(max-width:380px)",
+   "prop": "@media",
+   "old": "@media(max-width:380px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".sidebar-tour-card .guide-card-action",
+   "prop": "padding",
+   "old": "8px 14px",
+   "new": "8px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".sidebar-tour-card .sidebar-tour-copy p",
+   "prop": "font-size",
+   "old": "10px",
+   "new": "11px",
+   "kind": "font-size"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".sidebar-tour-card .sidebar-tour-copy p",
+   "prop": "margin-top",
+   "old": "6px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".folder-knowledge-map",
+   "prop": "border-radius",
+   "old": "10px",
+   "new": "12px",
+   "kind": "radius"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".folder-knowledge-map i",
+   "prop": "border-radius",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": ".folder-editorial-lines",
+   "prop": "padding-left",
+   "old": "7px",
+   "new": "8px",
+   "kind": "spacing"
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": "@media(max-width:380px)",
+   "prop": "@media",
+   "old": "@media(max-width:380px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "styles.css",
+   "media": "",
+   "selector": "@media(max-width:400px)",
+   "prop": "@media",
+   "old": "@media(max-width:400px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "styles.css",
+   "media": "",
+   "selector": "@media(max-width:400px)",
+   "prop": "@media",
+   "old": "@media(max-width:400px)",
+   "new": "@media(max-width:600px)",
+   "kind": "breakpoint"
+  },
+  {
+   "file": "workspace-header.css",
+   "media": "",
+   "selector": ".workspace-header",
+   "prop": "padding",
+   "old": "8px 24px 14px",
+   "new": "8px 24px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "workspace-header.css",
+   "media": "",
+   "selector": ".workspace-header .top-search button",
+   "prop": "padding",
+   "old": "10px 14px",
+   "new": "12px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "workspace-header.css",
+   "media": "@media(max-width:760px)",
+   "selector": ".workspace-header",
+   "prop": "padding",
+   "old": "4px 12px 10px",
+   "new": "4px 12px 12px",
+   "kind": "spacing"
+  },
+  {
+   "file": "tokens.css",
+   "media": "",
+   "selector": ".nova-ds",
+   "prop": "--radius-md",
+   "old": "6px",
+   "new": "8px",
+   "kind": "radius"
+  },
+  {
+   "file": "tokens.css",
+   "media": "",
+   "selector": ".nova-ds",
+   "prop": "--text-secondary / tertiary / helper",
+   "old": "#707070 / #949494 / #6B7280（榜单）；#626262 / #666666（普通页）",
+   "new": "#626262",
+   "kind": "color"
+  }
+ ]
+}

@@ -140,7 +140,7 @@
       "source": [
         "styles.css"
       ],
-      "size": "基础圆角 6px；左右 padding 12 / 16 / 20px。页面胶囊动作可有明确覆盖。",
+      "size": "基础圆角 8px（--radius-md）；左右 padding 12 / 16 / 20px。页面胶囊动作可有明确覆盖。",
       "layout": "grid",
       "status": "产品已有"
     },
@@ -330,7 +330,7 @@
         "forum.css",
         "forum.js"
       ],
-      "size": "通用 min-height 40px、圆角 6px；编辑器内有页面覆盖。",
+      "size": "通用 min-height 40px、圆角 8px；编辑器内有页面覆盖。",
       "layout": "grid",
       "status": "产品已有"
     },
@@ -794,14 +794,14 @@
     {
       "id": "sidebar",
       "group": "导航与筛选",
-      "name": "主导航",
+      "name": "分组侧栏",
       "en": "Sidebar navigation",
       "summary": "首页、知识学习和社区参与组成产品主导航。",
       "variants": [
         {
           "label": "完整分组",
           "html": "",
-          "fixture": "current-sidebar-document",
+          "fixture": "index-document",
           "selector": ".product-sidebar",
           "patch": [
             {
@@ -814,9 +814,9 @@
           "note": ""
         },
         {
-          "label": "文章选中",
+          "label": "资讯选中",
           "html": "",
-          "fixture": "current-sidebar-document",
+          "fixture": "index-document",
           "selector": ".product-sidebar",
           "patch": [
             {
@@ -838,7 +838,7 @@
         {
           "label": "悬停 / 焦点",
           "html": "",
-          "fixture": "current-sidebar-document",
+          "fixture": "index-document",
           "selector": ".product-sidebar",
           "patch": [
             {
@@ -896,26 +896,7 @@
       ],
       "size": "桌面 224px；主导航与底部区域保持至少 32px 间距。",
       "layout": "grid",
-      "status": "产品已有",
-      "confirmedRules": {
-        "status": "design-confirmed-implementation-unverified",
-        "entries": [
-          "首页",
-          "实战",
-          "专栏",
-          "文章",
-          "论坛",
-          "活动",
-          "Token 榜"
-        ],
-        "selection": "点击立即选中；图标从灰色模糊变为蓝色模糊，文字加粗。",
-        "loading": "右侧显示骨架屏；成功后替换为正式内容。",
-        "error": {
-          "message": "加载失败，请重试",
-          "actionLabel": "重新加载",
-          "retry": "保留选中入口，显示骨架屏并重新加载当前页面。"
-        }
-      }
+      "status": "产品已有"
     },
     {
       "id": "global-search",
@@ -4570,7 +4551,7 @@
         "section-headings.js",
         "home.css"
       ],
-      "size": "页面 30px / 42px / 500；手机 26px / 36px；说明 13px / 22px。",
+      "size": "页面 30px / 42px / 500；手机 24px / 32px；说明 13px / 22px。",
       "layout": "stack",
       "status": "产品已有"
     },

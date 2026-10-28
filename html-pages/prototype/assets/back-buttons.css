@@ -25,7 +25,7 @@
 .nova-ds .ds-topbar .page-back{order:-1}
 .nova-ds .ds-topbar:has(:is(#page-back:not([hidden]),[data-detail-back])) :is(.page-back,.ds-row){pointer-events:auto}
 .nova-ds .ds-topbar:has(:is(#page-back:not([hidden]),[data-detail-back]))>.mobile-menu{display:none}
-@media(max-width:1150px){.nova-ds{--back-edge:24px}}
+@media(max-width:1100px){.nova-ds{--back-edge:24px}}
 @media(max-width:760px){.nova-ds{--back-edge:16px}}
 
 /* Share the home navigation's frosted-glass material. */

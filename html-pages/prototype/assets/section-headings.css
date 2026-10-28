@@ -12,7 +12,7 @@
  #content.section-index>.home-heading,
  #content.section-index>.forum-page>.forum-heading{min-height:66px;margin-bottom:24px}
  #content.section-index>.home-heading h1,
- #content.section-index>.forum-page>.forum-heading h1{font-size:26px;line-height:36px}
+ #content.section-index>.forum-page>.forum-heading h1{font-size:24px;line-height:36px}
 }
 
 /* The feed scrolls beneath a transparent header; only the publish action stays visible. */
@@ -110,7 +110,7 @@
 }
 #content.feed-end-page:not(:has(>.forum-page))>*{flex-shrink:0}
 #content.feed-end-page>.channel-feed-footer{margin-top:auto}
-#content.feed-end-page .channel-feed-footer{padding:28px 0 24px;flex-shrink:0}
+#content.feed-end-page .channel-feed-footer{padding:24px 0 24px;flex-shrink:0}
 #content.feed-end-page>.forum-page .forum-feed-scroll{
  display:flex;flex-direction:column;padding-bottom:0;
 }

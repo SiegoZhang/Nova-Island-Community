@@ -1,0 +1,10 @@
+/* Mount/reload entrance. Repeated control interactions never retrigger it. */
+.nova-ds{--motion-enter:480ms;--motion-stagger:60ms;--motion-distance:8px;--motion-ease:cubic-bezier(.22,1,.36,1)}
+@keyframes nova-page-enter{from{opacity:0;transform:translateY(var(--motion-distance))}to{opacity:1;transform:translateY(0)}}
+.ds-page-entrance>.ds-topbar,.ds-page-entrance>.ds-main>.course-intro-layout,.ds-page-entrance>.ds-main>.course-layout,.ds-page-entrance>.ds-main>#related,.ds-page-entrance>.ds-main>.ds-footer,.ds-page-entrance>.ds-main>.ds-hero,.ds-page-entrance>.ds-main>.ds-tabs,.ds-page-entrance>.ds-main>[role="tabpanel"],.ds-page-entrance>.ds-entrance-sample{animation:nova-page-enter var(--motion-enter) var(--motion-ease) both}
+.ds-page-entrance>.ds-main>.course-intro-layout,.ds-page-entrance>.ds-main>.ds-hero{animation-delay:var(--motion-stagger)}
+.ds-page-entrance>.ds-main>.course-layout,.ds-page-entrance>.ds-main>.ds-tabs{animation-delay:calc(var(--motion-stagger)*2)}
+.ds-page-entrance>.ds-main>#related,.ds-page-entrance>.ds-main>[role="tabpanel"]{animation-delay:calc(var(--motion-stagger)*3)}
+.ds-page-entrance>.ds-main>.ds-footer{animation-delay:calc(var(--motion-stagger)*4)}
+@media(prefers-reduced-motion:reduce){.ds-page-entrance *{animation:none!important;transform:none!important}}
+@media print{.ds-page-entrance *{animation:none!important;opacity:1!important;transform:none!important}}

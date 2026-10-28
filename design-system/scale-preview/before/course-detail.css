@@ -1,0 +1,37 @@
+/* Page composition only. All visual values come from the existing design system. */
+.nova-ds .course-header { gap:var(--space-6);padding-bottom:var(--space-8); }
+.course-header>p { max-width:var(--grid-max); }
+.course-facts { display:flex;flex-wrap:wrap;gap:var(--space-5) var(--space-10);margin:0;padding:var(--space-2) 0; }
+.course-facts dt,.course-requirements dt { color:var(--text-helper);font-size:var(--font-sm);margin-bottom:var(--space-1); }
+.course-facts dd,.course-requirements dd { margin:0;color:var(--text-primary); }
+.course-layout { display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:var(--space-12); }
+.course-section { padding-top:var(--space-12);padding-bottom:var(--space-6);scroll-margin-top:var(--space-6); }
+.course-outcomes { list-style:none;padding:0;margin:0;display:grid;gap:var(--space-4); }
+.course-outcomes li { display:flex;align-items:baseline;gap:var(--space-4); }
+.course-context { align-self:start;padding-top:var(--space-12);gap:var(--space-4); }
+.course-context p { font-size:var(--font-sm); }
+.course-requirements { margin:0;display:grid;gap:var(--space-4);font-size:var(--font-sm); }
+.course-bio { margin:var(--space-4) 0!important; }
+.course-lesson-panel { margin-top:var(--space-6);padding:var(--space-5);background:var(--surface-default);border-top:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-none); }
+.course-preview-list { margin:0;padding-left:var(--space-5);display:grid;gap:var(--space-2);list-style:decimal; }
+@media(max-width:1100px){.course-layout{grid-template-columns:1fr;gap:var(--space-4)}.course-context{padding:var(--space-5) 0;border-top:var(--border-width) solid var(--border-subtle)}}
+
+/* The next action is a first-class object alongside the course identity. */
+.course-intro-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:var(--space-8);align-items:start}
+.course-intro-layout .course-header{padding-bottom:0;gap:var(--space-5)}
+.course-intro-layout h1{font-size:var(--font-3xl)}
+.course-intro-layout .ds-continue-card{align-self:stretch}
+.course-lesson-panel{border:var(--border-width) solid var(--border-strong);border-radius:var(--radius-lg);background:var(--surface-secondary)}
+@media(max-width:1100px){.course-intro-layout{grid-template-columns:1fr}.course-intro-layout .ds-continue-card{max-width:none}}
+
+/* Course overview: content left, progress preview right. */
+@media(min-width:901px){.course-intro-layout{grid-template-columns:minmax(0,1fr) minmax(280px,336px);gap:var(--space-8)}.course-intro-layout .ds-continue-card{align-self:start}}
+@media(max-width:900px){.course-intro-layout{grid-template-columns:1fr}}
+
+.course-lesson-panel{border-color:var(--border-subtle);background:var(--surface-default)}
+
+/* Curriculum follows the introduction independently of the progress card height. */
+.nova-ds .course-layout .course-header{padding-bottom:0;gap:var(--space-5)}
+.course-layout #curriculum{padding-top:var(--space-8)}
+.course-layout .course-context{padding-top:0}
+@media(min-width:901px){.course-layout{grid-template-columns:minmax(0,1fr) minmax(280px,336px);gap:var(--space-8)}}

@@ -1,0 +1,11 @@
+# Historical references and exports stay in git but are not published.
+html-pages/figma-export
+html-pages/figma-export 2
+html-pages/*.zip
+design-system/legacy-brand
+design-system/mist-blue
+design-system/community
+design-system/RECON
+.interface-design
+figma-sync
+.claude

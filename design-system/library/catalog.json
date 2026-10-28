@@ -523,7 +523,7 @@
       "variants": [
         {
           "label": "业务状态",
-          "html": "<div class=\"ds-row\"><span class=\"ds-badge success\">已完成</span><span class=\"ds-badge warning\">待处理</span><span class=\"ds-badge danger\">保存失败</span><span class=\"ds-badge info\">未开始</span></div>",
+          "html": "<div class=\"ds-row\"><span class=\"ds-badge success\">已完成</span><span class=\"ds-badge danger\">保存失败</span><span class=\"ds-badge info\">未开始</span></div>",
           "fixture": null,
           "selector": null,
           "patch": [],

@@ -3,5 +3,5 @@
    course.css) that imports its component and page files, in their established order, into the
    components layer. Splitting those files into components/ and patterns/ happens file by file. */
 @layer tokens, components, overrides;
-@import url("tokens.css") layer(tokens);
-@import url("overrides.css") layer(overrides);
+@import url("tokens.css?v=20261029b") layer(tokens);
+@import url("overrides.css?v=20261029b") layer(overrides);

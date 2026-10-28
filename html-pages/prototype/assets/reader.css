@@ -1,14 +1,14 @@
 /* Page entry for article.html：文章详情. Load after nova.css; order inside the layer still decides ties. */
-@import url("styles.css") layer(components);
-@import url("page-entrance.css") layer(components);
-@import url("article-contents.css") layer(components);
-@import url("article-reader.css") layer(components);
-@import url("html-pages.css") layer(components);
-@import url("home.css") layer(components);
-@import url("detail-shell.css") layer(components);
-@import url("workspace-header.css") layer(components);
-@import url("site-tour.css") layer(components);
-@import url("back-buttons.css") layer(components);
-@import url("scroll-glass.css") layer(components);
-@import url("forum.css") layer(components);
-@import url("article-interactions.css") layer(components);
+@import url("styles.css?v=20261029b") layer(components);
+@import url("page-entrance.css?v=20261029b") layer(components);
+@import url("article-contents.css?v=20261029b") layer(components);
+@import url("article-reader.css?v=20261029b") layer(components);
+@import url("html-pages.css?v=20261029b") layer(components);
+@import url("home.css?v=20261029b") layer(components);
+@import url("detail-shell.css?v=20261029b") layer(components);
+@import url("workspace-header.css?v=20261029b") layer(components);
+@import url("site-tour.css?v=20261029b") layer(components);
+@import url("back-buttons.css?v=20261029b") layer(components);
+@import url("scroll-glass.css?v=20261029b") layer(components);
+@import url("forum.css?v=20261029b") layer(components);
+@import url("article-interactions.css?v=20261029b") layer(components);

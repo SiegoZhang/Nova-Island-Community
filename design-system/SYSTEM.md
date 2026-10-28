@@ -53,7 +53,7 @@
 | 成功 | #276545 文字 / #EAF6EF 背景；成功不再借用蓝色 |
 | 阅读互动 | liked #BF2531；saved Token 为 #80631B，但 article-interactions.css 最终覆盖为 #F5C842；复用时检查最终级联 |
 
-Token 分为原始值、语义、组件三层，另有插画与图表用的表现色板，结构见 [foundations.html#tokens](foundations.html#tokens)。全部变量名称和值见 [tokens.css](tokens.css)，保留语义别名，不将原始颜色复制到新组件中。深色已存在基础映射，但不是已验收主题。
+Token 分为原始值、语义、组件三层，另有插画与图表用的表现色板，结构见 [tokens.html#structure](tokens.html#structure)。全部变量名称和值见 [tokens.css](tokens.css)，保留语义别名，不将原始颜色复制到新组件中。深色已存在基础映射，但不是已验收主题。
 
 ## 排版与空间
 

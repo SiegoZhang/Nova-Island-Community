@@ -1,0 +1,121 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>设计原则 / Nova Island 设计系统</title><link rel="stylesheet" href="assets/handbook.css?v=nav-unified-1"><script src="assets/handbook-nav.js?v=nav-unified-2" defer></script></head><body class="handbook"><a class="skip-link" href="#main" style="position:absolute;left:-10000px" onfocus="this.style.left='12px'" onblur="this.style.left='-10000px'">跳到正文</a><aside class="handbook-sidebar manual-sidebar" id="library-navigation"><a class="handbook-brand" href="index.html"><b>n.</b><span>Nova Island<small>AI Community · Design System</small></span></a><nav class="manual-nav" aria-label="设计系统手册"><details class="manual-group" data-section="start"><summary><span class="tree-chevron" aria-hidden="true"></span><span>Get Started<small>开始使用</small></span></summary><div class="manual-children"><a href="index.html">概览</a><a href="figma.html">使用 Figma</a><a href="develop.html">开发接入</a><a href="with-ai.html">使用 AI 开发</a></div></details><details class="manual-group" data-section="foundations"><summary><span class="tree-chevron" aria-hidden="true"></span><span>Foundations<small>设计基础</small></span></summary><div class="manual-children"><a href="foundations.html">设计基础概览</a><a href="foundations.html#principles">设计共识</a><a href="foundations.html#colors">颜色与语义</a><a href="foundations.html#typography">文字与节奏</a><a href="foundations.html#geometry">布局、圆角与材质</a><a href="foundations.html#components">组件与状态</a><a href="foundations.html#behavior">交互与响应式</a><a href="foundations.html#pages">页面模式</a><a href="foundations.html#maintenance">来源与维护</a></div></details><details class="manual-group" data-section="guidelines"><summary><span class="tree-chevron" aria-hidden="true"></span><span>Guidelines<small>原则与扩展</small></span></summary><div class="manual-children"><a href="principles.html">设计原则</a><a href="extend.html">扩展协议</a><a href="pattern-feed.html">页面模式 · 内容流</a></div></details><details class="manual-group" data-section="components"><summary><span class="tree-chevron" aria-hidden="true"></span><span>Components<small>组件</small></span></summary><div class="manual-children"><a href="ai-community.html#overview">组件总览</a><div class="manual-search"><input id="component-search" type="search" placeholder="搜索组件" aria-label="搜索组件"></div><div id="component-nav"><div class="manual-category"><h2>基础控件</h2><a href="ai-community.html#buttons" data-search="按钮 Button 按操作优先级选主按钮、次按钮或弱操作。 主操作 次操作 弱操作 悬停 按下 键盘焦点 禁用 加载中 小 / 中 / 大 危险操作">按钮</a><a href="ai-community.html#icon-buttons" data-search="图标按钮与返回 Icon button 返回、通知与紧凑工具操作。 返回 悬停 焦点 通知 未读通知">图标按钮与返回</a><a href="ai-community.html#fields" data-search="输入框 Text field 为标题和短文本提供明确标签、限制与校验反馈。 空值 已填写 焦点 错误 禁用">输入框</a><a href="ai-community.html#textarea" data-search="多行输入 Textarea 帖子正文与评论使用不同的长度限制。 帖子正文 已有内容 评论输入 错误">多行输入</a><a href="ai-community.html#selection" data-search="复选与单选 Selection controls 多选标签与单选月份的原生选择语义。 未选择 已选择 键盘焦点 禁用 单选月份">复选与单选</a><a href="ai-community.html#badges" data-search="状态与分类标签 Badge &amp; tag 状态标签与内容分类拥有独立语义，不混用。 业务状态 内容类型 六种色阶 帖子标签">状态与分类标签</a><a href="ai-community.html#avatars" data-search="头像与身份 Avatar 尺寸随列表、作者卡与成员主页层级变化。 列表 20px 顶栏 32px 榜单 36px 阅读作者 48px 成员 80px 长名字">头像与身份</a><a href="ai-community.html#icons" data-search="功能图标 Iconography 复用现有 SVG 图标的描边、尺寸和语义。 常用功能 图标 + 文字 独立动作 禁用动作">功能图标</a></div><div class="manual-category"><h2>导航与筛选</h2><a href="ai-community.html#sidebar" data-search="主导航 Sidebar navigation 首页、知识学习和社区参与组成产品主导航。 完整分组 文章选中 悬停 / 焦点">主导航</a><a href="ai-community.html#global-search" data-search="全局搜索 Global search 常驻顶栏，支持跨内容搜索。 默认 输入内容 聚焦 结果反馈 无结果">全局搜索</a><a href="ai-community.html#account-menu" data-search="账号菜单 Account menu 集中放置通知、收藏、草稿、设置和指南入口。 展开菜单 触发器 焦点入口">账号菜单</a><a href="ai-community.html#channel-nav" data-search="频道导航 Channel navigation 在推荐和主题频道之间切换，保留内容位置关系。 推荐选中 主题选中 悬停 / 焦点">频道导航</a><a href="ai-community.html#tabs" data-search="分段导航 Tabs &amp; segmented navigation 账号、成员和榜单使用不同密度的分段导航。 通知 成员内容 作者主页 统计口径 操作系统">分段导航</a><a href="ai-community.html#filter-capsule" data-search="筛选胶囊 Filter capsule 同一个胶囊包含打开筛选和移除已选项。 无筛选 单项 多项 溢出折叠 精选开关 我的帖子已选">筛选胶囊</a><a href="ai-community.html#filter-panel" data-search="筛选面板 Filter popover 支持标签搜索、多选、清空与应用。 展开 / 已选 搜索结果 搜索无结果 单选">筛选面板</a><a href="ai-community.html#outline" data-search="阅读目录 Article contents 目录与正文标题对应，突出当前阅读位置。 默认 当前第二节 焦点">阅读目录</a></div><div class="manual-category"><h2>内容与交流</h2><a href="ai-community.html#content-card" data-search="图文内容卡 Content card 真实封面、纯文字和不同内容色调共享同一信息结构。 带封面 纯文字 / 蓝 纯文字 / 黄 纯文字 / 红 悬停 长标题">图文内容卡</a><a href="ai-community.html#forum-post" data-search="论坛帖子卡 Discussion card 以作者、标题、摘要、标签与讨论操作组成一条帖子。 默认 悬停 长内容 草稿">论坛帖子卡</a><a href="ai-community.html#reactions" data-search="点赞、评论与收藏 Content actions 列表、内容卡与详情使用同一互动语义，密度不同。 帖子默认 已点赞 / 已收藏 卡片紧凑 详情 悬停 / 焦点">点赞、评论与收藏</a><a href="ai-community.html#metadata" data-search="作者、阅读数与元信息 Content metadata 将身份、分类和阅读数据放在标题附近，避免与操作混淆。 文章元信息 课程信息 长姓名">作者、阅读数与元信息</a><a href="ai-community.html#author-card" data-search="作者信息卡 Author card 在文章与帖子详情中介绍作者，并提供继续阅读入口。 文章作者 帖子作者 更多作品">作者信息卡</a><a href="ai-community.html#member-profile" data-search="成员身份与统计 Member profile 成员主页突出身份，其次是贡献与关系数量。 普通成员 作者主页 没有内容">成员身份与统计</a><a href="ai-community.html#active-members" data-search="活跃讨论者 Active members 论坛右栏的成员与近期内容列表。 成员列表 悬停 键盘焦点">活跃讨论者</a><a href="ai-community.html#comments" data-search="评论与回复 Comment thread 支持评论、点赞、回复层级及自己的评论操作。 评论列表 回复层级 无评论 回复输入">评论与回复</a><a href="ai-community.html#editor" data-search="发布编辑器 Post composer 标签、标题、正文、草稿状态与发布动作组成完整输入流程。 空白编辑器 恢复草稿 正文预览">发布编辑器</a><a href="ai-community.html#editor-toolbar" data-search="排版工具与标签选择 Editor tools 编辑器中的轻量 Markdown 操作和多选标签。 工具栏 标签选择 保存中反馈 保存失败">排版工具与标签选择</a><a href="ai-community.html#article-prose" data-search="阅读正文与信息块 Reading content 正文、引用、代码、步骤与延伸阅读保持稳定阅读节奏。 正文与引用 大字号阅读 步骤信息 提示与代码 延伸阅读">阅读正文与信息块</a></div><div class="manual-category"><h2>学习与导览</h2><a href="ai-community.html#course-modules" data-search="课程模块 Course module 以原生 details 组织课程章节和完成进度。 已完成 / 展开 进行中 / 展开 未解锁 / 展开 收起">课程模块</a><a href="ai-community.html#lessons" data-search="课时条目 Lesson row 已完成、当前、可学习和未解锁是四种独立状态。 已完成 当前课时 可学习 未解锁 焦点">课时条目</a><a href="ai-community.html#progress" data-search="进度与继续学习 Progress &amp; resume 使用进度条和文字共同表达学习完成情况。 未开始 进行中 全部完成 继续学习卡 指南继续卡">进度与继续学习</a><a href="ai-community.html#guide-folder" data-search="入门指南文件夹 Learning folder 首页的标志性蓝色文件夹承载四周学习入口。 开始旅程 进行中 已完成">入门指南文件夹</a><a href="ai-community.html#journey-week" data-search="学习周与任务 Learning week 四周路线中的当前周、已完成周和未开始周。 当前周 未开始 已完成 单个任务 任务完成">学习周与任务</a><a href="ai-community.html#instructor" data-search="课程讲师卡 Instructor card 课程详情中的讲师介绍与学习要求。 讲师 学习要求 课程概览">课程讲师卡</a><a href="ai-community.html#onboarding" data-search="功能导览 Onboarding 首次引导邀请与步骤浮层，各自有完整的退出路径。 邀请卡 第一步 最后一步">功能导览</a><a href="ai-community.html#fluid-orb" data-search="学习动态球体 Fluid orb 课程继续学习卡中的装饰性动态标记。 动态 暂停 无 WebGL 回退">学习动态球体</a></div><div class="manual-category"><h2>榜单与数据</h2><a href="ai-community.html#ranking-row" data-search="成员排名行 Ranking row 将排名、成员身份、模型分布和用量放在同一行。 前三名 悬停 定位自己 无匹配成员">成员排名行</a><a href="ai-community.html#trophies" data-search="排名奖杯与首页榜单 Podium &amp; compact ranking 前三名用金、银、铜材质区分，同时保留名次语义。 第一名 / 金 第二名 / 银 第三名 / 铜 普通名次 首页三人榜">排名奖杯与首页榜单</a><a href="ai-community.html#ranking-summary" data-search="社区用量总览 Community usage 突出总量，统计口径与时间范围紧随数字。 总览 当前筛选">社区用量总览</a><a href="ai-community.html#trend-chart" data-search="用量趋势图 Trend chart 用折线和填充展示每天的使用趋势。 每日趋势 数据点焦点 提示气泡">用量趋势图</a><a href="ai-community.html#distribution" data-search="模型分布 Model distribution 条形分布适合排名行，矩形树图适合个人概览。 行内条形 矩形树图 单一模型">模型分布</a><a href="ai-community.html#personal-rank" data-search="我的排行 Personal rank 连接前、连接后和筛选无数据拥有不同表达。 未连接 已连接 筛选无记录">我的排行</a><a href="ai-community.html#connection" data-search="接入步骤与命令 Connection flow 公开名称、操作系统命令、同步状态形成连续步骤。 接入流程 状态完成">接入步骤与命令</a></div><div class="manual-category"><h2>反馈与页面模式</h2><a href="ai-community.html#empty-states" data-search="空状态 Empty state 区分尚无内容、搜索无结果和未开始行动。 专栏未开放 搜索无结果 没有收藏 没有草稿">空状态</a><a href="ai-community.html#skeletons" data-search="加载骨架 Skeleton loading 加载结构对应将出现的内容，而不是统一转圈。 图文卡片 纯文字卡片 论坛帖子 榜单行">加载骨架</a><a href="ai-community.html#error-states" data-search="错误与恢复 Error &amp; recovery 页面失败、表单错误和存储失败分别提供恢复路径。 页面加载失败 帖子不存在 本地保存失败 字段错误">错误与恢复</a><a href="ai-community.html#toast" data-search="轻提示 Toast 复制、收藏、保存等操作后的短反馈。 成功提示 失败提示 交互演示">轻提示</a><a href="ai-community.html#tooltips" data-search="数据提示 Data tooltip 解释图表数据与图标含义，不替代可访问名称。 趋势数据 模型数据 基础提示">数据提示</a><a href="ai-community.html#feed-footer" data-search="列表终点 Feed end 告诉读者当前列表已经到底，避免把留白误认为仍在加载。 全部展示 加载更多 结束标记">列表终点</a><a href="ai-community.html#section-heading" data-search="页面标题与分区标题 Section heading 页面标题、模块标题和操作按钮各有明确层级。 页面标题 带发布动作 内容分区 滚动后">页面标题与分区标题</a><a href="ai-community.html#glass-surfaces" data-search="玻璃与滚动边缘 Glass surfaces 玻璃用于浮动控件和滚动边缘，不用于遮住整篇内容。 普通表面 玻璃筛选 连续滚动边缘">玻璃与滚动边缘</a></div></div><p id="search-empty" hidden>没有匹配的组件</p><span id="component-count" hidden>50</span></div></details></nav></aside><div class="handbook-workspace"><header class="handbook-topbar"><span>Guidelines / 设计原则</span><a href="../html-pages/prototype/index.html#home">打开 AI Community ↗</a></header><main id="main" class="handbook-content">
+<div class="handbook-eyebrow">GUIDELINES / PRINCIPLES</div>
+<h1>设计原则</h1>
+<p class="handbook-lead">组件库里没有现成答案时，用这些原则推出答案。每条原则都写了理由、现有系统里的证据、可以直接问自己的判断问题，以及反例。</p>
+<div class="handbook-draft"><span class="handbook-status pending">待确认</span><span>草案。根据 2026-09-24 原型、<a class="handbook-path" href="SYSTEM.md">SYSTEM.md</a> 和已确认的讨论记录归纳。确认之前仅作推理参考，不作为强制规则。</span></div>
+<ul class="handbook-toc" aria-label="本页原则">
+<li><a href="#content-first">01 内容是主角</a></li>
+<li><a href="#color-roles">02 颜色各有职责</a></li>
+<li><a href="#depth">03 用表面区分层级</a></li>
+<li><a href="#geometry">04 形状随角色缩放</a></li>
+<li><a href="#states">05 每个状态都要设计</a></li>
+<li><a href="#place">06 记住所在位置</a></li>
+<li><a href="#reuse">07 先复用再扩展</a></li>
+<li><a href="#priority">冲突时的优先级</a></li>
+</ul>
+
+<section class="handbook-section">
+<h2>怎么使用</h2>
+<ol>
+<li><strong>先通读一遍。</strong>弄清这套系统在取舍时看重什么，比记住数值更重要。</li>
+<li><strong>新设计中的每个决定都要过一遍“判断问题”。</strong>能用语义 Token 或现有组件回答的，就不要发明新值。</li>
+<li><strong>原则互相冲突时，按本页末尾的优先级处理。</strong>仍然无法判断时，按<a class="handbook-path" href="extend.html#escalate">扩展协议</a>记录下来，交给人确认。</li>
+</ol>
+</section>
+
+<section class="handbook-section">
+<h2>七条原则</h2>
+
+<article class="principle" id="content-first">
+<div class="principle-head"><span>01</span><h3>内容是主角，界面退后</h3></div>
+<p class="principle-claim">界面只负责把内容组织清楚，不和内容抢注意力。</p>
+<div class="principle-grid">
+<div><b>为什么</b><p>成员来岛上是为了发现工具、读经验、学课程。真实的封面、标题、代码和截图本身信息已经很多，再加界面装饰只会把它们冲淡。</p></div>
+<div><b>系统中的体现</b><ul><li>#F7F7F9 画布上放白色阅读表面</li><li>内容卡不强求等高，用瀑布流 <code>channel-masonry</code></li><li>真实配图保留来源，品牌标志不统一染色</li><li>不用生成封面，也不用随意的装饰渐变</li></ul></div>
+<div class="ask"><b>判断问题</b><p>把这个装饰、容器或颜色去掉，内容会更难理解吗？不会的话就去掉。</p></div>
+<div class="avoid"><b>反例</b><p>给每张卡片垫一张渐变底图；为了网格整齐把标题截成一行；把第三方工具的 logo 染成品牌蓝。</p></div>
+</div>
+</article>
+
+<article class="principle" id="color-roles">
+<div class="principle-head"><span>02</span><h3>颜色各有职责：黑色负责行动，蓝色负责定位</h3></div>
+<p class="principle-claim">每种颜色只承担一种语义。黑色是“请你去做”；蓝色说明“你在哪、选中了什么、还差多少”；状态色只用来表达结果。</p>
+<div class="principle-grid">
+<div><b>为什么</b><p>页面上同时有大量内容和操作。颜色的语义只有一种，用户扫一眼就能分清哪里可以点、什么被选中了、哪里出了问题。Agent 也可以按语义选 Token，不必凭“好看”去猜。</p></div>
+<div><b>系统中的体现</b><ul><li>主操作 <code>--action-primary</code> 是黑色</li><li><code>--accent-*</code> 蓝色阶用于选中、链接、进度和文件夹插画</li><li>成功用独立的绿色 <code>--status-success-*</code>，不借用蓝色</li><li>点赞红、收藏黄只在阅读互动中使用</li></ul></div>
+<div class="ask"><b>判断问题</b><p>这个颜色是在请用户行动，还是在说明状态？如果是状态，是哪一种？有没有对应的语义 Token？</p></div>
+<div class="avoid"><b>反例</b><p>用蓝色做主按钮；用蓝色表示“已完成”；把点赞红当成错误色；在组件里直接写原始色值。</p></div>
+</div>
+</article>
+
+<article class="principle" id="depth">
+<div class="principle-head"><span>03</span><h3>用表面和留白区分层级，不靠阴影和描边</h3></div>
+<p class="principle-claim">先用表面色阶和间距区分层级。只有浮在内容之上的元素才加阴影或玻璃效果。</p>
+<div class="principle-grid">
+<div><b>为什么</b><p>阅读界面里的元素很密，阴影和线条一叠加就成了噪音。相邻色阶既能分出层级，界面也能保持安静。</p></div>
+<div><b>系统中的体现</b><ul><li>画布 → 白色主卡（24px 圆角）</li><li>悬停时换成相邻色阶，例如 <code>--article-surface-blue-hover</code>，不加黑色遮罩</li><li>弹层用 <code>--shadow-popover</code></li><li>玻璃只用在筛选胶囊（62% 表面色 + 16px 模糊）、弹层（78% + 24px）和滚动边缘</li></ul></div>
+<div class="ask"><b>判断问题</b><p>这个元素浮在内容之上吗？如果没有，就只用表面色和间距来区分。</p></div>
+<div class="avoid"><b>反例</b><p>给普通卡片加投影；在整段正文上铺玻璃；悬停时整张卡片变暗。</p></div>
+</div>
+</article>
+
+<article class="principle" id="geometry">
+<div class="principle-head"><span>04</span><h3>形状随角色缩放</h3></div>
+<p class="principle-claim">圆角和间距由元素在层级里的角色决定，不逐个元素去调。</p>
+<div class="principle-grid">
+<div><b>为什么</b><p>比例关系统一了，新组件自然就和旧组件协调，Agent 也能直接推出数值，不用凭感觉。</p></div>
+<div><b>系统中的体现</b><ul><li>主容器和主要卡片 24px</li><li>筛选容器和弹层 20px</li><li>小控件 4 / 6 / 8px，胶囊全圆角</li><li>间距以 4px 为基数；已知例外是外壳间隔 6px 和胶囊内边距 3px</li></ul></div>
+<div class="ask"><b>判断问题</b><p>这个元素是容器、浮层、控件还是胶囊？去<a class="handbook-path" href="extend.html#derive">决策表</a>里取值。如果需要表里没有的数值，先登记为例外，等人确认。</p></div>
+<div class="avoid"><b>反例</b><p>新卡片随手写 12px 圆角；凭感觉写 10px、14px 这样的间距。</p></div>
+</div>
+</article>
+
+<article class="principle" id="states">
+<div class="principle-head"><span>05</span><h3>每个状态都要被设计</h3></div>
+<p class="principle-claim">一个界面在加载中、没有内容、出错、文字很长、窄屏和只用键盘操作时，都要有明确的样子，才算做完。</p>
+<div class="principle-grid">
+<div><b>为什么</b><p>社区内容是真实用户发的，数量和长度都无法预测；专栏、活动这类板块还会长期没有内容。如果没有设计这些状态，用户会把空白当成还在加载或者出了错。</p></div>
+<div><b>系统中的体现</b><ul><li>骨架屏的结构对应将要出现的内容（<code>page-loading.js</code> 分别为图文卡、帖子、榜单行生成）</li><li>空状态说明原因，并给出下一步，例如“写第一篇帖子”</li><li>加载失败时，在主内容区原位显示，可以重试（已确认的主导航规则）</li><li>列表到底时显示“已经看完全部内容”</li></ul></div>
+<div class="ask"><b>判断问题</b><p>没有数据、数据很多、文字很长、加载失败、只用键盘时，这个界面分别长什么样？</p></div>
+<div class="avoid"><b>反例</b><p>所有异常都显示同一个“暂无数据”；用转圈代替骨架屏；错误只用一闪而过的轻提示告知。</p></div>
+</div>
+</article>
+
+<article class="principle" id="place">
+<div class="principle-head"><span>06</span><h3>记住用户所在的位置</h3></div>
+<p class="principle-claim">筛选条件、频道、滚动位置和来源页面都要保留，用户返回时能回到原处。</p>
+<div class="principle-grid">
+<div><b>为什么</b><p>用户会在列表和详情之间来回切换。丢了位置，阅读节奏就被打断了。</p></div>
+<div><b>系统中的体现</b><ul><li>路由和筛选状态写在 hash 里，可以分享，刷新后能恢复</li><li>从详情返回时回到来源频道、列表或搜索结果，而不是统一跳回首页</li><li>点击主导航后立即切换选中状态，不等内容加载完</li></ul></div>
+<div class="ask"><b>判断问题</b><p>用户离开再回来、刷新页面，或者把链接发给别人时，能回到同一个状态吗？</p></div>
+<div class="avoid"><b>反例</b><p>返回按钮固定跳回首页；筛选条件只存在内存里，一刷新就没了。</p></div>
+</div>
+</article>
+
+<article class="principle" id="reuse">
+<div class="principle-head"><span>07</span><h3>先复用再扩展，扩展要有依据</h3></div>
+<p class="principle-claim">优先使用已有组件和语义 Token。必须新建时，从原则和决策规则推导出来，并登记回系统。</p>
+<div class="principle-grid">
+<div><b>为什么</b><p>设计系统的价值在于一致。每一个没有登记的新样式，都会变成下一个 Agent 学错的参考。</p></div>
+<div><b>系统中的体现</b><ul><li>50 个组件族在 <code>library/catalog.json</code> 中都有契约</li><li>每个形态都标了状态：已有、组合示例或基础样式</li></ul></div>
+<div class="ask"><b>判断问题</b><p>组件库里有没有能满足八成需求的组件？新加的东西写进契约了吗？</p></div>
+<div class="avoid"><b>反例</b><p>复制一个组件，改几个数值，另起一个类名；引入新颜色却不定义语义 Token。</p></div>
+</div>
+</article>
+</section>
+
+<section class="handbook-section" id="priority">
+<h2>冲突时的优先级</h2>
+<p>两条原则给出的答案相反时，按下面的顺序取舍。排在前面的优先。</p>
+<div class="handbook-table"><table>
+<thead><tr><th>顺序</th><th>关注点</th><th>对应原则</th><th>例子</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>可用、可访问，状态完整</td><td>05、06</td><td>点赞和收藏不能只靠颜色区分，要加 <code>aria-pressed</code> 或状态文字，哪怕界面因此多一点信息。</td></tr>
+<tr><td>2</td><td>内容可读</td><td>01</td><td>标题很长时完整换行，不为了卡片对齐截成一行。</td></tr>
+<tr><td>3</td><td>系统一致</td><td>02、03、04、07</td><td>新组件即使局部看起来更好看，也要用现有的圆角和颜色角色。</td></tr>
+<tr><td>4</td><td>局部视觉表现</td><td>—</td><td>只在前三项都满足以后再调整。</td></tr>
+</tbody></table></div>
+<p>下一步：遇到新需求时，按<a class="handbook-path" href="extend.html">扩展协议</a>把这些原则落到具体的 Token 和状态上。</p>
+</section>
+<footer class="handbook-foot">Nova Island 设计系统 · Guidelines 草案 · 2026-10-27</footer>
+</main></div></body></html>

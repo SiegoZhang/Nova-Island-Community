@@ -10,8 +10,8 @@
  user-select:none;
  opacity:var(--glass-opacity);
  background:rgb(255 255 255 / .16);
- -webkit-backdrop-filter:blur(24px);
- backdrop-filter:blur(24px);
+ -webkit-backdrop-filter:var(--glass-blur-strong);
+ backdrop-filter:var(--glass-blur-strong);
  -webkit-mask-image:linear-gradient(var(--glass-direction),transparent 0%,rgb(0 0 0 / .06) 18%,rgb(0 0 0 / .24) 40%,rgb(0 0 0 / .55) 65%,rgb(0 0 0 / .84) 84%,#000 100%);
  mask-image:linear-gradient(var(--glass-direction),transparent 0%,rgb(0 0 0 / .06) 18%,rgb(0 0 0 / .24) 40%,rgb(0 0 0 / .55) 65%,rgb(0 0 0 / .84) 84%,#000 100%);
 }

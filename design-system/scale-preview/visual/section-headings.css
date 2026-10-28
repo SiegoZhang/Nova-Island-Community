@@ -1,0 +1,123 @@
+/* Shared section heading geometry across all six navigation destinations. */
+#content.section-index{padding-top:var(--space-8)}
+#content.section-index>.forum-page{padding-top:0}
+#content.section-index>.home-heading,
+#content.section-index>.forum-page>.forum-heading{margin:0 0 var(--space-8);padding:0;min-height:72px;box-sizing:border-box}
+#content.section-index>.home-heading h1,
+#content.section-index>.forum-page>.forum-heading h1{font-size:var(--type-page);line-height:42px;font-weight:500;margin:0;padding:0}
+#content.section-index>.home-heading p,
+#content.section-index>.forum-page>.forum-heading p{margin:var(--space-2) 0 0;padding:0;font-size:var(--type-small);line-height:22px;color:var(--text-secondary)}
+@media(max-width:760px){
+ #content.section-index{padding-top:var(--space-6)}
+ #content.section-index>.home-heading,
+ #content.section-index>.forum-page>.forum-heading{min-height:66px;margin-bottom:var(--space-6)}
+ #content.section-index>.home-heading h1,
+ #content.section-index>.forum-page>.forum-heading h1{font-size:var(--type-title-lg);line-height:36px}
+}
+
+/* The feed scrolls beneath a transparent header; only the publish action stays visible. */
+#content.section-index:has(>.forum-page){
+ --feed-inset-x:40px;
+ --feed-inset-top:32px;
+ padding:0;
+ max-width:none;
+}
+#content.section-index>.forum-page{
+ --feed-heading-space:136px;
+ display:grid;
+ grid-template-columns:minmax(0,1fr);
+ grid-template-rows:minmax(0,1fr);
+}
+#content.section-index>.forum-page>.forum-heading{
+ grid-area:1 / 1;
+ align-self:start;
+ position:relative;
+ z-index:2;
+ margin-bottom:0;
+ padding:var(--feed-inset-top) var(--feed-inset-x) 0;
+ min-height:104px;
+ background:transparent;
+ pointer-events:none;
+}
+#content.section-index>.forum-page>.forum-heading>div{
+ opacity:var(--heading-opacity,1);
+ transform:translateY(var(--heading-offset,0px));
+ transition:none;
+}
+#content.section-index>.forum-page.feed-scrolled>.forum-heading>div{
+ visibility:hidden;
+}
+#content.section-index>.forum-page>.forum-heading>.ds-button{pointer-events:auto}
+#content.section-index>.forum-page>.forum-layout{
+ grid-area:1 / 1;
+ height:100%;
+ padding:0 var(--feed-inset-x);
+ box-sizing:border-box;
+}
+#content.section-index>.forum-page .forum-feed-scroll{
+ padding-top:0;
+ scroll-padding-top:var(--feed-heading-space);
+}
+#content.section-index>.forum-page .forum-feed-scroll::before{
+ content:"";
+ display:block;
+ height:var(--feed-heading-space);
+}
+#content.section-index>.forum-page .forum-aside{padding-top:var(--feed-heading-space)}
+@media(max-width:1100px){
+ #content.section-index>.forum-page>.forum-layout{
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:none;
+  padding-top:0;
+  scroll-padding-top:var(--feed-heading-space);
+ }
+ #content.section-index>.forum-page>.forum-layout::-webkit-scrollbar{display:none}
+ #content.section-index>.forum-page .forum-aside{padding-top:0}
+ #content.section-index>.forum-page .forum-feed-scroll{
+  flex:none;
+  height:auto;
+  overflow:visible;
+  padding-top:0;
+ }
+}
+@media(max-width:760px){
+ #content.section-index:has(>.forum-page){--feed-inset-x:16px;--feed-inset-top:24px}
+ #content.section-index>.forum-page{--feed-heading-space:114px}
+ #content.section-index>.forum-page>.forum-heading{min-height:90px}
+}
+@media(prefers-reduced-motion:reduce){
+ #content.section-index>.forum-page>.forum-heading>div{transition:none;transform:none}
+}
+
+/* These headings already move one-to-one with their native page scroll. */
+#content.scroll-heading-page>.home-heading{
+ opacity:var(--heading-opacity,1);
+ transition:none;
+ background:transparent;
+}
+#content.scroll-heading-page.feed-scrolled>.home-heading{visibility:hidden}
+
+/* Stop native edge bounce in both the page and nested feed scrollers. */
+#content.section-index,
+#content.section-index>.forum-page>.forum-layout,
+#content.section-index>.forum-page .forum-feed-scroll{overscroll-behavior-y:none}
+
+/* One end position: 24px above the main card edge, with no trailing scroll space. */
+#content.feed-end-page{padding-bottom:0;overscroll-behavior-y:none}
+#content.feed-end-page:not(:has(>.forum-page)){
+ display:flex;flex-direction:column;
+}
+#content.feed-end-page:not(:has(>.forum-page))>*{flex-shrink:0}
+#content.feed-end-page>.channel-feed-footer{margin-top:auto}
+#content.feed-end-page .channel-feed-footer{padding:var(--space-6) 0 var(--space-6);flex-shrink:0}
+#content.feed-end-page>.forum-page .forum-feed-scroll{
+ display:flex;flex-direction:column;padding-bottom:0;
+}
+#content.feed-end-page>.forum-page .forum-feed-scroll>*{flex-shrink:0}
+#content.feed-end-page>.forum-page .forum-feed-scroll::before{flex-shrink:0}
+#content.feed-end-page>.forum-page .forum-feed-scroll>.channel-feed-footer{margin-top:auto}
+
+/* Scroll position drives opacity directly, with no timed entrance or movement. */
+.channel-feed-end{opacity:var(--feed-end-opacity,0)}
+@media(prefers-reduced-motion:reduce){.channel-feed-end{opacity:1}}

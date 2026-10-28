@@ -39,7 +39,7 @@
 .author-home .member-name-line h1{max-width:none;text-wrap:wrap}
 .author-home-subtitle{margin:var(--space-3) 0 0;font-size:var(--type-small);line-height:1.7;color:var(--text-secondary)}
 .author-home .member-stats{grid-column:2/-1}
-.author-home .member-tabs{background:color-mix(in srgb,var(--surface-default) 68%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.author-home .member-tabs{background:color-mix(in srgb,var(--surface-default) 68%,transparent);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur)}
 .author-home .member-tabs a[aria-current]{background:var(--surface-secondary);color:var(--text-heading)}
 .author-home .member-tabs a:active{background:var(--surface-secondary);color:var(--text-heading)}
 @media(max-width:760px){.author-home{padding-top:76px}.author-home .member-identity{grid-template-columns:56px minmax(0,1fr);padding:var(--space-6)}.author-home .member-stats{grid-column:1/-1;gap:var(--space-6)}}

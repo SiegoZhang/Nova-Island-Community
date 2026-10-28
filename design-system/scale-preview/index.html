@@ -66,6 +66,9 @@ aside h2{font-size:14px;margin:0;color:var(--ink)}
       <option value="#ranking">Token 榜</option>
       <option value="#articles">文章</option>
       <option value="#courses">实战</option>
+      <option value="#guide">入门指南</option>
+      <option value="article.html">文章详情</option>
+      <option value="course.html">课程详情</option>
     </select>
   </label>
   <div class="field"><span>宽度</span>
@@ -78,7 +81,7 @@ aside h2{font-size:14px;margin:0;color:var(--ink)}
       <button type="button" data-mode="side">并排</button><button type="button" data-mode="flip">切换</button>
     </div>
   </div>
-  <button type="button" class="btn primary" id="flip" hidden>显示：迁移前（空格切换）</button>
+  <button type="button" class="btn primary" id="flip" hidden>显示：左侧（空格切换）</button>
   <label class="field"><input type="checkbox" id="sync" checked><span>同步滚动与跳转</span></label>
   <span class="spacer"></span>
   <button type="button" class="btn" id="reload">重新加载</button>
@@ -100,8 +103,12 @@ aside h2{font-size:14px;margin:0;color:var(--ink)}
 </main>
 <script>
 const PROTO = new URL('../../html-pages/prototype/index.html', location.href).href;
-// ?before=token-before/ compares against another snapshot folder.
-const BEFORE = new URL(new URLSearchParams(location.search).get('before') || 'before/', location.href).href;
+// ?before=dir/ swaps the left frame to a snapshot; ?after=dir/ swaps the right frame to a preview
+// (the left frame then shows the live prototype). ?changes=file.json picks the change list.
+const PARAMS = new URLSearchParams(location.search);
+const dirUrl = d => d ? new URL(d, location.href).href : null;
+const DIRS = {before: dirUrl(PARAMS.get('before') || (PARAMS.get('after') ? null : 'before/')), after: dirUrl(PARAMS.get('after'))};
+const CHANGES = PARAMS.get('changes') || 'applied-changes.json';
 const KIND = {'font-size': '字号', 'radius': '圆角', 'spacing': '间距', 'breakpoint': '断点', 'color': '颜色', 'font-weight': '字重'};
 const $ = s => document.querySelector(s);
 const frames = {before: $('#before'), after: $('#after')};
@@ -121,7 +128,7 @@ function layout(){
   }
 }
 
-function swapStyles(frame){
+function swapStyles(frame, dir){
   const doc = frame.contentDocument;
   if (!doc) return;
   const links = [...doc.querySelectorAll('link[rel="stylesheet"]')];
@@ -132,7 +139,7 @@ function swapStyles(frame){
     if (!m) continue;
     pending++;
     const next = link.cloneNode();
-    next.href = BEFORE + m[1] + '?v=' + state.stamp;
+    next.href = dir + m[1] + '?v=' + state.stamp;
     next.onload = next.onerror = () => { link.remove(); if (--pending === 0) done(); };
     link.after(next);
   }
@@ -142,7 +149,7 @@ function swapStyles(frame){
 function wire(name){
   const frame = frames[name], other = frames[name === 'before' ? 'after' : 'before'];
   frame.addEventListener('load', () => {
-    if (name === 'before') swapStyles(frame); else frame.style.visibility = 'visible';
+    if (DIRS[name]) swapStyles(frame, DIRS[name]); else frame.style.visibility = 'visible';
     const win = frame.contentWindow, doc = frame.contentDocument;
     win.addEventListener('hashchange', () => {
       if (!$('#sync').checked || syncing) return;
@@ -162,13 +169,15 @@ function wire(name){
 }
 
 function load(){
-  const base = PROTO + '?preview=' + state.stamp;
+  // Values are '#route' on index.html, or 'article.html' style separate pages.
+  const [file, hash] = state.page.startsWith('#') ? ['index.html', state.page] : [state.page.split('#')[0], state.page.includes('#') ? '#' + state.page.split('#')[1] : ''];
+  const base = new URL(file, PROTO).href + '?preview=' + state.stamp;
   for (const f of Object.values(frames)){
     let loc = null;
     try { loc = f.contentWindow.location; } catch {}
     // Same document: only the route changes, so no load event follows.
-    if (loc && loc.href.split('#')[0] === base){ loc.hash = state.page; continue; }
-    f.style.visibility = 'hidden'; f.src = base + state.page;
+    if (loc && loc.href.split('#')[0] === base && hash){ loc.hash = hash; continue; }
+    f.style.visibility = 'hidden'; f.src = base + hash;
   }
 }
 
@@ -184,7 +193,7 @@ function setMode(mode){
 
 function flip(){
   state.showing = state.showing === 'before' ? 'after' : 'before';
-  $('#flip').textContent = `显示：${state.showing === 'before' ? '迁移前' : '迁移后'}（空格切换）`;
+  $('#flip').textContent = `显示：${state.showing === 'before' ? '左侧' : '右侧'}（空格切换）`;
   setMode('flip');
 }
 
@@ -196,7 +205,7 @@ function renderList(){
 }
 function esc(s){ return String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch])); }
 
-fetch('applied-changes.json?v=' + state.stamp).then(r => r.json()).then(d => {
+fetch(CHANGES + '?v=' + state.stamp).then(r => r.json()).then(d => {
   data = d;
   const total = d.changes.length;
   $('#after-count').textContent = `共 ${total} 处变更`;
@@ -220,6 +229,12 @@ $('#toggle-list').addEventListener('click', () => { const a = $('#changes'); a.h
 document.addEventListener('keydown', e => { if (e.code === 'Space' && state.mode === 'flip' && !e.target.matches('input,select,textarea')){ e.preventDefault(); flip(); } });
 window.addEventListener('resize', layout);
 
+if (DIRS.after){
+  document.querySelector('#pane-before .pane-label').innerHTML = '<span class="tag">当前</span>当前原型';
+  document.querySelector('#pane-after .pane-label').innerHTML = '<span class="tag after">预览</span>视觉批次 <i id="after-count"></i>';
+  document.querySelector('header h1').innerHTML = '视觉批次对比<small>TOKEN-PROPOSAL.md · 阴影、玻璃、填充及遗留项</small>';
+  document.title = '视觉批次对比 / Nova Island 设计系统';
+}
 wire('before'); wire('after');
 pressed('#widths', 'w', state.width);
 setMode(state.mode);

@@ -8,7 +8,7 @@
 .article-outline .ds-article-contents a{font-size:var(--type-caption);min-height:var(--control-md);gap:var(--space-1);color:var(--text-secondary)}
 .article-outline .ds-article-contents a[aria-current]{color:var(--text-heading);font-weight:var(--weight-medium)}
 .article-header{display:grid;gap:var(--space-6);padding-bottom:var(--space-8);border-bottom:var(--border-width) solid var(--border-subtle)}
-.article-reader .article-header h1{max-width:none;line-height:1.4;letter-spacing:0;font-size:var(--font-3xl);text-wrap:balance}
+.article-reader .article-header h1{max-width:none;line-height:1.4;letter-spacing:0;font-size:var(--type-page);text-wrap:balance}
 .article-reader .article-deck{font-size:var(--type-body-lg);line-height:1.8;color:var(--text-secondary)}
 .article-byline{display:flex;align-items:center;gap:var(--space-3);font-size:var(--type-caption);color:var(--text-secondary);flex-wrap:wrap}
 .article-byline>div{display:grid;gap:var(--space-1);margin-right:auto}

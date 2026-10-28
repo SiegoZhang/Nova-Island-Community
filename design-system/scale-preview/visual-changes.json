@@ -1,0 +1,352 @@
+{
+ "summary": {
+  "详情标题": 3,
+  "玻璃": 17,
+  "阴影": 11,
+  "中性填充": 5,
+  "旅程完成色": 4,
+  "图表色": 6
+ },
+ "changes": [
+  {
+   "file": "article-reader.css",
+   "media": "",
+   "selector": "文章、课程详情标题 36px → 30px",
+   "prop": "详情标题",
+   "old": "var(--font-3xl)",
+   "new": "var(--type-page)",
+   "kind": "详情标题",
+   "count": 1
+  },
+  {
+   "file": "back-buttons.css",
+   "media": "",
+   "selector": "浮动控件（外观不变）",
+   "prop": "玻璃",
+   "old": "((?:-webkit-)?backdrop-filter:)blur(16px) saturate(115%)",
+   "new": "\\1var(--glass-blur)",
+   "kind": "玻璃",
+   "count": 2
+  },
+  {
+   "file": "channel-gooey.css",
+   "media": "",
+   "selector": "浮动控件（外观不变）",
+   "prop": "玻璃",
+   "old": "((?:-webkit-)?backdrop-filter:)blur(16px) saturate(115%)",
+   "new": "\\1var(--glass-blur)",
+   "kind": "玻璃",
+   "count": 2
+  },
+  {
+   "file": "channel-gooey.css",
+   "media": "",
+   "selector": "玻璃底色 62%（外观不变）",
+   "prop": "玻璃",
+   "old": "color-mix(in srgb,var(--surface-default) 62%,transparent)",
+   "new": "var(--glass-fill)",
+   "kind": "玻璃",
+   "count": 1
+  },
+  {
+   "file": "course-detail.css",
+   "media": "",
+   "selector": "文章、课程详情标题 36px → 30px",
+   "prop": "详情标题",
+   "old": "var(--font-3xl)",
+   "new": "var(--type-page)",
+   "kind": "详情标题",
+   "count": 1
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": "筛选弹层",
+   "prop": "阴影",
+   "old": "box-shadow:0 12px 40px #00000018",
+   "new": "box-shadow:var(--shadow-lg)",
+   "kind": "阴影",
+   "count": 1
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": "浮动控件（外观不变）",
+   "prop": "玻璃",
+   "old": "((?:-webkit-)?backdrop-filter:)blur(16px) saturate(115%)",
+   "new": "\\1var(--glass-blur)",
+   "kind": "玻璃",
+   "count": 2
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": "筛选弹层（外观不变）",
+   "prop": "玻璃",
+   "old": "((?:-webkit-)?backdrop-filter:)blur(24px) saturate(115%)",
+   "new": "\\1var(--glass-blur-strong)",
+   "kind": "玻璃",
+   "count": 2
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": "玻璃底色 62%（外观不变）",
+   "prop": "玻璃",
+   "old": "color-mix(in srgb,var(--surface-default) 62%,transparent)",
+   "new": "var(--glass-fill)",
+   "kind": "玻璃",
+   "count": 1
+  },
+  {
+   "file": "feed-filters.css",
+   "media": "",
+   "selector": "玻璃底色 78%（外观不变）",
+   "prop": "玻璃",
+   "old": "color-mix(in srgb,var(--surface-default) 78%,transparent)",
+   "new": "var(--glass-fill-strong)",
+   "kind": "玻璃",
+   "count": 1
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": "标签底色（外观不变）",
+   "prop": "中性填充",
+   "old": "color-mix(in srgb,var(--text-heading) 3%,var(--surface-default))",
+   "new": "var(--fill-subtle)",
+   "kind": "中性填充",
+   "count": 1
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": "标签悬停（外观不变）",
+   "prop": "中性填充",
+   "old": "color-mix(in srgb,var(--text-heading) 6%,var(--surface-default))",
+   "new": "var(--fill-hover)",
+   "kind": "中性填充",
+   "count": 1
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": "标签选中（外观不变）",
+   "prop": "中性填充",
+   "old": "color-mix(in srgb,var(--text-heading) 10%,var(--surface-default))",
+   "new": "var(--fill-selected)",
+   "kind": "中性填充",
+   "count": 1
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": "标签描边 8% → 10%",
+   "prop": "中性填充",
+   "old": "color-mix(in srgb,var(--text-heading) 8%,var(--surface-default))",
+   "new": "var(--fill-selected)",
+   "kind": "中性填充",
+   "count": 1
+  },
+  {
+   "file": "forum.css",
+   "media": "",
+   "selector": "标签选中描边（外观不变）",
+   "prop": "中性填充",
+   "old": "color-mix(in srgb,var(--text-heading) 20%,var(--surface-default))",
+   "new": "var(--fill-border)",
+   "kind": "中性填充",
+   "count": 1
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": "学习周卡片",
+   "prop": "阴影",
+   "old": "box-shadow:0 4px 24px rgb(52 56 73 / 3%)",
+   "new": "box-shadow:var(--shadow-sm)",
+   "kind": "阴影",
+   "count": 1
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": "提示、轻提示、指南菜单、引导卡片",
+   "prop": "阴影",
+   "old": "var(--shadow-popover)",
+   "new": "var(--shadow-md)",
+   "kind": "阴影",
+   "count": 1
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": "已完成周的底色改用成功色",
+   "prop": "旅程完成色",
+   "old": "var(--illus-journey-green)",
+   "new": "var(--status-success-bg)",
+   "kind": "旅程完成色",
+   "count": 2
+  },
+  {
+   "file": "guide-progress.css",
+   "media": "",
+   "selector": "已完成周的文字改用成功色",
+   "prop": "旅程完成色",
+   "old": "var(--illus-journey-success-text)",
+   "new": "var(--status-success-text)",
+   "kind": "旅程完成色",
+   "count": 2
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "账号菜单",
+   "prop": "阴影",
+   "old": "box-shadow:0 12px 48px #172b401f",
+   "new": "box-shadow:var(--shadow-lg)",
+   "kind": "阴影",
+   "count": 1
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "内容卡悬停",
+   "prop": "阴影",
+   "old": "--card-hover-shadow:0 2px 4px color-mix([^;]*?7%,transparent)",
+   "new": "--card-hover-shadow:var(--shadow-md)",
+   "kind": "阴影",
+   "count": 1
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "提示、轻提示、指南菜单、引导卡片",
+   "prop": "阴影",
+   "old": "var(--shadow-popover)",
+   "new": "var(--shadow-md)",
+   "kind": "阴影",
+   "count": 1
+  },
+  {
+   "file": "home.css",
+   "media": "",
+   "selector": "浮动控件（外观不变）",
+   "prop": "玻璃",
+   "old": "((?:-webkit-)?backdrop-filter:)blur(16px) saturate(115%)",
+   "new": "\\1var(--glass-blur)",
+   "kind": "玻璃",
+   "count": 2
+  },
+  {
+   "file": "member-profiles.css",
+   "media": "",
+   "selector": "作者主页分段导航，增加 115% 饱和度",
+   "prop": "玻璃",
+   "old": "((?:-webkit-)?backdrop-filter:)blur(16px)(?! saturate)",
+   "new": "\\1var(--glass-blur)",
+   "kind": "玻璃",
+   "count": 2
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "榜单数据提示",
+   "prop": "阴影",
+   "old": "box-shadow:0 4px 14px rgb(0 0 0 / .16)",
+   "new": "box-shadow:var(--shadow-md)",
+   "kind": "阴影",
+   "count": 1
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "操作系统分段选中",
+   "prop": "阴影",
+   "old": "box-shadow:0 1px 3px rgb(0 0 0 / .06)",
+   "new": "box-shadow:var(--shadow-sm)",
+   "kind": "阴影",
+   "count": 1
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "Codex 在树图中由紫色改为 Codex 蓝",
+   "prop": "图表色",
+   "old": "(.ranking-(?:tree|person-tile)-codex{[^}]*?background:)var(--chart-violet)",
+   "new": "\\1var(--chart-codex)",
+   "kind": "图表色",
+   "count": 2
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "Claude 在树图中由绿色改为 Claude 色",
+   "prop": "图表色",
+   "old": "(.ranking-(?:tree-claude|person-tile-claude-code){[^}]*?background:)var(--chart-green)",
+   "new": "\\1var(--chart-claude)",
+   "kind": "图表色",
+   "count": 2
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "接入完成圆点改用成功色",
+   "prop": "图表色",
+   "old": "var(--chart-green-strong)",
+   "new": "var(--status-success)",
+   "kind": "图表色",
+   "count": 1
+  },
+  {
+   "file": "ranking.css",
+   "media": "",
+   "selector": "个人 KPI 增长文字改用成功色",
+   "prop": "图表色",
+   "old": "var(--chart-green-text)",
+   "new": "var(--status-success-text)",
+   "kind": "图表色",
+   "count": 1
+  },
+  {
+   "file": "scroll-glass.css",
+   "media": "",
+   "selector": "滚动边缘，增加 115% 饱和度",
+   "prop": "玻璃",
+   "old": "((?:-webkit-)?backdrop-filter:)blur(24px)(?! saturate)",
+   "new": "\\1var(--glass-blur-strong)",
+   "kind": "玻璃",
+   "count": 2
+  },
+  {
+   "file": "site-tour.css",
+   "media": "",
+   "selector": "功能导览面板",
+   "prop": "阴影",
+   "old": "box-shadow:0 12px 40px #0002",
+   "new": "box-shadow:var(--shadow-lg)",
+   "kind": "阴影",
+   "count": 1
+  },
+  {
+   "file": "styles.css",
+   "media": "",
+   "selector": "提示、轻提示、指南菜单、引导卡片",
+   "prop": "阴影",
+   "old": "var(--shadow-popover)",
+   "new": "var(--shadow-md)",
+   "kind": "阴影",
+   "count": 2
+  },
+  {
+   "file": "styles.css",
+   "media": "",
+   "selector": "文章、课程详情标题 36px → 30px",
+   "prop": "详情标题",
+   "old": "var(--font-3xl)",
+   "new": "var(--type-page)",
+   "kind": "详情标题",
+   "count": 1
+  }
+ ]
+}

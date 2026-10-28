@@ -32,8 +32,8 @@
 @supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
  .nova-ds .back-button{
   background:color-mix(in srgb,var(--surface-default) 68%,transparent);
-  -webkit-backdrop-filter:blur(16px) saturate(115%);
-  backdrop-filter:blur(16px) saturate(115%);
+  -webkit-backdrop-filter:var(--glass-blur);
+  backdrop-filter:var(--glass-blur);
  }
  .nova-ds .back-button:hover{background:color-mix(in srgb,var(--surface-hover) 72%,transparent)}
 }

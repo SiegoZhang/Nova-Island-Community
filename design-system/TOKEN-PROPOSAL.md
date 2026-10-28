@@ -1,6 +1,8 @@
 # Token 整理提案
 
 > **状态（2026-10-28）**：T1–T7、T10、T12、T13 已实施（`scripts/migrate-tokens.py`）。迁移前后在 5 个页面、1440 / 390px 以及深色模式下逐元素比对计算样式，差异为 0。实施时的三处调整：T12 的工具色暂按原值移入 `--chart-*`，三个绿色合并留到视觉批次；`--journey-green` 移入 `--illus-journey-green`，未改为成功色（色值不同）；文章和课程详情标题仍为 36px，暂留 `--font-3xl`，在视觉批次中处理。T8、T9、T11 待做对比页。
+>
+> **更新（2026-10-28）**：视觉批次已确认并应用（`scripts/build-visual-preview.py --apply`，34 处）：T8 阴影三级、T9 玻璃 Token、T11 中性填充，以及遗留项——详情标题 36→30px、接入完成与 KPI 增长改用成功色、旅程完成周改用成功色。`--shadow-popover`、`--font-3xl`、未使用的图表绿与紫已删除。树图 `.ranking-tree-*` / `.ranking-person-tile-*` 无页面使用，留到组件层清理。
 
 2026-10-28。成熟度第 2 项，同时收尾第 1 项遗留的 D9–D11。统计范围是 `html-pages/prototype/assets/` 下的 tokens.css 和其余全部 CSS / JS。
 

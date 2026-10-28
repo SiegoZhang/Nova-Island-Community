@@ -8,7 +8,7 @@
 .feed-filter-chip>span{display:grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--text-heading);color:var(--surface-default);font-size:var(--type-small);line-height:1}
 .feed-filter-trigger:hover,.feed-filter-trigger[aria-expanded="true"]{background:var(--surface-hover);color:var(--text-heading)}
 .feed-filter-links{display:flex;gap:var(--space-4);white-space:nowrap;font-size:var(--type-caption);color:var(--text-secondary)}
-.feed-filter-popover{position:fixed;inset:auto;margin:0;padding:0;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);background:var(--surface-default);color:var(--text-heading);box-shadow:0 12px 40px #00000018;max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);overflow:auto}
+.feed-filter-popover{position:fixed;inset:auto;margin:0;padding:0;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);background:var(--surface-default);color:var(--text-heading);box-shadow:var(--shadow-lg);max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);overflow:auto}
 .feed-filter-popover::backdrop{background:transparent}
 .feed-filter-search{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-4);border-bottom:1px solid var(--border-subtle);color:var(--text-secondary)}
 .feed-filter-search input{width:100%;min-width:0;border:0;outline:none;background:transparent;color:var(--text-heading);font:inherit;font-size:var(--type-small)}
@@ -191,14 +191,14 @@
 @supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
  .feed-filter-group,.feed-filter-popover,
  .feed-filter-trigger:not(.feed-filter-group>*),.feed-filter-chip:not(.feed-filter-group>*){
-  background:color-mix(in srgb,var(--surface-default) 62%,transparent);
-  backdrop-filter:blur(16px) saturate(115%);
-  -webkit-backdrop-filter:blur(16px) saturate(115%);
+  background:var(--glass-fill);
+  backdrop-filter:var(--glass-blur);
+  -webkit-backdrop-filter:var(--glass-blur);
  }
  .feed-filter-popover{
-  background:color-mix(in srgb,var(--surface-default) 78%,transparent);
-  backdrop-filter:blur(24px) saturate(115%);
-  -webkit-backdrop-filter:blur(24px) saturate(115%);
+  background:var(--glass-fill-strong);
+  backdrop-filter:var(--glass-blur-strong);
+  -webkit-backdrop-filter:var(--glass-blur-strong);
  }
  .feed-filter-group>.feed-filter-trigger,.feed-filter-group>.feed-filter-chip{
   backdrop-filter:none;-webkit-backdrop-filter:none;

@@ -53,7 +53,7 @@
 <p class="principle-claim">先用表面色阶和间距区分层级。只有浮在内容之上的元素才加阴影或玻璃效果。</p>
 <div class="principle-grid">
 <div><b>为什么</b><p>阅读界面里的元素很密，阴影和线条一叠加就成了噪音。相邻色阶既能分出层级，界面也能保持安静。</p></div>
-<div><b>系统中的体现</b><ul><li>画布 → 白色主卡（24px 圆角）</li><li>悬停时换成相邻色阶，例如 <code>--article-surface-blue-hover</code>，不加黑色遮罩</li><li>弹层用 <code>--shadow-popover</code></li><li>玻璃只用在筛选胶囊（62% 表面色 + 16px 模糊）、弹层（78% + 24px）和滚动边缘</li></ul></div>
+<div><b>系统中的体现</b><ul><li>画布 → 白色主卡（24px 圆角）</li><li>悬停时换成相邻色阶，例如 <code>--article-surface-blue-hover</code>，不加黑色遮罩</li><li>阴影只有三级：<code>--shadow-sm</code> 小控件、<code>--shadow-md</code> 提示与轻提示、<code>--shadow-lg</code> 菜单、弹层与导览</li><li>玻璃只用在筛选胶囊（62% 表面色 + 16px 模糊）、弹层（78% + 24px）和滚动边缘</li></ul></div>
 <div class="ask"><b>判断问题</b><p>这个元素浮在内容之上吗？如果没有，就只用表面色和间距来区分。</p></div>
 <div class="avoid"><b>反例</b><p>给普通卡片加投影；在整段正文上铺玻璃；悬停时整张卡片变暗。</p></div>
 </div>

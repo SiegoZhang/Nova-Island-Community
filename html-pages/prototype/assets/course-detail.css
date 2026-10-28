@@ -19,7 +19,7 @@
 /* The next action is a first-class object alongside the course identity. */
 .course-intro-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:var(--space-8);align-items:start}
 .course-intro-layout .course-header{padding-bottom:0;gap:var(--space-5)}
-.course-intro-layout h1{font-size:var(--font-3xl)}
+.course-intro-layout h1{font-size:var(--type-page)}
 .course-intro-layout .ds-continue-card{align-self:stretch}
 .course-lesson-panel{border:var(--border-width) solid var(--border-strong);border-radius:var(--radius-sm);background:var(--surface-secondary)}
 @media(max-width:1100px){.course-intro-layout{grid-template-columns:1fr}.course-intro-layout .ds-continue-card{max-width:none}}

@@ -16,7 +16,7 @@ for block in blocks:
     else: contexts.append(block)
 def tier(name):
     if name.startswith(('--illus-', '--chart-')): return 'expressive'
-    if name.startswith(('--blue-', '--neutral-', '--type-', '--space-', '--radius-', '--font-3xl')): return 'primitive'
+    if name.startswith(('--blue-', '--neutral-', '--type-', '--space-', '--radius-')): return 'primitive'
     return 'semantic'
 tiers = {'primitive': {}, 'semantic': {}, 'expressive': {}}
 for k, v in light.items(): tiers[tier(k)][k] = v

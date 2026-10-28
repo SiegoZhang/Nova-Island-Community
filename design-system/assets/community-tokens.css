@@ -24,8 +24,6 @@
  --type-title-lg:24px; --type-title-lg-lh:32px;
  --type-page:30px; --type-page-lh:42px;
  --type-display:40px; --type-display-lh:48px;
- /* Pending: article and course detail titles still use 36px; aligned in the visual batch. */
- --font-3xl:36px;
  /* Spacing */
  --space-0:0px; --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:20px; --space-6:24px; --space-8:32px; --space-10:40px; --space-12:48px; --space-16:64px;
  /* Radius */
@@ -52,10 +50,7 @@
  --status-danger:#EE8C94; --status-danger-bg:#FFF5F6; --status-danger-text:#A23845;
  --status-info:var(--text-secondary); --status-info-bg:var(--surface-secondary);
  /* Reading reactions (T10) */
- --reaction-liked:#BF2531; --reaction-saved-icon:#F5C842; --reaction-saved-icon-deep:#E6AE25; --reaction-saved-text:#80631B;
- /* Elevation */
- --shadow-popover:0 4px 16px #1A1A1814;
- /* Typography */
+ --reaction-liked:#BF2531; --reaction-saved-icon:#F5C842; --reaction-saved-icon-deep:#E6AE25; --reaction-saved-text:#80631B; /* Typography */
  --font-sans:"Inter","PingFang SC","Microsoft YaHei",sans-serif; --font-mono:"SFMono-Regular",Consolas,monospace;
  --weight-regular:400; --weight-medium:500; --weight-semibold:600; --line-tight:1.25; --tracking-heading:-.035em;
  /* Layout */
@@ -126,9 +121,25 @@
  /* Mini guide previews */
  --illus-mini-ink:#7E8389;
  /* Learning journey */
- --illus-journey-green:#DDF5EC; --illus-journey-peach:#FFE8DA; --illus-journey-success-text:#326653;
+ --illus-journey-peach:#FFE8DA;
  /* Data: one hue per tool. Values are kept as found; unification belongs to the visual batch. */
  --chart-codex:var(--blue-400); --chart-codex-ink:var(--neutral-900);
  --chart-claude:#D99B80; --chart-claude-soft:#C7A794; --chart-claude-bright:#EB976D; --chart-claude-ink:#542712;
- --chart-violet:#8070E9; --chart-green:#46AC79; --chart-green-strong:#43A77A; --chart-green-text:#31966A; --chart-orange:#EF9565;
+ --chart-orange:#EF9565;
+}
+
+/* ---------- Visual batch (T8, T9, T11) ---------- */
+.nova-ds {
+ --shadow-color:9 21 64;
+ --shadow-sm:0 1px 3px rgb(var(--shadow-color) / .08);
+ --shadow-md:0 4px 16px rgb(var(--shadow-color) / .08);
+ --shadow-lg:0 12px 40px rgb(var(--shadow-color) / .12);
+ --glass-fill:color-mix(in srgb,var(--surface-default) 62%,transparent);
+ --glass-fill-strong:color-mix(in srgb,var(--surface-default) 78%,transparent);
+ --glass-blur:blur(16px) saturate(115%);
+ --glass-blur-strong:blur(24px) saturate(115%);
+ --fill-subtle:color-mix(in srgb,var(--text-heading) 3%,var(--surface-default));
+ --fill-hover:color-mix(in srgb,var(--text-heading) 6%,var(--surface-default));
+ --fill-selected:color-mix(in srgb,var(--text-heading) 10%,var(--surface-default));
+ --fill-border:color-mix(in srgb,var(--text-heading) 20%,var(--surface-default));
 }

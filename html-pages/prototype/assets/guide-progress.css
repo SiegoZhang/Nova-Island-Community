@@ -5,7 +5,7 @@
 .guide-progress-more{display:grid;place-items:center;width:36px;height:32px;padding:0;background:transparent;border:0;border-radius:var(--radius-sm);color:var(--text-secondary);font-size:var(--type-title-lg);line-height:1;cursor:pointer}
 .guide-progress-more:hover,.guide-progress-more[aria-expanded=true]{background:var(--surface-hover);color:var(--text-heading)}
 .guide-progress-more:hover{color:var(--accent-text)}
-.guide-progress-menu{position:absolute;right:0;top:calc(100% + 4px);z-index:5;min-width:156px;padding:var(--space-1);background:var(--surface-default);border:1px solid var(--border-subtle);border-radius:var(--radius-sm);box-shadow:var(--shadow-popover)}
+.guide-progress-menu{position:absolute;right:0;top:calc(100% + 4px);z-index:5;min-width:156px;padding:var(--space-1);background:var(--surface-default);border:1px solid var(--border-subtle);border-radius:var(--radius-sm);box-shadow:var(--shadow-md)}
 .guide-progress-menu[hidden]{display:none}
 .guide-progress-menu button{display:block;width:100%;border:0;background:transparent;color:var(--text-primary);text-align:left;font:inherit;font-size:var(--type-small);padding:var(--space-3) var(--space-3);border-radius:var(--radius-sm);cursor:pointer}
 .guide-progress-menu button:hover{background:var(--surface-hover)}
@@ -42,7 +42,7 @@
 /* Row 4 starts at 60% of the grid height + 9.6px (three of four 16px gaps).
    Extend the trunk to its connector at 60px, including the 2px stroke. */
 .journey-tree:before{content:"";position:absolute;left:50%;top:60px;bottom:calc(40% - 71.6px);border-left:2px dashed var(--journey-line);z-index:-1}
-.journey-week{position:relative;min-width:0;background:var(--journey-muted);border-radius:var(--radius-card);padding:var(--space-6);grid-column:1;grid-row:1 / span 2;box-shadow:0 4px 24px rgb(52 56 73 / 3%)}
+.journey-week{position:relative;min-width:0;background:var(--journey-muted);border-radius:var(--radius-card);padding:var(--space-6);grid-column:1;grid-row:1 / span 2;box-shadow:var(--shadow-sm)}
 .journey-week:nth-child(2){grid-column:2;grid-row:2 / span 2}
 .journey-week:nth-child(3){grid-column:1;grid-row:3 / span 2}
 .journey-week:nth-child(4){grid-column:2;grid-row:4 / span 2}
@@ -54,7 +54,7 @@
 .journey-week.current{--journey-hover:var(--accent-surface-soft);background:var(--accent-surface);color:var(--text-primary)}
 .journey-week-icon{position:absolute;top:16px;right:16px;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--journey-muted);color:var(--text-heading)}
 .journey-week-icon svg{width:23px;height:23px}
-.completed .journey-week-icon{background:var(--illus-journey-green)}
+.completed .journey-week-icon{background:var(--status-success-bg)}
 .current .journey-week-icon{background:var(--journey-dark-overlay)}
 .journey-week-meta{display:flex;gap:var(--space-3);align-items:center;padding-right:var(--space-10);font-size:var(--type-micro);color:var(--text-secondary);flex-wrap:wrap}
 .journey-week-meta>span:first-child{font-weight:600;color:var(--text-primary)}
@@ -84,7 +84,7 @@
 @media(prefers-reduced-motion:reduce){.journey-lesson-title{transition:none}}
 .journey-week footer{display:flex;align-items:center;justify-content:space-between;gap:var(--space-2)}
 .journey-stage-status{display:inline-flex;align-items:center;gap:var(--space-2);border-radius:var(--radius-card);padding:var(--space-2) var(--space-3);font-size:var(--type-micro);background:var(--journey-muted);white-space:nowrap}
-.completed .journey-stage-status{background:var(--illus-journey-green);color:var(--illus-journey-success-text)}
+.completed .journey-stage-status{background:var(--status-success-bg);color:var(--status-success-text)}
 .current .journey-stage-status{background:var(--journey-dark-overlay);color:var(--journey-on-dark)}
 .journey-complete-control{display:flex;align-items:center;gap:var(--space-2);min-height:44px;font-size:var(--type-micro);cursor:pointer;color:var(--text-secondary)}
 .journey-complete-control input{width:18px;height:18px;accent-color:var(--journey-accent-text);cursor:pointer}
@@ -96,7 +96,7 @@
 /* Deep blue current stage; light gray inactive stages. */
 .journey-week.current .journey-node{background:var(--journey-accent)}
 .journey-week.current .journey-week-icon{color:var(--journey-accent-text)}
-.journey-week.completed .journey-week-icon{color:var(--illus-journey-success-text)}
+.journey-week.completed .journey-week-icon{color:var(--status-success-text)}
 .journey-resources a:hover{color:var(--text-primary);background:var(--journey-hover);box-shadow:none}
 .journey-complete-control:hover{color:var(--accent-text)}
 .journey-page .journey-restore{background:var(--journey-blue);color:var(--journey-accent-text);border-color:transparent}

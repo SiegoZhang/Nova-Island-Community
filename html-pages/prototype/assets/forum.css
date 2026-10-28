@@ -66,11 +66,11 @@
 
 /* Topic labels stay neutral; emphasis communicates selection, not category. */
 .nova-ds{
- --tag-fill:color-mix(in srgb,var(--text-heading) 3%,var(--surface-default));
- --tag-hover:color-mix(in srgb,var(--text-heading) 6%,var(--surface-default));
- --tag-selected:color-mix(in srgb,var(--text-heading) 10%,var(--surface-default));
- --tag-border:color-mix(in srgb,var(--text-heading) 8%,var(--surface-default));
- --tag-selected-border:color-mix(in srgb,var(--text-heading) 20%,var(--surface-default));
+ --tag-fill:var(--fill-subtle);
+ --tag-hover:var(--fill-hover);
+ --tag-selected:var(--fill-selected);
+ --tag-border:var(--fill-selected);
+ --tag-selected-border:var(--fill-border);
 }
 .forum-tags-panel .forum-filters button[data-filter-tone],
 .forum-tags-panel .forum-filters a{

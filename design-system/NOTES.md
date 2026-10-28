@@ -24,6 +24,6 @@ python3 design-system/scripts/build-library.py
 
 预览仅操作内存，不读写产品本地存储。结构代码并非完整业务组件；需结合来源实现路由、数据与持久化。深色标为待验收。原型榜单包含生成的演示数据，不能当作实时统计。
 
-`assets/tokens.css`、`components.css`、`assets/styles.css` 与旧课程/文章页为历史资源；新库使用原型实际 CSS。官网、Unico 和历史主题保留独立入口。
+新库使用原型实际 CSS。旧展示资源、历史主题和官网规范快照已移入仓库根目录 `archive/`；设计系统只服务 AI Community 网站。
 
 本轮检查：1000px 与 390px 各完成 50 个组件 / 199 个样本，选择器、图片和根容器溢出检查均为 0 项问题；筛选、编辑器预览、点赞切换及代码复制已操作核对。JavaScript 语法与组件源码路径检查通过。

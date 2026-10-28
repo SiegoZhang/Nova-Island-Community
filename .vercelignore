@@ -1,11 +1,5 @@
-# Historical references and exports stay in git but are not published.
-html-pages/figma-export
-html-pages/figma-export 2
-html-pages/*.zip
-design-system/legacy-brand
-design-system/mist-blue
-design-system/community
-design-system/RECON
+# Retired schemes and local-only folders stay out of the deployment.
+archive
 .interface-design
 figma-sync
 .claude

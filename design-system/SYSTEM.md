@@ -93,8 +93,7 @@ Token 分为原始值、语义、组件三层，另有插画与图表用的表�
 1. `html-pages/prototype/assets/tokens.css` 是当前产品 Token 来源。
 2. 执行 `python3 design-system/scripts/sync-tokens.py` 更新 `design-system/tokens.css`、`assets/community-tokens.css` 和 `tokens.json`。
 3. JSON 保留别名；themes.light 为基础，themes.dark 为覆盖；contextualOverrides 为条件覆盖，blocks 保留原始级联顺序。普通页与榜单的文字差异不能压成单一浅色值。
-4. 当前指南使用独立 community-tokens，避免同步改变官网与历史页面。
-5. `assets/tokens.css`、`components.css`、`assets/styles.css` 以及本目录 course.html / article.html 是旧展示资源，不再作为最新产品规范。最新完整页面从指南打开 prototype。
-6. 官网规范来自 2026-09-14 已保存采集，未在本次重新线上采集。Unico 是独立分区，仍待专项整理。legacy-brand、mist-blue、community、RECON、figma-export 均不是当前产品事实来源。
+4. 手册网站读取 `assets/community-tokens.css`：与产品 Token 相同，另外把浅色值挂在 `:root` 上，供手册自身样式使用。
+5. 范围：设计系统只服务 AI Community 网站，唯一视觉语言是产品 Token。退役方案（legacy-brand、mist-blue、早期 Figma 稿、RECON、手册编排方案、v0.4 展示资源、官网规范快照）已移入仓库根目录 `archive/`，见 `archive/README.md`；它们都不是设计依据。
 
 待完善：全页面深色验收、搜索键盘焦点、错误状态矩阵、触控命中范围与长标签压力检查。此次整理不代表这些产品实现问题已修复。

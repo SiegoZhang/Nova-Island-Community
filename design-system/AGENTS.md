@@ -40,6 +40,6 @@ HTML 页面也可以直接读源码；正文在 `<main>` 中。
 ## 不要做的事
 
 - 不要把“建议”或“组合示例”写成“已有”。
-- 不要以 `assets/tokens.css`、`components.css`、`legacy-brand/`、`mist-blue/`、`RECON/` 为依据，它们是历史资源。
+- 不要以仓库根目录 `archive/` 中的任何内容为依据，它们是退役方案和旧资源。设计系统只服务 AI Community 网站，官网和 Unico 不在范围内。
 - 不要直接修改 `design-system/tokens.css`。Token 的来源是 `html-pages/prototype/assets/tokens.css`，改完运行 `scripts/sync-tokens.py`。
 - 不要把榜单的演示数据当成实时数据。

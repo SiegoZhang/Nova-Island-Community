@@ -17,7 +17,7 @@
 
 路径均相对 `html-pages/prototype/`。可视规范的筛选胶囊直接引用当前 feed-filters.css；文字与色板使用同步的 community-tokens.css。页面模式跳转当前原型，不宣称概括表格还原了完整页面交互。
 
-同期同步规则：运行 `design-system/scripts/sync-tokens.py` 生成 Token 快照与导出，JSON 包含源文件 SHA-256 和完整声明块顺序。官网、Unico、旧 Figma 导出和历史主题不混入当前社区设计事实。
+同期同步规则：运行 `design-system/scripts/sync-tokens.py` 生成 Token 快照与导出，JSON 包含源文件 SHA-256 和完整声明块顺序。退役方案与官网快照在仓库根目录 `archive/`，不混入当前社区设计事实。
 
 ## 组件级来源
 

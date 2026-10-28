@@ -6,7 +6,7 @@
    Expressive palettes (--illus-*, --chart-*) serve illustrations and data only. */
 
 /* ---------- 1. Primitive ---------- */
-.nova-ds {
+.nova-ds,:root {
  /* Folder blue */
  --blue-50:#F2F5FF; --blue-100:#E0E8FF; --blue-200:#BDCDFF; --blue-300:#8FABFF;
  --blue-400:#5C84FF; --blue-500:#0140FF; --blue-600:#0033CC; --blue-700:#082A99;
@@ -31,7 +31,7 @@
 }
 
 /* ---------- 2. Semantic ---------- */
-.nova-ds {
+.nova-ds,:root {
  /* Accent */
  --accent:var(--blue-500); --accent-text:var(--blue-600); --accent-surface:var(--blue-100); --accent-surface-soft:var(--blue-50); --accent-border:var(--blue-200);
  --text-link:var(--accent-text); --text-on-accent:var(--neutral-0);
@@ -73,7 +73,7 @@
 }
 
 /* Soft category badge palettes, with readable text in both themes. */
-.nova-ds {
+.nova-ds,:root {
  --badge-green-bg:#EAF6EF; --badge-green-text:#276545;
  --badge-red-bg:#F9D8C7; --badge-red-text:#8C4029;
  --badge-blue-bg:var(--accent-surface); --badge-blue-text:var(--accent-text);
@@ -91,7 +91,7 @@
 }
 
 /* Text-only card surfaces match their category badge hue; hover uses the adjacent shade. */
-.nova-ds{
+.nova-ds,:root{
  --article-surface-blue:var(--accent-surface-soft); --article-surface-yellow:#FFF6DF; --article-surface-red:#FFF3EB;
  --article-surface-blue-hover:#EAF0FF; --article-surface-yellow-hover:#FFF0CC; --article-surface-red-hover:#FFEBDD;
  --feed-surface-neutral-hover:#F0F0F4;
@@ -106,7 +106,7 @@
 }
 
 /* ---------- Expressive palettes (T12) ---------- */
-.nova-ds {
+.nova-ds,:root {
  /* Folder illustration */
  --illus-blue:var(--blue-500); --illus-blue-depth:var(--blue-700);
  /* Generated content covers */
@@ -129,7 +129,7 @@
 }
 
 /* ---------- Visual batch (T8, T9, T11) ---------- */
-.nova-ds {
+.nova-ds,:root {
  --shadow-color:9 21 64;
  --shadow-sm:0 1px 3px rgb(var(--shadow-color) / .08);
  --shadow-md:0 4px 16px rgb(var(--shadow-color) / .08);

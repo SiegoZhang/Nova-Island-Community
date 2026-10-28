@@ -63,7 +63,7 @@
  display:block;
  height:var(--feed-heading-space);
 }
-#content.section-index>.forum-page .forum-aside{padding-top:var(--feed-heading-space)}
+
 @media(max-width:1100px){
  #content.section-index>.forum-page>.forum-layout{
   overflow-y:auto;
@@ -73,7 +73,7 @@
   scroll-padding-top:var(--feed-heading-space);
  }
  #content.section-index>.forum-page>.forum-layout::-webkit-scrollbar{display:none}
- #content.section-index>.forum-page .forum-aside{padding-top:0}
+ 
  #content.section-index>.forum-page .forum-feed-scroll{
   flex:none;
   height:auto;

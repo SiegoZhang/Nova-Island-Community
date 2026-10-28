@@ -55,7 +55,7 @@
  --weight-regular:400; --weight-medium:500; --weight-semibold:600; --line-tight:1.25; --tracking-heading:-.035em;
  /* Layout */
  --shell-gap:6px; --card-padding:24px; --card-gap:16px; --orb-size:96px;
- --grid-columns:12; --grid-gutter:24px; --grid-max:1120px; --sidebar-width:224px;
+ --grid-max:1120px; --sidebar-width:224px;
  --control-sm:32px; --control-md:40px; --control-lg:48px; --motion-fast:150ms;
 }
 .nova-ds[data-theme="dark"] {
@@ -109,23 +109,15 @@
 .nova-ds,:root {
  /* Folder illustration */
  --illus-blue:var(--blue-500); --illus-blue-depth:var(--blue-700);
- /* Generated content covers */
- --illus-cover-ink:#24354c; --illus-cover-blue:#e9effa; --illus-cover-paper:#f3f0e9; --illus-cover-lilac:#edebf6;
- --illus-cover-sage:#e9eeeb; --illus-cover-dark:#27313f; --illus-cover-on-dark:#f7f8fb; --illus-cover-subtle-on-dark:#bdc7d5;
- /* Portal home */
- --illus-portal-navy:#172b40; --illus-portal-mist:#e8eef4; --illus-portal-soft:#b8c8d8; --illus-portal-paper:#f2efe8; --illus-portal-accent:var(--blue-300);
+ /* Content cover fallback */
+ --illus-cover-ink:#24354c; --illus-cover-blue:#e9effa;
  /* Trophy stars */
  --illus-star-gold-light:#FFF4C7; --illus-star-gold:#DFB452;
- --illus-star-silver-light:#F1F6FF; --illus-star-silver:#9AAEC7;
- --illus-star-bronze-light:#FFE6CF; --illus-star-bronze:#CB895E;
  /* Mini guide previews */
  --illus-mini-ink:#7E8389;
- /* Learning journey */
- --illus-journey-peach:#FFE8DA;
- /* Data: one hue per tool. Values are kept as found; unification belongs to the visual batch. */
+ /* Data: one hue per tool */
  --chart-codex:var(--blue-400); --chart-codex-ink:var(--neutral-900);
  --chart-claude:#D99B80; --chart-claude-soft:#C7A794; --chart-claude-bright:#EB976D; --chart-claude-ink:#542712;
- --chart-orange:#EF9565;
 }
 
 /* ---------- Visual batch (T8, T9, T11) ---------- */

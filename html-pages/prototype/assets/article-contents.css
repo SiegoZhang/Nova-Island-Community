@@ -11,6 +11,6 @@
 .ds-hook-list .ds-hook-rail[data-visible="true"]{opacity:1}
 .ds-hook-list .ds-hook-rail.is-muted[data-visible="true"]{opacity:.3}
 @media(prefers-reduced-motion:reduce){.ds-hook-list .ds-hook-rail,.ds-article-contents a{transition:none}}
-.ds-article-sample{display:grid;grid-template-columns:240px minmax(0,1fr);gap:var(--space-8);align-items:start}
-.ds-article-sample section{padding-bottom:var(--space-8);scroll-margin-top:var(--space-8)}
-@media(max-width:760px){.ds-article-sample{grid-template-columns:1fr}.ds-article-contents{position:static}.ds-article-contents a{font-size:var(--type-body)}}
+
+
+@media(max-width:760px){.ds-article-contents{position:static}.ds-article-contents a{font-size:var(--type-body)}}

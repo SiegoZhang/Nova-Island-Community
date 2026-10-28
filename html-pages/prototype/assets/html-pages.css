@@ -1,5 +1,5 @@
 *,*::before,*::after{box-sizing:border-box}
-html,body{margin:0;padding:0}body{font-family:"Inter","PingFang SC","Microsoft YaHei",sans-serif}button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:none!important}.html-pages-nav{display:flex;flex-direction:column;gap:var(--space-1)}.ds-topbar .ds-breadcrumb{display:flex}.ds-article-contents li{list-style:none}@media(max-width:760px){.ds-topbar{flex-wrap:wrap}.ds-sidebar .html-pages-nav{display:flex;flex-direction:row;gap:var(--space-2);margin-top:var(--space-3)}.html-pages-nav .ds-nav-label{display:none}.html-pages-nav .ds-sidebar-item{flex:1;justify-content:center}}
+html,body{margin:0;padding:0}body{font-family:"Inter","PingFang SC","Microsoft YaHei",sans-serif}button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:none!important}.ds-article-contents li{list-style:none}@media(max-width:760px){.ds-topbar{flex-wrap:wrap}}
 
 /* Shared main layout: local navigation | primary content | context.
    Course reserves the local column; article reserves the context column. */

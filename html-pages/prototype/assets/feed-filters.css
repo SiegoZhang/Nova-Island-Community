@@ -88,10 +88,10 @@
  .forum-activity{padding-top:var(--space-6);max-height:none;overflow:visible;padding-bottom:var(--space-6)}
 }
 
-.forum-personal-links{display:grid;gap:var(--space-1);margin-top:var(--space-4)}
-.forum-personal-links a{display:flex;align-items:center;justify-content:space-between;min-height:44px;padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);color:var(--text-secondary);font-size:var(--type-small)}
-.forum-personal-links a:hover{background:var(--surface-hover);color:var(--text-heading)}
-.forum-personal-links a:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+
+
+
+
 
 
 .feed-filter-mine[aria-pressed="true"],.feed-filter-featured[aria-pressed="true"]{border-color:var(--text-heading);color:var(--text-heading);font-weight:var(--weight-semibold)}
@@ -159,10 +159,7 @@
 .feed-filter-group>.feed-filter-trigger,.feed-filter-group>.feed-filter-chip{
  box-sizing:border-box;height:30px;line-height:20px;font-size:var(--type-caption);
 }
-.ranking-month-filter>.ranking-month-label{
- position:static;width:auto;height:auto;overflow:visible;clip-path:none;
- padding:var(--space-1) var(--space-3);font-size:var(--type-caption);line-height:20px;color:var(--text-secondary);white-space:nowrap;
-}
+
 .ranking-month-filter>select.feed-filter-chip{padding-right:var(--space-6);cursor:pointer}
 .ranking-filter-left{flex-wrap:wrap;overflow:visible;align-items:center}
 .ranking-sticky-filters{align-items:center;flex-wrap:wrap}

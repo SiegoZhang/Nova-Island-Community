@@ -59,3 +59,10 @@
 .feed-anatomy .aside{grid-row:span 2}
 .handbook-content pre code{background:none!important;padding:0!important;font-size:inherit!important}
 @media(max-width:760px){.principle{padding:20px}.principle-claim{margin-left:0}.principle-grid{grid-template-columns:1fr}.handbook-checklist{columns:1}.handbook-example{padding:20px}.feed-anatomy{grid-template-columns:1fr}.feed-anatomy .aside{grid-row:auto}}
+/* Decision records read as short essays: number, title, a few paragraphs, then the source. */
+.decision{padding:28px 0;border-bottom:1px solid var(--border-subtle);max-width:760px;scroll-margin-top:24px}
+.decision:last-of-type{border-bottom:0}
+.decision h3{font-size:var(--type-title-sm);line-height:var(--type-title-sm-lh);margin:0 0 12px;display:flex;gap:12px;align-items:baseline}
+.decision h3 span{font-size:var(--type-caption);font-weight:500;color:var(--accent-text);font-variant-numeric:tabular-nums;flex-shrink:0}
+.decision p{font-size:var(--type-body-lg);line-height:var(--type-body-lg-lh);margin:0 0 12px;color:var(--text-primary)}
+.decision .decision-meta{font-size:var(--type-caption);line-height:var(--type-caption-lh);color:var(--text-secondary);margin:16px 0 0}

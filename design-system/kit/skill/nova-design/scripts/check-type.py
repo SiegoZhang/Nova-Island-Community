@@ -39,6 +39,7 @@ for name in sys.argv[1:]:
     for m in re.finditer(r'font-weight\s*:\s*([^;"}]+)', text):
         if m.group(1).strip().replace('!important', '').strip() not in WEIGHT_OK: problems.append(f'{name}: font-weight {m.group(1).strip()}')
     for m in re.finditer(r'(?<![\w-])font\s*:\s*([^;"}]+)', text):
+        if m.group(1).strip().replace('!important', '').strip() in ('inherit', 'initial', 'unset', 'revert'): continue
         parts = re.split(r'\s+(?![^(]*\))', m.group(1).strip())
         size = next((p.split('/')[0] for p in parts if re.match(r'(\d|var\(--type|clamp)', p.split('/')[0]) and not re.fullmatch(r'\d{3}', p)), None)
         if any(p in WEIGHT_WORDS for p in parts): problems.append(f'{name}: font {m.group(1).strip()}（字重不在 400/500/600 内）')

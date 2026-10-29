@@ -8,7 +8,7 @@ Errors (exit code 1):
 - the accent blue used as a button background (blue means "where you are", not "do this")
 - more than one primary (black) button declared with the same class inside one file is NOT detected; check it by eye
 
-Notes (no failure): a palette colour written as a literal instead of its Token.
+Notes (no failure): a palette colour written as a literal instead of its Token; any box-shadow (cards take none).
 Files named colors.css are skipped, since they define the Tokens.
 """
 import re, sys
@@ -48,6 +48,8 @@ for name in sys.argv[1:]:
         if re.search(NAMED, value, re.I) and 'var(' not in value: errors.append(f'{name}: {prop}: {value}（命名颜色不在调色板里）')
         for t in re.findall(r'var\(--([\w-]+)', value):
             if t.startswith(GROUPS) and t not in TOKENS: errors.append(f'{name}: {prop}: var(--{t})（没有这个颜色 Token）')
+    for m in re.finditer(r'box-shadow\s*:\s*([^;"}]+)', text):
+        if m.group(1).strip() != 'none': notes.append(f'{name}: box-shadow: {m.group(1).strip()}（卡片和色条不用阴影；只有浮层可以）')
     for m in re.finditer(r'([^{}]*)\{([^{}]*)\}', text):
         sel, body = m.group(1), m.group(2)
         if re.search(r'button|btn|\.cta', sel, re.I) and re.search(r'background(?:-color)?\s*:\s*var\(--(accent|blue-[3-7]00)\)', body):

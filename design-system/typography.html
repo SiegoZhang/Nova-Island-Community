@@ -21,7 +21,8 @@
 | 元素 | 档位 |
 | --- | --- |
 | 页面 H1（每页一个） | page |
-| 首页大标题、引导横幅 | display |
+| 首页大标题 | display |
+| 引导横幅标题 | title-lg，字重 600 |
 | 页面里的区块标题、空状态标题 | title-md |
 | 列表行标题（帖子、活动行） | title-sm，字重 600 |
 | 网格卡片标题 | body-lg 字号，行高 1.4，字重 600（屏宽 ≤760px 用 body 字号） |
@@ -37,11 +38,11 @@
 
 规则：
 1. 不使用以上之外的字号；界面文字不小于 11px。
-2. 字重只用 400、500、600（normal 等同 400）。600 只用于卡片标题、列表行标题和需要强调的数字。
+2. 字重只用 400、500、600（normal 等同 400）。600 只用于卡片标题、列表行标题、引导横幅标题和需要强调的数字。
 3. display、page、title-lg 字距 -0.035em。
 4. 数字用 font-variant-numeric: tabular-nums。
 5. 标题完整换行，不截断。
 
 如果可以引入 CSS，直接使用 type.css：它为 body 设好默认文字；变量 --type-*；类 .nv-page、.nv-title-sm、.nv-card-title、.nv-row-title、.nv-caption 等。
-</pre></div><div class="kit-side"><div class="kit-file"><b>CSS</b><a class="handbook-button" href="kit/type/type.css" download>下载 type.css</a><small>变量 --type-* 和类 .nv-*，可单独引入</small></div><div class="kit-file"><b>检查</b><a class="handbook-button" href="kit/type/check-type.py" download>下载 check-type.py</a><small>python3 check-type.py page.html</small></div><div class="kit-file"><b>Skill</b><a class="handbook-button" href="kit/nova-design-skill.zip" download>下载 Skill</a><small>给 Claude Code 等 Agent，含文字、颜色、尺寸、图标四个模块</small></div><div class="copy-block"><div class="copy-head"><b>安装 Skill</b><button type="button" class="copy-btn" data-copy-target>复制</button></div><pre class="copy-text">unzip nova-design-skill.zip -d ~/.claude/skills/</pre></div></div></div></section><footer class="handbook-foot">Nova Island 设计系统 · 文字 · 2026-10-29</footer><script>document.addEventListener("click",e=>{const b=e.target.closest("[data-copy-target]");if(!b)return;const t=b.closest(".copy-block").querySelector(".copy-text").textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent="已复制";setTimeout(()=>b.textContent="复制",1500)});});</script>
+</pre></div><div class="kit-side"><div class="kit-file"><b>CSS</b><a class="handbook-button" href="kit/type/type.css" download>下载 type.css</a><small>变量 --type-* 和类 .nv-*，可单独引入</small></div><div class="kit-file"><b>检查</b><a class="handbook-button" href="kit/type/check-type.py" download>下载 check-type.py</a><small>python3 check-type.py page.html</small></div><div class="kit-file"><b>Skill</b><a class="handbook-button" href="kit/nova-design-skill.zip" download>下载 Skill</a><small>给 Claude Code 等 Agent，含文字、颜色、尺寸、图标、插画五个模块</small></div><div class="copy-block"><div class="copy-head"><b>安装 Skill</b><button type="button" class="copy-btn" data-copy-target>复制</button></div><pre class="copy-text">unzip nova-design-skill.zip -d ~/.claude/skills/</pre></div></div></div></section><footer class="handbook-foot">Nova Island 设计系统 · 文字 · 2026-10-29</footer><script>document.addEventListener("click",e=>{const b=e.target.closest("[data-copy-target]");if(!b)return;const t=b.closest(".copy-block").querySelector(".copy-text").textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent="已复制";setTimeout(()=>b.textContent="复制",1500)});});</script>
 </main></div></body></html>

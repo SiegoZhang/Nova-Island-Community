@@ -1,5 +1,5 @@
 /* Nova Island · 文字模块 v1（2026-10-29）
-   可单独引入任何项目。变量挂在 :root 上；.nv-* 类按角色直接使用。
+   可单独引入任何项目。变量挂在 :root 上；body 默认使用 body 档；.nv-* 类按角色直接使用。
    来源：html-pages/prototype/assets/tokens.css */
 :root{
  --font-sans:"Inter","PingFang SC","Microsoft YaHei",sans-serif;
@@ -27,9 +27,15 @@
 .nv-small   {font:400 var(--type-small)/var(--type-small-lh) var(--font-sans)}
 .nv-caption {font:400 var(--type-caption)/var(--type-caption-lh) var(--font-sans)}
 .nv-micro   {font:500 var(--type-micro)/var(--type-micro-lh) var(--font-sans)}
+.nv-card-title{font:600 var(--type-body-lg)/1.4 var(--font-sans)}
+.nv-row-title {font:600 var(--type-title-sm)/var(--type-title-sm-lh) var(--font-sans)}
 .nv-num     {font-variant-numeric:tabular-nums}
 .nv-code    {font-family:var(--font-mono);font-size:var(--type-small)}
+/* Default text for anything without a class; :where keeps specificity at zero. */
+:where(body){font-family:var(--font-sans);font-size:var(--type-body);line-height:var(--type-body-lh);font-weight:var(--weight-regular)}
+:where(code,pre,kbd){font-family:var(--font-mono)}
 @media (max-width:760px){
  .nv-display{font-size:var(--type-page);line-height:var(--type-page-lh)}
  .nv-page{font-size:var(--type-title-lg);line-height:var(--type-title-lg-lh)}
+ .nv-card-title{font-size:var(--type-body)}
 }

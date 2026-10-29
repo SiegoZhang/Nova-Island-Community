@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活动 · Nova Island</title>
+<link rel="stylesheet" href="../type/type.css">
+<style>
+  :root{--bg:#f6f6f7;--card:#fff;--line:#e5e5e8;--text:#1d1d1f;--muted:#6e6e73;--faint:#8e8e93;--accent:#1d1d1f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:var(--type-body);line-height:var(--type-body-lh);font-weight:var(--weight-regular)}
+  main{max-width:1040px;margin:0 auto;padding:48px 24px 80px}
+  header h1{margin:0}
+  header p{margin:8px 0 0;color:var(--muted)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 24px;padding:0;list-style:none}
+  .chip{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:6px 14px;cursor:pointer}
+  .chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin:0;padding:0;list-style:none}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px}
+  .tag{align-self:flex-start;background:#f0f0f2;color:var(--muted);border-radius:4px;padding:2px 8px}
+  .card h2{margin:0;font-weight:var(--weight-medium)}
+  .meta{margin:0;color:var(--faint)}
+  .summary{margin:0;color:var(--muted)}
+  .foot{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+  .count{color:var(--muted)}
+  .count strong{color:var(--text);font-weight:var(--weight-semibold)}
+  .link{color:var(--text);text-decoration:none;font-weight:var(--weight-medium)}
+  .link:hover{text-decoration:underline}
+  .end{text-align:center;color:var(--faint);margin:32px 0 0}
+  .empty{margin-top:48px;background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:48px 24px;text-align:center}
+  .empty h2{margin:0}
+  .empty p{margin:8px 0 0;color:var(--muted)}
+  .section-label{margin:48px 0 0;color:var(--faint)}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 class="nv-page">活动</h1>
+    <p class="nv-small">每周更新的 AI 学习分享会、工作坊与线下见面会，找到适合你的那一场。</p>
+  </header>
+
+  <ul class="chips" aria-label="筛选活动">
+    <li><button class="chip nv-small" aria-pressed="true">全部</button></li>
+    <li><button class="chip nv-small" aria-pressed="false">线上</button></li>
+    <li><button class="chip nv-small" aria-pressed="false">线下</button></li>
+    <li><button class="chip nv-small" aria-pressed="false">已报名</button></li>
+  </ul>
+
+  <ul class="grid">
+    <li class="card">
+      <span class="tag nv-micro">线下</span>
+      <h2 class="nv-body-lg">AI 工作流线下分享会：用大模型重构你的日常办公</h2>
+      <p class="meta nv-caption">11 月 8 日 周六 14:00 · 上海</p>
+      <p class="summary nv-small">三位一线产品经理现场演示如何用 AI 助手处理会议纪要、周报与数据整理，现场答疑。</p>
+      <div class="foot">
+        <span class="count nv-caption"><strong class="nv-num">128</strong> 人已报名</span>
+        <a class="link nv-caption" href="#">查看详情</a>
+      </div>
+    </li>
+    <li class="card">
+      <span class="tag nv-micro">线上</span>
+      <h2 class="nv-body-lg">提示词进阶直播课：从"能用"到"好用"</h2>
+      <p class="meta nv-caption">11 月 12 日 周三 20:00 · 线上直播</p>
+      <p class="summary nv-small">拆解 20 个真实案例，讲清结构化提示词、少样本示例与自我校验的写法。</p>
+      <div class="foot">
+        <span class="count nv-caption"><strong class="nv-num">1,046</strong> 人已报名</span>
+        <a class="link nv-caption" href="#">立即报名</a>
+      </div>
+    </li>
+    <li class="card">
+      <span class="tag nv-micro">线下</span>
+      <h2 class="nv-body-lg">北京 AI 读书会 · 第 17 期</h2>
+      <p class="meta nv-caption">11 月 15 日 周六 10:00 · 北京</p>
+      <p class="summary nv-small">本期共读《深度学习入门》第 5–6 章，适合有一点 Python 基础的同学。</p>
+      <div class="foot">
+        <span class="count nv-caption"><strong class="nv-num">42</strong> 人已报名</span>
+        <a class="link nv-caption" href="#">查看详情</a>
+      </div>
+    </li>
+    <li class="card">
+      <span class="tag nv-micro">线上</span>
+      <h2 class="nv-body-lg">零代码搭建你的第一个 AI 智能体</h2>
+      <p class="meta nv-caption">11 月 19 日 周三 19:30 · 线上直播</p>
+      <p class="summary nv-small">跟着讲师一步步完成一个能查资料、写摘要的小助手，全程无需写代码。</p>
+      <div class="foot">
+        <span class="count nv-caption"><strong class="nv-num">732</strong> 人已报名</span>
+        <a class="link nv-caption" href="#">立即报名</a>
+      </div>
+    </li>
+    <li class="card">
+      <span class="tag nv-micro">线下</span>
+      <h2 class="nv-body-lg">深圳开发者见面会：本地部署开源模型实战</h2>
+      <p class="meta nv-caption">11 月 22 日 周六 13:30 · 深圳</p>
+      <p class="summary nv-small">带上笔记本电脑，现场完成开源模型的量化与本地部署，并对比推理速度。</p>
+      <div class="foot">
+        <span class="count nv-caption"><strong class="nv-num">86</strong> 人已报名</span>
+        <a class="link nv-caption" href="#">查看详情</a>
+      </div>
+    </li>
+    <li class="card">
+      <span class="tag nv-micro">线上</span>
+      <h2 class="nv-body-lg">AI 绘画作品点评夜</h2>
+      <p class="meta nv-caption">11 月 26 日 周三 20:00 · 线上直播</p>
+      <p class="summary nv-small">提交你的作品，由社区设计师现场点评构图、风格与提示词，优秀作品将收录进精选集。</p>
+      <div class="foot">
+        <span class="count nv-caption"><strong class="nv-num">315</strong> 人已报名</span>
+        <a class="link nv-caption" href="#">立即报名</a>
+      </div>
+    </li>
+  </ul>
+
+  <p class="end nv-caption">已经看完全部活动</p>
+
+  <p class="section-label nv-caption">空状态示例</p>
+  <section class="empty" style="margin-top:12px">
+    <h2 class="nv-title-md">这个分类还没有活动</h2>
+    <p class="nv-small">新的活动发布后会第一时间出现在这里，可以先看看其他分类。</p>
+  </section>
+</main>
+</body>
+</html>

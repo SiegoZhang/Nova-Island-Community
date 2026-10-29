@@ -1,0 +1,35 @@
+/* Nova Island · 文字模块 v1（2026-10-29）
+   可单独引入任何项目。变量挂在 :root 上；.nv-* 类按角色直接使用。
+   来源：html-pages/prototype/assets/tokens.css */
+:root{
+ --font-sans:"Inter","PingFang SC","Microsoft YaHei",sans-serif;
+ --font-mono:"SFMono-Regular",Consolas,monospace;
+ --weight-regular:400; --weight-medium:500; --weight-semibold:600;
+ --tracking-heading:-.035em;
+ --type-display:40px;  --type-display-lh:48px;
+ --type-page:30px;     --type-page-lh:42px;
+ --type-title-lg:24px; --type-title-lg-lh:32px;
+ --type-title-md:20px; --type-title-md-lh:28px;
+ --type-title-sm:18px; --type-title-sm-lh:26px;
+ --type-body-lg:16px;  --type-body-lg-lh:1.75;
+ --type-body:14px;     --type-body-lh:1.65;
+ --type-small:13px;    --type-small-lh:20px;
+ --type-caption:12px;  --type-caption-lh:18px;
+ --type-micro:11px;    --type-micro-lh:16px;
+}
+.nv-display {font:500 var(--type-display)/var(--type-display-lh) var(--font-sans);letter-spacing:var(--tracking-heading)}
+.nv-page    {font:500 var(--type-page)/var(--type-page-lh) var(--font-sans);letter-spacing:var(--tracking-heading)}
+.nv-title-lg{font:500 var(--type-title-lg)/var(--type-title-lg-lh) var(--font-sans);letter-spacing:var(--tracking-heading)}
+.nv-title-md{font:500 var(--type-title-md)/var(--type-title-md-lh) var(--font-sans)}
+.nv-title-sm{font:500 var(--type-title-sm)/var(--type-title-sm-lh) var(--font-sans)}
+.nv-body-lg {font:400 var(--type-body-lg)/var(--type-body-lg-lh) var(--font-sans)}
+.nv-body    {font:400 var(--type-body)/var(--type-body-lh) var(--font-sans)}
+.nv-small   {font:400 var(--type-small)/var(--type-small-lh) var(--font-sans)}
+.nv-caption {font:400 var(--type-caption)/var(--type-caption-lh) var(--font-sans)}
+.nv-micro   {font:500 var(--type-micro)/var(--type-micro-lh) var(--font-sans)}
+.nv-num     {font-variant-numeric:tabular-nums}
+.nv-code    {font-family:var(--font-mono);font-size:var(--type-small)}
+@media (max-width:760px){
+ .nv-display{font-size:var(--type-page);line-height:var(--type-page-lh)}
+ .nv-page{font-size:var(--type-title-lg);line-height:var(--type-title-lg-lh)}
+}

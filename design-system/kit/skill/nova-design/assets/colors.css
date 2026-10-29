@@ -1,0 +1,75 @@
+/* Nova Island · 颜色模块 v1（2026-10-29）
+   可单独引入任何项目。原始色值挂在 :root；语义 Token 挂在 :root 和任何带 data-theme 的元素上，
+   因此给 html 或任意容器加 data-theme="dark" 都能切换到深色。
+   来源：html-pages/prototype/assets/tokens.css */
+
+/* 原始色值：只在本文件里引用 */
+:root{
+ --blue-50:#F2F5FF; --blue-100:#E0E8FF; --blue-200:#BDCDFF; --blue-300:#8FABFF;
+ --blue-400:#5C84FF; --blue-500:#0140FF; --blue-600:#0033CC; --blue-700:#082A99;
+ --neutral-0:#FFFFFF; --neutral-50:#F7F7F9; --neutral-100:#F2F2F2; --neutral-200:#DEDEE0; --neutral-300:#CCCCCF;
+ --neutral-400:#949494; --neutral-600:#626262; --neutral-800:#333333; --neutral-900:#000000;
+}
+
+/* 语义 Token（浅色） */
+:root,[data-theme]{
+ /* 表面 */
+ --surface-canvas:var(--neutral-50); --surface-default:var(--neutral-0); --surface-secondary:var(--neutral-100); --surface-hover:var(--neutral-50);
+ /* 文字 */
+ --text-heading:var(--neutral-900); --text-primary:var(--neutral-800); --text-secondary:var(--neutral-600); --text-disabled:var(--neutral-400);
+ /* 边框 */
+ --border-strong:var(--neutral-300); --border-default:var(--neutral-200); --border-subtle:var(--neutral-100);
+ /* 操作：黑色主按钮 */
+ --action-primary:var(--neutral-900); --action-primary-hover:var(--neutral-800); --text-on-action:var(--neutral-0);
+ /* 强调：当前位置、选中、链接、进度、焦点 */
+ --accent:var(--blue-500); --accent-text:var(--blue-600); --accent-surface:var(--blue-100); --accent-surface-soft:var(--blue-50); --accent-border:var(--blue-200);
+ --text-link:var(--accent-text); --text-on-accent:var(--neutral-0);
+ --focus-ring:var(--accent); --progress-track:var(--accent-border); --progress-fill:var(--accent);
+ /* 状态：只有成功、危险、信息 */
+ --status-success:#276545; --status-success-bg:#EAF6EF; --status-success-text:#276545;
+ --status-danger:#EE8C94; --status-danger-bg:#FFF5F6; --status-danger-text:#A23845;
+ --status-info:var(--text-secondary); --status-info-bg:var(--surface-secondary);
+ /* 分类：区分内容类型，可互换，不表达状态 */
+ --badge-green-bg:#EAF6EF; --badge-green-text:#276545;
+ --badge-red-bg:#F9D8C7; --badge-red-text:#8C4029;
+ --badge-blue-bg:var(--accent-surface); --badge-blue-text:var(--accent-text);
+ --badge-amber-bg:#FFF4DE; --badge-amber-text:#845B16;
+ --badge-purple-bg:#F0E8FA; --badge-purple-text:#65418B;
+ --badge-yellow-bg:#FFF3C9; --badge-yellow-text:#80631B;
+ /* 没有配图的纯文字卡片底色，以及悬停时的相邻色阶 */
+ --article-surface-blue:var(--accent-surface-soft); --article-surface-yellow:#FFF6DF; --article-surface-red:#FFF3EB;
+ --article-surface-blue-hover:#EAF0FF; --article-surface-yellow-hover:#FFF0CC; --article-surface-red-hover:#FFEBDD;
+ --feed-surface-neutral-hover:#F0F0F4;
+ /* 阅读互动 */
+ --reaction-liked:#BF2531; --reaction-saved-icon:#F5C842; --reaction-saved-text:#80631B;
+ /* 透明：中性填充与玻璃 */
+ --fill-subtle:color-mix(in srgb,var(--text-heading) 3%,var(--surface-default));
+ --fill-hover:color-mix(in srgb,var(--text-heading) 6%,var(--surface-default));
+ --fill-selected:color-mix(in srgb,var(--text-heading) 10%,var(--surface-default));
+ --fill-border:color-mix(in srgb,var(--text-heading) 20%,var(--surface-default));
+ --glass-fill:color-mix(in srgb,var(--surface-default) 62%,transparent);
+ --glass-fill-strong:color-mix(in srgb,var(--surface-default) 78%,transparent);
+}
+
+/* 深色 */
+[data-theme="dark"]{
+ --surface-canvas:#242424; --surface-default:#191919; --surface-secondary:#242424; --surface-hover:#333333;
+ --text-heading:#FFFFFF; --text-primary:#DEDEE0; --text-secondary:#B3B3AC;
+ --border-strong:#949494; --border-default:#707070; --border-subtle:#333333;
+ --action-primary:#F7F7F5; --action-primary-hover:#DEDED8; --text-on-action:#1A1A18;
+ --accent:var(--blue-300); --accent-text:var(--blue-200); --text-on-accent:#1A1A18;
+ --accent-surface-soft:color-mix(in srgb,var(--blue-500) 10%,var(--surface-default));
+ --accent-surface:color-mix(in srgb,var(--blue-500) 20%,var(--surface-default));
+ --accent-border:color-mix(in srgb,var(--blue-400) 50%,var(--surface-default));
+ --status-danger-bg:#322326; --status-danger-text:#F3AEB4;
+ --badge-green-bg:#203B2D; --badge-green-text:#9DDBB5; --status-success:#9DDBB5; --status-success-bg:#203B2D; --status-success-text:#9DDBB5;
+ --badge-red-bg:#684332; --badge-red-text:#FFDDCC;
+ --badge-amber-bg:#42361E; --badge-amber-text:#EDCC89;
+ --badge-purple-bg:#352740; --badge-purple-text:#D8B9F2;
+ --badge-yellow-bg:#40371F; --badge-yellow-text:#F0D77E;
+ --article-surface-yellow:#393324; --article-surface-red:#442E25;
+ --article-surface-blue-hover:#1C2747; --article-surface-yellow-hover:#443C28; --article-surface-red-hover:#51362B;
+ --feed-surface-neutral-hover:#3B3B3F;
+ --reaction-liked:#F3AEB4; --reaction-saved-text:#F0D77E;
+}
+:where([data-theme]),:where(:root){color:var(--text-primary);background-color:var(--surface-canvas)}

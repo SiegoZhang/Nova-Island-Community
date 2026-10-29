@@ -12,7 +12,7 @@ AI Community 网站的设计规范，拆成可以单独使用的模块。只读�
 | 模块 | 状态 | 读什么 | 用什么 |
 | --- | --- | --- | --- |
 | 文字 | 可用 | `references/type.md` | `assets/type.css`、`scripts/check-type.py` |
-| 颜色 | 制作中 | — | — |
+| 颜色 | 可用 | `references/color.md` | `assets/colors.css`、`scripts/check-color.py` |
 | 尺寸（间距、圆角、断点） | 制作中 | — | — |
 | 图标 | 制作中 | — | — |
 | 插画 | 制作中 | — | — |
@@ -29,7 +29,8 @@ AI Community 网站的设计规范，拆成可以单独使用的模块。只读�
 4. 完成后运行对应的检查脚本。脚本在本 Skill 文件夹的 `scripts/` 下，用完整路径调用：
 
    ```bash
-   python3 <本 Skill 文件夹>/scripts/check-type.py 你的页面.html
+   python3 <本 Skill 文件夹>/scripts/check-type.py 你的页面.html    # 用了文字模块
+   python3 <本 Skill 文件夹>/scripts/check-color.py 你的页面.html   # 用了颜色模块
    ```
 
-   输出 OK 才算完成。脚本只检查数值是否在阶梯内；元素是否用对了档位，还要对照 reference 里的“元素对应哪一档”表自查。
+   每个脚本都输出 OK 才算完成。脚本只能检查数值；元素是否用对了档位或颜色角色，还要对照 reference 里的对应表自查。同时用多个模块时，CSS 按 colors.css、type.css 的顺序引入。

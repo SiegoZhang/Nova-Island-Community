@@ -14,7 +14,7 @@ AI Community 网站的设计规范，拆成可以单独使用的模块。只读�
 | 文字 | 可用 | `references/type.md` | `assets/type.css`、`scripts/check-type.py` |
 | 颜色 | 可用 | `references/color.md` | `assets/colors.css`、`scripts/check-color.py` |
 | 尺寸（间距、圆角、控件高度、布局） | 可用 | `references/size.md` | `assets/size.css`、`scripts/check-size.py` |
-| 图标 | 制作中 | — | — |
+| 图标 | 可用 | `references/icon.md` | `assets/icons.js`、`assets/icons.css`、`scripts/check-icon.py` |
 | 插画 | 制作中 | — | — |
 | 组件 | 制作中 | — | — |
 | 页面模式 | 制作中 | — | — |

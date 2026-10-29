@@ -1,0 +1,21 @@
+/* Nova Island · 图标尺寸与颜色。配合 icons.js 使用，也可单独给内联 SVG 用 */
+[data-nv-icon],.nv-icon{display:inline-grid;place-items:center;flex:none;width:16px;height:16px;color:inherit;line-height:0}
+[data-nv-icon] svg,.nv-icon svg,svg.nv-icon{width:100%;height:100%;display:block}
+.nv-icon-12{width:12px;height:12px}
+.nv-icon-14{width:14px;height:14px}
+.nv-icon-16{width:16px;height:16px}
+.nv-icon-18{width:18px;height:18px}
+.nv-icon-20{width:20px;height:20px}
+.nv-icon-24{width:24px;height:24px}
+/* 玻璃导航图标：28，放在侧栏导航项里 */
+[data-nv-glass]{display:inline-grid;place-items:center;flex:none;width:28px;height:28px;line-height:0}
+[data-nv-glass] svg{width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 1px 1px #29364a40)}
+[data-nv-glass] svg,.nv-glass-back,.nv-glass-front{transform-box:view-box;transform-origin:50% 55%;transition:transform 280ms cubic-bezier(.2,.8,.2,1),filter 280ms ease}
+/* 悬停、键盘聚焦：两层错开，整体略微放大 */
+:is(a,button):is(:hover,:focus-visible) [data-nv-glass] svg{transform:translateY(-1px) scale(1.08);filter:drop-shadow(0 3px 3px #29364a26)}
+:is(a,button):is(:hover,:focus-visible) [data-nv-glass] .nv-glass-back{transform:translate(3px,-5px) rotate(6deg)}
+:is(a,button):is(:hover,:focus-visible) [data-nv-glass] .nv-glass-front{transform:translate(-2px,1px) rotate(-5deg)}
+:is(a,button):active [data-nv-glass] svg{transform:scale(.96)}
+@media (prefers-reduced-motion:reduce){[data-nv-glass] svg,.nv-glass-back,.nv-glass-front{transition:none;transform:none!important}}
+/* 当前导航项：折射层变蓝 */
+[aria-current] [data-nv-glass] .nv-glass-refraction,.selected [data-nv-glass] .nv-glass-refraction{fill:var(--blue-400,#5C84FF);opacity:.65}

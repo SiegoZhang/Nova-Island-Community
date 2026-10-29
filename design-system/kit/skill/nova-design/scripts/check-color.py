@@ -9,7 +9,7 @@ Errors (exit code 1):
 - more than one primary (black) button declared with the same class inside one file is NOT detected; check it by eye
 
 Notes (no failure): a palette colour written as a literal instead of its Token; any box-shadow (cards take none).
-Files named colors.css are skipped, since they define the Tokens.
+Files named colors.css and icons.css are skipped (they ship with the kit).
 """
 import re, sys
 from pathlib import Path
@@ -38,7 +38,7 @@ def norm(h):
 
 errors, notes = [], []
 for name in sys.argv[1:]:
-    if Path(name).name == 'colors.css': continue
+    if Path(name).name in ('colors.css', 'icons.css'): continue
     text = re.sub(r'/\*.*?\*/', '', Path(name).read_text(encoding='utf-8', errors='ignore'), flags=re.S)
     for m in re.finditer(rf'(?<![\w-]){COLOR_PROPS}\s*:\s*([^;"}}]+)', text, re.I):
         prop, value = m.group(1).lower(), m.group(2).strip()

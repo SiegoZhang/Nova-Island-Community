@@ -13,7 +13,7 @@ AI Community 网站的设计规范，拆成可以单独使用的模块。只读�
 | --- | --- | --- | --- |
 | 文字 | 可用 | `references/type.md` | `assets/type.css`、`scripts/check-type.py` |
 | 颜色 | 可用 | `references/color.md` | `assets/colors.css`、`scripts/check-color.py` |
-| 尺寸（间距、圆角、断点） | 制作中 | — | — |
+| 尺寸（间距、圆角、控件高度、布局） | 可用 | `references/size.md` | `assets/size.css`、`scripts/check-size.py` |
 | 图标 | 制作中 | — | — |
 | 插画 | 制作中 | — | — |
 | 组件 | 制作中 | — | — |
@@ -31,6 +31,7 @@ AI Community 网站的设计规范，拆成可以单独使用的模块。只读�
    ```bash
    python3 <本 Skill 文件夹>/scripts/check-type.py 你的页面.html    # 用了文字模块
    python3 <本 Skill 文件夹>/scripts/check-color.py 你的页面.html   # 用了颜色模块
+   python3 <本 Skill 文件夹>/scripts/check-size.py 你的页面.html    # 用了尺寸模块
    ```
 
-   每个脚本都输出 OK 才算完成。脚本只能检查数值；元素是否用对了档位或颜色角色，还要对照 reference 里的对应表自查。同时用多个模块时，CSS 按 colors.css、type.css 的顺序引入。
+   每个脚本都输出 OK 才算完成。脚本只能检查数值；元素是否用对了档位或颜色角色，还要对照 reference 里的对应表自查。同时用多个模块时，CSS 按 colors.css、type.css、size.css 的顺序引入。

@@ -1,0 +1,43 @@
+/* Nova Island · 尺寸模块 v1（2026-10-29）
+   间距、圆角、控件高度和布局。可单独引入任何项目。
+   来源：html-pages/prototype/assets/tokens.css 和产品页面的实测值 */
+:root{
+ /* 间距：4px 为单位 */
+ --space-0:0px; --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:20px;
+ --space-6:24px; --space-8:32px; --space-10:40px; --space-12:48px; --space-16:64px;
+ /* 只有这三处用的例外值 */
+ --shell-gap:6px;      /* 外壳与浏览器边缘、侧栏与内容卡之间 */
+ --capsule-pad:3px;    /* 胶囊组容器的内边距 */
+ /* 圆角 */
+ --radius-none:0px; --radius-xs:4px; --radius-sm:8px; --radius-md:12px; --radius-lg:20px; --radius-card:24px; --radius-full:999px;
+ /* 控件高度 */
+ --control-sm:32px; --control-md:40px; --control-lg:48px; --touch-target:44px;
+ /* 头像 */
+ --avatar-xs:22px; --avatar-sm:32px; --avatar-md:36px; --avatar-lg:44px; --avatar-xl:48px;
+ /* 布局 */
+ --sidebar-width:224px; --card-padding:24px; --card-gap:20px; --split-gap:24px; --field-gap:20px;
+}
+
+/* 主内容区的左右留白，随断点收窄 */
+.nv-main{padding:0 var(--space-8) var(--space-12)}
+/* 卡片网格：3 列 → 2 列 → 1 列 */
+.nv-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--card-gap)}
+/* 主栏 + 侧栏：2 : 1 */
+.nv-split{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:var(--split-gap);align-items:start}
+/* 区块：标题到内容 24，区块之间 32 */
+.nv-section+.nv-section{margin-top:var(--space-8)}
+.nv-section-head{margin-bottom:var(--space-6)}
+
+@media (min-width:1440px){ .nv-main{padding-top:var(--space-12)} }
+@media (max-width:1100px){
+ .nv-main{padding:0 var(--space-6) var(--space-10)}
+ .nv-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .nv-split{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+ .nv-main{padding:0 var(--space-4) var(--space-10)}
+ .nv-section+.nv-section{margin-top:var(--space-6)}
+}
+@media (max-width:600px){
+ .nv-card-grid{grid-template-columns:minmax(0,1fr);gap:var(--space-3)}
+}

@@ -36,7 +36,8 @@
 | 进度 轨道 / 填充 | --progress-track / --progress-fill | #BDCDFF / #0140FF |
 | 键盘焦点轮廓（2px，偏移 2px） | --focus-ring | #0140FF |
 | 成功标签 底 / 字 | --status-success-bg / --status-success-text | #EAF6EF / #276545 |
-| 错误文字、危险按钮 底 / 字 | --status-danger-text、--status-danger-bg | #A23845 / #FFF5F6 |
+| 错误文字 | --status-danger-text | #A23845 |
+| 危险按钮 底 / 字（不加描边；所在卡片的描边不变色） | --status-danger-bg / --status-danger-text | #FFF5F6 / #A23845 |
 | 输入框错误边框 | --status-danger | #EE8C94 |
 | 中性提示 底 / 字 | --status-info-bg / --status-info | #F2F2F2 / #626262 |
 | 标签、话题的中性底色 默认 / 悬停 / 选中 | --fill-subtle / --fill-hover / --fill-selected | 黑色 3% / 6% / 10% 叠加在白色上 |

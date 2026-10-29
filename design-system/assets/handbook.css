@@ -369,10 +369,13 @@
 .ic-act.on{color:var(--reaction-liked)}.ic-act.on svg{fill:currentColor}
 .ic-act.saved{color:var(--reaction-saved-text)}.ic-act.saved svg{color:var(--reaction-saved-icon);fill:currentColor}
 .ic-btn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--surface-default);color:var(--text-heading)}
-.ic-glass-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2);padding:var(--space-4);margin:var(--space-4) 0;background:var(--surface-secondary);border-radius:var(--radius-card)}
-.ic-glass-item{display:flex;align-items:center;gap:var(--space-3);min-height:44px;padding:var(--space-2) var(--space-4);border-radius:var(--radius-card);font-size:var(--type-body);color:var(--text-primary)}
-.ic-glass-item.selected{background:var(--accent-surface);color:var(--accent-text);font-weight:500}
+.ic-glass-stage{margin:var(--space-4) 0;padding:var(--space-6) var(--space-4);background:var(--surface-canvas);border:1px solid var(--border-subtle);border-radius:var(--radius-card)}
+.ic-glass-nav{display:grid;gap:20px;max-width:224px}
+.ic-glass-group{display:grid;gap:4px}
+.ic-glass-label{padding:0 20px 4px;font-size:var(--type-micro);line-height:20px;font-weight:500;color:var(--text-secondary)}
+.ic-glass-item{display:flex;align-items:center;gap:12px;min-height:44px;padding:8px 20px;border-radius:var(--radius-card);font-size:var(--type-body);color:var(--text-secondary)}
+.ic-glass-item.selected{background:var(--surface-default);color:var(--text-heading);font-weight:500}
 .ic-glass-item [data-nv-glass]{display:inline-grid;width:28px;height:28px;line-height:0}
-.ic-glass-item [data-nv-glass] svg{width:100%;height:100%}
+.ic-glass-item [data-nv-glass] svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 1px 1px #29364a40)}
 .ic-glass-item.selected .nv-glass-refraction{fill:var(--blue-400)}
-@media (max-width:760px){.ic-sizes{grid-template-columns:repeat(3,minmax(0,1fr))}.ic-glass-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.ic-sizes{grid-template-columns:repeat(3,minmax(0,1fr))}}

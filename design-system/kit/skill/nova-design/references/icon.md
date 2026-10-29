@@ -6,9 +6,32 @@
 1. 线性图标（界面里所有地方）：24 × 24 网格，描边 1.6，圆头圆角（stroke-linecap / stroke-linejoin: round），不填充（fill="none"），颜色用 currentColor 跟随文字。
 2. 玻璃导航图标（只用于左侧主导航）：64 × 64 网格，三层叠放：后层白色片、前层半透明磨砂玻璃（模糊折射后层）、最上面 3px 白色细节线。显示为 28 × 28。当前导航项的折射层变成蓝色 #5C84FF。只有 8 个：home 首页、book 实战、column 专栏、file 文章、chat 论坛、calendar 活动、trophy 榜单、layers 合集。不要自己画新的玻璃图标；新的导航项先告诉用户。
    - 主导航用 <nav> 包住；玻璃图标不能出现在 <nav> 以外。
-   - 导航项：玻璃图标在文字左边，间距 12；文字 --text-primary，当前项 --accent-text、字重 500，底色 --accent-surface。当前项的链接写 aria-current="page"（icons.css 靠它把折射层变蓝，也认 .selected）。
+   - 侧栏底色 --surface-canvas（浅灰），没有右边框。导航分组：首页单独一项，其余放在“知识学习”“社区参与”两组下；组名 11 号、字重 500、--text-secondary，左边和导航文字对齐，组与组之间 20。
+   - 导航项：高 44，圆角 24（胶囊形），左右内边距 20，玻璃图标在文字左边，间距 12，项与项之间 4。文字 14 号、--text-secondary，不加底色。
+   - 当前项：白色胶囊底 --surface-default，文字 --text-heading、字重 500，没有描边和阴影；玻璃图标的折射层变成蓝色（前后两层重叠的地方透出蓝色），其余图标保持灰白。当前项的链接写 aria-current="page"（icons.css 靠它把折射层变蓝，也认 .selected）。不要用浅蓝底、蓝字或左侧色条表示当前项。
+   - 可以直接用 icons.css 里的 .nv-nav、.nv-nav-group、.nv-nav-label、.nv-nav-item，结构见下方示例。
    - 玻璃图标只能由 icons.js 画出来。不能运行 JS 时，导航改用同名线性图标，尺寸 20。
    - 深色模式下玻璃图标保持不变；线性图标跟随文字颜色，自动适配。
+
+导航示例（需要 icons.css、icons.js，配合 colors.css、type.css）：
+
+```html
+<nav class="nv-nav" aria-label="主导航">
+  <a class="nv-nav-item" href="#home" aria-current="page"><span data-nv-glass="home"></span>首页</a>
+  <div class="nv-nav-group" role="group" aria-label="知识学习">
+    <div class="nv-nav-label" aria-hidden="true">知识学习</div>
+    <a class="nv-nav-item" href="#courses"><span data-nv-glass="book"></span>实战</a>
+    <a class="nv-nav-item" href="#columns"><span data-nv-glass="column"></span>专栏</a>
+    <a class="nv-nav-item" href="#articles"><span data-nv-glass="file"></span>文章</a>
+  </div>
+  <div class="nv-nav-group" role="group" aria-label="社区参与">
+    <div class="nv-nav-label" aria-hidden="true">社区参与</div>
+    <a class="nv-nav-item" href="#forum"><span data-nv-glass="chat"></span>论坛</a>
+    <a class="nv-nav-item" href="#events"><span data-nv-glass="calendar"></span>活动</a>
+    <a class="nv-nav-item" href="#ranking"><span data-nv-glass="trophy"></span>Token 榜</a>
+  </div>
+</nav>
+```
 
 线性图标的尺寸只用这 6 档：
 | 尺寸 | 用在哪里 |

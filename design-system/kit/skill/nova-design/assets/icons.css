@@ -19,3 +19,10 @@
 @media (prefers-reduced-motion:reduce){[data-nv-glass] svg,.nv-glass-back,.nv-glass-front{transition:none;transform:none!important}}
 /* 当前导航项：折射层变蓝 */
 [aria-current] [data-nv-glass] .nv-glass-refraction,.selected [data-nv-glass] .nv-glass-refraction{fill:var(--blue-400,#5C84FF);opacity:.65}
+/* 侧栏主导航：灰色侧栏上，当前项是白色胶囊，只有玻璃图标的折射层变蓝 */
+.nv-nav{display:grid;gap:20px}
+.nv-nav-group{display:grid;gap:4px}
+.nv-nav-label{padding:0 20px 4px;font-size:var(--type-micro,11px);line-height:20px;font-weight:500;color:var(--text-secondary,#626262)}
+.nv-nav-item{box-sizing:border-box;display:flex;align-items:center;gap:12px;min-height:44px;padding:8px 20px;border-radius:var(--radius-card,24px);font-size:var(--type-body,14px);color:var(--text-secondary,#626262);text-decoration:none}
+.nv-nav-item:is([aria-current],.selected){background:var(--surface-default,#FFFFFF);color:var(--text-heading,#000000);font-weight:500}
+.nv-nav-item:focus-visible{outline:2px solid var(--focus-ring,#0140FF);outline-offset:2px}

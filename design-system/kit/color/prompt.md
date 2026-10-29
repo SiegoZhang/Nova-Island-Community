@@ -2,7 +2,7 @@
 
 核心规则：
 1. 黑色表示“去做”：主按钮是黑底白字。一个区块最多一个黑色主按钮；列表和卡片里的操作用次按钮或文字按钮。
-2. 蓝色表示“在哪里”：只用于侧边栏当前项、当前进行中的一组、链接、进度、键盘焦点。蓝色不做按钮底色，不表示成功；筛选胶囊和标签页的“已选”用灰底黑字，不用蓝。
+2. 蓝色表示“在哪里”：只用于侧边栏当前项的玻璃图标（折射层）、当前进行中的一组、链接、进度、键盘焦点。蓝色不做按钮底色，不表示成功；筛选胶囊和标签页的“已选”用灰底黑字，不用蓝。
 3. 绿色表示“已完成 / 成功”，红色表示“错误 / 危险”。没有黄色或橙色的提醒色。
 4. 分类色（六种浅底色 + 深色字）只区分内容类型，可以互换，不表达状态。
 5. 卡片不加阴影（包括用 inset 阴影画的色条）；需要强调边缘时用 border；悬停时换成相邻的浅色底，不加黑色遮罩。
@@ -27,7 +27,7 @@
 | 次按钮 底 / 描边 / 字 / 悬停底 | --surface-default / --border-default / --text-primary / --surface-hover | #FFFFFF / #DEDEE0 / #333333 / #F7F7F9 |
 | 文字按钮 字 / 悬停底 | --text-secondary / --surface-hover | #626262 / #F7F7F9 |
 | 链接 | --text-link | #0033CC |
-| 侧边栏当前项 底 / 字 | --accent-surface / --accent-text | #E0E8FF / #0033CC |
+| 侧边栏底 / 当前项 底 / 字 / 图标折射层 | --surface-canvas / --surface-default / --text-heading / --blue-400 | #F7F7F9 / #FFFFFF / #000000 / #5C84FF |
 | 当前进行中的一组（如本周课程）底 / 其中行的描边 / 行悬停 | --accent-surface / --accent-border / --accent-surface-soft | #E0E8FF / #BDCDFF / #F2F5FF |
 | 未开始的行 底 / 描边 / 悬停 | --surface-default / --border-subtle / --surface-hover | #FFFFFF / #F2F2F2 / #F7F7F9 |
 | 已完成的行 | 文字 --text-secondary 加删除线；完成图标用 --status-success-bg / --status-success-text | #626262；#EAF6EF / #276545 |
